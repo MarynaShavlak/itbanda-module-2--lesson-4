@@ -5,7 +5,7 @@
  .header__container {
   position:relative;
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 20px;
  }
@@ -19,22 +19,34 @@
   display: flex;
   align-items: center;
   gap:3px;
+  margin-left: 65px;
+  margin-right: 65px;
   padding: 5px;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.42;
   border: 2px solid $main-accent-color;
   border-radius: 50px;
+  @media screen and (min-width: 768px) {
+      margin-left: 47px;
+      margin-right: 0;
+  }
  }
+
  .nav__item {
   padding: 5px 14px;
+  &:has(.nav__link--current) {
+  border-radius: 25px;
+  background-color: $main-accent-color;
+  }
  }
 
  .nav__link {
   position:relative;
-   display: block;
-   color: $primary-black-color;
+  display: block;
+  color: $primary-black-color;
  }
+
  .nav__link--current {
   color: $primary-white-color;
  }
@@ -45,7 +57,15 @@
     display: flex;
     align-items: center;
     gap: 50px;
+    margin-left: 62px;
   }
+ }
+
+ .menu__link {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: auto;
+  color: $primary-black-color;
  }
 
  .contacts {
@@ -62,9 +82,50 @@
   @media screen and (min-width: 768px) {
       display: flex;
       gap: 14px;
+      margin-left: 49px;
   }
   @media screen and (min-width: 1440px) {
       display: flex;
       gap: 15px;
+      margin-left: 62px;
   }      
+ }
+
+ .contacts__tel-btn {
+  @media screen and (min-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $main-accent-color;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 50px;
+      padding: 16px 24px;
+      border: 2px solid $main-accent-color;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    padding: 18px 26px;
+  }
+
+ }
+
+ .socials__icon {
+  @media screen and (min-width: 768px) {
+      width: 32px;
+      height: 32px;
+  }
+  @media screen and (min-width: 1440px) {
+      width: 40px;
+      height: 40px;
+  }
+ }
+
+ .menu-toggle {
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
  }
