@@ -5,7 +5,6 @@
  .header__container {
   position:relative;
   display: flex;
-  // justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 20px;
  }
@@ -151,10 +150,10 @@
  }
 
  .socials__icon {
-  @media screen and (min-width: 768px) {
+
       width: 32px;
       height: 32px;
-  }
+  
   @media screen and (min-width: 1440px) {
       width: 40px;
       height: 40px;
