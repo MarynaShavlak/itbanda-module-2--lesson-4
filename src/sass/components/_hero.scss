@@ -64,16 +64,44 @@
     font-weight: 700;
   }
 }
+
+.hero {
+  position: relative;
+}
 .hero__container {
   position:relative;
-  height: 712px;
+  height: 596px;
+  
+    @media screen and (min-width: 768px) {
+      height: 654px;
+    }
+      
+    @media screen and (min-width: 1440px) {
+      height: 564px;
+    }
+
 }
 
 .image-thumb {
   position: absolute;
-  right: 0;
-  width: 836px;
-  height: 561px;
-  background-image: url(../images/hero/hero.svg);
+  background-image: url(../images/hero/hero_mobile.svg);
   background-repeat: no-repeat;
+  width: 425px;
+  height: 285px;
+  left:50%;
+  bottom:32px;
+  transform: translate(-50%,0%);
+ 
+  @media screen and (min-width: 768px) {
+    background-image: url(../images/hero/hero_tablet.svg);
+      width: 738px;
+      height: 495px;
+    }
+     
+   @media screen and (min-width: 1440px) {
+    background-image: url(../images/hero/hero.svg);
+    right:0;
+    width: 836px;
+    height: 561px;
+  }
 }
