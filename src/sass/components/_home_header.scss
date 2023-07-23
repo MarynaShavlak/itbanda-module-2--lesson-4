@@ -117,6 +117,9 @@
 }
 .socials__link {
  color: $main-accent-color;
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 .socials__icon {
   fill: currentColor;

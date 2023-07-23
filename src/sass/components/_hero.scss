@@ -1,0 +1,44 @@
+.hero__btn {
+  padding: 14px 78px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  background-color: $main-accent-color;
+  color: $primary-white-color;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.33;
+  transition: color $cubic, background-color $cubic, border $cubic;
+  &:hover, &:focus {
+    border: 2px solid $main-accent-color;
+    background-color: $primary-white-color;
+    color:  $main-accent-color;
+  }
+    @media screen and (min-width: 768px) {
+      padding: 14px 22px;
+    }
+  
+    @media screen and (min-width: 1440px) {
+    padding: 16px 24px;
+    font-size: 18px;
+    line-height: 1.39;
+    }
+}
+
+.hero__title {
+  max-width: 335px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:700;
+  line-height: 1.15;
+  font-size: 26px;
+  @media screen and (min-width: 768px) {
+    max-width: 453px;
+    font-size: 36px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 678px;
+    font-size: 55px;
+  }
+  span {
+    color: $main-accent-color;
+  }
+}
