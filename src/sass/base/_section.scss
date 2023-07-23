@@ -1,0 +1,18 @@
+.section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  @media screen and (min-width: 768px) {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+  @media screen and (min-width: 1440x) {
+    padding-top: 116px;
+    padding-bottom: 116px;
+  }
+ 
+}
+
+
+.section--dark-background {
+  background-color: $first-additional-bg-color;
+}

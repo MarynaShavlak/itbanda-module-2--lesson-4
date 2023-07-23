@@ -26,6 +26,7 @@
 
 .hero__title {
   max-width: 335px;
+  margin-bottom: 16px;
   font-family: 'Montserrat', sans-serif;
   font-weight:700;
   line-height: 1.15;
@@ -37,8 +38,42 @@
   @media screen and (min-width: 1440px) {
     max-width: 678px;
     font-size: 55px;
+    margin-bottom: 20px;
   }
   span {
     color: $main-accent-color;
   }
+}
+
+.hero__text {
+  font-weight: 400;
+  max-width: 335px;
+  font-size: 16px;
+  line-height: 1.38;
+  margin-bottom: 24px;
+  @media screen and (min-width: 768px) {
+      max-width: 453px;
+  }
+  @media screen and (min-width: 1440px) {
+      max-width: 604px;
+      font-size: 18px;
+      line-height: 1.39;
+      margin-bottom: 40px;
+  }
+  span {
+    font-weight: 700;
+  }
+}
+.hero__container {
+  position:relative;
+  height: 712px;
+}
+
+.image-thumb {
+  position: absolute;
+  right: 0;
+  width: 836px;
+  height: 561px;
+  background-image: url(../images/hero/hero.svg);
+  background-repeat: no-repeat;
 }
