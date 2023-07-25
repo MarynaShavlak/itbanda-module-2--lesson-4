@@ -21,12 +21,14 @@
   row-gap: 40px;
   background-color:$second-additional-bg-color;
   margin-top: 51px;
+  margin-bottom: 24px;
   border-radius: 20px;
   padding-top: 32px;
   padding-bottom: 32px;
   padding-left: 16px;
   padding-right: 16px;
   @media screen and (min-width: 768px) {
+    margin-bottom: 32px;
     row-gap: 48px;
     padding: 60px;
     margin-top: 48px;
@@ -39,7 +41,24 @@
     padding-bottom: 90px;
     padding-left: 60px;
     padding-right: 110px;
+    margin-bottom: 48px;
   }
+}
+
+.cleaning__banner {
+  background-color: $main-accent-color;
+  border-radius: 20px;
+  padding:24px;
+  
+    @media screen and (min-width: 768px) {
+      padding: 60px;
+    }
+  
+    @media screen and (min-width: 1440px) {
+      border-radius: 30px;
+      padding: 60px 100px;
+      padding-bottom:137px;
+    }
 }
 
 .info-block__title {
@@ -58,7 +77,29 @@
     margin-bottom: 32px;
   }
 }
-
+.info-block__title--white {
+  color:$second-additional-bg-color;
+  margin: 0;
+  max-width: 265px;
+  @media screen and (min-width: 768px) {
+    max-width: 360px;
+  }
+@media screen and (min-width: 1440px) {
+  max-width: 540px;
+}
+ span {
+  background-color: $additional-accent-color;
+  display: inline-block;
+  border-radius: 50px;
+  padding-left: 5px;
+  padding-right: 5px;
+  @media screen and (min-width: 768px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+ }
+}
+  
 .info-block__text {
   font-weight: 400;
   font-size: 16px;
@@ -178,4 +219,45 @@
   }
 }
 
+.cleaning__banner{
+
+  height: 321px;
+  background-image:  url('../images/cleaning-package/desktop/banner-back@1x.png');
+  background-position: left top 45px;
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image:  url('../images/cleaning-package/desktop/banner-back@2x.png');
+    }
+  
+  
+    @media screen and (min-width: 768px) {
+      height: auto;
+      background-position: right 35px top;
+      background-image: url('../images/cleaning-package/desktop/banner-back@1x.png');
+  
+      @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+        background-image: url('../images/cleaning-package/desktop/banner-back@2x.png');
+      }
+    }
+  
+    @media screen and (min-width: 1440px) {
+       background-position: right 114px top;
+      background-image: url('../images/cleaning-package/desktop/banner-back@1x.png');
+  
+      @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+        background-image: url('../images/cleaning-package/desktop/banner-back@2x.png');
+      }
+    }
+  
+    background-repeat: no-repeat;
+   
+    background-size: contain;
     
+ 
+    
+}
