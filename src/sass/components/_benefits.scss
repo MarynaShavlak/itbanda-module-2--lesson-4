@@ -1,0 +1,28 @@
+.features__title {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+ 
+    @media screen and (min-width: 1440px) {
+      font-size: 22px;
+      line-height: 1.23;
+    }
+  }
+
+.features__desc {
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+    @media screen and (min-width: 1440px) {
+     font-size: 18px;
+    line-height: 1.39;
+    }
+  
+    span {
+      font-weight: 600;
+    }
+
+}
