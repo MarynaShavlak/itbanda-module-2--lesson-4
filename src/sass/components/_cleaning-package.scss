@@ -17,6 +17,7 @@
 
 .cleaning__info {
   background-color:$second-additional-bg-color;
+  margin-top: 51px;
   border-radius: 20px;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -24,8 +25,11 @@
   padding-right: 16px;
   @media screen and (min-width: 768px) {
     padding: 60px;
-    }
+    margin-top: 48px;
+  }
   @media screen and (min-width: 1440px) {
+    display:flex;
+    column-gap: 90px;
     border-radius: 30px;
     padding-top: 90px;
     padding-bottom: 90px;
@@ -39,11 +43,77 @@
   font-size: 20px;
   line-height: 1.15;
   margin-bottom: 16px;
+  max-width: 250px;
   @media screen and (min-width: 768px) {
+    max-width: 450px;
     font-size: 28px;
   }
   @media screen and (min-width: 1440px) {
+    max-width: 500px;
     font-size: 32px;
     margin-bottom: 32px;
   }
+}
+
+.info-block__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 1.39;
+  }
+}
+
+.info-block__text--accent {
+  position: relative;
+  left: 66px;
+  color: $main-accent-color;
+  margin-top: 16px;
+  max-width: 225px;
+  
+  @media screen and (min-width: 768px) {
+      max-width: 376px;
+  }
+  span{
+    font-weight: 700;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 442px;
+    margin-top: 32px;
+  }
+}
+
+.info-block__text:first-child{
+  margin-bottom: 8px;
+}
+
+.info-block__text::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius:50%;
+  margin-right: 8px;
+  background-color: $main-accent-color;
+  
+
+  @media screen and (min-width: 1440px) {
+    margin-right: 12px;
+    width: 11px;
+    height: 11px;
+  }
+}
+
+.info-block__text--accent::before {
+  position: absolute;
+  left: -66px;
+  content: '';
+  display: inline-block;
+  background-image: url(../images/cleaning-package/gift.svg);
+  background-repeat: no-repeat;
+  width: 53px;
+  height: 50px;
+  border-radius: 0;
+  background-color: transparent;
 }
