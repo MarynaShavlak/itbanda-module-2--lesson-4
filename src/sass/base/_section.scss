@@ -25,6 +25,15 @@
     @media screen and (min-width: 1440px) {
         padding-top: 141px;
         
-        // padding-bottom: 88px;
-    }
+   }
+}
+
+.section--benefits {
+  padding-top: 0;
+  @media screen and (min-width: 768px) {
+      padding-top: 0;
+  }
+@media screen and (min-width: 1440px) {
+    padding-top: 74px;
+  }
 }
