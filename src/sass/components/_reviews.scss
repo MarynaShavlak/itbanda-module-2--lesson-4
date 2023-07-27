@@ -1,0 +1,147 @@
+.reviews__list {
+  margin-bottom: 48px;
+  @media screen and (min-width: 768px) {
+    display: grid;
+    gap: 30px;
+    margin-bottom:56px;
+  }
+
+  @media screen and (min-width: 768px) and(max-width: 1439px) {
+    grid-template-areas:
+      "item-1 item-2"
+      "item-3 item-4"
+      "item-6 item-5";
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 60px;
+    gap: 36px 40px;
+    grid-template-columns: repeat(3, 360px);
+  }
+  
+}
+
+.reviews__item {
+  background-color: $first-additional-bg-color;
+  border-radius: 20px;
+  padding: 28px 24px;
+  @media screen and (min-width: 768px) {
+    width: 330px;
+  }
+  @media screen and (min-width: 1440px){
+    width: 360px;
+    border-radius: 30px;
+    
+  }
+ 
+}
+
+.item-1 {
+  @media screen and (min-width: 768px) {
+    grid-row: 1;
+    height: 212px;
+  }
+  @media screen and (min-width: 1440px) {
+    grid-row: 1;
+    height: 233px;
+  }
+}
+
+.item-2 {
+  @media screen and (min-width: 768px) {
+    grid-row: 1;
+    height: 300px;
+  }
+  @media screen and (min-width: 1440px) {
+    grid-row: 1;
+    height: 333px;
+  }
+  
+}
+
+.item-3 {
+  @media screen and (min-width: 768px) {
+    grid-row: 2;
+    height: 234px;
+    margin-top:-88px;
+  }
+  @media screen and (min-width: 1440px) {
+    grid-row: 1;
+    height: 258px;
+  }
+}
+
+.item-4 {
+  @media screen and (min-width: 768px) {
+    grid-row: 2;
+    height: 214px;
+
+  }
+  @media screen and (min-width: 1440px) {
+    grid-row: 2;
+    height: 235px;
+    margin-top:-100px;
+  }
+  
+}
+
+.item-5 {
+  @media (max-width: 1439px) {
+    grid-area: item-5;
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-row: 3;
+    height: 190px;
+    
+  }
+  @media screen and (min-width: 1440px) {
+    grid-row: 2;
+    height: 208px;
+  }
+
+  
+}
+
+.item-6 {
+  @media (max-width: 1439px) {grid-area: item-6;}
+  @media screen and (min-width: 768px) {
+    grid-row: 3;
+    height: 212px;
+    margin-top: -68px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-top: -75px;
+    grid-row: 2;
+    height: 233px;
+  }
+}
+
+.review__title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.2;
+  font-size: 20px;
+  @media screen and (min-width: 1440px) {
+    line-height: 1.23;
+    font-size: 22px;
+  }
+
+  
+}
+
+.review__rating {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 16px;
+}
+
+.review__text {
+  line-height: 22px;
+  font-size: 16px;
+  
+    @media screen and (min-width: 1440px) {
+      line-height: 1.39;
+      font-size: 18px;
+    }
+}
