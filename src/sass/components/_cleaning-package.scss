@@ -256,22 +256,6 @@
   }
 }
 
-.cleaning__btn {
-  font-size: 16px;
-  line-height: 1.38;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  width: 100%;
-
-  @media screen and (min-width: 768px) {
-    width: 400px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    padding-top: 17px;
-    padding-bottom: 17px;
-  }
-}
 
 .cleaning__banner {
   height: 321px;
@@ -403,12 +387,3 @@
   }
 }
 
-.cleaning__order-btn {
-  align-self: center;
-  margin: 0 auto;
-  @media screen and (max-width: 1439px){
-    padding: 15px 23px;
-    font-size: 16px;
-    line-height: 1.38;
-  }
-}

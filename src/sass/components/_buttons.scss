@@ -21,7 +21,49 @@
   }
 }
 
-.order-btn {
+
+.btn--light {
+  border: 2px solid $main-accent-color;
+  background-color: $primary-white-color;
+  color: $main-accent-color;
+  &:hover,
+  &:focus {
+      background-color: $second-additional-bg-color;
+  }
+}
+
+
+
+
+.contacts__tel-btn {
+  transition: color $cubic, background-color $cubic;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $main-accent-color;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 16px 24px;
+    background-color: transparent;
+    border: 2px solid $main-accent-color;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    padding: 18px 26px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $primary-white-color;
+    background-color: $main-accent-color;
+  }
+
+}
+.action-btn {
   padding: 15px 79px;
 
   @media screen and (min-width: 768px) {
@@ -30,5 +72,44 @@
 
   @media screen and (min-width: 1440px) {
     padding: 17px 25px;
+  }
+}
+
+.cleaning__btn {
+  font-size: 16px;
+  line-height: 1.38;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 400px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
+}
+
+.cleaning__order-btn,
+.reviews__btn {
+  align-self: center;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1439px) {
+    padding: 15px 23px;
+    font-size: 16px;
+    line-height: 1.38;
+  }
+}
+
+.reviews__btn {
+  @media screen and (max-width: 767px) {
+    min-width: 277px;
+  }
+  &:hover,
+  &:focus {
+    background-color: $second-additional-bg-color;
   }
 }

@@ -1,3 +1,8 @@
+.reviews__container {
+  display: flex;
+  flex-direction: column;
+}
+
 .reviews__list {
   display: flex;
   flex-direction: column;
@@ -165,4 +170,15 @@
       line-height: 1.39;
       font-size: 18px;
     }
+}
+
+.reviews__button-list {
+  display: flex;
+  flex-direction: column;
+  gap:16px;
+  align-items: center;
+  @media screen and (min-width: 768px){
+    flex-direction: row;
+    align-self: center;
+  }
 }
