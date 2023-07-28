@@ -1,6 +1,6 @@
 .title{
   margin-bottom: 40px;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     margin-bottom: 48px;
   }
   @media screen and (min-width: 1440px) {
@@ -20,6 +20,7 @@
     gap:40px;
   }
 }
+
 
 .section__block {
   display:flex;
@@ -47,8 +48,6 @@
   }
  }
   
-
-
 .block__number {
    color: $main-accent-color;
    font-weight: 600;
