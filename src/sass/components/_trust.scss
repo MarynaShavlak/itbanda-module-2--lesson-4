@@ -5,6 +5,8 @@
 }
 
 .trust__container {
+    display: flex;
+    flex-direction: column;
     border-radius: 20px;
     background-color: $second-additional-bg-color;
     padding-left: 16px;
@@ -31,14 +33,17 @@
 
 .block-wrapper--trust {
   gap: 32px;
+  margin-bottom: 48px;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 30px;
+    margin-bottom: 56px;
   }
 
   @media screen and (min-width: 1440px) {
     gap: 40px;
+    margin-bottom: 64px;
   }
 }
