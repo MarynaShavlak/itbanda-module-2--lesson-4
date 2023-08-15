@@ -5,6 +5,7 @@
 }
 
 .trust__container {
+    position: relative;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
@@ -13,7 +14,6 @@
     padding-right: 16px;
     padding-top: 64px;
     padding-bottom: 64px;
-  z-index: 1;
     @media screen and (min-width: 768px) {
       padding-left: 30px;
       padding-right: 30px;
@@ -29,6 +29,24 @@
       padding-bottom: 116px;
     }
 }
+
+.trust__container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // height: calc(100% - 98px);
+  background-image: url('../images/trust/brush_tablet@1x.png');
+  background-repeat: no-repeat;
+  // background-position: 0 calc(100% - 98px);
+  background-size: cover;
+  /* Adjust this to control the size of the background image */
+  z-index: 2;
+  /* Set the z-index to be behind the content */
+}
+
+
 
 
 .block-wrapper--trust {
