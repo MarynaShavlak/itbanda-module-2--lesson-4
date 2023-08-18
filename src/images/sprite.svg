@@ -5,4 +5,6 @@
 </symbol><symbol id="icon-menu" viewBox="0 0 37 32">
 <path fill="none" stroke="#4d1299" style="stroke: var(--color1, #4d1299)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4.5714" d="M2.286 2.286h32M2.286 16h32M2.286 29.714h32"></path>
 </symbol>
+<symbol id="icon-plus" viewBox="0 0 25 25"><path d="M19.7913 13.5394H13.5413V19.7894H11.458V13.5394H5.20801V11.4561H11.458V5.20605H13.5413V11.4561H19.7913V13.5394Z" fill="white"/> </symbol>
+<symbol id="icon-minus" viewBox="0 0 25 25"><path d="M19.7913 13.5394H13.5413H11.458H5.20801V11.4561H11.458H13.5413H19.7913V13.5394Z" fill="white"/> </symbol>
 </defs></svg>

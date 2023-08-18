@@ -44,6 +44,11 @@
   padding-top: 0;
 }
 
+
+.question-wrapper {
+  position: relative;
+}
+
 .question__title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -80,3 +85,29 @@
     margin-bottom: 12px;
   }
 }
+
+.toggle-question-icon {
+  width: 23px;
+  height: 23px;
+  @media screen and (min-width: 768px){
+    width: 27px;
+    height: 27px;
+  }
+  @media screen and (min-width: 1440px){
+    width: 29px;
+    height: 29px;
+  }
+}
+.toggle-question-btn {
+  position:absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top:50%;
+  left:100%;
+  transform: translate(-100%,-50%);
+  border: none;
+  background-color: transparent;
+  
+}
+
