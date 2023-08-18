@@ -42,7 +42,7 @@
   }
 }
 
-.section__block:nth-child(2) {
+.section__block:not(.section__block--trust):nth-child(2) {
   @media screen and (min-width: 768px) and (max-width: 1439px){
     padding-right: 21px;
   }
@@ -73,7 +73,7 @@
 }
 
 .block__text {
-  text-align: justify;
+  
   font-size: 16px;
   line-height: 1.38;
   @media screen and (min-width: 1440px) {
@@ -83,6 +83,10 @@
   span {
     font-weight: 700;
   }
+}
+
+.block__text:not(.block__text--trust) {
+text-align: justify;
 }
 
 .block__remark {
