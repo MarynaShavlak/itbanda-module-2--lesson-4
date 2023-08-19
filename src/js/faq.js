@@ -9,7 +9,6 @@ toggleAnswerBtnList.forEach(button => {
 function onToggleAnswerBtnClick(btn) {
   const parentListItem = btn.closest('.questions__item');
   const questionTextList = parentListItem.querySelectorAll('.questions__text');
-  console.log('questionTextList: ', questionTextList);
   questionTextList.forEach(questionText => {
     toggleAnswerToQuestion(questionText);
   });

@@ -1,0 +1,10 @@
+.title--connection {
+  margin-bottom: 48px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 25px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 64px;
+  }
+}

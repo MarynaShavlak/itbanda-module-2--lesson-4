@@ -54,6 +54,8 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 1.15;
+    transition: color $cubic;
+    cursor: pointer;
     @media screen and (min-width: 768px) {
      line-height: 1.23;
       font-size: 22px;
@@ -63,7 +65,12 @@
       font-size: 24px;
       line-height: 1.21;
     }
+    &:hover, &:focus {
+      color: $main-accent-color;
+    }
 }
+
+
 .questions__text {
     display: none;
     font-weight: 400;
