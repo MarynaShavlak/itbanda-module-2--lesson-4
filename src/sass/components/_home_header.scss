@@ -94,14 +94,23 @@
   @media screen and (min-width: 768px) {
       display: flex;
       gap: 14px;
-      margin-left: 49px;
   }
   @media screen and (min-width: 1440px) {
       display: flex;
-      gap: 15px;
-      margin-left: 62px;
   }      
  }
+
+.contacts__socials {
+    @media screen and (min-width: 768px) {
+        margin-left: 49px;
+      }
+      @media screen and (min-width: 1440px) {
+        gap: 15px;
+        margin-left: 62px;
+      }
+}
+
+
 
 .socials__item {
   border-radius: 50%;
