@@ -1,7 +1,7 @@
 <section class="section section--cleaning-types">
   <div class="container">
     <h2 class="section__title title">Що входить в прибирання?</h2>
-    <ul class="block-wrapper">
+    <ul class="block-wrapper block-wrapper--types">
       <li class="section__block">
       <p class="block__number">01</p>
       <h4 class="block__title">Бюджетна підписка</h4>
@@ -14,5 +14,37 @@
       <p class="block__remark">*Не включає миття вікон</p>
     </li>
     </ul>
+    <div class="rooms__wrapper">
+      <ul class="rooms">
+        <li class="rooms__item  rooms__item--current">Кухня</li>
+        <li class="rooms__item ">Кімнати</li>
+        <li class="rooms__item ">Санвузол</li>
+    </ul>
+    <div class="rooms__shema">
+    <picture class="rooms__image">
+              <source
+                srcset="
+                  ./images/reviews/tablet/star@1x.png 1x,
+                  ./images/reviews/tablet/star@2x.png 2x
+                "
+                media="(max-width: 1439px)"
+              />
+              <source
+                srcset="
+                  ./images/reviews/desktop/star@1x.png 1x,
+                  ./images/reviews/desktop/star@2x.png 2x
+                "
+                media="(min-width: 1440px)"
+              />
+              <img
+                class="rating__icon"
+                src="./images/reviews/tablet/star@1x.png"
+                alt="Жовта зірка"
+              />
+    </picture>
+    </div>
+   
+
+  </div>
     
 </section>
