@@ -182,6 +182,12 @@
   }
 }
 
+.info-block__text--light {
+  color: $second-additional-text-color;
+}
+
+
+
 .info-block__list {
   display: flex;
   flex-direction: column;
@@ -234,17 +240,27 @@
     line-height: 1.36;
   }
 }
+.info-block__accent--light {
+    color: $second-additional-bg-color;
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 0;   
+    }
+    
+}
 
 .info-block--second {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  @media screen and (min-width: 1440px) {
-    padding-top: 10px;
-  }
+
 }
 
+.info-block--with-padding  {
+  @media screen and (min-width: 1440px) {
+      padding-top: 10px;
+    }
+}
 
 .cleaning__banner {
   height: 321px;

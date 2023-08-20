@@ -4,9 +4,8 @@
   align-items: center;
 }
 .order__banner {
-  // height: 321px;
-  // background-image: url('../images/banner/desktop/banner-back@1x.png');
-  // background-position: left top 45px;
+  background-image: url('../images/banner/pail@1x.png');
+  background-position: right top 125px;
   padding: 32px 16px;
 
   @media screen and (min-width: 768px) {
@@ -17,25 +16,27 @@
     padding: 60px 212px;
   }
 
-  // @media (min-device-pixel-ratio: 2),
-  // (min-resolution: 192dpi),
-  // (min-resolution: 2dppx) {
-  //   background-image: url('../images/banner/desktop/banner-back@2x.png');
-  // }
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    background-image: url('../images/banner/pail@2x.png');
+  }
 
-  // @media screen and (min-width: 768px) {
-  //   height: auto;
-  //   background-position: right 35px top;
-  //   background-image: url('../images/cleaning-package/desktop/banner-back@1x.png');
-
-  //   @media (min-device-pixel-ratio: 2),
-  //   (min-resolution: 192dpi),
-  //   (min-resolution: 2dppx) {
-  //     background-image: url('../images/banner/desktop/banner-back@2x.png');
-  //   }
-  // }
+  @media screen and (min-width: 768px) {
+    background-position: left 0px top, right 13px bottom;
+    background-size: 226px 315px, 126px 343px;
+      background-image: url('../images/banner/tablet/girl_tablet@1x.png'), url('../images/banner/tablet/boy_tablet@1x.png');
+    
+      @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+        background-image: url('../images/banner/tablet/girl_tablet@2x.png'),
+          url('../images/banner/tablet/boy_tablet@2x.png');
+      }
+  }
 
   @media screen and (min-width: 1440px) {
+    background-size: contain;
     background-position: left 29px top, right 60px top;
     background-image: url('../images/banner/desktop/girl_desktop@1x.png'), url('../images/banner/desktop/boy_desktop@1x.png') ;
 
@@ -48,7 +49,7 @@
   }
 
   background-repeat: no-repeat;
-  background-size: contain;
+  
 }
 
 .info-block__title--order {
