@@ -53,21 +53,7 @@
   }
 }
 
-.cleaning__banner {
-  background-color: $main-accent-color;
-  border-radius: 20px;
-  padding: 24px;
 
-  @media screen and (min-width: 768px) {
-    padding: 60px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    border-radius: 30px;
-    padding: 60px 100px;
-    padding-bottom: 137px;
-  }
-}
 
 .cleaning__advantages {
   margin-top: 64px;
@@ -127,6 +113,9 @@
       padding-right: 10px;
     }
   }
+}
+.info-block__title--centered {
+  text-align: center;
 }
 
 .info-block__title--advantages {
@@ -261,6 +250,16 @@
   height: 321px;
   background-image: url('../images/cleaning-package/desktop/banner-back@1x.png');
   background-position: left top 45px;
+  padding: 24px;
+  
+    @media screen and (min-width: 768px) {
+      padding: 60px;
+    }
+  
+    @media screen and (min-width: 1440px) {
+      padding: 60px 100px;
+      padding-bottom: 137px;
+    }
 
   @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
@@ -294,6 +293,16 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+.banner {
+  background-color: $main-accent-color;
+  border-radius: 20px;
+  @media screen and (min-width: 1440px) {
+    border-radius: 30px;
+  }
+}
+
+
 
 .cleaning__advantages {
   height: 609px;

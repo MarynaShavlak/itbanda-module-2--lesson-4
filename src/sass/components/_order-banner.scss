@@ -1,0 +1,70 @@
+.order__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.order__banner {
+  // height: 321px;
+  // background-image: url('../images/banner/desktop/banner-back@1x.png');
+  // background-position: left top 45px;
+  padding: 32px 16px;
+
+  @media screen and (min-width: 768px) {
+    padding: 60px 90px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 60px 212px;
+  }
+
+  // @media (min-device-pixel-ratio: 2),
+  // (min-resolution: 192dpi),
+  // (min-resolution: 2dppx) {
+  //   background-image: url('../images/banner/desktop/banner-back@2x.png');
+  // }
+
+  // @media screen and (min-width: 768px) {
+  //   height: auto;
+  //   background-position: right 35px top;
+  //   background-image: url('../images/cleaning-package/desktop/banner-back@1x.png');
+
+  //   @media (min-device-pixel-ratio: 2),
+  //   (min-resolution: 192dpi),
+  //   (min-resolution: 2dppx) {
+  //     background-image: url('../images/banner/desktop/banner-back@2x.png');
+  //   }
+  // }
+
+  @media screen and (min-width: 1440px) {
+    background-position: left 29px top, right 60px top;
+    background-image: url('../images/banner/desktop/girl_desktop@1x.png'), url('../images/banner/desktop/boy_desktop@1x.png') ;
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image: url('../images/banner/desktop/girl_desktop@2x.png'),
+        url('../images/banner/desktop/boy_desktop@2x.png');
+    }
+  }
+
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.info-block__title--order {
+  max-width: 303px;
+  margin-bottom: 48px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 510px;
+    margin-bottom: 56px;
+
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 737px;
+    margin-bottom: 36px;
+  }
+
+
+}
