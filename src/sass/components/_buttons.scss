@@ -35,10 +35,9 @@
 
 
 
-.contacts__tel-btn {
+.tel-btn {
   transition: color $cubic, background-color $cubic;
-
-  @media screen and (min-width: 768px) {
+    line-height: 1.19;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,11 +48,11 @@
     padding: 16px 24px;
     background-color: transparent;
     border: 2px solid $main-accent-color;
-  }
+  
 
   @media screen and (min-width: 1440px) {
     font-size: 18px;
-    padding: 18px 26px;
+    line-height: 1.39;
   }
 
   &:hover,
