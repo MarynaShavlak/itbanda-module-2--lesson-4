@@ -231,6 +231,8 @@ text-align: justify;
   padding: 4px 6px;
   font-size: 9px;
   line-height: 1.33;
+  transition: opacity $cubic;
+  opacity: 0;
   @media screen and (min-width: 768px) {
     margin-bottom: 14px;
     padding: 7px 10px;
@@ -238,6 +240,12 @@ text-align: justify;
     line-height: 1.38;
   }
 }
+
+.is-shown {
+  opacity: 1;
+}
+
+
 
 .toolkit__desc--reverse {
   position: absolute;
