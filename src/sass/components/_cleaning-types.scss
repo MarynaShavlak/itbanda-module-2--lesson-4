@@ -290,7 +290,7 @@ text-align: justify;
   flex-direction: column;
 }
 
- .wrapper--first {
+ .schema--kitchen .wrapper--first {
   position: absolute;
   bottom: 4px;
   left: 39px;
@@ -309,7 +309,7 @@ text-align: justify;
   }
  }
 
- .wrapper--second{
+ .schema--kitchen .wrapper--second{
   position: absolute;
   bottom: 85px;
   left: 78px;
@@ -329,7 +329,7 @@ text-align: justify;
  }
 
 
- .wrapper--third {
+ .schema--kitchen .wrapper--third {
   position: absolute;
   bottom: 31px;
   left:173px;
@@ -348,7 +348,7 @@ text-align: justify;
   }
  }
 
- .wrapper--fourth {
+ .schema--kitchen .wrapper--fourth {
   position: absolute;
   bottom: 107px;
   right: 75px;
@@ -366,7 +366,8 @@ text-align: justify;
       right: 220px;
   }
  }
- .wrapper--fifth {
+
+ .schema--kitchen.wrapper--fifth {
   position: absolute;
   top: 7px;
   right: 6px;
@@ -386,7 +387,10 @@ text-align: justify;
  }
 
 
- .schema--kitchen{
+ .schema--kitchen {
+  display: none;
+ }
+ .schema--room {
   display: none;
  }
 
@@ -529,3 +533,123 @@ text-align: justify;
     right: 40px;
    }
  }
+ .schema--bath .wrapper--first {
+   position: absolute;
+   bottom: 10px;
+   left: 10px;
+   width: 120px;
+   height:60px;
+
+   @media screen and (min-width: 768px) {
+     width: 170px;
+     height: 90px;
+     bottom: 30px;
+     left: 30px;
+   }
+
+   @media screen and (min-width: 1440px) {
+     bottom:50px;
+     left: 100px;
+   }
+ }
+
+ .schema--bath .wrapper--second {
+   position: absolute;
+   bottom: 55px;
+   left: 55px;
+   width: 140px;
+   height: 60px;
+
+   @media screen and (min-width: 768px) {
+     width: 160px;
+     height: 90px;
+     bottom: 120px;
+     left: 170px;
+   }
+
+   @media screen and (min-width: 1440px) {
+     bottom: 200px;
+     left: 330px;
+   }
+ }
+
+ .schema--bath .wrapper--third {
+   position: absolute;
+   bottom: 20px;
+   left: 130px;
+   width: 120px;
+   height: 50px;
+
+   @media screen and (min-width: 768px) {
+     width: 184px;
+     height: 70px;
+     bottom: 60px;
+     left: 300px;
+   }
+
+   @media screen and (min-width: 1440px) {
+     bottom:160px;
+     left: 550px;
+   }
+ }
+
+.schema--bath .wrapper--fourth {
+  position: absolute;
+  top: 10px;
+  left: 75px;
+  width: 90px;
+  height: 60px;
+
+  @media screen and (min-width: 768px) {
+    width: 130px;
+    height: 90px;
+    top: 65px;
+    left: 190px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    top: 145px;
+    left: 370px;
+  }
+}
+
+.schema--bath .wrapper--fifth {
+  position: absolute;
+  bottom: 55px;
+  right: 6px;
+  width:100px;
+  height: 50px;
+
+  @media screen and (min-width: 768px) {
+    width: 140px;
+    height: 70px;
+    bottom: 120px;
+    right: 35px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    bottom: 200px;
+    right: 120px;
+  }
+}
+
+ .schema--bath .wrapper--sixth {
+    position: absolute;
+      top: 5px;
+      right: 55px;
+      width: 70px;
+      height: 60px;
+    
+      @media screen and (min-width: 768px) {
+        width: 146px;
+        height: 70px;
+        top: 50px;
+        right: 120px;
+      }
+    
+      @media screen and (min-width: 1440px) {
+        top: 140px;
+        right: 230px;
+      }
+ }
+
