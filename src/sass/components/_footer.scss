@@ -86,8 +86,8 @@
 
 .footer__item {
   font-weight: 400;
-    font-size: 14px;
-    line-height: 1.36;
+  font-size: 14px;
+  line-height: 1.36;
   
   
     @media screen and (min-width: 768px) {
@@ -121,9 +121,11 @@
   }
 }
 
-.socials__item--footer {
-  background-color: $primary-white-color;
+.socials__item--white-bg {
+   background-color: $primary-white-color;
 }
+
+
 
  .socials__icon--footer {
    @media screen and (min-width: 1440px) {

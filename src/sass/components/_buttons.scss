@@ -36,7 +36,7 @@
 
 
 .tel-btn {
-  transition: color $cubic, background-color $cubic;
+    transition: color $cubic, background-color $cubic;
     line-height: 1.19;
     display: flex;
     align-items: center;
@@ -61,6 +61,19 @@
     background-color: $main-accent-color;
   }
 
+}
+
+.tel-btn--white-bg {
+  background-color:$primary-white-color;
+}
+.tel-btn--aside--menu {
+  border: 1px solid $main-accent-color;
+
+  &:hover,
+  &:focus {
+    background-color: $light-accent-color;
+    border: 1px solid $primary-white-color;
+  }
 }
 .action-btn {
   padding: 15px 79px;
