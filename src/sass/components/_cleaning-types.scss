@@ -367,7 +367,7 @@ text-align: justify;
   }
  }
 
- .schema--kitchen.wrapper--fifth {
+ .schema--kitchen .wrapper--fifth {
   position: absolute;
   top: 7px;
   right: 6px;
@@ -386,13 +386,17 @@ text-align: justify;
   }
  }
 
-
- .schema--kitchen {
-  display: none;
- }
  .schema--room {
   display: none;
  }
+ .schema--bath {
+  display: none;
+ }
+
+ .rooms__schema--current {
+  display: block;
+ }
+
 
  .schema--room .wrapper--first {
    position: absolute;
