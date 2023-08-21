@@ -1,2 +1,0 @@
-var toolkitsList=document.querySelectorAll(".plus-btn--toolkit");function toggleToolkitDescVisibility(t){t.closest(".toolkit__wrapper").querySelector(":first-child").classList.toggle("is-shown")}toolkitsList.forEach((function(t){t.addEventListener("mouseenter",(function(){toggleToolkitDescVisibility(t)})),t.addEventListener("mouseleave",(function(){toggleToolkitDescVisibility(t)}))}));
-//# sourceMappingURL=index.2e570ffe.js.map
