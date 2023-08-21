@@ -1,0 +1,2 @@
+document.querySelectorAll(".toggle-question-btn").forEach((e=>{e.addEventListener("click",(()=>{!function(e){const t=e.closest(".questions__item");t.querySelectorAll(".questions__text").forEach((e=>{!function(e){const t="none"===window.getComputedStyle(e).display;e.style.display=t?"block":"none"}(e)})),function(e){const t=e.querySelector(".icon--plus"),n=e.querySelector(".icon--minus");"none"===t.style.display?(t.style.display="block",n.style.display="none"):(t.style.display="none",n.style.display="block")}(e)}(e)}))}));
+//# sourceMappingURL=index.bf11b9ab.js.map
