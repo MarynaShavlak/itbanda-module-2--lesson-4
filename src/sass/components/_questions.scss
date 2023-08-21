@@ -109,17 +109,23 @@
     height: 29px;
   }
 }
+
+
+
 .toggle-question-btn {
-  position:absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   top:50%;
   left:100%;
   transform: translate(-100%,-50%);
+  
+}
+
+.plus-btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   background-color: transparent;
-  
 }
 
 .icon--minus {

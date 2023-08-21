@@ -167,8 +167,100 @@ text-align: justify;
 }
 
 .rooms__shema {
+  position: relative;
   border-radius: 20px;
   @media screen and (min-width: 768px) {
     border-radius: 30px;
   }
 }
+
+.toolkit__icon {
+  width: 13px;
+  height: 13px;
+  z-index: 2;
+
+  @media screen and (min-width: 768px) {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.toolkit__btn::before {
+  content:'';
+  z-index: 1;
+  position: absolute;
+  border-radius: 50%;
+  background-color: $light-accent-color;
+  width: 20px;
+  height: 20px;
+  
+  @media screen and (min-width: 768px) {
+      width: 28px;
+      height: 28px;
+  }
+
+}
+
+.toolkit__btn {
+  position: relative;
+  top: 95%;
+  left:50%;
+  transform: translate(-50%,-100%);
+}
+
+.toolkit__desc {
+  position:relative;
+  display: block;
+  margin-bottom: 9px;
+  background-color: $primary-white-color;
+  border-radius: 5px;
+  padding: 4px 6px;
+  font-size: 9px;
+  line-height: 1.33;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 14px;
+    padding: 7px 10px;
+    font-size: 13px;
+    line-height: 1.38;
+  }
+
+}
+
+.toolkit__desc:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left:0;
+  top:0;
+  border: 5px solid transparent;
+  border-top: 5px solid $primary-white-color;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.toolkit__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+ .wrapper--first {
+  position: absolute;
+  bottom: 4px;
+  left: 39px;
+   width: 77px;
+   height: 49px;
+
+   @media screen and (min-width: 768px) {
+     width: 114px;
+     height: 70px;
+      bottom: 16px;
+      left: 168px;
+   }
+  @media screen and (min-width: 768px) {
+      bottom: 64px;
+      left: 316px;
+  }
+ }
