@@ -22,45 +22,47 @@
 }
 
 .modal {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+      border-radius: 30px;
+        background: $primary-white-color;
+        transform: scale(1);
+        transition: transform $cubic;
+        width: 335px;
+      
+        .backdrop--hidden & {
+          transform: scale(0.8);
+        }
+      
+        @media screen and (min-width: 768px) {
+          transform: scale(1);
+          width: 480px;
+          max-height: 100vh;
+          overflow-y: auto;
+      
+          .backdrop--hidden & {
+            transform: scale(0.8);
+          }
+}
+
+
+.modal--support {
   gap:24px;
-  padding: 30px;
   padding-top: 40px;
-  border-radius: 30px;
-  background: $primary-white-color;
-  transform: scale(1);
-  transition: transform $cubic;
-  width: 335px;
-
-  .backdrop--hidden & {
-    transform: scale(0.8);
-  }
-
   @media screen and (min-width: 768px) {
-    padding: 60px;
-    transform: scale(1);
-    width: 480px;
-    max-height: 100vh;
-    overflow-y: auto;
-
-    .backdrop--hidden & {
-      // transform: translate(-50%, -50%) scale(0.8);
-      transform: scale(0.8);
+      padding: 60px;
     }
+
   }
 
   @media screen and (min-width: 1440px) {
     min-height: 581px;
   }
-
 }
 
 
-.modal--support {
-  position: relative;
-}
 
 .modal__title {
    font-weight: 600;
