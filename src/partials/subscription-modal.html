@@ -1,21 +1,127 @@
 <div class="backdrop" data-subscription-modal>
   <div class="modal modal--subscription">
-    <h3 class="subscr-modal__title">
-      Місячна підписка на клінінг для будинку чи квартири
-    </h3>
-    <ul class="info-block__list subscr-modal__list">
-      <li class="info-block__item info-block__text info-block__text--marked">
-        1 генеральне прибирання
-      </li>
-      <li class="info-block__item info-block__text info-block__text--marked">
-        1 підтримуюче прибирання
-      </li>
-    </ul>
+    <div class="subsc__wrapper">
+      <div class="subscr__title-wrapper">
+        <h3 class="subscr-modal__title">
+          Місячна підписка на клінінг для будинку чи квартири
+        </h3>
+        <span class="subscr__accent">399zł</span>
+      </div>
+      <ul class="info-block__list subscr-modal__list">
+        <li class="info-block__item info-block__text info-block__text--marked">
+          1 генеральне прибирання
+        </li>
+        <li class="info-block__item info-block__text info-block__text--marked">
+          1 підтримуюче прибирання
+        </li>
+      </ul>
+      <p class="info-block__text info-block__text--accent subscr__text-accent">
+        Хімчистка стільців, диванів, матраців, подушок та крісел раз у 6 місяців
+        у
+        <span>подарунок</span>!
+      </p>
+    </div>
+    <h4 class="modal__form-title">Ваші дані</h4>
 
-    <p class="info-block__text info-block__text--accent subscr--accent">
-      Хімчистка стільців, диванів, матраців, подушок та крісел раз у 6 місяців у
-      <span>подарунок</span>!
-    </p>
+    <form class="subscr__form form">
+      <ul class="form__user-info list">
+        <li class="form__item">
+          <input required
+            class="form__input"
+            type="text"
+            name="modal-user-name"
+            placeholder="Ваше ім’я"
+          />
+        </li>
+        <li class="form__item">
+          <input required
+            class="form__input"
+            type="text"
+            name="modal-user-surname"
+            placeholder="Ваше прізвище"
+          />
+        </li>
+        <li class="form__item">
+          <label class="form__field">
+          <input required class="form__input" type="tel" name="modal-user-tel" placeholder="Номер телефону"/>
+        </li>
+        <li class="form__item">
+          <input required
+                class="form__input"
+                type="email"
+                name="modal-user-email"
+                placeholder="Email"
+              />
+        </li>
+        <li class="form__item">
+          <input required
+            class="form__input"
+            type="text"
+            name="modal-user-date"
+            placeholder="На коли хочете прибирання?"
+          />
+        </li>
+        <li class="form__item">
+          <input required
+            class="form__input"
+            type="text"
+            name="modal-user-time"
+            placeholder="На котру годину?"
+          />
+        </li>
+        <li class="form__item">
+          <input required
+            class="form__input"
+            type="text"
+            name="modal-user-location"
+            placeholder="Ваша повна адреса (включаючи номер будинку та квартиру)"
+          />
+          <label>*Працюємо по місту Лодзь та +30 км за містом (виїзд за місто оплачується окремо)</label>
+        </li>
+
+
+
+        <li class="form__item">
+            <textarea
+              class="form__input form__comment"
+              name="modal-user-comment"
+              placeholder="Ваш коментар"
+            >
+          </textarea>
+        </li>
+      </ul>
+
+      <label class="form__agreement">
+        <input required
+          class="form__checkbox"
+          type="checkbox"
+          name="studio-policy-check"
+          value="accept-policy"
+          required
+        />
+
+        <span
+          >Оформлюючи замовлення я погоджуюсь з &nbsp;
+          <a href="#" class="form__agreement-link">договором публічної оферти</a> та&nbsp;<a href="#" class="form__agreement-link">політикою конфіденційності</a>  </span
+        >
+      </label>
+
+      <label class="form__agreement">
+        <input required
+          class="form__checkbox"
+          type="checkbox"
+          name="studio-policy-data"
+          value="accept-data"
+          required
+        />
+        <span>Я даю згоду для використання моїх особистих данних в цілях відправки підписки та акційних пропозицій</span>
+      </label>
+<ul class="form__payment-buttons">
+  <li class="payment__item"><button class="payment__button" type="button">Картой online/Apple Pay/Google Pay</button></li>
+  <li class="payment__item"><button class="payment__button" type="button">Готівкою</button></li>
+</ul>
+      <button class="form__submit-btn" type="submit">Оплатити 399zł</button>
+    </form>
 
     <button class="close-modal-btn" type="button" data-subscription-modal-close>
       <svg class="close-modal-icon">

@@ -4,17 +4,25 @@
   padding-top: 40px;
   @media screen and (min-width: 768px) {
       padding: 60px;
+      width: 650px;
   }
   @media screen and (min-width: 1440px) {
       width: 800px;
   }
  }
 
+.subscr__title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+
  .subscr-modal__title {
    font-weight: 600;
    font-size: 20px;
    line-height: 1.15;
-   margin-bottom: 24px;
+   
 
    @media screen and (min-width: 768px) {
   font-size: 28px;
@@ -25,16 +33,87 @@
      max-width: 484px;
    }
  }
+
+
  .subscr-modal__list {
   gap:0;
  }
 
- .subscr--accent {
+ .subscr__text-accent {
   @media screen and (min-width: 768px) {
-    max-width: 350px;
+    max-width: 380px;
   }
   @media screen and (min-width: 1440px) {
     max-width: 430px;
   }
    
+ }
+
+
+ .subscr__accent {
+   color: $main-accent-color;
+   font-weight: 700;
+   font-size: 32px;
+  line-height: 1.22;
+
+   @media screen and (min-width: 1440px) {
+     font-size: 46px;
+    
+   }
+ }
+.subscr__form{
+    margin-top: 24px;
+}
+
+ .modal__form-title {
+    margin-top: 48px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.23;
+ }
+
+ .form__user-info {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  column-gap: 28px;
+ }
+
+ .form__input {
+  width: 100%;
+  border: none;
+  outline:none;
+  border-bottom: 1px solid $border-input-color;
+  font-size: 18px;
+  line-height: 1.39;
+  font-weight: 600;
+  padding-bottom: 10px;
+  color: $primary-black-color;
+  transition: border $cubic;
+  cursor: pointer;
+  &:focus {
+      border-bottom: 1px solid $main-accent-color;
+  }
+ }
+
+ .form__input::placeholder {
+    font-weight: 400;
+    color: $placeholder-text-color;
+ }
+
+ .form__comment {
+  resize: vertical;
+  min-height: 89px;
+  font-size: 18px;
+  line-height: 1.39;
+  font-weight: 600;
+  padding-bottom: 0 0 10px;
+  color: $primary-black-color;
+ }
+
+ .form__comment::placeholder {
+  font-size: 18px;
+  line-height: 1.39;
+  font-weight: 400;
+  color: $placeholder-text-color;
  }
