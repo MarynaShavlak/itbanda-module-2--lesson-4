@@ -76,7 +76,12 @@
   margin-bottom: 48px;
   display: flex;
   flex-direction: column;
-  column-gap: 28px;
+  row-gap: 28px;
+
+  li:last-child {
+    margin-top: -4px;
+  }
+
  }
 
  .form__input {
@@ -107,7 +112,7 @@
   font-size: 18px;
   line-height: 1.39;
   font-weight: 600;
-  padding-bottom: 0 0 10px;
+  padding: 0 0 10px;
   color: $primary-black-color;
  }
 
@@ -116,4 +121,32 @@
   line-height: 1.39;
   font-weight: 400;
   color: $placeholder-text-color;
+ }
+
+ .form__label {
+  display: block;
+  margin-top: 5px;
+  color: $label-text-color;
+  font-size: 14px;
+  line-height: 1.36;
+ }
+
+
+ .form__wrap {
+   position: relative;
+   display: block;
+ }
+
+ .form__icon {
+   position: absolute;
+   top: 0;
+   right: 0;
+   transition: fill $cubic;
+   fill: $border-input-color;
+   cursor: pointer;
+
+   
+ }
+ .form__input:focus + .form__icon {
+   fill: $main-accent-color;
  }

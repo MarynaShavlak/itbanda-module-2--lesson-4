@@ -26,7 +26,8 @@
     <form class="subscr__form form">
       <ul class="form__user-info list">
         <li class="form__item">
-          <input required
+          <input
+            required
             class="form__input"
             type="text"
             name="modal-user-name"
@@ -34,7 +35,8 @@
           />
         </li>
         <li class="form__item">
-          <input required
+          <input
+            required
             class="form__input"
             type="text"
             name="modal-user-surname"
@@ -43,83 +45,126 @@
         </li>
         <li class="form__item">
           <label class="form__field">
-          <input required class="form__input" type="tel" name="modal-user-tel" placeholder="Номер телефону"/>
+            <input
+              required
+              class="form__input"
+              type="tel"
+              name="modal-user-tel"
+              placeholder="Номер телефону"
+            />
+          </label>
         </li>
         <li class="form__item">
-          <input required
-                class="form__input"
-                type="email"
-                name="modal-user-email"
-                placeholder="Email"
-              />
-        </li>
-        <li class="form__item">
-          <input required
+          <input
+            required
             class="form__input"
-            type="text"
-            name="modal-user-date"
-            placeholder="На коли хочете прибирання?"
+            type="email"
+            name="modal-user-email"
+            placeholder="Email"
           />
         </li>
         <li class="form__item">
-          <input required
-            class="form__input"
-            type="text"
-            name="modal-user-time"
-            placeholder="На котру годину?"
-          />
+          <span class="form__wrap">
+            <input
+              required
+              class="form__input"
+              type="text"
+              name="modal-user-date"
+              placeholder="На коли хочете прибирання?"
+            />
+            <svg class="form__icon icon" width="24" height="24">
+              <use href="./images/sprite.svg#icon-calendar"></use>
+            </svg>
+          </span>
         </li>
         <li class="form__item">
-          <input required
-            class="form__input"
-            type="text"
-            name="modal-user-location"
-            placeholder="Ваша повна адреса (включаючи номер будинку та квартиру)"
-          />
-          <label>*Працюємо по місту Лодзь та +30 км за містом (виїзд за місто оплачується окремо)</label>
+          <span class="form__wrap">
+            <input
+              required
+              class="form__input"
+              type="text"
+              name="modal-user-time"
+              placeholder="На котру годину?"
+            />
+            <svg class="form__icon icon" width="24" height="24">
+              <use href="./images/sprite.svg#icon-clock"></use>
+            </svg>
+          </span>
         </li>
-
-
-
         <li class="form__item">
-            <textarea
-              class="form__input form__comment"
-              name="modal-user-comment"
-              placeholder="Ваш коментар"
-            >
-          </textarea>
+          <span class="form__wrap">
+            <input
+              required
+              class="form__input"
+              type="text"
+              name="modal-user-location"
+              placeholder="Ваша повна адреса (включаючи номер будинку та квартиру)"
+            />
+            <svg class="form__icon icon" width="24" height="24">
+              <use href="./images/sprite.svg#icon-location"></use>
+            </svg>
+          </span>
+          <label class="form__label"
+            >*Працюємо по місту Лодзь та +30 км за містом (виїзд за місто
+            оплачується окремо)</label
+          >
+        </li>
+        <li class="form__item">
+          <textarea
+            class="form__input form__comment"
+            name="modal-user-comment"
+            placeholder="Ваш коментар"
+          ></textarea>
         </li>
       </ul>
 
       <label class="form__agreement">
-        <input required
+        <input
+          required
           class="form__checkbox"
           type="checkbox"
           name="studio-policy-check"
           value="accept-policy"
           required
         />
-
         <span
-          >Оформлюючи замовлення я погоджуюсь з &nbsp;
-          <a href="#" class="form__agreement-link">договором публічної оферти</a> та&nbsp;<a href="#" class="form__agreement-link">політикою конфіденційності</a>  </span
+          >Оформлюючи замовлення я погоджуюсь з&nbsp;<a
+            href="#"
+            class="form__agreement-link"
+            >договором публічної оферти</a
+          >
+          та&nbsp;<a href="#" class="form__agreement-link"
+            >політикою конфіденційності</a
+          ></span
         >
       </label>
 
       <label class="form__agreement">
-        <input required
+        <input
+          required
           class="form__checkbox"
           type="checkbox"
           name="studio-policy-data"
           value="accept-data"
           required
         />
-        <span>Я даю згоду для використання моїх особистих данних в цілях відправки підписки та акційних пропозицій</span>
+        <span
+          >Я даю згоду для використання моїх особистих данних в цілях відправки
+          підписки та акційних пропозицій</span
+        >
       </label>
-<ul class="form__payment-buttons">
-  <li class="payment__item"><button class="payment__button" type="button">Картой online/Apple Pay/Google Pay</button></li>
-  <li class="payment__item"><button class="payment__button" type="button">Готівкою</button></li>
-</ul>
+
+      <ul class="form__payment-buttons">
+        <li class="payment__item">
+          <button class="payment__button" type="button">
+            Картой online/Apple Pay/Google Pay
+          </button>
+        </li>
+        <li class="payment__item">
+          <button class="payment__button" type="button">Готівкою</button>
+        </li>
+      </ul>
+
       <button class="form__submit-btn" type="submit">Оплатити 399zł</button>
     </form>
 
