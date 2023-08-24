@@ -150,3 +150,68 @@
  .form__input:focus + .form__icon {
    fill: $main-accent-color;
  }
+
+
+ .form__agreement {
+  display: flex;
+  align-items: center;
+   margin-bottom: 30px;
+   font-size: 12px;
+   line-height: 1.17;
+   letter-spacing: 0.03em;
+   color: $primary-black-color;
+
+   @media screen and (min-width: 1440px) {
+     font-size: 14px;
+     line-height: 1.71;
+   }
+ }
+
+
+ .form__checkbox {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   border: 0;
+   padding: 0;
+   white-space: nowrap;
+   clip-path: inset(100%);
+   clip: rect(0 0 0 0);
+   overflow: hidden;
+ }
+
+ .form__checkbox-custom {
+   width: 16px;
+   height: 15px;
+   margin-right: 8px;
+   cursor: pointer;
+   border: 1.5px solid $primary-black-color;
+   border-radius: 2px;
+   fill: $primary-white-color;
+   transition: border-color $cubic,
+    background-color $cubic,
+    outline-color $cubic;
+
+
+   .form__checkbox:focus+& {
+     outline: 2px solid $main-accent-color;
+   }
+
+   .form__checkbox:checked+& {
+     border-color: $main-accent-color;
+     background-color: $main-accent-color;
+     outline: none;
+   }
+
+ }
+
+ .form__icon-custom {
+   opacity: 0;
+   transition: opacity $cubic;
+
+   .form__checkbox:checked+.form__checkbox-custom & {
+     opacity: 1;
+   }
+
+ }
