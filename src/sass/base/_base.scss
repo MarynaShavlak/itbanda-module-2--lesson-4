@@ -7,6 +7,9 @@ body {
   min-height: 100vh;
   color: $primary-black-color;
   overflow-x: hidden;
+  &.modal-open {
+      overflow: hidden;
+    }
 }
 
 main {
