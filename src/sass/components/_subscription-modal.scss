@@ -147,23 +147,35 @@
 
    
  }
+
+
+
+
  .form__input:focus + .form__icon {
    fill: $main-accent-color;
  }
 
 
+.form__agreement-block {
+ display: flex;
+ flex-direction: column;
+ gap: 16px;
+ margin-bottom: 56px;
+}
+
+
+
+
  .form__agreement {
   display: flex;
-  align-items: center;
-   margin-bottom: 30px;
-   font-size: 12px;
-   line-height: 1.17;
-   letter-spacing: 0.03em;
+   align-items: center;
+   font-size: 16px;
+   line-height: 1.38;
    color: $primary-black-color;
 
    @media screen and (min-width: 1440px) {
-     font-size: 14px;
-     line-height: 1.71;
+     font-size: 18px;
+     line-height: 1.36;
    }
  }
 
@@ -181,18 +193,27 @@
    overflow: hidden;
  }
 
- .form__checkbox-custom {
-   width: 16px;
-   height: 15px;
-   margin-right: 8px;
-   cursor: pointer;
-   border: 1.5px solid $primary-black-color;
-   border-radius: 2px;
-   fill: $primary-white-color;
-   transition: border-color $cubic,
-    background-color $cubic,
-    outline-color $cubic;
+.form__agreement-link {
+   font-weight: 600;
+}
 
+.form__check-text {
+ 
+  @media screen and (min-width: 1440px) {
+    max-width: 480px;
+  }
+}
+
+ .form__checkbox-custom {
+  display: block;
+  width: 31px;
+  height: 31px;
+  border: 2px solid $main-accent-color;
+  border-radius: 50%;
+  margin-right: 16px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color $cubic, outline-color $cubic;;
 
    .form__checkbox:focus+& {
      outline: 2px solid $main-accent-color;
@@ -200,7 +221,7 @@
 
    .form__checkbox:checked+& {
      border-color: $main-accent-color;
-     background-color: $main-accent-color;
+     background-color: $light-accent-color;
      outline: none;
    }
 

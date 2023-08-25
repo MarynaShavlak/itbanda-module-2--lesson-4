@@ -117,48 +117,45 @@
           ></textarea>
         </li>
       </ul>
-
-      <label class="form__agreement">
-        <input
-          required
-          class="form__checkbox"
-          type="checkbox"
-          name="studio-policy-check"
-          value="accept-policy"
-          required
-        />
-        <svg class="callback-form__checkbox-custom" width="16" height="15">
-          <use
-            class="callback-form__icon-custom"
-            href="./images/sprite.svg#icon-unchecked"
-          ></use>
-        </svg>
-        <span
-          >Оформлюючи замовлення я погоджуюсь з&nbsp;<a
-            href="#"
-            class="form__agreement-link"
-            >договором публічної оферти</a
+      <div class="form__agreement-block">
+        <label class="form__agreement">
+          <input
+            required
+            class="form__checkbox"
+            type="checkbox"
+            name="studio-policy-check"
+            value="accept-policy"
+            required
+          />
+          <span class="form__checkbox-custom"></span>
+          <span class="form__check-text"
+            >Оформлюючи замовлення я погоджуюсь з&nbsp;<a
+              href="#"
+              class="form__agreement-link"
+              >договором публічної оферти</a
+            >
+            та&nbsp;<a href="#" class="form__agreement-link"
+              >політикою конфіденційності</a
+            ></span
           >
-          та&nbsp;<a href="#" class="form__agreement-link"
-            >політикою конфіденційності</a
-          ></span
-        >
-      </label>
+        </label>
 
-      <label class="form__agreement">
-        <input
-          required
-          class="form__checkbox"
-          type="checkbox"
-          name="studio-policy-data"
-          value="accept-data"
-          required
-        />
-        <span
-          >Я даю згоду для використання моїх особистих данних в цілях відправки
-          підписки та акційних пропозицій</span
-        >
-      </label>
+        <label class="form__agreement">
+          <input
+            required
+            class="form__checkbox"
+            type="checkbox"
+            name="studio-policy-data"
+            value="accept-data"
+            required
+          />
+          <span class="form__checkbox-custom"></span>
+          <span class="form__check-text"
+            >Я даю згоду для використання моїх особистих данних в цілях
+            відправки підписки та акційних пропозицій</span
+          >
+        </label>
+      </div>
 
       <ul class="form__payment-buttons">
         <li class="payment__item">
