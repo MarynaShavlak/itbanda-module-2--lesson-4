@@ -205,6 +205,7 @@
 }
 
  .form__checkbox-custom {
+  position: relative;
   display: block;
   width: 31px;
   height: 31px;
@@ -213,18 +214,11 @@
   margin-right: 16px;
   cursor: pointer;
   background-color: transparent;
-  transition: background-color $cubic, outline-color $cubic;;
-
-   .form__checkbox:focus+& {
-     outline: 2px solid $main-accent-color;
-   }
+  transition: background-color $cubic;
 
    .form__checkbox:checked+& {
-     border-color: $main-accent-color;
      background-color: $light-accent-color;
-     outline: none;
    }
-
  }
 
  .form__icon-custom {
@@ -235,4 +229,58 @@
      opacity: 1;
    }
 
+ }
+
+ .form__checkbox-custom:before {
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -60%) rotate(45deg);
+  content:'';
+  opacity: 0;
+  width: 10px;
+  height: 20px;
+  border-bottom: 4px solid $primary-black-color;
+  border-right: 4px solid $primary-black-color;
+  transition: opacity $cubic;
+  .form__checkbox:checked+& {
+      opacity: 1;
+    }
+ }
+
+ .form__payment-buttons {
+  display: flex;
+  gap: 24px;
+ }
+
+.payment__button {
+    background-position: left 26px top 18px;
+    background-repeat: no-repeat;
+  @media screen and (min-width: 1440px) { 
+    padding-right: 26px;
+    max-height: 86px;
+  }
+}
+
+
+ #card-payment-btn {
+  background-image: url('../images/subscr-modal/cards.png');
+  background-size: 65px 50px;
+  @media screen and (min-width: 1440px) {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 100px;
+    max-width: 312px; 
+
+  }
+ }
+ #cash-payment-btn {
+    background-image: url('../images/subscr-modal/currency.png');
+      background-size: 61px 50px;
+  @media screen and (min-width: 1440px) {
+    padding-top: 30.5px;
+    padding-bottom: 30.5px;
+    padding-left: 89px;
+    max-width: 200px; 
+  }
  }
