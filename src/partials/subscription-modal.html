@@ -1,4 +1,4 @@
-<div class="backdrop" data-subscription-modal>
+<div class="backdrop backdrop--subscr backdrop--hidden" data-subscription-modal>
   <div class="modal modal--subscription">
     <div class="subsc__wrapper">
       <div class="subscr__title-wrapper">
@@ -25,24 +25,27 @@
 
     <form class="subscr__form form">
       <ul class="form__user-info list">
-        <li class="form__item">
-          <input
-            required
-            class="form__input"
-            type="text"
-            name="modal-user-name"
-            placeholder="Ваше ім’я"
-          />
+        <li class="row-container">
+          <div class="form__item form__item--short">
+            <input
+              required
+              class="form__input"
+              type="text"
+              name="modal-user-name"
+              placeholder="Ваше ім’я"
+            />
+          </div>
+          <div class="form__item form__item--short">
+            <input
+              required
+              class="form__input"
+              type="text"
+              name="modal-user-surname"
+              placeholder="Ваше прізвище"
+            />
+          </div>
         </li>
-        <li class="form__item">
-          <input
-            required
-            class="form__input"
-            type="text"
-            name="modal-user-surname"
-            placeholder="Ваше прізвище"
-          />
-        </li>
+
         <li class="form__item">
           <label class="form__field">
             <input
@@ -178,7 +181,9 @@
         </li>
       </ul>
 
-      <button class="form__submit-btn" type="submit">Оплатити 399zł</button>
+      <button class="form__submit-btn action-btn btn" type="submit">
+        Оплатити 399zł
+      </button>
     </form>
 
     <button class="close-modal-btn" type="button" data-subscription-modal-close>

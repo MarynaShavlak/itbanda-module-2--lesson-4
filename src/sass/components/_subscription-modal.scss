@@ -1,3 +1,13 @@
+.backdrop--subscr {
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  @media screen and (min-width: 1440px) {
+    padding-bottom: 50px;
+  }
+}
+
+
 .modal--subscription {
   gap: 0;
   padding: 20px;
@@ -7,7 +17,8 @@
       width: 650px;
   }
   @media screen and (min-width: 1440px) {
-      width: 800px;
+    width: 800px;
+    height:max-content;
   }
  }
 
@@ -76,7 +87,7 @@
   margin-bottom: 48px;
   display: flex;
   flex-direction: column;
-  row-gap: 28px;
+  gap: 28px;
 
   li:last-child {
     margin-top: -4px;
@@ -100,6 +111,20 @@
       border-bottom: 1px solid $main-accent-color;
   }
  }
+
+.form__item--short:first-child {
+  @media screen and (min-width: 1440px) {
+    width: 240px;
+  }
+
+}
+.form__item--short:nth-child(2) {
+  @media screen and (min-width: 1440px) {
+      width: 340px;
+  }
+}
+
+
 
  .form__input::placeholder {
     font-weight: 400;
@@ -251,6 +276,7 @@
  .form__payment-buttons {
   display: flex;
   gap: 24px;
+  margin-bottom: 48px;
  }
 
 .payment__button {
@@ -284,3 +310,17 @@
     max-width: 200px; 
   }
  }
+
+ .form__submit-btn {
+  @media screen and (min-width: 1440px) {
+    padding: 16px 84px;
+  }
+ }
+
+.row-container {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: 60px;
+  }
+
+}
