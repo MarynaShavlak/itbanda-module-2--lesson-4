@@ -1,11 +1,11 @@
 .backdrop--subscr {
   display: flex;
   justify-content: center;
-  @media screen and (min-width: 768px) {
-    padding-bottom: 30px;
-  }
+  padding-bottom: 30px;
+  padding-top: 30px;
   @media screen and (min-width: 1440px) {
     padding-bottom: 50px;
+    padding-top: 50px;
   }
 }
 
@@ -256,10 +256,12 @@
 
  .form__agreement {
   display: flex;
-   align-items: center;
    font-size: 16px;
    line-height: 1.38;
    color: $primary-black-color;
+  @media screen and (min-width: 768px) {
+    align-items: center;
+  }
 
    @media screen and (min-width: 1440px) {
      font-size: 18px;
@@ -286,6 +288,7 @@
 }
 
 .form__check-text {
+  max-width: 260px;
    @media screen and (min-width: 768px) {
     max-width: 510px;
   }
@@ -297,11 +300,16 @@
  .form__checkbox-custom {
   position: relative;
   display: block;
-  width: 31px;
-  height: 31px;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  @media screen and (min-width: 768px) {
+    width: 31px;
+    height: 31px;
+    margin-right: 16px;
+  }
   border: 2px solid $main-accent-color;
   border-radius: 50%;
-  margin-right: 16px;
   cursor: pointer;
   background-color: transparent;
   transition: background-color $cubic;
@@ -328,8 +336,13 @@
   transform: translate(-50%, -60%) rotate(45deg);
   content:'';
   opacity: 0;
-  width: 10px;
-  height: 20px;
+  width: 7px;
+  height: 16px;
+  @media screen and (min-width: 768px) {
+      width: 10px;
+      height: 20px;
+  }
+
   border-bottom: 4px solid $primary-black-color;
   border-right: 4px solid $primary-black-color;
   transition: opacity $cubic;
@@ -340,43 +353,50 @@
 
  .form__payment-buttons {
   display: flex;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
   gap: 24px;
   margin-bottom: 48px;
  }
 
 .payment__button {
+    width: 100%;
     background-position: left 26px top 18px;
     background-repeat: no-repeat;
-  @media screen and (min-width: 768px) { 
     padding-right: 26px;
     max-height: 86px;
-  }
+    @media screen and (max-width: 767px) {
+      font-size: 16px;
+    }
+  
 }
 
 
  #card-payment-btn {
   background-image: url('../images/subscr-modal/cards.png');
   background-size: 65px 50px;
-  @media screen and (min-width: 768px) {
     padding-top: 18px;
     padding-bottom: 18px;
     padding-left: 100px;
     max-width: 312px; 
 
-  }
  }
  #cash-payment-btn {
     background-image: url('../images/subscr-modal/currency.png');
-      background-size: 61px 50px;
-  @media screen and (min-width: 768px) {
+    background-size: 61px 50px;
     padding-top: 30.5px;
     padding-bottom: 30.5px;
     padding-left: 89px;
-    max-width: 200px; 
-  }
+    @media screen and (min-width: 768px) {
+    max-width: 200px;
+    }
  }
 
  .form__submit-btn {
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
   @media screen and (min-width: 768px) {
     padding: 16px 84px;
   }
@@ -389,6 +409,7 @@
   
   @media screen and (min-width: 768px) {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     gap: 60px;
   }
