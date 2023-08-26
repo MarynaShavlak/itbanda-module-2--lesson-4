@@ -72,10 +72,11 @@
               required
               class="form__input"
               type="text"
+              id="datepicker"
               name="modal-user-date"
               placeholder="На коли хочете прибирання?"
             />
-            <svg class="form__icon icon" width="24" height="24">
+            <svg class="form__icon icon icon--calendar" width="24" height="24">
               <use href="./images/sprite.svg#icon-calendar"></use>
             </svg>
           </span>
@@ -87,9 +88,11 @@
               class="form__input"
               type="text"
               name="modal-user-time"
+              id="timepicker"
               placeholder="На котру годину?"
             />
-            <svg class="form__icon icon" width="24" height="24">
+
+            <svg class="form__icon icon icon--clock" width="24" height="24">
               <use href="./images/sprite.svg#icon-clock"></use>
             </svg>
           </span>
@@ -98,9 +101,10 @@
           <span class="form__wrap">
             <input
               required
-              class="form__input form__input--long-placeholder"
+              class="form__input form__input--long-placeholder form__input--location"
               type="text"
               name="modal-user-location"
+              id="location-input"
               placeholder="Ваша повна адреса (включаючи номер будинку та квартиру)"
             />
             <svg
