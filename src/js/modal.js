@@ -1,30 +1,34 @@
 const refsSupport = {
-  openModalBtn: document.querySelector('[data-modal-open]'),
-  closeModalBtn: document.querySelector('[data-modal-close]'),
-  modal: document.querySelector('[data-modal]'),
+  name: 'support',
+  openModalBtn: document.querySelector('[data-support-modal-open]'),
+  closeModalBtn: document.querySelector('[data-support-modal-close]'),
+  modal: document.querySelector('[data-support-modal]'),
   backdrop: document.querySelector('.backdrop--support'),
 };
 
-refsSupport.openModalBtn.addEventListener('click', toggleSupportModal);
-refsSupport.closeModalBtn.addEventListener('click', toggleSupportModal);
-refsSupport.backdrop.addEventListener('click', toggleSupportModal);
-
-function toggleSupportModal() {
-  document.body.classList.toggle('modal-open');
-  refsSupport.modal.classList.toggle('backdrop--hidden');
-}
 const refsSubscr = {
+  name: 'subscription',
   openModalBtn: document.querySelector('[data-subscription-modal-open]'),
   closeModalBtn: document.querySelector('[data-subscription-modal-close]'),
   modal: document.querySelector('[data-subscription-modal]'),
   backdrop: document.querySelector('.backdrop--subscr'),
 };
 
-refsSubscr.openModalBtn.addEventListener('click', toggleSubscriptionModal);
-refsSubscr.closeModalBtn.addEventListener('click', toggleSubscriptionModal);
-refsSubscr.backdrop.addEventListener('click', toggleSubscriptionModal);
-
-function toggleSubscriptionModal() {
-  document.body.classList.toggle('modal-open');
-  refsSubscr.modal.classList.toggle('backdrop--hidden');
+function initializeModal(refs) {
+  refs.openModalBtn.addEventListener('click', () => toggleModal(refs));
+  refs.closeModalBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    toggleModal(refs);
+  });
+  refs.backdrop.addEventListener('click', e => {
+    if (e.target === refs.backdrop) toggleModal(refs);
+  });
 }
+
+function toggleModal(refs) {
+  document.body.classList.toggle(`${refs.name}-modal-open`);
+  refs.modal.classList.toggle('backdrop--hidden');
+}
+
+initializeModal(refsSupport);
+initializeModal(refsSubscr);

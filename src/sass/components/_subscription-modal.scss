@@ -1,7 +1,9 @@
 .backdrop--subscr {
   display: flex;
-  // align-items: center;
   justify-content: center;
+  @media screen and (min-width: 768px) {
+    padding-bottom: 30px;
+  }
   @media screen and (min-width: 1440px) {
     padding-bottom: 50px;
   }
@@ -12,13 +14,13 @@
   gap: 0;
   padding: 20px;
   padding-top: 40px;
+  height: max-content;
   @media screen and (min-width: 768px) {
       padding: 60px;
-      width: 650px;
+      width: 690px;
   }
   @media screen and (min-width: 1440px) {
     width: 800px;
-    height:max-content;
   }
  }
 
@@ -26,6 +28,9 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 24px;
+    @media screen and (max-width: 767px) {
+        align-items:end;
+    }
 }
 
 
@@ -36,7 +41,8 @@
    
 
    @media screen and (min-width: 768px) {
-  font-size: 28px;
+    max-width: 450px;
+    font-size: 28px;
    }
 
    @media screen and (min-width: 1440px) {
@@ -51,6 +57,9 @@
  }
 
  .subscr__text-accent {
+  max-width: 210px;
+  margin-top: 32px;
+  line-height: 1.38;
   @media screen and (min-width: 768px) {
     max-width: 380px;
   }
@@ -61,6 +70,11 @@
  }
 
 
+ .subscr__text-accent::before {
+  top:50%;
+  transform:translate(0,-50%)
+ }
+
  .subscr__accent {
    color: $main-accent-color;
    font-weight: 700;
@@ -69,7 +83,6 @@
 
    @media screen and (min-width: 1440px) {
      font-size: 46px;
-    
    }
  }
 .subscr__form{
@@ -77,17 +90,24 @@
 }
 
  .modal__form-title {
-    margin-top: 48px;
+    margin-top: 32px;
     font-weight: 600;
     font-size: 22px;
     line-height: 1.23;
+    @media screen and (min-width: 768px) {
+      margin-top: 48px;
+    }
+
  }
 
  .form__user-info {
   margin-bottom: 48px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
+  @media screen and (min-width: 768px) {
+      gap: 28px;
+  }
 
   li:last-child {
     margin-top: -4px;
@@ -100,8 +120,12 @@
   border: none;
   outline:none;
   border-bottom: 1px solid $border-input-color;
-  font-size: 18px;
-  line-height: 1.39;
+  font-size: 16px;
+  line-height: 1.38;
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.39;
+   }
   font-weight: 600;
   padding-bottom: 10px;
   color: $primary-black-color;
@@ -112,14 +136,50 @@
   }
  }
 
+.form__input--long-placeholder {
+  @media screen and (max-width: 767px) {
+    height: 60px;
+  }
+&::-webkit-input-placeholder {
+  @media screen and (max-width: 767px) {
+    white-space: pre-line;
+    position: relative;
+    top: -10px;
+  }
+
+}
+
+&:-moz-placeholder {
+  @media screen and (max-width: 767px) {
+    white-space: pre-line;
+    position: relative;
+    top: -10px;
+  }
+}
+
+&:-ms-input-placeholder {
+  @media screen and (max-width: 767px) {
+    white-space: pre-line;
+    position: relative;
+    top: -10px;
+  }
+}
+
+}
+
+
+
+
+
+
 .form__item--short:first-child {
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     width: 240px;
   }
 
 }
 .form__item--short:nth-child(2) {
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
       width: 340px;
   }
 }
@@ -169,10 +229,13 @@
    transition: fill $cubic;
    fill: $border-input-color;
    cursor: pointer;
-
-   
  }
-
+.form__icon--vertical-centered {
+  @media screen and (max-width: 767px) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
 
 
 
@@ -223,8 +286,10 @@
 }
 
 .form__check-text {
- 
-  @media screen and (min-width: 1440px) {
+   @media screen and (min-width: 768px) {
+    max-width: 510px;
+  }
+   @media screen and (min-width: 1440px) {
     max-width: 480px;
   }
 }
@@ -282,7 +347,7 @@
 .payment__button {
     background-position: left 26px top 18px;
     background-repeat: no-repeat;
-  @media screen and (min-width: 1440px) { 
+  @media screen and (min-width: 768px) { 
     padding-right: 26px;
     max-height: 86px;
   }
@@ -292,7 +357,7 @@
  #card-payment-btn {
   background-image: url('../images/subscr-modal/cards.png');
   background-size: 65px 50px;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     padding-top: 18px;
     padding-bottom: 18px;
     padding-left: 100px;
@@ -303,7 +368,7 @@
  #cash-payment-btn {
     background-image: url('../images/subscr-modal/currency.png');
       background-size: 61px 50px;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     padding-top: 30.5px;
     padding-bottom: 30.5px;
     padding-left: 89px;
@@ -312,14 +377,19 @@
  }
 
  .form__submit-btn {
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     padding: 16px 84px;
   }
  }
 
 .row-container {
+  display: flex;
+  flex-direction: column;
+  gap:24px;
+  
   @media screen and (min-width: 768px) {
     display: flex;
+    justify-content: space-between;
     gap: 60px;
   }
 

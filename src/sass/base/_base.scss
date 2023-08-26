@@ -7,9 +7,10 @@ body {
   min-height: 100vh;
   color: $primary-black-color;
   overflow-x: hidden;
-  &.modal-open {
+  &.support-modal-open, 
+  &.subscription-modal-open  {
       overflow: hidden;
-    }
+  }
 }
 
 main {
