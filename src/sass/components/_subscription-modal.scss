@@ -289,6 +289,7 @@
 
 .form__agreement-link {
    font-weight: 600;
+   color: $main-accent-color;
 }
 
 .form__check-text {
@@ -297,7 +298,7 @@
     max-width: 510px;
   }
    @media screen and (min-width: 1440px) {
-    max-width: 480px;
+    max-width: 580px;
   }
 }
 
