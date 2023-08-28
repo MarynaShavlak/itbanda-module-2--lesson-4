@@ -33,38 +33,29 @@ function toggleModal(refs) {
 initializeModal(refsSupport);
 initializeModal(refsSubscr);
 
-function validateInput(el) {
-  const validityState = el.validity;
-  console.log('validityState: ', validityState);
-  if (validityState.valueMissing) {
-    el.setCustomValidity('Будь-ласка, заповніть це поле');
-  } else {
-    el.setCustomValidity('');
-  }
-}
+// function validateInput(el) {
+//   const validityState = el.validity;
+//   console.log('validityState: ', validityState);
+//   if (validityState.valueMissing) {
+//     el.setCustomValidity('Будь-ласка, заповніть це поле');
+//   } else {
+//     el.setCustomValidity('');
+//   }
+// }
 
 const subscForm = document.querySelector('.subscr__form');
-console.log('subscForm: ', subscForm);
 subscForm.addEventListener('submit', onSubmitForm);
 
 function onSubmitForm(e) {
   console.log('e: ', e);
   e.preventDefault();
-  // const inputElements = document.querySelectorAll('input');
-  // console.log('inputElements : ', inputElements);
-  // const filteredInputs = Array.from(inputElements).filter(function (element) {
-  //   return (
-  //     !element.classList.contains('form__comment') &&
-  //     !element.classList.contains('form__checkbox')
-  //   );
-  // });
-  // filteredInputs.forEach(input => validateInput(input));
-  // console.log('filteredInputs: ', filteredInputs);
-  // if (subscForm.reportValidity()) {
-  //   // If form is valid, you can submit it here
-  //   // form.submit();
-  //   console.log('Form is valid. Submitting...');
-  // } else {
-  //   console.log('Form is not valid. Please check the fields.');
-  // }
+  validateInput();
+}
+
+function validateInput() {
+  if (!datePicker.selectedDates || datePicker.selectedDates.length === 0) {
+    datePickerElement.setCustomValidity('Оберіть дату прибирання');
+  } else {
+    datePickerElement.setCustomValidity('');
+  }
 }

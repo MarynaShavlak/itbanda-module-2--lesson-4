@@ -33,6 +33,8 @@
               type="text"
               name="modal-user-name"
               placeholder="Ваше ім’я"
+              oninvalid="this.setCustomValidity('Будь ласка, заповніть Ваше ім\'я')"
+              onchange="try{setCustomValidity('')}catch(e){};"
             />
           </div>
           <div class="form__item form__item--short">
@@ -42,6 +44,8 @@
               type="text"
               name="modal-user-surname"
               placeholder="Ваше прізвище"
+              oninvalid="this.setCustomValidity('Будь ласка, заповніть Ваше прізвище')"
+              onchange="try{setCustomValidity('')}catch(e){};"
             />
           </div>
         </li>
@@ -54,6 +58,8 @@
               type="tel"
               name="modal-user-tel"
               placeholder="Номер телефону"
+              oninvalid="this.setCustomValidity('Будь ласка, заповніть Ваш номер телефону')"
+              onchange="try{setCustomValidity('')}catch(e){};"
             />
           </label>
         </li>
@@ -64,6 +70,8 @@
             type="email"
             name="modal-user-email"
             placeholder="Email"
+            oninvalid="this.setCustomValidity('Будь ласка, заповніть Ваш email')"
+            onchange="try{setCustomValidity('')}catch(e){};"
           />
         </li>
         <li class="form__item">
@@ -74,6 +82,8 @@
               type="text"
               id="datepicker"
               name="modal-user-date"
+              oninvalid="this.setCustomValidity('Оберіть дату прибирання')"
+              onchange="try{setCustomValidity('')}catch(e){};"
               placeholder="На коли хочете прибирання?"
             />
             <svg class="form__icon icon icon--calendar" width="24" height="24">
@@ -90,6 +100,8 @@
               name="modal-user-time"
               id="timepicker"
               placeholder="На котру годину?"
+              oninvalid="this.setCustomValidity('Оберіть час прибирання')"
+              onchange="try{setCustomValidity('')}catch(e){};"
             />
 
             <svg class="form__icon icon icon--clock" width="24" height="24">
@@ -106,6 +118,8 @@
               name="modal-user-location"
               id="location-input"
               placeholder="Ваша повна адреса (включаючи номер будинку та квартиру)"
+              oninvalid="this.setCustomValidity('Будь ласка, заповніть Ваше адресу')"
+              onchange="try{setCustomValidity('')}catch(e){};"
             />
             <svg
               class="form__icon icon form__icon--vertical-centered"
