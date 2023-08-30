@@ -1,3 +1,4 @@
+import { datePicker, datePickerElement } from './datepick';
 const refsSupport = {
   name: 'support',
   openModalBtn: document.querySelector('[data-support-modal-open]'),
@@ -33,16 +34,6 @@ function toggleModal(refs) {
 initializeModal(refsSupport);
 initializeModal(refsSubscr);
 
-// function validateInput(el) {
-//   const validityState = el.validity;
-//   console.log('validityState: ', validityState);
-//   if (validityState.valueMissing) {
-//     el.setCustomValidity('Будь-ласка, заповніть це поле');
-//   } else {
-//     el.setCustomValidity('');
-//   }
-// }
-
 const subscForm = document.querySelector('.subscr__form');
 subscForm.addEventListener('submit', onSubmitForm);
 
@@ -55,7 +46,10 @@ function onSubmitForm(e) {
 function validateInput() {
   if (!datePicker.selectedDates || datePicker.selectedDates.length === 0) {
     datePickerElement.setCustomValidity('Оберіть дату прибирання');
+    console.log('datePickerElement: ', datePickerElement);
+    console.log('custom');
   } else {
     datePickerElement.setCustomValidity('');
+    console.log('space');
   }
 }

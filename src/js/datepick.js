@@ -7,7 +7,7 @@ const timePickerElement = document.querySelector('#timepicker');
 const calendarIcon = document.querySelector('.icon--calendar');
 const clockIcon = document.querySelector('.icon--clock');
 
-flatpickr(datePickerElement, {
+const datePicker = flatpickr(datePickerElement, {
   dateFormat: 'Y-m-d',
   minDate: 'today',
 });
@@ -25,3 +25,5 @@ calendarIcon.addEventListener('click', () => {
 clockIcon.addEventListener('click', () => {
   timePickerElement.focus();
 });
+
+export { datePicker, datePickerElement };

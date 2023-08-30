@@ -82,10 +82,9 @@
               type="text"
               id="datepicker"
               name="modal-user-date"
-              oninvalid="this.setCustomValidity('Оберіть дату прибирання')"
-              onchange="try{setCustomValidity('')}catch(e){};"
               placeholder="На коли хочете прибирання?"
             />
+
             <svg class="form__icon icon icon--calendar" width="24" height="24">
               <use href="./images/sprite.svg#icon-calendar"></use>
             </svg>
@@ -100,8 +99,6 @@
               name="modal-user-time"
               id="timepicker"
               placeholder="На котру годину?"
-              oninvalid="this.setCustomValidity('Оберіть час прибирання')"
-              onchange="try{setCustomValidity('')}catch(e){};"
             />
 
             <svg class="form__icon icon icon--clock" width="24" height="24">
@@ -118,7 +115,7 @@
               name="modal-user-location"
               id="location-input"
               placeholder="Ваша повна адреса (включаючи номер будинку та квартиру)"
-              oninvalid="this.setCustomValidity('Будь ласка, заповніть Ваше адресу')"
+              oninvalid="this.setCustomValidity('Будь ласка, заповніть Вашу адресу')"
               onchange="try{setCustomValidity('')}catch(e){};"
             />
             <svg
