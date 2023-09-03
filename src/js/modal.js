@@ -40,16 +40,71 @@ subscForm.addEventListener('submit', onSubmitForm);
 function onSubmitForm(e) {
   console.log('e: ', e);
   e.preventDefault();
-  validateInput();
-}
+  // validateInput();
+  const elements = e.currentTarget.elements;
+  console.log('elements: ', elements);
+  const userName = elements.modalUserName.value;
+  const userSurname = elements.modalUserSurname.value;
+  const userTel = elements.modalUserTel.value;
+  const userEmail = elements.modalUserEmail.value;
+  const userLocation = elements.modalUserLocation.value;
+  const userDate = elements.modalUserDate.value;
+  const userTime = elements.modalUserTime.value;
 
-function validateInput() {
-  if (!datePicker.selectedDates || datePicker.selectedDates.length === 0) {
-    datePickerElement.setCustomValidity('Оберіть дату прибирання');
-    console.log('datePickerElement: ', datePickerElement);
-    console.log('custom');
-  } else {
-    datePickerElement.setCustomValidity('');
-    console.log('space');
+  const elementsWithErrors = [];
+  if (userName.length === 0) {
+    elementsWithErrors.push(elements.modalUserName);
+  }
+
+  if (userSurname.length === 0) {
+    elementsWithErrors.push(elements.modalUserSurname);
+  }
+
+  if (userTel.length === 0) {
+    elementsWithErrors.push(elements.modalUserTel);
+  }
+
+  if (userEmail.length === 0) {
+    elementsWithErrors.push(elements.modalUserEmail);
+  }
+
+  if (userLocation.length === 0) {
+    elementsWithErrors.push(elements.modalUserLocation);
+  }
+
+  if (userDate.length === 0) {
+    elementsWithErrors.push(elements.modalUserDate);
+  }
+
+  if (userTime.length === 0) {
+    elementsWithErrors.push(elements.modalUserTime);
+  }
+  console.log('elementsWithErrors: ', elementsWithErrors);
+
+  // Remove any existing "error" class from all elements
+  Array.from(elements).forEach(element => {
+    element.classList.remove('error');
+  });
+
+  // Add the "error" class to the elements with errors
+  elementsWithErrors.forEach(element => {
+    element.classList.add('error');
+  });
+
+  // Check if there are errors
+  if (elementsWithErrors.length === 0) {
+    // If no errors, submit the form
+    form.submit();
   }
 }
+
+// function validateInput() {
+//   if (!datePicker.selectedDates || datePicker.selectedDates.length === 0) {
+//     datePickerElement.setCustomValidity('Оберіть дату прибирання');
+//     console.log('datePickerElement: ', datePickerElement);
+//     console.log('custom');
+//   } else {
+//     datePickerElement.setCustomValidity('');
+//     console.log('space');
+//   }
+// }

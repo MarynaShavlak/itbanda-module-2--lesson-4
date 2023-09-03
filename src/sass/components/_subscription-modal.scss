@@ -420,3 +420,16 @@
   }
 
 }
+
+.error {
+  border-bottom: 1px solid $error-color;
+}
+
+.form__input.error::placeholder{
+  color: $error-color;
+}
+
+
+ .form__input.error+.form__icon {
+   fill: $error-color;
+ }
