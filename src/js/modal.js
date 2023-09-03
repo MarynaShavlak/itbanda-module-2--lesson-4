@@ -56,6 +56,7 @@ function onSubmitForm(e) {
 
   if (elementsWithErrors.length === 0) {
     e.currentTarget.submit();
+    window.location.href = 'success-order.html';
   }
 }
 

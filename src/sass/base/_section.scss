@@ -16,17 +16,7 @@
   background-color: $first-additional-bg-color;
 }
 
-.section--hero {
-  padding-top:32px;
-  padding-bottom: 32px;
-    @media screen and (min-width: 768px) {
-      padding-bottom: 0;
-    }
-    @media screen and (min-width: 1440px) {
-        padding-top: 141px;
-        
-   }
-}
+
 
 .section--benefits {
   padding-top: 0;
