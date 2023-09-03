@@ -25,5 +25,3 @@ calendarIcon.addEventListener('click', () => {
 clockIcon.addEventListener('click', () => {
   timePickerElement.focus();
 });
-
-export { datePicker, datePickerElement };
