@@ -27,6 +27,13 @@
     color: $main-accent-color;
 }
 
+.title--office {
+  span{
+    color: $main-accent-color;
+  }
+}
+
+
 .hero__text {
   font-weight: 400;
   max-width: 335px;
@@ -47,6 +54,8 @@
   }
 }
 
+
+
 .text--success {
   font-weight: 600;
   font-size: 18px;
@@ -62,6 +71,12 @@
   }
   @media screen and (min-width: 1440px) {
     font-size: 22px;
+  }
+}
+
+.text--office {
+  span {
+    color: $main-accent-color;
   }
 }
 
@@ -124,7 +139,7 @@
   }
 }
 
-.image-thumb {
+.image-success-thumb {
   position: absolute;
   @media screen and (min-width: 768px) {
     top: 0;
@@ -254,3 +269,95 @@
     }
 }
 
+.office-hero__list {
+
+    margin-top: 16px;
+    margin-bottom: 24px;
+  
+  @media screen and (min-width: 1440px) {
+    margin-top: 20px;
+    margin-bottom: 60px;
+  }
+
+}
+
+.hero__button-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+ 
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+
+.image-office-thumb {
+  position: absolute;
+
+  @media screen and (min-width: 768px) {
+    top: 0;
+    // right: -30px;
+    width: 382px;
+    height: 380px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    // top: -13px;
+    width: 559px;
+    height: 557px;
+  }
+}
+
+
+.image--success {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  //background-size: contain;
+  background-image: url('../images/office-page/mobile/office-cleaner@1x.png');
+
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    background-image: url('../images/office-page/mobile/office-cleaner@2x.png');
+  }
+
+  width: 308px;
+  height: 307px;
+
+
+  @media screen and (min-width: 768px) {
+    width: 382px;
+    height: 380px;
+    background-image: url('../images/office-page/tablet/office-cleaner@1x.png');
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image: url('../images/office-page/tablet/office-cleaner@2x.png');
+    }
+  }
+
+
+  @media screen and (min-width: 1440px) {
+    width: 559px;
+    height: 557px;
+    background-size: cover;
+    // background-position: top -40px right;
+    background-image: url('../images/office-page/desktop/office-cleaner@1x.png');
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image: url('../images/office-page/desktop/office-cleaner@2x.png');
+    }
+  }
+
+
+
+
+
+}
