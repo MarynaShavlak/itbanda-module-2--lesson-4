@@ -1,2 +1,2 @@
 document.querySelectorAll(".toggle-question-btn").forEach((function(e){e.addEventListener("click",(function(){var l;(l=e).closest(".questions__item").querySelectorAll(".questions__text").forEach((function(e){var l,n;l=e,n="none"===window.getComputedStyle(l).display,l.style.display=n?"block":"none"})),function(e){var l=e.querySelector(".icon--plus"),n=e.querySelector(".icon--minus");"none"===l.style.display?(l.style.display="block",n.style.display="none"):(l.style.display="none",n.style.display="block")}(l)}))}));
-//# sourceMappingURL=index.ef94aae0.js.map
+//# sourceMappingURL=office.a346e8b5.js.map
