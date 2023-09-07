@@ -1,0 +1,52 @@
+.banner--office {
+  @media screen and (max-width: 767px) {
+    height: 292px;
+    padding:32px 16px;
+    background-image: url('../images/office-page/mobile/brush@1x.png');
+    background-size: 94px;
+    background-position: right bottom 94px;
+    
+    }
+   
+      @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+          background-image: url('../images/office-page/mobile/brush@2x.png');
+        }
+    
+    @media screen and (min-width: 768px) {
+      padding: 60px;
+      background-position: right -20px top;
+    }
+    @media screen and (min-width: 1440px) {
+      background-position: right 114px top;    
+    }
+
+}
+
+
+.banner--office .info-block__title {
+    @media screen and (max-width: 767px) {
+        max-width: 290px;
+    }
+    @media screen and (max-width: 1439px) {
+        max-width: 400px;
+    }
+    
+}
+
+
+.banner--office .info-block__text {
+  color: $second-additional-bg-color;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  @media screen and (min-width: 768px) {
+      max-width: 362px;
+  }
+  
+  
+  @media screen and (min-width: 1440px) {
+    max-width: 500px;
+      margin-bottom: 40px;
+  }
+}

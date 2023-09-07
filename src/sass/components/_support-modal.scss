@@ -47,8 +47,6 @@
         @media screen and (min-width: 768px) {
           transform: scale(1);
           width: 480px;
-          // max-height: 100vh;
-      
           .backdrop--hidden & {
             transform: scale(0.8);
           }
