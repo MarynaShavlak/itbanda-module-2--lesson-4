@@ -70,9 +70,13 @@
 .office-calc__wrap {
   position: relative;
   display: flex;
+  
   flex-direction: column;
   gap: 32px;
   
+  @media screen and (max-width: 767px) {
+    align-items: center;
+  }
   @media screen and (min-width: 768px) {
     gap: 60px;
   }
@@ -103,11 +107,10 @@
 .full-order-table {
   height:fit-content;
   padding: 40px 27px;
-  @media screen and (min-width: 768px) and (max-width: 1439px) {
-    max-width: 360px;
-  }
+
   @media screen and (min-width: 768px) {
     padding: 40px;
+    width: 360px;
   }
 }
 
@@ -143,8 +146,8 @@
   
 }
 .calc-btn {
+  width:100%;
   margin-top: 40px;
-  padding: 15px 50px;
 }
 
 .discount {
@@ -156,8 +159,9 @@
   background-color: $second-additional-bg-color;
   width: 250px;
   height: 250px;
+  transform: rotate(10deg);
   @media screen and (min-width: 768px) and (max-width: 1439px) {
-    transform: rotate(10deg) ;
+    transform: rotate(10deg);
     position: absolute;
     bottom: 47px;
     right: 47px;
