@@ -299,24 +299,25 @@
 
   @media screen and (min-width: 768px) {
     top: 0;
-    // right: -30px;
+    right: 40px;
     width: 382px;
     height: 380px;
   }
 
   @media screen and (min-width: 1440px) {
-    // top: -13px;
+    right: 0;
+    top: -70px;
     width: 559px;
     height: 557px;
   }
 }
 
 
-.image--success {
+.image--office{
   position: absolute;
   background-repeat: no-repeat;
   background-position: center;
-  //background-size: contain;
+  background-size: cover;
   background-image: url('../images/office-page/mobile/office-cleaner@1x.png');
 
   @media (min-device-pixel-ratio: 2),
@@ -346,7 +347,7 @@
     width: 559px;
     height: 557px;
     background-size: cover;
-    // background-position: top -40px right;
+    background-position: top 50px right;
     background-image: url('../images/office-page/desktop/office-cleaner@1x.png');
 
     @media (min-device-pixel-ratio: 2),
@@ -360,4 +361,20 @@
 
 
 
+}
+
+.container--office {
+  position: relative;
+}
+
+.title--office {
+  @media screen and (min-width:768px) and (max-width:1439px) {
+  max-width: 420px;
+  }
+}
+
+.office-hero {
+  @media screen and (max-width:767px) {
+      height: 830px;
+  }
 }

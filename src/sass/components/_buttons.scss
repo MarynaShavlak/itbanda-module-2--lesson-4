@@ -79,7 +79,7 @@ padding: 17px 25px;
   }
 }
 .action-btn {
-  padding: 15px 79px;
+  padding: 15px 70px;
 
   @media screen and (min-width: 768px) {
     padding: 15px 23px;
@@ -96,14 +96,15 @@ padding: 17px 25px;
   padding-top: 14px;
   padding-bottom: 14px;
   width: 100%;
+  padding: 15px 50px;
 
   @media screen and (min-width: 768px) {
     width: 400px;
+    padding: 15px 23px;
   }
 
   @media screen and (min-width: 1440px) {
-    padding-top: 17px;
-    padding-bottom: 17px;
+    padding: 17px 25px;
     font-size: 18px;
     line-height: 1.39;
   }
