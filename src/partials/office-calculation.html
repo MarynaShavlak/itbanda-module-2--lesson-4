@@ -1,190 +1,42 @@
-<section
-  class="section section--dark-background cleaning"
-  id="order-cleaning-block"
->
-  <div class="container cleaning__container">
-    <h2 class="section__title">Розрахунок вартості прибирання</h2>
-    <div class="form--subscription">
-      <h4 class="modal__form-title">Ваші дані</h4>
-
-      <form class="subscr__form form">
-        <ul class="form__user-info list">
-          <li class="row-container">
-            <div class="form__item form__item--short">
-              <input
-                class="form__input"
-                type="text"
-                name="modalUserName"
-                placeholder="Ваше ім’я"
-                oninvalid="this.setCustomValidity('Будь ласка, заповніть Ваше ім\'я')"
-                onchange="try{setCustomValidity('')}catch(e){};"
-              />
-            </div>
-            <div class="form__item form__item--short">
-              <input
-                class="form__input"
-                type="text"
-                name="modalUserSurname"
-                placeholder="Ваше прізвище"
-                oninvalid="this.setCustomValidity('Будь ласка, заповніть Ваше прізвище')"
-                onchange="try{setCustomValidity('')}catch(e){};"
-              />
-            </div>
-          </li>
-
-          <li class="form__item">
-            <label class="form__field">
-              <input
-                class="form__input"
-                type="tel"
-                name="modalUserTel"
-                placeholder="Номер телефону"
-                oninvalid="this.setCustomValidity('Будь ласка, заповніть Ваш номер телефону')"
-                onchange="try{setCustomValidity('')}catch(e){};"
-              />
-            </label>
-          </li>
-          <li class="form__item">
-            <input
-              class="form__input"
-              type="email"
-              name="modalUserEmail"
-              placeholder="Email"
-              oninvalid="this.setCustomValidity('Будь ласка, заповніть Ваш email')"
-              onchange="try{setCustomValidity('')}catch(e){};"
-            />
-          </li>
-          <li class="form__item">
-            <span class="form__wrap">
-              <input
-                class="form__input"
-                type="text"
-                id="datepicker"
-                name="modalUserDate"
-                placeholder="На коли хочете прибирання?"
-              />
-
-              <svg
-                class="form__icon icon icon--calendar"
-                width="24"
-                height="24"
-              >
-                <use href="./images/sprite.svg#icon-calendar"></use>
-              </svg>
-            </span>
-          </li>
-          <li class="form__item">
-            <span class="form__wrap">
-              <input
-                class="form__input"
-                type="text"
-                name="modalUserTime"
-                id="timepicker"
-                placeholder="На котру годину?"
-              />
-
-              <svg class="form__icon icon icon--clock" width="24" height="24">
-                <use href="./images/sprite.svg#icon-clock"></use>
-              </svg>
-            </span>
-          </li>
-          <li class="form__item">
-            <span class="form__wrap">
-              <input
-                class="form__input form__input--long-placeholder form__input--location"
-                type="text"
-                name="modalUserLocation"
-                id="location-input"
-                placeholder="Ваша повна адреса (включаючи номер будинку та квартиру)"
-                oninvalid="this.setCustomValidity('Будь ласка, заповніть Вашу адресу')"
-                onchange="try{setCustomValidity('')}catch(e){};"
-              />
-              <svg
-                class="form__icon icon form__icon--vertical-centered"
-                width="24"
-                height="24"
-              >
-                <use href="./images/sprite.svg#icon-location"></use>
-              </svg>
-            </span>
-            <label class="form__label"
-              >*Працюємо по місту Лодзь та +30 км за містом (виїзд за місто
-              оплачується окремо)</label
-            >
-          </li>
-          <li class="form__item">
-            <textarea
-              class="form__input form__comment"
-              name="modalUserComment"
-              placeholder="Ваш коментар"
-            ></textarea>
-          </li>
-        </ul>
-        <div class="form__agreement-block">
-          <label class="form__agreement">
-            <input
-              checked
-              required
-              class="form__checkbox"
-              type="checkbox"
-              name="studio-policy-check"
-              value="accept-policy"
-            />
-            <span class="form__checkbox-custom"></span>
-            <span class="form__check-text"
-              >Оформлюючи замовлення, я погоджуюсь з&nbsp;<a
-                href="#"
-                class="form__agreement-link"
-                >договором публічної оферти</a
-              >
-              та&nbsp;<a href="#" class="form__agreement-link"
-                >політикою конфіденційності</a
-              ></span
-            >
-          </label>
-
-          <label class="form__agreement">
-            <input
-              checked
-              required
-              class="form__checkbox"
-              type="checkbox"
-              name="studio-policy-data"
-              value="accept-data"
-            />
-            <span class="form__checkbox-custom"></span>
-            <span class="form__check-text"
-              >Я даю згоду для використання моїх особистих данних в цілях
-              відправки підписки та акційних пропозицій</span
-            >
-          </label>
+<section class="section section--dark-background" id="office-calc-block">
+  <div class="container order-cleaning__container office-calc">
+    <h2 class="section__title title--office-calc">
+      Розрахунок вартості прибирання
+    </h2>
+    <div class="office-calc__wrap">
+      <div class="form--subscription office-calc__block data-order">
+        <include src="./partials/order-form.html"></include>
+      </div>
+      <div class="office-calc__block full-order-table">
+        <div class="table__header table__block">
+          <span>Послуга</span>
+          <span>Вартість</span>
         </div>
-
-        <ul class="form__payment-buttons">
-          <li class="payment__item">
-            <button
-              class="payment__button btn btn--light"
-              type="button"
-              id="card-payment-btn"
-            >
-              <span>Картой online/Apple Pay/Google Pay</span>
-            </button>
+        <ul class="table__data">
+          <li class="table__item table__block">
+            <span>Площа: 1 м²</span>
+            <span id="squareValue" class="service-value">2zł</span>
           </li>
-          <li class="payment__item">
-            <button
-              class="payment__button btn btn--light"
-              type="button"
-              id="cash-payment-btn"
-            >
-              Готівкою
-            </button>
+          <li class="table__item table__block">
+            <span>Миття вікон (стандартні)</span>
+            <span id="windowStandard" class="service-value">35zł</span>
           </li>
         </ul>
-
-        <button class="form__submit-btn action-btn btn" type="submit">
-          Оплатити 399zł
+        <div class="table__sum table__block">
+          <span>Вартість</span>
+          <span class="service-value">37zł</span>
+        </div>
+        <button class="action-btn btn calc-btn" type="submit">
+          Замовити прибирання
         </button>
-      </form>
+      </div>
+      <div class="discount">
+        <span class="discount__value">-10%</span>
+        <span class="discount__text">на перше прибирання!</span>
+        <span class="discount__remark">
+          *вкажіть що це ваше перше замовлення у полі з коментарем
+        </span>
+      </div>
     </div>
 
     <div class="cleaning__banner banner banner--office">

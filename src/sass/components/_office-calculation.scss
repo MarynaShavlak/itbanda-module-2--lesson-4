@@ -1,5 +1,6 @@
 .banner--office {
   @media screen and (max-width: 767px) {
+    margin-top: 65px;
     height: 292px;
     padding:32px 16px;
     background-image: url('../images/office-page/mobile/brush@1x.png');
@@ -17,6 +18,7 @@
     @media screen and (min-width: 768px) {
       padding: 60px;
       background-position: right -20px top;
+      margin-top: 100px;
     }
     @media screen and (min-width: 1440px) {
       background-position: right 114px top;    
@@ -49,4 +51,144 @@
     max-width: 500px;
       margin-bottom: 40px;
   }
+}
+
+.office-calc {
+  position: relative;
+}
+
+.title--office-calc {
+  margin-bottom: 30px;
+  @media screen and (min-width: 768px) {
+      margin-bottom: 48px;
+  }
+  @media screen and (min-width: 1440px) {
+      margin-bottom: 205px;
+  }
+}
+
+.office-calc__wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  
+  @media screen and (min-width: 768px) {
+    gap: 60px;
+  }
+    @media screen and (min-width: 1440px) {
+      flex-direction: row;
+      gap:40px;
+  }
+}
+
+.office-calc__block {
+    background-color: $primary-white-color;
+    border-radius: 20px;
+    @media screen and (min-width: 1440px) {
+        border-radius: 30px;
+      }
+}
+
+
+.data-order {
+  @media screen and (min-width: 768px) {
+    max-width: 690px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 760px;
+  }
+}
+
+.full-order-table {
+  height:fit-content;
+  padding: 40px 27px;
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    max-width: 360px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 40px;
+  }
+}
+
+.table__header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid $border-input-color;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.38;
+}
+.table__sum {
+  padding-top: 10px;
+  border-top: 1px solid $border-input-color;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.39;
+}
+
+.table__block {
+  display: flex;
+  justify-content: space-between;
+  .service-value {
+      font-weight: 600;
+    }
+}
+
+.table__data {
+  display: flex;
+  flex-direction: column;
+  gap:8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  
+}
+.calc-btn {
+  margin-top: 40px;
+  padding: 15px 50px;
+}
+
+.discount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: $second-additional-bg-color;
+  width: 250px;
+  height: 250px;
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    transform: rotate(10deg) ;
+    position: absolute;
+    bottom: 47px;
+    right: 47px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    transform: rotate(10deg) translate(-50%, -50%);
+    position: absolute;
+    left: 655px;
+  }
+}
+
+.discount__value {
+  color: $main-accent-color;
+  font-weight: 700;
+  line-height: 1.22;
+  font-size: 46px;
+}
+
+.discount__text {
+  color: $primary-black-color;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.39;
+  margin-bottom: 12px;
+}
+
+.discount__remark {
+  text-align: center;
+  max-width: 173px;
+  font-weight: 400;
+  font-size: 14px;
+  color: $additional-text-color;
 }
