@@ -64,7 +64,6 @@ function validateFields(elements, fieldNames) {
   const elementsWithErrors = [];
   fieldNames.forEach(fieldName => {
     const fieldValue = elements[fieldName].value;
-    console.log('fieldValue: ', fieldValue);
     if (fieldValue.length === 0) {
       elementsWithErrors.push(elements[fieldName]);
     }

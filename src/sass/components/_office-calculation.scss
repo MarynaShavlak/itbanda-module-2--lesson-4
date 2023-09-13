@@ -253,6 +253,7 @@
   display: flex;
   flex-direction: column;
   width: fit-content;
+  min-width: 164px;
   
 }
 .data-order__wrap--square {
@@ -269,6 +270,7 @@
   display: flex;
   gap: 17px;
   align-items: center;
+  justify-content: space-between;
   padding: 5px;
   border-radius: 50px;
   border: 2px solid $main-accent-color;
@@ -408,14 +410,3 @@
       text-align: left;
     }
   
-    // #cash-payment-btn {
-    //   background-image: url('../images/subscr-modal/currency.png');
-    //   background-size: 61px 50px;
-    //   padding-top: 30.5px;
-    //   padding-bottom: 30.5px;
-    //   padding-left: 89px;
-  
-    //   @media screen and (min-width: 768px) {
-    //     max-width: 200px;
-    //   }
-    // }
