@@ -17,7 +17,7 @@
           <li class="buildings__element" id="building-3">Ресторан</li>
         </ul>
         <h4 class="form-title data-order__title">Оберіть площу приміщення</h4>
-        <div class="data-order__wrap data-order__wrap--square">
+        <div class="data-order__wrap wrap--square">
           <div class="data-order__quantity-block">
             <button
               type="button"
@@ -33,7 +33,7 @@
               </svg>
             </button>
             <span class="quantity-block__text"
-              ><span class="quantity-block__value">1</span> м²</span
+              ><span class="quantity-block__value square-value">1</span> м²</span
             >
             <button type="button" class="control-quantity-btn control-quantity-btn--plus">
               <svg
@@ -50,16 +50,16 @@
         </div>
         <h4 class="form-title data-order__title">Додаткові послуги</h4>
         <ul class="data-order__add-services-list">
-          <li class="add-services-list__item">
-            <label class="service-element">
+          <li class="add-services-list__item ">
+            <label class="service-element"  data-id = "windowStandard">
               <input
                class="checkbox"
               type="checkbox"
               />
               <span class="checkbox-custom checkbox-custom--service"></span>
-              <span class="service-element__text"></span>Миття вікон (стандартні) -&nbsp; <span class="service-element__accent">35zł</span></span>
+              <span class="service-element__text">Миття вікон (стандартні)</span>&nbsp; -&nbsp; <span class="service-element__accent" data-value="35">35zł</span></span>
             </label>
-            <div class="data-order__wrap data-order__wrap--service">
+            <div class="data-order__wrap wrap--service isHidden">
               <div class="data-order__quantity-block">
             <button
               type="button"
@@ -74,7 +74,7 @@
                 <use href="./images/sprite.svg#icon-minus"></use>
               </svg>
             </button>
-            <span class="quantity-block__text quantity-block__value">1</span>
+            <span class="quantity-block__text quantity-block__value service-quantity">1</span>
             
             <button type="button" class="control-quantity-btn">
               <svg
@@ -99,7 +99,7 @@
               <span class="checkbox-custom checkbox-custom--service"></span>
               <span class="service-element__text"></span>Миття вікон (до підлоги) -&nbsp; <span class="service-element__accent">40zł</span></span>
             </label>
-            <div class="data-order__wrap data-order__wrap--service">
+            <div class="data-order__wrap wrap--service isHidden">
               <div class="data-order__quantity-block">
             <button
               type="button"
@@ -114,7 +114,7 @@
                 <use href="./images/sprite.svg#icon-minus"></use>
               </svg>
             </button>
-            <span class="quantity-block__text quantity-block__value">1</span>
+            <span class="quantity-block__text quantity-block__value service-quantity">1</span>
             
             <button type="button" class="control-quantity-btn">
               <svg
@@ -139,7 +139,7 @@
               <span class="checkbox-custom checkbox-custom--service"></span>
               <span class="service-element__text"></span>Мікрохвильовка  -&nbsp; <span class="service-element__accent">15zł</span></span>
             </label>
-            <div class="data-order__wrap data-order__wrap--service">
+            <div class="data-order__wrap wrap--service isHidden">
               <div class="data-order__quantity-block">
             <button
               type="button"
@@ -154,7 +154,7 @@
                 <use href="./images/sprite.svg#icon-minus"></use>
               </svg>
             </button>
-            <span class="quantity-block__text quantity-block__value">1</span>
+            <span class="quantity-block__text quantity-block__value service-quantity">1</span>
             
             <button type="button" class="control-quantity-btn">
               <svg
@@ -179,7 +179,7 @@
               <span class="checkbox-custom checkbox-custom--service"></span>
               <span class="service-element__text"></span>Холодильник -&nbsp; <span class="service-element__accent">40zł</span></span>
             </label>
-            <div class="data-order__wrap data-order__wrap--service">
+            <div class="data-order__wrap wrap--service isHidden">
               <div class="data-order__quantity-block">
             <button
               type="button"
@@ -194,7 +194,7 @@
                 <use href="./images/sprite.svg#icon-minus"></use>
               </svg>
             </button>
-            <span class="quantity-block__text quantity-block__value">1</span>
+            <span class="quantity-block__text quantity-block__value service-quantity">1</span>
             
             <button type="button" class="control-quantity-btn">
               <svg
@@ -219,7 +219,7 @@
               <span class="checkbox-custom checkbox-custom--service"></span>
               <span class="service-element__text"></span>Плита -&nbsp; <span class="service-element__accent">35zł</span></span>
             </label>
-            <div class="data-order__wrap data-order__wrap--service">
+            <div class="data-order__wrap wrap--service isHidden">
               <div class="data-order__quantity-block">
             <button
               type="button"
@@ -234,7 +234,7 @@
                 <use href="./images/sprite.svg#icon-minus"></use>
               </svg>
             </button>
-            <span class="quantity-block__text quantity-block__value">1</span>
+            <span class="quantity-block__text quantity-block__value service-quantity">1</span>
             
             <button type="button" class="control-quantity-btn">
               <svg
@@ -259,7 +259,7 @@
               <span class="checkbox-custom checkbox-custom--service"></span>
               <span class="service-element__text"></span>Хімчистка офісних стільців -&nbsp; <span class="service-element__accent">20zł</span></span>
             </label>
-            <div class="data-order__wrap data-order__wrap--service">
+            <div class="data-order__wrap wrap--service isHidden">
               <div class="data-order__quantity-block">
             <button
               type="button"
@@ -274,7 +274,7 @@
                 <use href="./images/sprite.svg#icon-minus"></use>
               </svg>
             </button>
-            <span class="quantity-block__text quantity-block__value">1</span>
+            <span class="quantity-block__text quantity-block__value service-quantity">1</span>
             
             <button type="button" class="control-quantity-btn">
               <svg
@@ -299,7 +299,7 @@
               <span class="checkbox-custom checkbox-custom--service"></span>
               <span class="service-element__text"></span>Хімчистка дивану 2х -&nbsp; <span class="service-element__accent">109,99zł</span></span>
             </label>
-            <div class="data-order__wrap data-order__wrap--service">
+            <div class="data-order__wrap wrap--service isHidden">
               <div class="data-order__quantity-block">
             <button
               type="button"
@@ -314,7 +314,7 @@
                 <use href="./images/sprite.svg#icon-minus"></use>
               </svg>
             </button>
-            <span class="quantity-block__text quantity-block__value">1</span>
+            <span class="quantity-block__text quantity-block__value service-quantity">1</span>
             
             <button type="button" class="control-quantity-btn">
               <svg
@@ -339,7 +339,7 @@
               <span class="checkbox-custom checkbox-custom--service"></span>
               <span class="service-element__text"></span>Хімчистка дивану 3х -&nbsp; <span class="service-element__accent">129,99zł</span></span>
             </label>
-            <div class="data-order__wrap data-order__wrap--service">
+            <div class="data-order__wrap wrap--service isHidden">
               <div class="data-order__quantity-block">
             <button
               type="button"
@@ -354,7 +354,7 @@
                 <use href="./images/sprite.svg#icon-minus"></use>
               </svg>
             </button>
-            <span class="quantity-block__text quantity-block__value">1</span>
+            <span class="quantity-block__text quantity-block__value service-quantity">1</span>
             
             <button type="button" class="control-quantity-btn">
               <svg
@@ -379,7 +379,7 @@
               <span class="checkbox-custom checkbox-custom--service"></span>
               <span class="service-element__text"></span>Хімчистка дивану 4х -&nbsp; <span class="service-element__accent">149,99zł</span></span>
             </label>
-            <div class="data-order__wrap data-order__wrap--service">
+            <div class="data-order__wrap wrap--service isHidden">
               <div class="data-order__quantity-block">
             <button
               type="button"
@@ -394,7 +394,7 @@
                 <use href="./images/sprite.svg#icon-minus"></use>
               </svg>
             </button>
-            <span class="quantity-block__text quantity-block__value">1</span>
+            <span class="quantity-block__text quantity-block__value service-quantity">1</span>
             
             <button type="button" class="control-quantity-btn">
               <svg
@@ -444,13 +444,13 @@
         </div>
         <ul class="table__data">
           <li class="table__item table__block">
-            <span>Площа: 1 м²</span>
-            <span id="squareValue" class="service-value">2zł</span>
+            <span>Площа: <span class="square-value">1</span> м²</span>
+            <span  class="service-value"><span id="squareValue">2</span>zł</span>
           </li>
-          <li class="table__item table__block">
-            <span>Миття вікон (стандартні)</span>
+          <!-- <li class="table__item table__block" id="windowStandard">
+            <span class="item__name">Миття вікон (стандартні)&nbsp;<span class="item__quantity">x1</span></span>
             <span id="windowStandard" class="service-value">35zł</span>
-          </li>
+          </li> -->
         </ul>
         <div class="table__sum table__block">
           <span>Вартість</span>
