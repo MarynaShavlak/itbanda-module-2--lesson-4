@@ -26,16 +26,16 @@ serviceCheckboxList.forEach(el => {
 });
 
 const itemQuantities = {
-  square: 1,
-  windowsStandard: 1,
-  windowsLarge: 1,
-  microWave: 1,
-  refrigerator: 1,
-  plate: 1,
-  officeChair: 1,
-  sofaDry2x: 1,
-  sofaDry3x: 1,
-  sofaDry4x: 1,
+  square: { quantity: 1, price: 2 },
+  windowsStandard: { quantity: 1, price: 35 },
+  windowsLarge: { quantity: 1, price: 40 },
+  microWave: { quantity: 1, price: 15 },
+  refrigerator: { quantity: 1, price: 40 },
+  plate: { quantity: 1, price: 35 },
+  officeChair: { quantity: 1, price: 20 },
+  sofaDry2x: { quantity: 1, price: 109.99 },
+  sofaDry3x: { quantity: 1, price: 129.99 },
+  sofaDry4x: { quantity: 1, price: 149.99 },
 };
 
 function onBuldingTypeBtnClick(e) {
@@ -67,8 +67,7 @@ function updateServiceItemInterface(serviceName) {
   const totalItemQntEl = document.querySelector(
     `[data-service="${serviceName}"]`
   );
-  itemQntEl.textContent = itemQuantities[serviceName];
-  totalItemQntEl.textContent = itemQuantities[serviceName];
+  itemQntEl.textContent = itemQuantities[serviceName].quantity;
 }
 
 function onChangeSquareBtnClick(e) {
@@ -90,10 +89,10 @@ function changeSquareValue(operation) {
 
 function changeServiceItemValue(itemName, operation) {
   if (operation === 'plus') {
-    itemQuantities[itemName] += 1;
+    itemQuantities[itemName].quantity += 1;
   } else if (operation === 'minus') {
-    if (itemQuantities[itemName] === 1) return;
-    itemQuantities[itemName] -= 1;
+    if (itemQuantities[itemName].quantity === 1) return;
+    itemQuantities[itemName].quantity -= 1;
   }
 }
 
@@ -115,6 +114,7 @@ function onChangeQuantityBtnClick(e) {
   const operationType = getClickedBtnType(e);
   changeServiceItemValue(serviceName, operationType);
   updateServiceItemInterface(serviceName);
+  updateServiceItemTotalCost(serviceName);
   // updateMinusBtnStyle();
 }
 
@@ -132,6 +132,19 @@ function updateMinusBtnStyle() {
 function updateSquareTotalCost() {
   const totalSquareCostEl = document.querySelector('#squareValue');
   totalSquareCostEl.textContent = `${2 * itemQuantities.square}`;
+}
+
+function updateServiceItemTotalCost(serviceName) {
+  const totalServiceItemCost = document.querySelector(
+    `[data-service="${serviceName}"]`
+  );
+  const totalServiceItemQuantity = document.querySelector(
+    `#${serviceName} .service-quantity`
+  );
+  totalServiceItemCost.textContent = `${
+    itemQuantities[serviceName].price * itemQuantities[serviceName].quantity
+  }zł`;
+  totalServiceItemQuantity.textContent = itemQuantities[serviceName].quantity;
 }
 
 function toggleServiceItem(e) {
@@ -162,7 +175,6 @@ function attachQuantityButtonListeners(controlQuantityBlock) {
 }
 
 function updateTotalCostTable(isServiceChosen, item) {
-  console.log('item: ', item);
   const itemId = item.id;
   const tableElementsList = totalCostTableElement.querySelectorAll('li');
   const chosenItem = [...tableElementsList].find(el => el.id === itemId);
@@ -195,12 +207,13 @@ function createServiceItem(element) {
   const spaceTextNode = document.createTextNode('\u00A0 x');
   const quantitySpan = createSpan(
     'item__quantity service-quantity',
-    itemQuantities[serviceID]
+    itemQuantities[serviceID].quantity
   );
-  quantitySpan.setAttribute('data-service', serviceID);
-  quantitySpan.textContent = itemQuantities[serviceID];
+
+  quantitySpan.textContent = itemQuantities[serviceID].quantity;
   appendChildNodes(nameSpan, [spaceTextNode, quantitySpan]);
   const valueSpan = createSpan('service-value', `${servicePrice}zł`);
+  valueSpan.setAttribute('data-service', serviceID);
   appendChildNodes(listItem, [nameSpan, valueSpan]);
   return listItem;
 }
