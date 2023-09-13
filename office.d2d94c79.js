@@ -1,2 +1,0 @@
-!function(){var n=document.querySelectorAll(".buildings__element");n.forEach((function(e){e.addEventListener("click",(function(e){!function(e){var t=e.target;t.classList.contains("buildings__element--current")||n.forEach((function(n){n===t?(n.id,n.classList.add("buildings__element--current")):n.classList.remove("buildings__element--current")}))}(e)}))}))}();
-//# sourceMappingURL=office.d2d94c79.js.map

@@ -1,2 +1,0 @@
-document.addEventListener("DOMContentLoaded",(function(){const n=window.location.pathname;console.log("currentPage: ",n);const e=document.querySelector(".modal-btn");console.log("buttonToHide: ",e),"/"===n||"/index.html"===n?document.querySelector(".nav__link ").classList.add("nav__link--current"):"/office.html"===n&&(document.querySelector(".nav__list .nav__item:nth-child(2) .nav__link").classList.add("nav__link--current"),e.style.display="none")}));
-//# sourceMappingURL=office.b71bf203.js.map
