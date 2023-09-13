@@ -378,3 +378,44 @@
  .data-order__wrap--service {
   display: none;
  }
+
+
+.data-order__btn-list {
+  display: flex;
+  margin-top: 24px;
+  gap: 16px;
+    @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+    margin-bottom: 40px;
+    @media screen and (min-width: 768px) {
+      gap:10px;
+    }
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 51px;
+      gap:13px;
+    }
+  }
+
+
+    #take-keys-btn, #give-keys-btn {
+      background-image: url('../images/office-page/keys.png');
+      background-size: 50px 50px;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      padding-left: 92px;
+      max-width: 312px;
+      text-align: left;
+    }
+  
+    // #cash-payment-btn {
+    //   background-image: url('../images/subscr-modal/currency.png');
+    //   background-size: 61px 50px;
+    //   padding-top: 30.5px;
+    //   padding-bottom: 30.5px;
+    //   padding-left: 89px;
+  
+    //   @media screen and (min-width: 768px) {
+    //     max-width: 200px;
+    //   }
+    // }

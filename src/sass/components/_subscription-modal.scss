@@ -363,7 +363,7 @@
   margin-bottom: 48px;
  }
 
-.payment__button {
+.option-button {
     width: 100%;
     background-position: left 26px top 18px;
     background-repeat: no-repeat;
@@ -372,7 +372,6 @@
     @media screen and (max-width: 767px) {
       font-size: 16px;
     }
-  
 }
 
 
@@ -383,8 +382,8 @@
     padding-bottom: 18px;
     padding-left: 100px;
     max-width: 312px; 
-
  }
+
  #cash-payment-btn {
     background-image: url('../images/subscr-modal/currency.png');
     background-size: 61px 50px;
