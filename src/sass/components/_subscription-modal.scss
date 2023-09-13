@@ -275,7 +275,7 @@
  }
 
 
- .form__checkbox {
+ .checkbox {
    position: absolute;
    width: 1px;
    height: 1px;
@@ -303,7 +303,7 @@
   }
 }
 
- .form__checkbox-custom {
+ .checkbox-custom {
   position: relative;
   display: block;
   width: 24px;
@@ -320,8 +320,8 @@
   background-color: transparent;
   transition: background-color $cubic;
 
-   .form__checkbox:checked+& {
-     background-color: $light-accent-color;
+   .checkbox:checked+& {
+     background-color: $main-accent-color;
    }
  }
 
@@ -329,30 +329,27 @@
    opacity: 0;
    transition: opacity $cubic;
 
-   .form__checkbox:checked+.form__checkbox-custom & {
+   .checkbox:checked+.checkbox-custom & {
      opacity: 1;
    }
 
  }
 
- .form__checkbox-custom:before {
+ .checkbox-custom:before {
   position: absolute;
   top:50%;
   left: 50%;
-  transform: translate(-50%, -60%) rotate(45deg);
+  transform: translate(-40%, -60%) rotate(45deg);
   content:'';
   opacity: 0;
-  width: 7px;
-  height: 16px;
-  @media screen and (min-width: 768px) {
-      width: 10px;
-      height: 20px;
-  }
+  width: 8px;
+  height: 15px;
 
-  border-bottom: 4px solid $primary-black-color;
-  border-right: 4px solid $primary-black-color;
+
+  border-bottom: 2px solid $primary-white-color;
+  border-right: 2px solid $primary-white-color;
   transition: opacity $cubic;
-  .form__checkbox:checked+& {
+  .checkbox:checked+& {
       opacity: 1;
     }
  }

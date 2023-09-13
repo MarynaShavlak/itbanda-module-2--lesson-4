@@ -214,7 +214,7 @@
     margin-bottom: 30px;
   }
   @media screen and (min-width: 1440px) {
-    margin-bottom: 46px;
+    margin-bottom: 40px;
   }
 
 }
@@ -243,3 +243,138 @@
     background-color: $main-accent-color;
     color: $primary-white-color;
   }}
+
+.data-order__title {
+  margin: 0;
+}
+
+
+.data-order__wrap {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  
+}
+.data-order__wrap--square {
+  margin-top: 24px;
+  margin-bottom: 40px;
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 48px;
+  }
+}
+
+
+
+.data-order__quantity-block {
+  display: flex;
+  gap: 17px;
+  align-items: center;
+  padding: 5px;
+  border-radius: 50px;
+  border: 2px solid $main-accent-color;
+  font-weight: 700;
+}
+
+
+.control-quantity-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+
+    .icon--plus, .icon--minus {
+      width: 35px;
+      height: 35px;
+      }
+}
+
+.data-order__wrap--service {
+  margin-top: 12px;
+
+  .icon--plus,
+  .icon--minus {
+    width: 26px;
+    height: 26px;
+  @media screen and (min-width: 1440px) {
+    width: 31px;
+    height: 31px;
+  }
+
+
+  }
+}
+
+
+.data-order__text {
+  display: flex;
+  align-self: center;
+  margin-top: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+}
+
+
+
+.control-quantity-btn--minus svg {
+ fill: $border-input-color;
+}
+
+
+
+.quantity-block__text {
+   font-weight: 600;
+   line-height: 1.39;
+   font-size: 18px;
+}
+
+.data-order__add-services-list {
+  display: flex;
+  flex-direction: column;
+  gap:16px;
+  margin-top: 26px;
+  margin-bottom: 40px;
+    @media screen and (min-width: 768px) {
+        margin-top: 24px;
+    }
+    @media screen and (min-width: 1440px) {
+        margin-bottom: 48px;
+    }
+}
+
+ .service-element {
+   display: flex;
+   align-items: center;
+   font-size: 16px;
+   line-height: 1.38;
+   color: $primary-black-color;
+
+   @media screen and (min-width: 768px) {
+        font-size: 18px;
+        line-height: 1.39;
+   }
+ }
+
+ .service-element__accent {
+  font-weight: 700;
+ }
+
+ .checkbox-custom--service {
+    width: 26px;
+    height: 26px;
+    margin-right: 16px;
+    @media screen and (min-width: 768px) {
+      margin-right: 21px;
+    }
+    @media screen and (min-width: 1440px) {
+      margin-right: 16px;
+      width: 31px;
+      height: 31px;
+    }
+
+ }
+
+ .data-order__wrap--service {
+  display: none;
+ }

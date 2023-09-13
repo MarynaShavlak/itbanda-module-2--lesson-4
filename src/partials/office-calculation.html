@@ -5,7 +5,7 @@
     </h2>
     <div class="office-calc__wrap">
       <div class="form--subscription office-calc__block data-order">
-        <h4 class="form-title">Вид приміщення</h4>
+        <h4 class="form-title data-order__title">Вид приміщення</h4>
         <ul class="buildings">
           <li
             class="buildings__element buildings__element--current"
@@ -16,9 +16,404 @@
           <li class="buildings__element" id="building-2">Магазин</li>
           <li class="buildings__element" id="building-3">Ресторан</li>
         </ul>
-        <h4 class="form-title">Оберіть площу приміщення</h4>
-        <h4 class="form-title">Додаткові послуги</h4>
-        <h4 class="form-title">Доставимо ключі</h4>
+        <h4 class="form-title data-order__title">Оберіть площу приміщення</h4>
+        <div class="data-order__wrap data-order__wrap--square">
+          <div class="data-order__quantity-block">
+            <button
+              type="button"
+              class="control-quantity-btn control-quantity-btn--minus"
+            >
+              <svg
+                class="icon--minus"
+                width="35"
+                height="35"
+                aria-label=" Зменшити кількість квадратних метрів"
+              >
+                <use href="./images/sprite.svg#icon-minus"></use>
+              </svg>
+            </button>
+            <span class="quantity-block__text"
+              ><span class="quantity-block__value">1</span> м²</span
+            >
+            <button type="button" class="control-quantity-btn">
+              <svg
+                class="icon--plus"
+                width="35"
+                height="35"
+                aria-label="Збільшити кількість квадратних метрів"
+              >
+                <use href="./images/sprite.svg#icon-plus"></use>
+              </svg>
+            </button>
+          </div>
+          <span class="data-order__text">2zł за м²</span>
+        </div>
+        <h4 class="form-title data-order__title">Додаткові послуги</h4>
+        <ul class="data-order__add-services-list">
+          <li class="add-services-list__item">
+            <label class="service-element">
+              <input
+               class="checkbox"
+              type="checkbox"
+              />
+              <span class="checkbox-custom checkbox-custom--service"></span>
+              <span class="service-element__text"></span>Миття вікон (стандартні) -&nbsp; <span class="service-element__accent">35zł</span></span>
+            </label>
+            <div class="data-order__wrap data-order__wrap--service">
+              <div class="data-order__quantity-block">
+            <button
+              type="button"
+              class="control-quantity-btn control-quantity-btn--minus"
+            >
+              <svg
+                class="icon--minus"
+                width="35"
+                height="35"
+                aria-label=" Зменшити кількість "
+              >
+                <use href="./images/sprite.svg#icon-minus"></use>
+              </svg>
+            </button>
+            <span class="quantity-block__text quantity-block__value">1</span>
+            
+            <button type="button" class="control-quantity-btn">
+              <svg
+                class="icon--plus"
+                width="35"
+                height="35"
+                aria-label="Збільшити кількість"
+              >
+                <use href="./images/sprite.svg#icon-plus"></use>
+              </svg>
+            </button>
+              </div>
+              <span class="data-order__text">Кількість</span>
+            </div>
+          </li>
+          <li class="add-services-list__item">
+            <label class="service-element">
+              <input
+               class="checkbox"
+              type="checkbox"
+              />
+              <span class="checkbox-custom checkbox-custom--service"></span>
+              <span class="service-element__text"></span>Миття вікон (до підлоги) -&nbsp; <span class="service-element__accent">40zł</span></span>
+            </label>
+            <div class="data-order__wrap data-order__wrap--service">
+              <div class="data-order__quantity-block">
+            <button
+              type="button"
+              class="control-quantity-btn control-quantity-btn--minus"
+            >
+              <svg
+                class="icon--minus"
+                width="35"
+                height="35"
+                aria-label=" Зменшити кількість "
+              >
+                <use href="./images/sprite.svg#icon-minus"></use>
+              </svg>
+            </button>
+            <span class="quantity-block__text quantity-block__value">1</span>
+            
+            <button type="button" class="control-quantity-btn">
+              <svg
+                class="icon--plus"
+                width="35"
+                height="35"
+                aria-label="Збільшити кількість"
+              >
+                <use href="./images/sprite.svg#icon-plus"></use>
+              </svg>
+            </button>
+              </div>
+              <span class="data-order__text">Кількість</span>
+            </div>
+          </li>
+          <li class="add-services-list__item">
+            <label class="service-element">
+              <input
+               class="checkbox"
+              type="checkbox"
+              />
+              <span class="checkbox-custom checkbox-custom--service"></span>
+              <span class="service-element__text"></span>Мікрохвильовка  -&nbsp; <span class="service-element__accent">15zł</span></span>
+            </label>
+            <div class="data-order__wrap data-order__wrap--service">
+              <div class="data-order__quantity-block">
+            <button
+              type="button"
+              class="control-quantity-btn control-quantity-btn--minus"
+            >
+              <svg
+                class="icon--minus"
+                width="35"
+                height="35"
+                aria-label=" Зменшити кількість "
+              >
+                <use href="./images/sprite.svg#icon-minus"></use>
+              </svg>
+            </button>
+            <span class="quantity-block__text quantity-block__value">1</span>
+            
+            <button type="button" class="control-quantity-btn">
+              <svg
+                class="icon--plus"
+                width="35"
+                height="35"
+                aria-label="Збільшити кількість"
+              >
+                <use href="./images/sprite.svg#icon-plus"></use>
+              </svg>
+            </button>
+              </div>
+              <span class="data-order__text">Кількість</span>
+            </div>
+          </li>
+          <li class="add-services-list__item">
+            <label class="service-element">
+              <input
+               class="checkbox"
+              type="checkbox"
+              />
+              <span class="checkbox-custom checkbox-custom--service"></span>
+              <span class="service-element__text"></span>Холодильник -&nbsp; <span class="service-element__accent">40zł</span></span>
+            </label>
+            <div class="data-order__wrap data-order__wrap--service">
+              <div class="data-order__quantity-block">
+            <button
+              type="button"
+              class="control-quantity-btn control-quantity-btn--minus"
+            >
+              <svg
+                class="icon--minus"
+                width="35"
+                height="35"
+                aria-label=" Зменшити кількість "
+              >
+                <use href="./images/sprite.svg#icon-minus"></use>
+              </svg>
+            </button>
+            <span class="quantity-block__text quantity-block__value">1</span>
+            
+            <button type="button" class="control-quantity-btn">
+              <svg
+                class="icon--plus"
+                width="35"
+                height="35"
+                aria-label="Збільшити кількість"
+              >
+                <use href="./images/sprite.svg#icon-plus"></use>
+              </svg>
+            </button>
+              </div>
+              <span class="data-order__text">Кількість</span>
+            </div>
+          </li>
+          <li class="add-services-list__item">
+            <label class="service-element">
+              <input
+               class="checkbox"
+              type="checkbox"
+              />
+              <span class="checkbox-custom checkbox-custom--service"></span>
+              <span class="service-element__text"></span>Плита -&nbsp; <span class="service-element__accent">35zł</span></span>
+            </label>
+            <div class="data-order__wrap data-order__wrap--service">
+              <div class="data-order__quantity-block">
+            <button
+              type="button"
+              class="control-quantity-btn control-quantity-btn--minus"
+            >
+              <svg
+                class="icon--minus"
+                width="35"
+                height="35"
+                aria-label=" Зменшити кількість "
+              >
+                <use href="./images/sprite.svg#icon-minus"></use>
+              </svg>
+            </button>
+            <span class="quantity-block__text quantity-block__value">1</span>
+            
+            <button type="button" class="control-quantity-btn">
+              <svg
+                class="icon--plus"
+                width="35"
+                height="35"
+                aria-label="Збільшити кількість"
+              >
+                <use href="./images/sprite.svg#icon-plus"></use>
+              </svg>
+            </button>
+              </div>
+              <span class="data-order__text">Кількість</span>
+            </div>
+          </li>
+          <li class="add-services-list__item">
+            <label class="service-element">
+              <input
+               class="checkbox"
+              type="checkbox"
+              />
+              <span class="checkbox-custom checkbox-custom--service"></span>
+              <span class="service-element__text"></span>Хімчистка офісних стільців -&nbsp; <span class="service-element__accent">20zł</span></span>
+            </label>
+            <div class="data-order__wrap data-order__wrap--service">
+              <div class="data-order__quantity-block">
+            <button
+              type="button"
+              class="control-quantity-btn control-quantity-btn--minus"
+            >
+              <svg
+                class="icon--minus"
+                width="35"
+                height="35"
+                aria-label=" Зменшити кількість "
+              >
+                <use href="./images/sprite.svg#icon-minus"></use>
+              </svg>
+            </button>
+            <span class="quantity-block__text quantity-block__value">1</span>
+            
+            <button type="button" class="control-quantity-btn">
+              <svg
+                class="icon--plus"
+                width="35"
+                height="35"
+                aria-label="Збільшити кількість"
+              >
+                <use href="./images/sprite.svg#icon-plus"></use>
+              </svg>
+            </button>
+              </div>
+              <span class="data-order__text">Кількість</span>
+            </div>
+          </li>
+          <li class="add-services-list__item">
+            <label class="service-element">
+              <input
+               class="checkbox"
+              type="checkbox"
+              />
+              <span class="checkbox-custom checkbox-custom--service"></span>
+              <span class="service-element__text"></span>Хімчистка дивану 2х -&nbsp; <span class="service-element__accent">109,99zł</span></span>
+            </label>
+            <div class="data-order__wrap data-order__wrap--service">
+              <div class="data-order__quantity-block">
+            <button
+              type="button"
+              class="control-quantity-btn control-quantity-btn--minus"
+            >
+              <svg
+                class="icon--minus"
+                width="35"
+                height="35"
+                aria-label=" Зменшити кількість "
+              >
+                <use href="./images/sprite.svg#icon-minus"></use>
+              </svg>
+            </button>
+            <span class="quantity-block__text quantity-block__value">1</span>
+            
+            <button type="button" class="control-quantity-btn">
+              <svg
+                class="icon--plus"
+                width="35"
+                height="35"
+                aria-label="Збільшити кількість"
+              >
+                <use href="./images/sprite.svg#icon-plus"></use>
+              </svg>
+            </button>
+              </div>
+              <span class="data-order__text">Кількість</span>
+            </div>
+          </li>
+          <li class="add-services-list__item">
+            <label class="service-element">
+              <input
+               class="checkbox"
+              type="checkbox"
+              />
+              <span class="checkbox-custom checkbox-custom--service"></span>
+              <span class="service-element__text"></span>Хімчистка дивану 3х -&nbsp; <span class="service-element__accent">129,99zł</span></span>
+            </label>
+            <div class="data-order__wrap data-order__wrap--service">
+              <div class="data-order__quantity-block">
+            <button
+              type="button"
+              class="control-quantity-btn control-quantity-btn--minus"
+            >
+              <svg
+                class="icon--minus"
+                width="35"
+                height="35"
+                aria-label=" Зменшити кількість "
+              >
+                <use href="./images/sprite.svg#icon-minus"></use>
+              </svg>
+            </button>
+            <span class="quantity-block__text quantity-block__value">1</span>
+            
+            <button type="button" class="control-quantity-btn">
+              <svg
+                class="icon--plus"
+                width="35"
+                height="35"
+                aria-label="Збільшити кількість"
+              >
+                <use href="./images/sprite.svg#icon-plus"></use>
+              </svg>
+            </button>
+              </div>
+              <span class="data-order__text">Кількість</span>
+            </div>
+          </li>
+          <li class="add-services-list__item">
+            <label class="service-element">
+              <input
+               class="checkbox"
+              type="checkbox"
+              />
+              <span class="checkbox-custom checkbox-custom--service"></span>
+              <span class="service-element__text"></span>Хімчистка дивану 4х -&nbsp; <span class="service-element__accent">149,99zł</span></span>
+            </label>
+            <div class="data-order__wrap data-order__wrap--service">
+              <div class="data-order__quantity-block">
+            <button
+              type="button"
+              class="control-quantity-btn control-quantity-btn--minus"
+            >
+              <svg
+                class="icon--minus"
+                width="35"
+                height="35"
+                aria-label=" Зменшити кількість "
+              >
+                <use href="./images/sprite.svg#icon-minus"></use>
+              </svg>
+            </button>
+            <span class="quantity-block__text quantity-block__value">1</span>
+            
+            <button type="button" class="control-quantity-btn">
+              <svg
+                class="icon--plus"
+                width="35"
+                height="35"
+                aria-label="Збільшити кількість"
+              >
+                <use href="./images/sprite.svg#icon-plus"></use>
+              </svg>
+            </button>
+              </div>
+              <span class="data-order__text">Кількість</span>
+            </div>
+          </li>
+        </ul>
+
+        
+        <h4 class="form-title data-order__title">Доставимо ключі</h4>
 
         <include src="./partials/order-form.html"></include>
       </div>
