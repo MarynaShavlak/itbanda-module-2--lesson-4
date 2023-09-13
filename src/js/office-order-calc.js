@@ -64,7 +64,11 @@ function updateServiceItemInterface(serviceName) {
   const itemQntEl = label.nextElementSibling.querySelector(
     `[data-name="${serviceName}"]`
   );
+  const totalItemQntEl = document.querySelector(
+    `[data-service="${serviceName}"]`
+  );
   itemQntEl.textContent = itemQuantities[serviceName];
+  totalItemQntEl.textContent = itemQuantities[serviceName];
 }
 
 function onChangeSquareBtnClick(e) {
@@ -72,7 +76,7 @@ function onChangeSquareBtnClick(e) {
   changeSquareValue(operationType);
   updateSquareInterfaceValue();
   updateSquareTotalCost();
-  updateMinusBtnStyle();
+  // updateMinusBtnStyle();
 }
 
 function changeSquareValue(operation) {
@@ -134,7 +138,18 @@ function toggleServiceItem(e) {
   const el = e.currentTarget;
   const label = el.closest('label');
   const controlQuantityBlock = label.nextElementSibling;
-  controlQuantityBlock.classList.toggle(`isHidden`, !el.checked);
+  const isServiceChosen = el.checked;
+  toggleControlQuantityBlock(controlQuantityBlock, isServiceChosen);
+  attachQuantityButtonListeners(controlQuantityBlock);
+  const serviceItem = createServiceItem(label);
+  updateTotalCostTable(isServiceChosen, serviceItem);
+}
+
+function toggleControlQuantityBlock(controlQuantityBlock, isVisible) {
+  controlQuantityBlock.classList.toggle('isHidden', !isVisible);
+}
+
+function attachQuantityButtonListeners(controlQuantityBlock) {
   const increaseQuantityBtn = controlQuantityBlock.querySelector(
     '.control-quantity-btn--plus'
   );
@@ -144,10 +159,25 @@ function toggleServiceItem(e) {
 
   increaseQuantityBtn.addEventListener('click', onChangeQuantityBtnClick);
   decreaseQuantityBtn.addEventListener('click', onChangeQuantityBtnClick);
+}
 
-  const serviceItem = createServiceItem(label);
-  const isServiceChosen = el.checked;
-  updateTotalCostTable(isServiceChosen, serviceItem);
+function updateTotalCostTable(isServiceChosen, item) {
+  console.log('item: ', item);
+  const itemId = item.id;
+  const tableElementsList = totalCostTableElement.querySelectorAll('li');
+  const chosenItem = [...tableElementsList].find(el => el.id === itemId);
+  if (isServiceChosen && !chosenItem) {
+    totalCostTableElement.insertAdjacentElement('beforeend', item);
+  } else if (!isServiceChosen && chosenItem) {
+    totalCostTableElement.removeChild(chosenItem);
+  }
+}
+
+function createSpan(className, textContent) {
+  const span = document.createElement('span');
+  span.className = className;
+  span.textContent = textContent;
+  return span;
 }
 
 function createServiceItem(element) {
@@ -159,34 +189,24 @@ function createServiceItem(element) {
     .getAttribute('data-value');
   const serviceID = element.getAttribute('data-id');
   const listItem = document.createElement('li');
-  listItem.className = 'table__item table__block';
-  const nameSpan = document.createElement('span');
-  nameSpan.className = 'item__name';
-  nameSpan.textContent = `${serviceName}`;
-  const spaceTextNode = document.createTextNode('\u00A0 x');
-  const quantitySpan = document.createElement('span');
-  quantitySpan.className = 'item__quantity service-quantity';
-  quantitySpan.textContent = '1';
-  nameSpan.appendChild(spaceTextNode);
-  nameSpan.appendChild(quantitySpan);
-  const valueSpan = document.createElement('span');
-
-  valueSpan.className = 'service-value';
-  valueSpan.textContent = `${servicePrice}zł`;
-  listItem.appendChild(nameSpan);
-  listItem.appendChild(valueSpan);
   listItem.id = serviceID;
-
+  listItem.className = 'table__item table__block';
+  const nameSpan = createSpan('item__name', `${serviceName}`);
+  const spaceTextNode = document.createTextNode('\u00A0 x');
+  const quantitySpan = createSpan(
+    'item__quantity service-quantity',
+    itemQuantities[serviceID]
+  );
+  quantitySpan.setAttribute('data-service', serviceID);
+  quantitySpan.textContent = itemQuantities[serviceID];
+  appendChildNodes(nameSpan, [spaceTextNode, quantitySpan]);
+  const valueSpan = createSpan('service-value', `${servicePrice}zł`);
+  appendChildNodes(listItem, [nameSpan, valueSpan]);
   return listItem;
 }
 
-function updateTotalCostTable(isServiceChosen, item) {
-  const itemId = item.id;
-  const tableElementsList = totalCostTableElement.querySelectorAll('li');
-  const chosenItem = [...tableElementsList].find(el => el.id === itemId);
-  if (isServiceChosen && !chosenItem) {
-    totalCostTableElement.insertAdjacentElement('beforeend', item);
-  } else if (!isServiceChosen && chosenItem) {
-    totalCostTableElement.removeChild(chosenItem);
-  }
+function appendChildNodes(parent, children) {
+  children.forEach(child => {
+    parent.appendChild(child);
+  });
 }
