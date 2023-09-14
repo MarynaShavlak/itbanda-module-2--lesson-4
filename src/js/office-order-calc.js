@@ -38,6 +38,19 @@ const itemQuantities = {
   sofaDry4x: { quantity: 1, price: 149.99 },
 };
 
+const userOrderInfo = {
+  square: { quantity: 1, price: 2 },
+  windowsStandard: { quantity: 0, price: 35 },
+  windowsLarge: { quantity: 0, price: 40 },
+  microWave: { quantity: 0, price: 15 },
+  refrigerator: { quantity: 0, price: 40 },
+  plate: { quantity: 0, price: 35 },
+  officeChair: { quantity: 0, price: 20 },
+  sofaDry2x: { quantity: 0, price: 109.99 },
+  sofaDry3x: { quantity: 0, price: 129.99 },
+  sofaDry4x: { quantity: 0, price: 149.99 },
+};
+
 function onBuldingTypeBtnClick(e) {
   const clickedButton = e.target;
   if (clickedButton.classList.contains('buildings__element--current')) return;
@@ -64,9 +77,9 @@ function updateServiceItemInterface(serviceName) {
   const itemQntEl = label.nextElementSibling.querySelector(
     `[data-name="${serviceName}"]`
   );
-  const totalItemQntEl = document.querySelector(
-    `[data-service="${serviceName}"]`
-  );
+  // const totalItemQntEl = document.querySelector(
+  //   `[data-service="${serviceName}"]`
+  // );
   itemQntEl.textContent = itemQuantities[serviceName].quantity;
 }
 
@@ -87,7 +100,7 @@ function changeSquareValue(operation) {
   }
 }
 
-function changeServiceItemValue(itemName, operation) {
+function changeServiceQuantity(itemName, operation) {
   if (operation === 'plus') {
     itemQuantities[itemName].quantity += 1;
   } else if (operation === 'minus') {
@@ -96,25 +109,12 @@ function changeServiceItemValue(itemName, operation) {
   }
 }
 
-function getClickedBtnType(e) {
-  const type = e.currentTarget.getAttribute('data-type');
-  return type;
-}
-
-function getChosenServiceName(e) {
-  const chosenServiceName = e.currentTarget
-    .closest('.wrap--service')
-    .parentNode.querySelector('label')
-    .getAttribute('data-id');
-  return chosenServiceName;
-}
-
-function onChangeQuantityBtnClick(e) {
+function handleQuantityChange(e) {
   const serviceName = getChosenServiceName(e);
   const operationType = getClickedBtnType(e);
-  changeServiceItemValue(serviceName, operationType);
+  changeServiceQuantity(serviceName, operationType);
   updateServiceItemInterface(serviceName);
-  updateServiceItemTotalCost(serviceName);
+  updateTotalCostForService(serviceName);
   // updateMinusBtnStyle();
 }
 
@@ -134,17 +134,29 @@ function updateSquareTotalCost() {
   totalSquareCostEl.textContent = `${2 * itemQuantities.square}`;
 }
 
-function updateServiceItemTotalCost(serviceName) {
+function updateTotalCostForService(serviceName) {
   const totalServiceItemCost = document.querySelector(
     `[data-service="${serviceName}"]`
   );
   const totalServiceItemQuantity = document.querySelector(
     `#${serviceName} .service-quantity`
   );
-  totalServiceItemCost.textContent = `${
-    itemQuantities[serviceName].price * itemQuantities[serviceName].quantity
-  }zł`;
-  totalServiceItemQuantity.textContent = itemQuantities[serviceName].quantity;
+
+  const updatedQuantity = itemQuantities[serviceName].quantity;
+  console.log('updatedQuantity: ', updatedQuantity);
+  const price = itemQuantities[serviceName].price;
+  console.log('itemQuantities: ', itemQuantities);
+  console.log('userOrderInfo: ', userOrderInfo);
+  if (totalServiceItemCost && totalServiceItemQuantity) {
+    totalServiceItemCost.textContent = `${updatedQuantity * price}zł`;
+    totalServiceItemQuantity.textContent = updatedQuantity;
+    userOrderInfo[serviceName].quantity = updatedQuantity;
+    userOrderInfo[serviceName].price = price;
+  } else {
+    userOrderInfo[serviceName].quantity = 0;
+    userOrderInfo[serviceName].price = price;
+  }
+  calculateTotalOrderCost();
 }
 
 function toggleServiceItem(e) {
@@ -155,7 +167,10 @@ function toggleServiceItem(e) {
   toggleControlQuantityBlock(controlQuantityBlock, isServiceChosen);
   attachQuantityButtonListeners(controlQuantityBlock);
   const serviceItem = createServiceItem(label);
-  updateTotalCostTable(isServiceChosen, serviceItem);
+  const serviceName = label.getAttribute('data-id');
+  updateTotalServicesTable(isServiceChosen, serviceItem);
+  updateTotalCostForService(serviceName);
+  calculateTotalOrderCost();
 }
 
 function toggleControlQuantityBlock(controlQuantityBlock, isVisible) {
@@ -170,19 +185,40 @@ function attachQuantityButtonListeners(controlQuantityBlock) {
     '.control-quantity-btn--minus'
   );
 
-  increaseQuantityBtn.addEventListener('click', onChangeQuantityBtnClick);
-  decreaseQuantityBtn.addEventListener('click', onChangeQuantityBtnClick);
+  increaseQuantityBtn.addEventListener('click', handleQuantityChange);
+  decreaseQuantityBtn.addEventListener('click', handleQuantityChange);
 }
 
-function updateTotalCostTable(isServiceChosen, item) {
+function updateTotalServicesTable(isServiceChosen, item) {
   const itemId = item.id;
   const tableElementsList = totalCostTableElement.querySelectorAll('li');
   const chosenItem = [...tableElementsList].find(el => el.id === itemId);
   if (isServiceChosen && !chosenItem) {
     totalCostTableElement.insertAdjacentElement('beforeend', item);
+    const updatedQuantity = itemQuantities[itemId].quantity;
+    const price = itemQuantities[itemId].price;
+    userOrderInfo[itemId].quantity = updatedQuantity;
+    userOrderInfo[itemId].price = price;
   } else if (!isServiceChosen && chosenItem) {
+    const updatedQuantity = 0;
+    const price = itemQuantities[itemId].price;
+    userOrderInfo[itemId].quantity = updatedQuantity;
+    userOrderInfo[itemId].price = price;
     totalCostTableElement.removeChild(chosenItem);
   }
+}
+
+function calculateTotalOrderCost() {
+  const totalOrderCost = Object.keys(userOrderInfo).reduce(
+    (acc, propertyName) => {
+      const property = userOrderInfo[propertyName];
+      return acc + property.quantity * property.price;
+    },
+    0
+  );
+  const totalOrderCostEl = document.querySelector('.total-order-value');
+  totalOrderCostEl.textContent = `${totalOrderCost}zł`;
+  console.log('totalOrderCost: ', totalOrderCost);
 }
 
 function createSpan(className, textContent) {
@@ -222,4 +258,17 @@ function appendChildNodes(parent, children) {
   children.forEach(child => {
     parent.appendChild(child);
   });
+}
+
+function getClickedBtnType(e) {
+  const type = e.currentTarget.getAttribute('data-type');
+  return type;
+}
+
+function getChosenServiceName(e) {
+  const chosenServiceName = e.currentTarget
+    .closest('.wrap--service')
+    .parentNode.querySelector('label')
+    .getAttribute('data-id');
+  return chosenServiceName;
 }
