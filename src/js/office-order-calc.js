@@ -9,9 +9,20 @@ const serviceCheckboxList = document.querySelectorAll(
   '.service-element .checkbox'
 );
 const totalCostTableElement = document.querySelector('.table__data');
+const takeKeysBtn = document.querySelector('#take-keys-btn');
+const giveKeysBtn = document.querySelector('#give-keys-btn');
+const keysAddressBlock = document.querySelector('.keys-address-block');
+const addressTakeBlock = document.querySelector(
+  '.keys-address-block__take-item'
+);
+const addressGiveBlock = document.querySelector(
+  '.keys-address-block__give-item'
+);
 
 increaseSquareBtn.addEventListener('click', handleSquareQuantityChange);
 decreaseSquareBtn.addEventListener('click', handleSquareQuantityChange);
+takeKeysBtn.addEventListener('click', handleKeyBtn);
+giveKeysBtn.addEventListener('click', handleKeyBtn);
 buildingsBtnList.forEach(el => {
   el.addEventListener('click', e => {
     onBuldingTypeBtnClick(e);
@@ -89,6 +100,7 @@ function changeOrderItemQuantity(e) {
 }
 
 function handleServiceQuantityChange(e) {
+  const serviceName = getChosenServiceName(e);
   changeOrderItemQuantity(e);
   updateTotalCostForService(serviceName);
   calculateTotalOrderCost();
@@ -279,5 +291,34 @@ function updateMinusBtnStyle(serviceName) {
     decreaseSquareIcon.style.fill = 'rgba(	77, 18, 153, 0.3)';
   } else {
     decreaseSquareIcon.style.fill = '#4D1299';
+  }
+}
+
+function handleKeyBtn(e) {
+  const btn = e.currentTarget;
+  btn.classList.toggle('active');
+  const addressType = btn.id;
+  toggleAddressItem(addressType);
+  toggleKeysAddressBlock();
+}
+
+function toggleAddressItem(addressType) {
+  if (addressType === 'take-keys-btn') {
+    addressTakeBlock.classList.toggle('isHidden');
+  } else {
+    addressGiveBlock.classList.toggle('isHidden');
+  }
+}
+
+function toggleKeysAddressBlock() {
+  const isAddressTakeBlockHidden =
+    addressTakeBlock.classList.contains('isHidden');
+  const isAddressGiveBlockHidden =
+    addressGiveBlock.classList.contains('isHidden');
+
+  if (isAddressTakeBlockHidden && isAddressGiveBlockHidden) {
+    keysAddressBlock.classList.add('isHidden');
+  } else {
+    keysAddressBlock.classList.remove('isHidden');
   }
 }

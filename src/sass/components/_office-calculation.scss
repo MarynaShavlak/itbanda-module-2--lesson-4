@@ -401,18 +401,16 @@
     @media screen and (max-width: 767px) {
     flex-direction: column;
   }
-    margin-bottom: 40px;
     @media screen and (min-width: 768px) {
       gap:10px;
     }
     @media screen and (min-width: 1440px) {
-      margin-bottom: 51px;
       gap:13px;
     }
   }
 
 
-    #take-keys-btn, #give-keys-btn {
+    .key-btn {
       background-image: url('../images/office-page/keys.png');
       background-size: 50px 50px;
       padding-top: 18px;
@@ -420,8 +418,36 @@
       padding-left: 92px;
       max-width: 312px;
       text-align: left;
+      background-color: transparent;
     }
   
+#take-keys-btn.active,
+#give-keys-btn.active {
+ background-color: $main-accent-color;
+ color: $primary-white-color;
+}
+
+
+
 .wrap--service.isHidden {
+  display: none;
+}
+
+.keys-address-block {
+ margin-top: 24px;
+  @media screen and (min-width: 1440px) {
+    margin-top: 36px;
+  }
+
+}
+
+.keys-address-block__take-item.isHidden {
+  display: none;
+}
+.keys-address-block__give-item.isHidden {
+  display: none;
+}
+
+.keys-address-block.isHidden {
   display: none;
 }

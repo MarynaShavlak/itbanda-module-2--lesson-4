@@ -392,7 +392,7 @@
                 class="icon--minus"
                 width="35"
                 height="35"
-                aria-label=" Зменшити кількість "
+                aria-label="Зменшити кількість "
               >
                 <use href="./images/sprite.svg#icon-minus"></use>
               </svg>
@@ -420,7 +420,7 @@
         <ul class="data-order__btn-list">
           <li>
             <button
-              class="option-button btn btn--light"
+              class="option-button btn btn--light key-btn"
               type="button"
               id="take-keys-btn"
             >
@@ -429,7 +429,7 @@
           </li>
           <li>
             <button
-              class="option-button btn btn--light"
+              class="option-button btn btn--light key-btn"
               type="button"
               id="give-keys-btn"
             > 
@@ -438,7 +438,46 @@
           </li>
         </ul>
 
-        <include src="./partials/order-form.html"></include>
+        <ul class="form__user-info list keys-address-block isHidden">
+          <li class="form__item keys-address-block__take-item isHidden">
+            <span class="form__wrap">
+            <input
+              class="form__input form__input--long-placeholder form__input--location"
+              type="text"
+              name="modalUserLocation"
+              id="location-input"
+              placeholder="Де забрати ключі?"
+            />
+            <svg
+              class="form__icon icon form__icon--vertical-centered"
+              width="24"
+              height="24"
+            >
+              <use href="./images/sprite.svg#icon-location"></use>
+            </svg>
+            </span>
+          </li>
+          <li class="form__item keys-address-block__give-item isHidden">
+            <span class="form__wrap">
+              <input
+                class="form__input form__input--long-placeholder form__input--location"
+                type="text"
+                name="modalUserLocation"
+                id="location-input"
+                placeholder="Куди доставити ключі?"
+              />
+              <svg
+                class="form__icon icon form__icon--vertical-centered"
+                width="24"
+                height="24"
+              >
+                <use href="./images/sprite.svg#icon-location"></use>
+              </svg>
+            </span>
+          </li>
+        </ul>
+        
+      <include src="./partials/order-form.html"></include>
       </div>
       <div class="office-calc__block full-order-table">
         <div class="table__header table__block">
