@@ -5,14 +5,13 @@ const decreaseSquareBtn = document.querySelector(
 );
 
 const squareValueElementsList = document.querySelectorAll('.square-value');
-const servicesElementsList = document.querySelectorAll('.service-element');
 const serviceCheckboxList = document.querySelectorAll(
   '.service-element .checkbox'
 );
 const totalCostTableElement = document.querySelector('.table__data');
 
-increaseSquareBtn.addEventListener('click', onChangeSquareBtnClick);
-decreaseSquareBtn.addEventListener('click', onChangeSquareBtnClick);
+increaseSquareBtn.addEventListener('click', handleSquareQuantityChange);
+decreaseSquareBtn.addEventListener('click', handleSquareQuantityChange);
 buildingsBtnList.forEach(el => {
   el.addEventListener('click', e => {
     onBuldingTypeBtnClick(e);
@@ -25,7 +24,7 @@ serviceCheckboxList.forEach(el => {
   });
 });
 
-const itemQuantities = {
+const serviceInfo = {
   square: { quantity: 1, price: 2 },
   windowsStandard: { quantity: 1, price: 35 },
   windowsLarge: { quantity: 1, price: 40 },
@@ -51,112 +50,80 @@ const userOrderInfo = {
   sofaDry4x: { quantity: 0, price: 149.99 },
 };
 
-function onBuldingTypeBtnClick(e) {
-  const clickedButton = e.target;
-  if (clickedButton.classList.contains('buildings__element--current')) return;
-  buildingsBtnList.forEach(button => {
-    if (button === clickedButton) {
-      const id = button.id;
-      button.classList.add('buildings__element--current');
-    } else {
-      button.classList.remove('buildings__element--current');
-    }
-  });
-}
-
-function updateSquareInterfaceValue() {
-  squareValueElementsList.forEach(el => {
-    el.textContent = itemQuantities.square;
-  });
-}
-
 function updateServiceItemInterface(serviceName) {
+  const servicesElementsList = document.querySelectorAll('.service-element');
   const label = [...servicesElementsList].find(
     el => el.getAttribute('data-id') === serviceName
   );
-  const itemQntEl = label.nextElementSibling.querySelector(
+  const itemQntEl = label?.nextElementSibling.querySelector(
     `[data-name="${serviceName}"]`
   );
-  // const totalItemQntEl = document.querySelector(
-  //   `[data-service="${serviceName}"]`
-  // );
-  itemQntEl.textContent = itemQuantities[serviceName].quantity;
-}
-
-function onChangeSquareBtnClick(e) {
-  const operationType = getClickedBtnType(e);
-  changeSquareValue(operationType);
-  updateSquareInterfaceValue();
-  updateSquareTotalCost();
-  // updateMinusBtnStyle();
-}
-
-function changeSquareValue(operation) {
-  if (operation === 'plus') {
-    itemQuantities.square += 1;
-  } else if (operation === 'minus') {
-    if (itemQuantities.square === 1) return;
-    itemQuantities.square -= 1;
+  const squareEl = document
+    .querySelector('.wrap--square')
+    .querySelector(`[data-name="${serviceName}"]`);
+  if (itemQntEl) {
+    itemQntEl.textContent = serviceInfo[serviceName].quantity;
+  }
+  if (squareEl) {
+    squareEl.textContent = serviceInfo[serviceName].quantity;
+    const squareInTotal = document.querySelector('.square-value-total');
+    squareInTotal.textContent = serviceInfo[serviceName].quantity;
   }
 }
 
-function changeServiceQuantity(itemName, operation) {
+function updateQuantityData(itemName, operation) {
   if (operation === 'plus') {
-    itemQuantities[itemName].quantity += 1;
+    serviceInfo[itemName].quantity += 1;
   } else if (operation === 'minus') {
-    if (itemQuantities[itemName].quantity === 1) return;
-    itemQuantities[itemName].quantity -= 1;
+    if (serviceInfo[itemName].quantity === 1) return;
+    serviceInfo[itemName].quantity -= 1;
   }
 }
 
-function handleQuantityChange(e) {
+function changeOrderItemQuantity(e) {
   const serviceName = getChosenServiceName(e);
   const operationType = getClickedBtnType(e);
-  changeServiceQuantity(serviceName, operationType);
+  updateQuantityData(serviceName, operationType);
   updateServiceItemInterface(serviceName);
-  updateTotalCostForService(serviceName);
-  // updateMinusBtnStyle();
+  updateMinusBtnStyle(serviceName);
 }
 
-function updateMinusBtnStyle() {
-  const decreaseSquareIcon = document.querySelector(
-    '.control-quantity-btn--minus .icon--minus'
+function handleServiceQuantityChange(e) {
+  changeOrderItemQuantity(e);
+  updateTotalCostForService(serviceName);
+  calculateTotalOrderCost();
+}
+
+function handleSquareQuantityChange(e) {
+  changeOrderItemQuantity(e);
+  updateSquareTotalCost();
+  calculateTotalOrderCost();
+}
+
+function updateTotalCostForService(serviceName) {
+  const orderServiceTotalCost = document.querySelector(
+    `[data-service="${serviceName}"]`
   );
-  if (square === 1) {
-    decreaseSquareIcon.style.fill = 'rgba(	77, 18, 153, 0.3)';
+  const orderServiceTotalQuantity = document.querySelector(
+    `#${serviceName} .service-quantity`
+  );
+
+  const price = serviceInfo[serviceName].price;
+  if (orderServiceTotalCost && orderServiceTotalQuantity) {
+    const updatedQuantity = updateServiceQuantity(serviceName);
+    orderServiceTotalCost.textContent = `${updatedQuantity * price}zł`;
+    orderServiceTotalQuantity.textContent = updatedQuantity;
   } else {
-    decreaseSquareIcon.style.fill = '#4D1299';
+    updateServiceQuantity(serviceName, 0);
   }
 }
 
 function updateSquareTotalCost() {
-  const totalSquareCostEl = document.querySelector('#squareValue');
-  totalSquareCostEl.textContent = `${2 * itemQuantities.square}`;
-}
-
-function updateTotalCostForService(serviceName) {
-  const totalServiceItemCost = document.querySelector(
-    `[data-service="${serviceName}"]`
-  );
-  const totalServiceItemQuantity = document.querySelector(
-    `#${serviceName} .service-quantity`
-  );
-
-  const updatedQuantity = itemQuantities[serviceName].quantity;
-  console.log('updatedQuantity: ', updatedQuantity);
-  const price = itemQuantities[serviceName].price;
-  console.log('itemQuantities: ', itemQuantities);
-  console.log('userOrderInfo: ', userOrderInfo);
-  if (totalServiceItemCost && totalServiceItemQuantity) {
-    totalServiceItemCost.textContent = `${updatedQuantity * price}zł`;
-    totalServiceItemQuantity.textContent = updatedQuantity;
-    userOrderInfo[serviceName].quantity = updatedQuantity;
-    userOrderInfo[serviceName].price = price;
-  } else {
-    userOrderInfo[serviceName].quantity = 0;
-    userOrderInfo[serviceName].price = price;
-  }
-  calculateTotalOrderCost();
+  const totalSquareCostEl = document.querySelector(`[data-service="square"]`);
+  userOrderInfo.square.quantity = serviceInfo.square.quantity;
+  totalSquareCostEl.textContent = `${
+    userOrderInfo.square.quantity * userOrderInfo.square.price
+  }zł`;
 }
 
 function toggleServiceItem(e) {
@@ -185,27 +152,27 @@ function attachQuantityButtonListeners(controlQuantityBlock) {
     '.control-quantity-btn--minus'
   );
 
-  increaseQuantityBtn.addEventListener('click', handleQuantityChange);
-  decreaseQuantityBtn.addEventListener('click', handleQuantityChange);
+  increaseQuantityBtn.addEventListener('click', handleServiceQuantityChange);
+  decreaseQuantityBtn.addEventListener('click', handleServiceQuantityChange);
 }
 
 function updateTotalServicesTable(isServiceChosen, item) {
-  const itemId = item.id;
-  const tableElementsList = totalCostTableElement.querySelectorAll('li');
-  const chosenItem = [...tableElementsList].find(el => el.id === itemId);
-  if (isServiceChosen && !chosenItem) {
-    totalCostTableElement.insertAdjacentElement('beforeend', item);
-    const updatedQuantity = itemQuantities[itemId].quantity;
-    const price = itemQuantities[itemId].price;
-    userOrderInfo[itemId].quantity = updatedQuantity;
-    userOrderInfo[itemId].price = price;
-  } else if (!isServiceChosen && chosenItem) {
-    const updatedQuantity = 0;
-    const price = itemQuantities[itemId].price;
-    userOrderInfo[itemId].quantity = updatedQuantity;
-    userOrderInfo[itemId].price = price;
-    totalCostTableElement.removeChild(chosenItem);
+  const serviceName = item.id;
+  const serviceInTable = findServiceInTable(serviceName);
+  if (isServiceChosen && !serviceInTable) {
+    addToTotalCostTable(item);
+    updateServiceQuantity(serviceName);
+  } else if (!isServiceChosen && serviceInTable) {
+    updateServiceQuantity(serviceName, 0);
+    removeFromTotalCostTable(serviceInTable);
   }
+}
+
+function updateServiceQuantity(serviceName, quantity) {
+  const updatedQuantity =
+    quantity !== undefined ? quantity : serviceInfo[serviceName].quantity;
+  userOrderInfo[serviceName].quantity = updatedQuantity;
+  return updatedQuantity;
 }
 
 function calculateTotalOrderCost() {
@@ -218,7 +185,6 @@ function calculateTotalOrderCost() {
   );
   const totalOrderCostEl = document.querySelector('.total-order-value');
   totalOrderCostEl.textContent = `${totalOrderCost}zł`;
-  console.log('totalOrderCost: ', totalOrderCost);
 }
 
 function createSpan(className, textContent) {
@@ -243,10 +209,10 @@ function createServiceItem(element) {
   const spaceTextNode = document.createTextNode('\u00A0 x');
   const quantitySpan = createSpan(
     'item__quantity service-quantity',
-    itemQuantities[serviceID].quantity
+    serviceInfo[serviceID].quantity
   );
 
-  quantitySpan.textContent = itemQuantities[serviceID].quantity;
+  quantitySpan.textContent = serviceInfo[serviceID].quantity;
   appendChildNodes(nameSpan, [spaceTextNode, quantitySpan]);
   const valueSpan = createSpan('service-value', `${servicePrice}zł`);
   valueSpan.setAttribute('data-service', serviceID);
@@ -267,8 +233,51 @@ function getClickedBtnType(e) {
 
 function getChosenServiceName(e) {
   const chosenServiceName = e.currentTarget
-    .closest('.wrap--service')
-    .parentNode.querySelector('label')
-    .getAttribute('data-id');
-  return chosenServiceName;
+    ?.closest('.wrap--service')
+    ?.parentNode.querySelector('label')
+    ?.getAttribute('data-id');
+
+  const squareEl = e.currentTarget
+    ?.closest('.wrap--square')
+    ?.getAttribute('data-id');
+  return chosenServiceName || squareEl;
+}
+
+function findServiceInTable(serviceName) {
+  const tableElementsList = totalCostTableElement.querySelectorAll('li');
+  return [...tableElementsList].find(el => el.id === serviceName);
+}
+
+function addToTotalCostTable(item) {
+  totalCostTableElement.insertAdjacentElement('beforeend', item);
+}
+
+function removeFromTotalCostTable(item) {
+  totalCostTableElement.removeChild(item);
+}
+
+function onBuldingTypeBtnClick(e) {
+  const clickedButton = e.target;
+  if (clickedButton.classList.contains('buildings__element--current')) return;
+  buildingsBtnList.forEach(button => {
+    if (button === clickedButton) {
+      const id = button.id;
+      button.classList.add('buildings__element--current');
+    } else {
+      button.classList.remove('buildings__element--current');
+    }
+  });
+}
+
+function updateMinusBtnStyle(serviceName) {
+  const decreaseSquareIcon = document
+    .querySelector(`[data-name="${serviceName}"]`)
+    .parentNode?.parentNode?.querySelector(
+      '.control-quantity-btn--minus .icon--minus'
+    );
+  if (serviceInfo[serviceName].quantity === 1) {
+    decreaseSquareIcon.style.fill = 'rgba(	77, 18, 153, 0.3)';
+  } else {
+    decreaseSquareIcon.style.fill = '#4D1299';
+  }
 }

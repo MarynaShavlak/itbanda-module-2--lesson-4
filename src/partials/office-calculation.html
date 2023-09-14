@@ -17,7 +17,7 @@
           <li class="buildings__element" id="building-3">Ресторан</li>
         </ul>
         <h4 class="form-title data-order__title">Оберіть площу приміщення</h4>
-        <div class="data-order__wrap wrap--square">
+        <div class="data-order__wrap wrap--square" data-id = "square">
           <div class="data-order__quantity-block">
             <button
               type="button"
@@ -32,9 +32,12 @@
                 <use href="./images/sprite.svg#icon-minus"></use>
               </svg>
             </button>
-            <span class="quantity-block__text"
-              ><span class="quantity-block__value square-value">1</span> м²</span
-            >
+   
+
+          <span class="quantity-block__text quantity-block__value service-quantity" >
+            <span data-name="square" class="square-value">1</span> м²
+          </span>
+
             <button type="button" class="control-quantity-btn control-quantity-btn--plus" data-type="plus">
               <svg
                 class="icon--plus"
@@ -69,7 +72,7 @@
                 class="icon--minus"
                 width="35"
                 height="35"
-                aria-label=" Зменшити кількість "
+                aria-label="Зменшити кількість "
               >
                 <use href="./images/sprite.svg#icon-minus"></use>
               </svg>
@@ -444,13 +447,9 @@
         </div>
         <ul class="table__data">
           <li class="table__item table__block">
-            <span>Площа: <span class="square-value">1</span> м²</span>
+            <span>Площа: <span class="square-value square-value-total">1</span> м²</span>
             <span class="service-value" data-service="square">2zł</span> 
           </li>
-          <!-- <li class="table__item table__block" id="windowsStandard">
-            <span class="item__name">Миття вікон (стандартні)&nbsp;<span class="item__quantity">x1</span></span>
-            <span id="windowsStandard" class="service-value">35zł</span>
-          </li> -->
         </ul>
         <div class="table__sum table__block">
           <span>Вартість</span>
