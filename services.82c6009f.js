@@ -1,2 +1,2 @@
 document.addEventListener("DOMContentLoaded",(function(){const n=window.location.pathname,e=document.querySelectorAll(".dynamic-link");"/"===n||"/index.html"===n?(document.querySelector(".nav__link ").classList.add("nav__link--current"),[...e].forEach((n=>n.href="index.html#order-cleaning-block"))):"/office.html"===n&&(document.querySelector(".nav__list .nav__item:nth-child(2) .nav__link").classList.add("nav__link--current"),[...e].forEach((n=>n.href="office.html#office-calc-block")))}));
-//# sourceMappingURL=office.542e95d0.js.map
+//# sourceMappingURL=services.82c6009f.js.map
