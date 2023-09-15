@@ -12,8 +12,7 @@ function initializeModal(refs) {
 }
 
 function toggleModal(refs) {
-  console.log('refs: ', refs);
   document.body.classList.toggle(`${refs.name}-modal-open`);
   refs.modal.classList.toggle('backdrop--hidden');
-  resetErrors(subscForm.elements);
+  if (refs.name === 'subscription') resetErrors(subscForm.elements);
 }

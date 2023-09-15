@@ -1,5 +1,5 @@
 const subscForm = document.querySelector('.subscr__form');
-subscForm.addEventListener('submit', onSubmitForm);
+subscForm?.addEventListener('submit', onSubmitForm);
 
 function onSubmitForm(e) {
   e.preventDefault();

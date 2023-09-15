@@ -7,13 +7,12 @@
     background-size: 94px;
     background-position: right bottom 94px;
     
-    }
-   
-      @media (min-device-pixel-ratio: 2),
+  }
+  @media (min-device-pixel-ratio: 2),
         (min-resolution: 192dpi),
         (min-resolution: 2dppx) {
           background-image: url('../images/office-page/mobile/brush@2x.png');
-        }
+  }
     
     @media screen and (min-width: 768px) {
       padding: 60px;
@@ -23,8 +22,51 @@
     @media screen and (min-width: 1440px) {
       background-position: right 114px top;    
     }
-
 }
+
+.banner--services {
+  @media screen and (max-width: 767px) {
+    margin-top: 64px;
+    padding: 32px 16px;
+    background-image: url('../images/banner/mobile/question-bubble@1x.png');
+    background-size: 180px;
+    background-position: right -20px top -60px;
+
+  }
+
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    background-image: url('../images/banner/mobile/question-bubble@2x.png');
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 60px;
+    margin-top: 72px;
+    background-image: url('../images/banner/tablet/hand-with-phone@1x.png');
+    background-size: 500px;
+    background-position: right -50px bottom -135px;
+    
+      @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+        background-image: url('../images/banner/tablet/hand-with-phone@2x.png');
+      }
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-top: 116px;
+    background-image: url('../images/banner/desktop/hand-with-phone@1x.png');
+    background-size: 660px;
+    background-position: right bottom -135px;
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+        background-image: url('../images/banner/desktop/hand-with-phone@2x.png');
+      }
+  }
+}
+
 
 
 .banner--office .info-block__title {
@@ -38,7 +80,7 @@
 }
 
 
-.banner--office .info-block__text {
+.banner--office .text {
   color: $second-additional-bg-color;
   margin-top: 16px;
   margin-bottom: 24px;
@@ -52,6 +94,27 @@
       margin-bottom: 40px;
   }
 }
+.banner--services .text {
+  color: $second-additional-bg-color;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  @media screen and (min-width: 768px) {
+    margin-top: 16px;
+    max-width: 333px;
+  }
+  
+  
+  @media screen and (min-width: 1440px) {
+    max-width: 400px;
+    margin-bottom: 32px;
+    margin-top: 8px;
+  }
+}
+
+
+
+
+
 
 .office-calc {
   position: relative;
@@ -107,6 +170,7 @@
 .full-order-table {
   height:fit-content;
   padding: 40px 27px;
+  width: 100%;
 
   @media screen and (min-width: 768px) {
     padding: 40px;
