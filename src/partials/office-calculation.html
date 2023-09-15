@@ -477,7 +477,12 @@
           </li>
         </ul>
         
-      <include src="./partials/order-form.html"></include>
+
+<h4 class="form-title">Ваші дані</h4>
+    <form class="subscr__form form">
+      <include src="./partials/user-order-data.html"></include>
+    </form>
+
       </div>
       <div class="office-calc__block full-order-table">
         <div class="table__header table__block">
@@ -498,7 +503,7 @@
           Замовити прибирання
         </button>
       </div>
-      <div class="discount">
+      <div class="discount" id="office-calc-discount">
         <span class="discount__value">-10%</span>
         <span class="discount__text">на перше прибирання!</span>
         <span class="discount__remark">
@@ -515,14 +520,14 @@
         Вкажіть у полі “Ваш коментар”, що це ваше перше замовлення і ми
         повернемо вам 10% від суми прибирання!
       </p>
-      <a href="#order-cleaning-block"
+      <a href="#office-calc-discount"
         ><button class="hero__btn action-btn btn btn--light" type="button">
           Отримати знижку 10%
         </button></a
       >
     </div>
     <include src="./partials/company-features.html"></include>
-    <a href="#order-cleaning-block" class="cleaning__order-link"
+    <a href="#office-calc-block" class="cleaning__order-link"
       ><button class="cleaning__order-btn action-btn btn" type="button">
         Замовити прибирання
       </button></a
