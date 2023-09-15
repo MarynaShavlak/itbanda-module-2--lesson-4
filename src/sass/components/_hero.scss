@@ -437,7 +437,7 @@
   }
 
   @media screen and (min-width: 768px) {
-    top: -36px;
+    top: -26px;
     right: 0;
     width: 240px;
     height: 321px;
@@ -462,13 +462,11 @@
   position: absolute;
   background-repeat: no-repeat;
   @media screen and (max-width: 767px) {
-      background-position: left top 40px;
-      width: 247px;
-      height: 332px;
+    background-position: left 0 top 10px;
+    width: 247px;
+    height: 332px;
   }
-  background-size: cover;
   background-image: url('../images/hero/after-repair/mobile/after-repair-hero@1x.png');
-
   @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
