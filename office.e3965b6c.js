@@ -1,2 +1,0 @@
-function initializeModal(o){o.openModalBtn.addEventListener("click",(function(){return toggleModal(o)})),o.closeModalBtn.addEventListener("click",(function(e){e.stopPropagation(),toggleModal(o)})),o.backdrop.addEventListener("click",(function(e){e.target===o.backdrop&&toggleModal(o)}))}function toggleModal(o){console.log("refs: ",o),document.body.classList.toggle("".concat(o.name,"-modal-open")),o.modal.classList.toggle("backdrop--hidden"),resetErrors(subscForm.elements)}
-//# sourceMappingURL=office.e3965b6c.js.map
