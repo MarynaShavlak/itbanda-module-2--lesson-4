@@ -198,17 +198,32 @@
   text-align: justify;
 }
 
+.text--marked {
+  display:flex;
+  align-items: center;
+  gap:8px;
+  @media screen and (min-width: 1440px) {
+    gap:12px;
+  }
+}
+
+
+
+
+
 .text--marked::before {
   content: '';
-  display: inline-block;
+  display: flex;
+  align-self: self-start;
+
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  margin-right: 8px;
+  margin-top: 8px;
   background-color: $main-accent-color;
 
   @media screen and (min-width: 1440px) {
-    margin-right: 12px;
+    margin-top: 6px;
     width: 11px;
     height: 11px;
   }
@@ -321,109 +336,6 @@
   }
 }
 
-// .advantages {
-//   margin-top: 64px;
-  
-//     @media screen and (min-width: 768px) {
-//       display: flex;
-//       justify-content: end;
-//       margin-top: 72px;
-//     }
-  
-//     @media screen and (min-width: 1440px) {
-//       margin-top: 57px;
-//     }
-// }
-
-// .advantages--home {
-//   height: 609px;
-//   background-image: url('../images/cleaning-package/tablet/boy@1x.png'),
-//   url('../images/cleaning-package/desktop/light.svg');
-//   @media (min-device-pixel-ratio: 2),
-//   (min-resolution: 192dpi),
-//   (min-resolution: 2dppx) {
-//     background-image: url('../images/cleaning-package/tablet/boy@2x.png'),
-//       url('../images/cleaning-package/desktop/light.svg');
-//   }
-
-//   @media screen and (max-width: 767px) {
-//     background-position: left top 300px;
-//   }
-
-//   @media screen and (min-width: 768px) {
-//     height: 297px;
-//     background-image: url('../images/cleaning-package/tablet/boy@1x.png'),
-//       url('../images/cleaning-package/desktop/light.svg');
-
-//     @media (min-device-pixel-ratio: 2),
-//     (min-resolution: 192dpi),
-//     (min-resolution: 2dppx) {
-//       background-image: url('../images/cleaning-package/tablet/boy@2x.png'),
-//         url('../images/cleaning-package/desktop/light.svg');
-//     }
-//   }
-
-//   @media screen and (min-width: 1440px) {
-//     height: 538px;
-//     background-image: url('../images/cleaning-package/desktop/boy@1x.png'), url('../images/cleaning-package/desktop/light.svg');
-
-//     @media (min-device-pixel-ratio: 2),
-//     (min-resolution: 192dpi),
-//     (min-resolution: 2dppx) {
-//       background-image: url('../images/cleaning-package/desktop/boy@2x.png'), url('../images/cleaning-package/desktop/light.svg');
-//     }
-//   }
-
-//   background-repeat: no-repeat;
-//   background-size: contain;
-// }
-
-// .advantages--repair {
-//   height: 745px;
-//   background-image: url('../images/cleaning-package/tablet/boy@1x.png'),
-//   url('../images/cleaning-package/desktop/light.svg');
-
-//   @media (min-device-pixel-ratio: 2),
-//   (min-resolution: 192dpi),
-//   (min-resolution: 2dppx) {
-//     background-image: url('../images/cleaning-package/tablet/boy@2x.png'),
-//       url('../images/cleaning-package/desktop/light.svg');
-//   }
-
-//   @media screen and (max-width: 767px) {
-//     background-position: left bottom 19px;
-//   }
-
-//   @media screen and (min-width: 768px) and (max-width: 1439px){
-//     height: 459px;
-//     background-size: 340px;
-//     background-position: left -20px top 30px;
-//     background-image: url('../images/cleaning-package/tablet/boy@1x.png'),
-//       url('../images/cleaning-package/desktop/light.svg');
-
-//     @media (min-device-pixel-ratio: 2),
-//     (min-resolution: 192dpi),
-//     (min-resolution: 2dppx) {
-//       background-image: url('../images/cleaning-package/tablet/boy@2x.png'),
-//         url('../images/cleaning-package/desktop/light.svg');
-//     }
-//   }
-
-//   @media screen and (min-width: 1440px) {
-//     height: 482px;
-//     background-image: url('../images/cleaning-package/desktop/boy@1x.png'), url('../images/cleaning-package/desktop/light.svg');
-
-//     @media (min-device-pixel-ratio: 2),
-//     (min-resolution: 192dpi),
-//     (min-resolution: 2dppx) {
-//       background-image: url('../images/cleaning-package/desktop/boy@2x.png'), url('../images/cleaning-package/desktop/light.svg');
-//     }
-//   }
-
-//   background-repeat: no-repeat;
-//   background-size: contain;
-// }
-
 .advantages {
   margin-top: 64px;
 
@@ -494,6 +406,29 @@
     max-width: 570px;
   }
 }
+
+.advantages--desktop {
+  @media screen and (max-width: 1439px) {
+    display: none;
+  }
+}
+.advantages--tablet {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (min-width: 1440px) {
+    display: none;
+  }
+}
+.advantages--mobile {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+
+
+
 
 .info-block--home-advantages {
   @media screen and (min-width: 1440px) {
