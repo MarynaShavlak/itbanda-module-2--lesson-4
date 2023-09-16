@@ -350,12 +350,12 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url('../images/hero/after-repair/mobile/after-repair-hero@1x.png');
+  background-image: url('../images/hero/office/mobile/office-cleaner@1x.png');
 
   @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
-    background-image: url('../images/hero/after-repair/mobile/after-repair-hero@2x.png');
+    background-image: url('../images/hero/office/mobile/office-cleaner@2x.png');
   }
 
   width: 308px;
@@ -365,12 +365,12 @@
   @media screen and (min-width: 768px) {
     width: 382px;
     height: 380px;
-    background-image: url('../images/hero/after-repair/tablet/after-repair-hero@1x.png');
+    background-image: url('../images/hero/office/tablet/office-cleaner@1x.png');
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-      background-image: url('../images/hero/after-repair/tablet/after-repair-hero@2x.png');
+      background-image: url('../images/hero/office/tablet/office-cleaner@2x.png');
     }
   }
 
@@ -380,12 +380,12 @@
     height: 557px;
     background-size: cover;
     background-position: top 50px right;
-    background-image: url('../images/hero/after-repair/desktop/after-repair-hero@1x.png');
+    background-image: url('../images/hero/office/desktop/office-cleaner@1x.png');
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-      background-image: url('../images/hero/after-repair/desktop/after-repair-hero@2x.png');
+      background-image: url('../images/hero/office/desktop/office-cleaner@2x.png');
     }
   }
 
