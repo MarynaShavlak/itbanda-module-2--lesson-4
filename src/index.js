@@ -13,5 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
     [...dynamicLinkList].forEach(
       link => (link.href = 'office.html#office-calc-block')
     );
+  } else if (currentPage === '/after-repair.html') {
+    const serviceItems = document.querySelectorAll('.add-services-list__item');
+    const selectedItems = [...serviceItems].slice(2);
+    selectedItems.forEach(item => item.classList.add('isHidden'));
   }
 });
