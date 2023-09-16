@@ -104,7 +104,7 @@
   text-align: center;
 }
 
-.title--home-advantages {
+.title--home-maintenance {
   max-width: 335px;
 
   @media screen and (min-width: 768px) {
@@ -118,7 +118,7 @@
   }
 }
 
-.title--repair-advantages {
+.title--repair-maintenance {
   max-width: 300px;
 
   @media screen and (min-width: 768px) {
@@ -336,7 +336,7 @@
   }
 }
 
-.advantages {
+.maintenance {
   margin-top: 64px;
 
   @media screen and (min-width: 768px) {
@@ -350,8 +350,8 @@
   }
 }
 
-.advantages--home,
-.advantages--repair {
+.maintenance--home,
+.maintenance--repair {
   background-repeat: no-repeat;
   background-size: contain;
   background-image:
@@ -367,7 +367,7 @@
   }
 }
 
-.advantages--home {
+.maintenance--home {
   height: 609px;
   @media screen and (max-width: 767px) {
       background-position: left top 300px;
@@ -381,7 +381,7 @@
   }
 }
 
-.advantages--repair {
+.maintenance--repair {
   height: 745px;
   @media screen and (max-width: 767px) {
       background-position: left bottom 19px;
@@ -397,7 +397,7 @@
   }
 }
 
-.info-block__list--advantages {
+.info-block__list--maintenance {
   @media screen and (min-width: 768px) {
     max-width: 395px;
   }
@@ -407,12 +407,12 @@
   }
 }
 
-.advantages--desktop {
+.maintenance--desktop {
   @media screen and (max-width: 1439px) {
     display: none;
   }
 }
-.advantages--tablet {
+.maintenance--tablet {
   @media screen and (max-width: 767px) {
     display: none;
   }
@@ -420,7 +420,7 @@
     display: none;
   }
 }
-.advantages--mobile {
+.maintenance--mobile {
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -430,31 +430,31 @@
 
 
 
-.info-block--home-advantages {
+.info-block--home-maintenance {
   @media screen and (min-width: 1440px) {
     padding-top: 129px;
   }
 }
-.info-block--repair-advantages {
+.info-block--repair-maintenance {
   @media screen and (min-width: 1440px) {
     padding-top: 65px;
   }
 }
 
 .features--cleaning {
-  margin-top: 30px;
+  // margin-top: 30px;
   margin-bottom: 40px;
   @media screen and (min-width: 768px) {
       display: flex;
       flex-wrap: wrap;
-      margin-top: 60px;
+      // margin-top: 60px;
       margin-bottom: 56px;
       justify-content: center;
       column-gap: 30px;
       row-gap: 40px;
   }
   @media screen and (min-width: 1440px) {
-      margin-top: 110px;
+      // margin-top: 110px;
       margin-bottom: 64px;
   }
 }

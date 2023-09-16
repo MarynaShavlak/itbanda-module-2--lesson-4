@@ -18,7 +18,7 @@
 
 
 
-.section--benefits {
+.section--benefits-expanded {
   padding-top: 0;
   @media screen and (min-width: 768px) {
       padding-top: 0;
@@ -31,7 +31,25 @@
 .section--no-padding-top {
      padding-top: 0;
 }
+.section--no-padding-bottom {
+     padding-bottom: 0;
+}
 
+
+.section--benefits {
+  padding-top: 30px;
+    // padding-bottom: 40px;
+  
+    @media screen and (min-width: 768px) {
+      padding-top: 60px;
+      // padding-bottom: 56px;
+    }
+  
+    @media screen and (min-width: 1440px) {
+      padding-top: 110px;
+      // padding-bottom: 64px;
+    }
+}
 
 .section__title {
 
