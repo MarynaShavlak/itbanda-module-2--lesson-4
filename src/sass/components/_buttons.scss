@@ -151,7 +151,7 @@ padding: 17px 25px;
   }
 }
 
-.section--success .hero__btn {
+.section--success .hero__btn,.section--error .hero__btn  {
   @media screen and (max-width: 767px) {
     width: 100%;
   }

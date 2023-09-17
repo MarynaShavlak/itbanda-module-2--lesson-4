@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
     addWhiteBackground('.block');
   } else if (currentPage === '/contacts.html') {
     modifyContactPage();
+    modifyMainSection();
+  } else if (
+    currentPage === '/success-order.html' ||
+    currentPage === '/error.html'
+  ) {
+    modifyMainSection();
   }
 });
 
@@ -39,9 +45,12 @@ function setCurrentNavLink(selector) {
 
 function modifyContactPage() {
   const connectionSection = document.querySelector('.connection');
-  connectionSection.classList.remove('section--no-padding-top');
+  connectionSection.classList.remove('no-padding-top');
   const supportBlock = document.querySelector('.connection--second-block');
   supportBlock.classList.add('block-with-image');
+}
+
+function modifyMainSection() {
   const main = document.querySelector('main');
   main.classList.add('section--dark-background');
 }
