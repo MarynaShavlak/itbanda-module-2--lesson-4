@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     hideSelectedItems('.add-services-list__item:nth-child(n+3)');
   } else if (currentPage === '/calc-order.html') {
     addWhiteBackground('.block');
+  } else if (currentPage === '/contacts.html') {
+    modifyContactPage();
   }
 });
 
@@ -33,4 +35,13 @@ function setCurrentNavLink(selector) {
   if (currentNavLink) {
     currentNavLink.classList.add('nav__link--current');
   }
+}
+
+function modifyContactPage() {
+  const connectionSection = document.querySelector('.connection');
+  connectionSection.classList.remove('section--no-padding-top');
+  const supportBlock = document.querySelector('.connection--second-block');
+  supportBlock.classList.add('block-with-image');
+  const main = document.querySelector('main');
+  main.classList.add('section--dark-background');
 }

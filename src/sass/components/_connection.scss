@@ -66,6 +66,7 @@
 
 
  .connection--second-block {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,7 +85,7 @@
       padding-left:45px;
       padding-right:45px;
       padding-top: 40px;
-      padding-bottom: 40x;
+      padding-bottom: 40px;
     }
   
     @media screen and (min-width: 1440px) {
@@ -93,6 +94,55 @@
       padding: 40px;
     }
   }
+
+
+.connection--second-block.block-with-image::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: 2;
+  background-position: center;
+  
+  @media screen and (max-width: 767px) { 
+    top: -110px;
+    right: 0;
+  }
+  
+  // top: 916px;
+  // right: -11px;
+  width: 133px;
+  height: 133px;
+  background-image: url('../images/contacts/mobile/phone@1x.png');
+
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    background-image: url('../images/contacts/mobile/phone@2x.png');
+  }
+
+  @media screen and (min-width: 768px) {
+    top: 202px;
+    left: -90px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    
+    top:170px;
+    left:-122px;
+    width: 195px;
+    height: 195px;
+    background-image: url('../images/contacts/tablet/phone@1x.png');
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image: url('../images/contacts/tablet/phone@2x.png');
+    }
+  }
+}
+
+
+
 
  .info-block__title--connection {
   text-align: center;
