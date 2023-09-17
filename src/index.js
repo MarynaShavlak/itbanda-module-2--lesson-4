@@ -1,5 +1,23 @@
+const allowedPages = [
+  '/',
+  '/index.html',
+  '/office.html',
+  '/success-order.html',
+  '/after-repair.html',
+  '/calc-order.html',
+  '/contacts.html',
+  '/faq.html',
+];
+
 document.addEventListener('DOMContentLoaded', function () {
   const currentPage = window.location.pathname;
+  const isAllowedPage = allowedPages.includes(currentPage);
+  if (!isAllowedPage) {
+    if (!allowedPages.includes(currentPage)) {
+      window.location.href = '/error.html';
+    }
+  }
+
   if (currentPage === '/' || currentPage === '/index.html') {
     setCurrentNavLink('.nav__link');
     updateDynamicLinks('index.html#order-cleaning-block');
