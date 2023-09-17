@@ -9,13 +9,15 @@ function initMap() {
 }
 
 function handleInputFocusAndNotEmpty() {
-  if (
-    locationInput.value.trim() !== '' &&
-    document.activeElement === locationInput
-  ) {
-    backdrop.style.overflow = 'hidden';
-  } else {
-    backdrop.style.overflow = 'auto';
+  if (backdrop) {
+    if (
+      locationInput.value.trim() !== '' &&
+      document.activeElement === locationInput
+    ) {
+      backdrop.style.overflow = 'hidden';
+    } else {
+      backdrop.style.overflow = 'auto';
+    }
   }
 }
 

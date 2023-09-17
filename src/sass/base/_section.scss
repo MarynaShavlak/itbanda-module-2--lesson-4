@@ -52,17 +52,14 @@
     }
 }
 
-.section--discount-banner {
-  padding-top: 64px;
+.section--calc-order-cost {
+  padding-bottom: 64px;
   
     @media screen and (min-width: 768px) {
-      padding-top: 100px;
+      padding-bottom: 100px;
     }
   
-    @media screen and (min-width: 1440px) {
-      padding-top: 83px;
-    }
-}
+  }
 
 .section--home-maintenance {
   padding-top: 64px;

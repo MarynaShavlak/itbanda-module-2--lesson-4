@@ -1,21 +1,36 @@
 document.addEventListener('DOMContentLoaded', function () {
   const currentPage = window.location.pathname;
-  const dynamicLinkList = document.querySelectorAll('.dynamic-link');
   if (currentPage === '/' || currentPage === '/index.html') {
-    document.querySelector('.nav__link ').classList.add('nav__link--current');
-    [...dynamicLinkList].forEach(
-      link => (link.href = 'index.html#order-cleaning-block')
-    );
+    setCurrentNavLink('.nav__link');
+    updateDynamicLinks('index.html#order-cleaning-block');
   } else if (currentPage === '/office.html') {
-    document
-      .querySelector('.nav__list .nav__item:nth-child(2) .nav__link')
-      .classList.add('nav__link--current');
-    [...dynamicLinkList].forEach(
-      link => (link.href = 'office.html#office-calc-block')
-    );
+    setCurrentNavLink('.nav__list .nav__item:nth-child(2) .nav__link');
+    updateDynamicLinks('office.html#office-calc-block');
   } else if (currentPage === '/after-repair.html') {
-    const serviceItems = document.querySelectorAll('.add-services-list__item');
-    const selectedItems = [...serviceItems].slice(2);
-    selectedItems.forEach(item => item.classList.add('isHidden'));
+    hideSelectedItems('.add-services-list__item:nth-child(n+3)');
+  } else if (currentPage === '/calc-order.html') {
+    addWhiteBackground('.block');
   }
 });
+
+function updateDynamicLinks(href) {
+  const dynamicLinkList = document.querySelectorAll('.dynamic-link');
+  [...dynamicLinkList].forEach(link => (link.href = href));
+}
+
+function hideSelectedItems(selector) {
+  const items = document.querySelectorAll(selector);
+  items.forEach(item => item.classList.add('isHidden'));
+}
+
+function addWhiteBackground(selector) {
+  const items = document.querySelectorAll(selector);
+  items.forEach(item => item.classList.add('block--white'));
+}
+
+function setCurrentNavLink(selector) {
+  const currentNavLink = document.querySelector(selector);
+  if (currentNavLink) {
+    currentNavLink.classList.add('nav__link--current');
+  }
+}

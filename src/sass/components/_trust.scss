@@ -113,11 +113,11 @@
   }
 }
 
-.section__block--zIndex {
+.block--zIndex {
   z-index: 2;
 }
 
-.section__block--trust {
+.block--trust {
   @media screen and (max-width: 1439px) {
     min-height: 379px;
   }

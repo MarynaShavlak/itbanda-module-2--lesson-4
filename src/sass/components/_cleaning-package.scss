@@ -21,7 +21,7 @@
   }
 }
 
-.cleaning__info {
+.month-subsr-block {
   display: flex;
   flex-direction: column;
   row-gap: 40px;
@@ -74,9 +74,13 @@
   }
 }
 
+.title--no-margin {
+    margin: 0;
+}
+
 .title--white {
   color: $second-additional-bg-color;
-  margin: 0;
+  
   max-width: 265px;
 
   @media screen and (min-width: 768px) {
