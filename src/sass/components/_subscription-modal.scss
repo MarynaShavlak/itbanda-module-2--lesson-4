@@ -375,34 +375,7 @@
 }
 
 
- #card-payment-btn {
-  background-image: url('../images/subscr-modal/cards.png');
-  background-size: 65px 50px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    padding-left: 100px;
-    max-width: 312px; 
- }
 
- #cash-payment-btn {
-    background-image: url('../images/subscr-modal/currency.png');
-    background-size: 61px 50px;
-    padding-top: 30.5px;
-    padding-bottom: 30.5px;
-    padding-left: 89px;
-    @media screen and (min-width: 768px) {
-    max-width: 200px;
-    }
- }
-
- .form__submit-btn {
-  @media screen and (max-width: 767px) {
-    width: 100%;
-  }
-  @media screen and (min-width: 768px) {
-    padding: 16px 84px;
-  }
- }
 
 .row-container {
   display: flex;

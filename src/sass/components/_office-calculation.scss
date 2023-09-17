@@ -221,13 +221,8 @@
   margin-bottom: 16px;
   
 }
-.calc-btn {
-  width:100%;
-  margin-top: 40px;
-}
-.office-order .calc-btn {
-  margin-top: 0;
-}
+
+
 .discount {
   display: flex;
   flex-direction: column;
@@ -477,25 +472,10 @@
     @media screen and (min-width: 1440px) {
       gap:13px;
     }
-  }
-
-
-    .key-btn {
-      background-image: url('../images/office-page/keys.png');
-      background-size: 50px 50px;
-      padding-top: 18px;
-      padding-bottom: 18px;
-      padding-left: 92px;
-      max-width: 312px;
-      text-align: left;
-      background-color: transparent;
-    }
-  
-#take-keys-btn.active,
-#give-keys-btn.active {
- background-color: $main-accent-color;
- color: $primary-white-color;
 }
+
+
+
 
 
 

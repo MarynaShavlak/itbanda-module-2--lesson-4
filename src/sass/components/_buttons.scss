@@ -32,9 +32,6 @@
   }
 }
 
-
-
-
 .tel-btn {
     transition: color $cubic, background-color $cubic;
     line-height: 1.19;
@@ -78,6 +75,7 @@ padding: 17px 25px;
     border: 1px solid $primary-white-color;
   }
 }
+
 .action-btn {
   padding: 15px 50px;
 
@@ -137,3 +135,82 @@ padding: 17px 25px;
     background-color: $second-additional-bg-color;
   }
 }
+
+.connection__btn {
+  font-family: 'Inter', sans-serif;
+  margin-top: 24px;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: 1440px) {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 32px;
+    margin-bottom: 13px;
+  }
+}
+
+.section--success .hero__btn {
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 225px;
+  }
+}
+
+.key-btn {
+  background-image: url('../images/office-page/keys.png');
+  background-size: 50px 50px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 92px;
+  max-width: 312px;
+  text-align: left;
+  background-color: transparent;
+}
+    
+#take-keys-btn.active,
+#give-keys-btn.active {
+  background-color: $main-accent-color;
+  color: $primary-white-color;
+}
+
+.calc-btn {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.office-order .calc-btn {
+  margin-top: 0;
+}
+
+ #card-payment-btn {
+   background-image: url('../images/subscr-modal/cards.png');
+   background-size: 65px 50px;
+   padding-top: 18px;
+   padding-bottom: 18px;
+   padding-left: 100px;
+   max-width: 312px;
+ }
+
+ #cash-payment-btn {
+   background-image: url('../images/subscr-modal/currency.png');
+   background-size: 61px 50px;
+   padding-top: 30.5px;
+   padding-bottom: 30.5px;
+   padding-left: 89px;
+
+   @media screen and (min-width: 768px) {
+     max-width: 200px;
+   }
+ }
+
+ .form__submit-btn {
+   @media screen and (max-width: 767px) {
+     width: 100%;
+   }
+
+   @media screen and (min-width: 768px) {
+     padding: 16px 84px;
+   }
+ }
