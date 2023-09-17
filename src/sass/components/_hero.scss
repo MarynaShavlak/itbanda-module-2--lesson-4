@@ -512,14 +512,14 @@
   @media screen and (min-width: 768px) {
     top: 0;
     right: -30px;
-    width: 450px;
-    height: 450px;
+    width: 302px;
+    height: 400px;
   }
 
   @media screen and (min-width: 1440px) {
     top: -13px;
-    width: 579px;
-    height: 579px;
+    width: 485px;
+    height: 641px;
   }
 }
 
@@ -528,13 +528,13 @@
   position: absolute;
   background-repeat: no-repeat;
   background-position: center;
-  //background-size: contain;
-  background-image: url('../images/hero/success-page/mobile/success-back@1x.png');
+  // background-size: contain;
+  background-image: url('../images/hero/error/mobile/error-hero@1x.png');
 
   @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
-    background-image: url('../images/hero/success-page/mobile/success-back@2x.png');
+    background-image: url('../images/hero/error/mobile/error-hero@2x.png');
   }
 
   width: 347px;
@@ -542,29 +542,28 @@
 
 
   @media screen and (min-width: 768px) {
-    width: 450px;
-    height: 450px;
-    background-image: url('../images/hero/success-page/tablet/success-back@1x.png');
+    width: 302px;
+    height: 400px;
+    background-image: url('../images/hero/error/tablet/error-hero@1x.png');
+    background-size: 320px;
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-      background-image: url('../images/hero/success-page/tablet/success-back@2x.png');
+      background-image: url('../images/hero/error/tablet/error-hero@2x.png');
     }
   }
 
 
   @media screen and (min-width: 1440px) {
-    width: 579px;
-    height: 579px;
+    width: 485px;
+    height: 641px;
     background-size: cover;
-    background-position: top -40px right;
-    background-image: url('../images/hero/success-page/desktop/success-back@1x.png');
+    background-position: top -60px right;
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-      background-image: url('../images/hero/success-page/desktop/success-back@2x.png');
     }
   }
 
