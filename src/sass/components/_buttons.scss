@@ -108,10 +108,8 @@ padding: 17px 25px;
   }
 }
 
-.cleaning__order-btn,
+.order-btn,
 .reviews__btn {
-  align-self: center;
-  margin: 0 auto;
 
   @media screen and (max-width: 1439px) {
     padding: 15px 23px;
@@ -120,6 +118,11 @@ padding: 17px 25px;
   }
 }
  
+.btn--centered {
+  align-self: center;
+    margin: 0 auto;
+}
+
 .cleaning__order-link {
   align-self: center;
   margin: 0 auto;
@@ -213,4 +216,16 @@ padding: 17px 25px;
    @media screen and (min-width: 768px) {
      padding: 16px 84px;
    }
+ }
+
+ .ask-btn {
+    margin-top: 48px;
+    
+      @media screen and (min-width: 768px) {
+        margin-top: 56px;
+      }
+    
+      @media screen and (min-width: 1440px) {
+        margin-top: 83px;
+      }
  }

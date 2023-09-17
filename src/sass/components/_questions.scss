@@ -17,16 +17,7 @@
     padding-bottom: 60px;
   }
 }
-.questions__list {
-  margin-bottom: 48px;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 56px;
-  }
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 83px;
-  }
-  
-}
+
 .questions__item {
   border-bottom: 2px solid $main-accent-color;
   padding-top: 20px;
@@ -133,3 +124,70 @@
   display: none;
   fill: $main-accent-color;
 }
+
+.questions__wrap {
+  display: flex;
+  margin-top: 57px;
+  @media screen and (max-width: 767px) {
+     flex-direction: column;
+     gap: 24px;
+  }
+    @media screen and (min-width: 768px) {
+      justify-content: space-between;
+    }
+  
+    @media screen and (min-width: 1440px) {
+      margin-top: 34px;
+    }
+}
+
+.questions-expanded__text {
+  max-width: 285px;
+  margin-left: 50px;
+  @media screen and (min-width: 768px) {
+    margin-left: 54px;
+    max-width: 396px;
+  }
+  
+    @media screen and (min-width: 1440px) {
+      margin-left: 72px;
+      max-width: 660px;
+    }
+}
+
+.container--questions-expanded {
+  background-repeat: no-repeat;
+  background-position: left -5px bottom 75px;
+    background-size:  95px 95px;
+    background-image:  url('../images/faq/question-sign-small@1x.png');
+  
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image: 
+        url('../images/faq/question-sign-small@2x.png');
+    }
+  
+    @media screen and (min-width: 768px) {
+      background-position: right 30px top -24px, left 20px bottom -15px;
+      background-size: 137px 137px, 95px 95px;
+      background-image: url('../images/faq/question-sign-big@1x.png'), url('../images/faq/question-sign-small@1x.png');
+      @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+        background-image: url('../images/faq/question-sign-big@1x.png'),
+            url('../images/faq/question-sign-small@2x.png');
+      }
+    }
+
+    @media screen and (min-width: 1440px) {
+      background-position: right 0px top -24px, left 0 bottom -15px;
+      background-size: 137px 137px, 105px 105px;
+  
+//       @media (min-device-pixel-ratio: 2),
+//       (min-resolution: 192dpi),
+//       (min-resolution: 2dppx) {
+//         background-image: url('../images/faq/question-sign-big@1x.png'),
+//           url('../images/faq/question-sign-small@2x.png');
+// }
+}}
