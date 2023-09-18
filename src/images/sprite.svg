@@ -70,6 +70,12 @@
     <symbol id="icon-close" viewBox="0 0 28 28" fill="none">
       <path d="M2.7998 2.79999L25.1998 25.2M2.7998 25.2L25.1998 2.79999" stroke-width="2" />
     </symbol>
+    <symbol id="icon-prev-btn" viewBox="0 0 40 40">
+      <path d="M23.7049 15.41L22.2949 14L16.2949 20L22.2949 26L23.7049 24.59L19.1249 20L23.7049 15.41Z" />
+    </symbol>
+    <symbol id="icon-next-btn" viewBox="0 0 40 40">
+      <path d="M17.7049 14L16.2949 15.41L20.8749 20L16.2949 24.59L17.7049 26L23.7049 20L17.7049 14Z" />
+    </symbol>
 
   </defs>
 </svg>

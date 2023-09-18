@@ -1,22 +1,30 @@
-<div id="calendar">
-  <div id="header">
-    <button id="prevMonth">&lt;</button>
-    <h1 id="monthYear"></h1>
-    <button id="nextMonth">&gt;</button>
+<div class="calendar">
+  <div class="calendar__header">
+    <button class="calendar__prevMonth-btn">
+      <svg width="40" height="40">
+        <use href="./images/sprite.svg#icon-prev-btn "></use>
+      </svg>
+    </button>
+    <h1 class="calendar__monthYear"></h1>
+    <button class="calendar__nextMonth-btn">
+      <svg width="40" height="40">
+        <use href="./images/sprite.svg#icon-next-btn"></use>
+      </svg>
+    </button>
   </div>
   <table>
     <thead>
       <tr>
-        <th>Mon</th>
-        <th>Tue</th>
-        <th>Wed</th>
-        <th>Thu</th>
-        <th>Fri</th>
-        <th>Sat</th>
-        <th>Sun</th>
+        <th class="calendar__day-name">Пн</th>
+        <th class="calendar__day-name">Вт</th>
+        <th class="calendar__day-name">Ср</th>
+        <th class="calendar__day-name">Чт</th>
+        <th class="calendar__day-name">Пт</th>
+        <th class="calendar__day-name">Сб</th>
+        <th class="calendar__day-name">Нд</th>
       </tr>
     </thead>
-    <tbody id="calendarBody">
+    <tbody class="calendar__body">
       <!-- Calendar days will be inserted here -->
     </tbody>
   </table>
