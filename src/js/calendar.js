@@ -153,6 +153,11 @@ function generateCalendar() {
     }${formattedMonth}/${formattedYear}`;
     currentRow.appendChild(cell);
     cell.addEventListener('click', handleCellClick);
+    if (
+      isDateBeforeToday(new Date(formattedYear, formattedMonth - 1, day), today)
+    ) {
+      cell.classList.add('disabled-day');
+    }
   }
 
   // Fill the remaining cells with days from the current month
@@ -173,6 +178,9 @@ function generateCalendar() {
     }/${year}`;
     currentRow.appendChild(cell);
     cell.addEventListener('click', handleCellClick);
+    if (isDateBeforeToday(new Date(year, month, currentDay), today)) {
+      cell.classList.add('disabled-day');
+    }
     if (currentRow.children.length === 7) {
       calendarBody.appendChild(currentRow);
       currentRow = document.createElement('tr');
@@ -193,14 +201,53 @@ function generateCalendar() {
     }${formattedMonth}/${formattedYear}`;
     currentRow.appendChild(cell);
     cell.addEventListener('click', handleCellClick);
+    if (
+      isDateBeforeToday(new Date(formattedYear, formattedMonth - 1, i), today)
+    ) {
+      cell.classList.add('disabled-day');
+    }
   }
 
   calendarBody.appendChild(currentRow);
 }
 
+function isDateBeforeToday(date, today) {
+  return date < today;
+}
+
+function convertDateFormat(dateString) {
+  // Split the input date string by '/'
+  const parts = dateString.split('/');
+
+  // Ensure there are three parts (day, month, and year)
+  if (parts.length !== 3) {
+    return 'Invalid date format';
+  }
+
+  const [day, month, year] = parts;
+
+  // Swap day and month and rejoin them with '/'
+  const newDateString = `${month}/${day}/${year}`;
+
+  return newDateString;
+}
+
 function handleCellClick(event) {
-  const clickedDate = event.target.dataset.date;
-  console.log(clickedDate);
+  const clickedDate = convertDateFormat(event.target.dataset.date);
+  const currentDate = new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
+
+  const clickedDateObj = new Date(clickedDate);
+  const currentDateObj = new Date(currentDate);
+  const differenceInMilliseconds = clickedDateObj - currentDateObj;
+
+  if (differenceInMilliseconds >= 0) {
+    console.log('currentDate: ', currentDate);
+    console.log('clickedDate: ', clickedDate);
+  }
 }
 
 prevMonthBtn.addEventListener('click', () => {
