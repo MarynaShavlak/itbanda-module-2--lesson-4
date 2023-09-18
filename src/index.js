@@ -170,25 +170,58 @@ function addCellClickEvent(cell, isDisabledDate) {
   }
 }
 
-function createPreviousMonthCell(day) {
+function createCellEl(fd, y, isDisabledDate, monthType) {
+  const { month } = getCurrentYearAndMonth(currentDateObj);
   const cell = document.createElement('td');
-  const todayObj = new Date();
+  setCellText(cell, fd);
+  setCellAttributes(cell, fd, month, y);
+  addCellClasses(cell, isDisabledDate, monthType);
+  addCellClickEvent(cell, isDisabledDate);
+
+  return cell;
+}
+
+function createPreviousMonthCell(day) {
   const { year, month } = getCurrentYearAndMonth(currentDateObj);
   const { formattedDay, formattedMonth, formattedYear } = formatDateInfo(
     day,
     month,
     year
   );
+  const todayObj = new Date();
   const isDisabledDate = isDateBeforeToday(
     new Date(formattedYear, formattedMonth - 1, day),
     todayObj
   );
-  setCellText(cell, formattedDay);
-  // setCellAttributes(cell, formattedDay, formattedMonth, formattedYear);
-  setCellAttributes(cell, formattedDay, month, formattedYear);
-  addCellClasses(cell, isDisabledDate, 'previous-month');
-  addCellClickEvent(cell, isDisabledDate);
+  const cell = createCellEl(
+    formattedDay,
+    formattedYear,
+    isDisabledDate,
+    'previous-month'
+  );
+  return cell;
+}
 
+function createCurrentMonthCell(day) {
+  const { formattedDay } = formatDateInfo(day);
+  const { year, month } = getCurrentYearAndMonth(currentDateObj);
+  const todayObj = new Date();
+  const isDisabledDate = isDateBeforeToday(
+    new Date(year, month, day),
+    todayObj
+  );
+
+  const cell = createCellEl(
+    formattedDay,
+    year,
+    isDisabledDate,
+    'current-month'
+  );
+  const isToday =
+    currentDateObj.getFullYear() === todayObj.getFullYear() &&
+    currentDateObj.getMonth() === todayObj.getMonth() &&
+    day === todayObj.getDate();
+  addCellClasses(cell, isDisabledDate, 'current-month', isToday);
   return cell;
 }
 
@@ -229,28 +262,11 @@ function generateCalendar() {
     appendElement(currentRow, cell);
   }
 
-  // Fill the remaining cells with days from the current month
   while (currentDayNumber <= lastDayOfMonthObj.getDate()) {
-    const cell = document.createElement('td');
-    const { formattedDay } = formatDateInfo(currentDayNumber);
-    setCellText(cell, formattedDay);
-    const isDisabledDate = isDateBeforeToday(
-      new Date(year, month, currentDayNumber),
-      todayObj
-    );
-    addCellClasses(cell, isDisabledDate, 'current-month');
-    addCellClickEvent(cell, isDisabledDate);
-    const isToday =
-      currentDateObj.getFullYear() === todayObj.getFullYear() &&
-      currentDateObj.getMonth() === todayObj.getMonth() &&
-      currentDayNumber === todayObj.getDate();
-    addCellClasses(cell, isDisabledDate, 'current-month', isToday);
-    cell.dataset.date = `${formattedDay}/${month < 9 ? '0' : ''}${
-      month + 1
-    }/${year}`;
+    const cell = createCurrentMonthCell(currentDayNumber);
     appendElement(currentRow, cell);
-
-    if (currentRow.children.length === 7) {
+    const isWeekRowFull = currentRow.children.length === 7;
+    if (isWeekRowFull) {
       appendElement(calendarBody, currentRow);
       currentRow = createCalendarRow();
     }
