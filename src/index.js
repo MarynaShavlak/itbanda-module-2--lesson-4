@@ -150,7 +150,6 @@ function setCellText(cell, day) {
   cell.textContent = day;
 }
 function setCellAttributes(cell, day, month, year) {
-  // cell.dataset.date = `${day}/${month < 10 ? '0' : ''}${month}/${year}`;
   cell.dataset.date = `${day}/${month < 9 ? '0' : ''}${month + 1}/${year}`;
 }
 
@@ -170,11 +169,10 @@ function addCellClickEvent(cell, isDisabledDate) {
   }
 }
 
-function createCellEl(fd, y, isDisabledDate, monthType) {
-  const { month } = getCurrentYearAndMonth(currentDateObj);
+function createCellEl(fd, fm, y, isDisabledDate, monthType) {
   const cell = document.createElement('td');
   setCellText(cell, fd);
-  setCellAttributes(cell, fd, month, y);
+  setCellAttributes(cell, fd, fm, y);
   addCellClasses(cell, isDisabledDate, monthType);
   addCellClickEvent(cell, isDisabledDate);
 
@@ -195,6 +193,7 @@ function createPreviousMonthCell(day) {
   );
   const cell = createCellEl(
     formattedDay,
+    formattedMonth - 1,
     formattedYear,
     isDisabledDate,
     'previous-month'
@@ -213,6 +212,7 @@ function createCurrentMonthCell(day) {
 
   const cell = createCellEl(
     formattedDay,
+    month,
     year,
     isDisabledDate,
     'current-month'
@@ -222,6 +222,26 @@ function createCurrentMonthCell(day) {
     currentDateObj.getMonth() === todayObj.getMonth() &&
     day === todayObj.getDate();
   addCellClasses(cell, isDisabledDate, 'current-month', isToday);
+  return cell;
+}
+
+function createNextMonthCell(day) {
+  const { year, month } = getCurrentYearAndMonth(currentDateObj);
+  const { formattedDay } = formatDateInfo(day, month, year);
+  const formattedMonth = month === 11 ? 1 : month + 2;
+  const formattedYear = month === 11 ? year + 1 : year;
+  const todayObj = new Date();
+  const isDisabledDate = isDateBeforeToday(
+    new Date(formattedYear, formattedMonth - 1, day),
+    todayObj
+  );
+  const cell = createCellEl(
+    formattedDay,
+    formattedMonth - 1,
+    formattedYear,
+    isDisabledDate,
+    'next-month'
+  );
   return cell;
 }
 
@@ -243,7 +263,6 @@ function appendElement(parent, child) {
 
 function generateCalendar() {
   const { year, month } = getCurrentYearAndMonth(currentDateObj);
-  const todayObj = new Date();
   setMonthAndYearName(year);
   clearCalendarData();
   const { firstDayOfMonth, lastDayOfMonthObj } = getMonthBoundaryDates(
@@ -272,31 +291,14 @@ function generateCalendar() {
     }
     currentDayNumber++;
   }
-
-  // Fill the last row with days from the next month
-  for (let i = 1; currentRow.children.length < 7; i++) {
-    const cell = document.createElement('td');
-    const formattedDay = i < 10 ? `0${i}` : i;
-    const formattedMonth = month === 11 ? 1 : month + 2; // Handle December
-    const formattedYear = month === 11 ? year + 1 : year; // Handle December
-    cell.textContent = formattedDay;
-    cell.classList.add('next-month');
-    cell.dataset.date = `${formattedDay}/${
-      formattedMonth < 10 ? '0' : ''
-    }${formattedMonth}/${formattedYear}`;
-    currentRow.appendChild(cell);
-    cell.addEventListener('click', handleCellClick);
-    if (
-      isDateBeforeToday(
-        new Date(formattedYear, formattedMonth - 1, i),
-        todayObj
-      )
-    ) {
-      cell.classList.add('disabled-day');
+  const isAnyEmptyCell = currentRow.children.length > 0;
+  if (isAnyEmptyCell) {
+    for (let i = 1; currentRow.children.length < 7; i++) {
+      const cell = createNextMonthCell(i);
+      appendElement(currentRow, cell);
     }
+    appendElement(calendarBody, currentRow);
   }
-
-  calendarBody.appendChild(currentRow);
 }
 
 function isDateBeforeToday(date, todayObj) {
@@ -354,9 +356,6 @@ nextMonthBtn?.addEventListener('click', () => {
   updateCalendar(1);
 });
 
-// Initial calendar generation
-generateCalendar();
-
 calendarIcon.addEventListener('click', () => {
   toggleCalendarVisibility();
 });
@@ -365,6 +364,9 @@ function toggleCalendarVisibility() {
   const calendarElement = document.querySelector('.calendar');
   calendarElement.classList.toggle('isHidden');
 }
+
+generateCalendar();
+
 const subscForm = document.querySelector('.subscr__form');
 const dateInput = document.querySelector('[name="userDate"]');
 dateInput.addEventListener('focus', toggleCalendarVisibility);
