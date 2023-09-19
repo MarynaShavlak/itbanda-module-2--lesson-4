@@ -782,8 +782,8 @@ const refsSupport = {
 
 initializeModal(refsSupport);
 
-const timePickerElement = document.querySelector('#timepicker');
+// const timePickerElement = document.querySelector('#timepicker');
 const clockIcon = document.querySelector('.icon--clock');
-clockIcon.addEventListener('click', () => {
-  timePickerElement.focus();
-});
+// clockIcon.addEventListener('click', () => {
+//   timePickerElement.focus();
+// });
