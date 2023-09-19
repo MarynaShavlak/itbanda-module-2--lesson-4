@@ -32,7 +32,7 @@
       color: $time-picker-number-color;
   }
 
-  .outer-circle {
+  .time-picker__tablo {
     position: relative;
     width: 256px;
     height: 256px;
@@ -41,8 +41,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
   }
+
+.time-picker__tablo::before {
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  content:'';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: $main-accent-color;
+}
+
 
   /* Define styles for the inner circles */
   .inner-circle {
@@ -76,9 +88,23 @@
   }
 
   .number.active {
+    z-index: 34px;
     color: $primary-white-color;
     background-color: $main-accent-color;
   }
+
+.number.active:before {
+  position: absolute;
+  transform: translate(50%) rotate(-30deg);
+  content:'';
+  height: 2px;
+  width: 75px;
+  transform-origin: left;
+  background-color: $main-accent-color;
+
+}
+
+
 
   .number:nth-child(1) {
     top: 0;
