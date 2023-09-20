@@ -356,8 +356,9 @@ nextMonthBtn?.addEventListener('click', () => {
   updateCalendar(1);
 });
 
-calendarIcon.addEventListener('click', () => {
+calendarIcon.addEventListener('click', e => {
   toggleCalendarVisibility();
+  toggleIconActiveStyle(e.target);
 });
 
 function toggleCalendarVisibility() {
@@ -782,16 +783,16 @@ const refsSupport = {
 
 initializeModal(refsSupport);
 
-// const timePickerElement = document.querySelector('#timepicker');
-const clockIcon = document.querySelector('.icon--clock');
-// clockIcon.addEventListener('click', () => {
-//   timePickerElement.focus();
-// });
+const selectedTimeObj = { hours: '20', minutes: '00' };
 
+const clockIcon = document.querySelector('.icon--clock');
 const hourTablo = document.querySelector('.tablo--hours');
 const minuteTablo = document.querySelector('.tablo--minutes');
 const hourPicker = document.querySelector('.time-picker__hours');
 const minutePicker = document.querySelector('.time-picker__minutes');
+const timePickerBtn = document.querySelector('.time-picker__btn');
+const timeInput = document.querySelector('[name="userTime"]');
+timeInput.addEventListener('focus', toggleTimePickerVisibility);
 
 hourTablo.addEventListener('click', e =>
   onTimeCellClick(e, '.time-picker__hours')
@@ -805,6 +806,7 @@ minutePicker.addEventListener('click', () =>
 hourPicker.addEventListener('click', () => toggleTablo(hourTablo, minuteTablo));
 
 function onTimeCellClick(e, blockSelector) {
+  console.log('blockSelector: ', blockSelector);
   const clickedElement = e.target;
   if (!validateClickedNumber(clickedElement)) return;
   const elements = document.querySelectorAll('.number');
@@ -812,6 +814,7 @@ function onTimeCellClick(e, blockSelector) {
   const block = document.querySelector(blockSelector);
   const value = clickedElement.dataset.id;
   updateTimePickerBlock(block, value);
+  updateTimeInput(blockSelector, value);
 }
 
 function validateClickedNumber(clickedElement) {
@@ -846,4 +849,28 @@ function toggleTablo(tabloToShow, tabloToHide) {
   if (isVisible) return;
   tabloToShow.classList.remove('isHidden');
   tabloToHide.classList.add('isHidden');
+}
+
+clockIcon.addEventListener('click', e => {
+  toggleTimePickerVisibility();
+  toggleIconActiveStyle(e.target);
+});
+
+timePickerBtn.addEventListener('click', () => {
+  toggleTimePickerVisibility();
+});
+
+function toggleTimePickerVisibility() {
+  const timePickerElement = document.querySelector('.time-picker-wrap');
+  timePickerElement.classList.toggle('isHidden');
+}
+
+function toggleIconActiveStyle(icon) {
+  icon.classList.toggle('isActive');
+}
+
+function updateTimeInput(selector, value) {
+  const partTime = selector.split('__')[1];
+  selectedTimeObj[partTime] = value;
+  timeInput.value = `${selectedTimeObj.hours} : ${selectedTimeObj.minutes}`;
 }

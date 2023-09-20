@@ -229,3 +229,29 @@ padding: 17px 25px;
         margin-top: 83px;
       }
  }
+
+ .time-picker__btn {
+  position:absolute;
+  bottom:0;
+  left: 0;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid $main-accent-color;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+  color: $time-picker-tablo-color;
+  background-color: $time-picker-color;
+    cursor: pointer;
+    transition: color $cubic, background-color $cubic;
+  
+    &:hover {
+      color: $primary-white-color;
+      background-color: $main-accent-color;
+    }
+ }

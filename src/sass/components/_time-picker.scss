@@ -1,4 +1,5 @@
   .time-picker-wrap {
+    position: relative;
     font-family: 'Roboto', sans-serif;
     border-radius: 28px;
     background-color: $time-picker-color;
@@ -6,7 +7,14 @@
     max-width: 328px;
     margin-top: 10px;
     padding: 32px 36px;
+    padding-bottom: 60px;
+    
   }
+
+    .time-picker-wrap.isHidden {
+      display: none;
+    }
+
 
   .time-picker__block {
     display: flex;
