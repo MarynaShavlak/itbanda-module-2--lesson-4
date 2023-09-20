@@ -1,110 +1,206 @@
 // const calendarIcon = document.querySelector('.icon--calendar');
 // const calendarBody = document.querySelector('.calendar__body');
-// const monthYear = document.querySelector('.calendar__monthYear');
+// const calendarHeadMonthAndYear = document.querySelector('.calendar__monthYear');
 // const prevMonthBtn = document.querySelector('.calendar__prevMonth-btn');
 // const nextMonthBtn = document.querySelector('.calendar__nextMonth-btn');
+// const dateInput = document.querySelector('[name="userDate"]');
+// dateInput.addEventListener('focus', toggleCalendarVisibility);
 
 // let currentDateObj = new Date();
 
-// function generateCalendar() {
-//   const year = currentDateObj.getFullYear();
-//   const month = currentDateObj.getMonth();
-//   const todayObj = new Date(); // Get the current date
-//   const firstDayOfMonth = new Date(year, month, 1);
-//   const lastDayOfMonthObj = new Date(year, month + 1, 0);
+// function toggleIconActiveStyle(icon) {
+//   icon.classList.toggle('isActive');
+// }
 
-//   const monthName = currentDateObj.toLocaleDateString('uk-UA', { month: 'long' });
-//   const capitalizedMonth =
-//     monthName.charAt(0).toUpperCase() + monthName.slice(1);
-
-//   monthYear.textContent = `${capitalizedMonth} ${year}`;
-
-//   // Clear previous month's data
-//   calendarBody.innerHTML = '';
-
-//   // Calculate the start day (0 for Sunday, 1 for Monday, etc.)
+// function calculateStartDay(firstDayOfMonth) {
 //   let initialNumberOfWeekDay = firstDayOfMonth.getDay();
 //   if (initialNumberOfWeekDay === 0) {
-//     initialNumberOfWeekDay = 7; // Make Sunday (0) the last day of the week
+//     initialNumberOfWeekDay = 7;
 //   }
+//   return initialNumberOfWeekDay;
+// }
 
-//   // Calculate the last day of the previous month
-//   const lastDayOfPrevMonth = new Date(year, month, 0).getDate();
+// function getLastDayOfPrevMonth(year, month) {
+//   return new Date(year, month, 0).getDate();
+// }
 
-//   // Fill in the calendar
+// function getCurrentYearAndMonth(currentDateObj) {
+//   const year = currentDateObj.getFullYear();
+//   const month = currentDateObj.getMonth();
+//   return { month, year };
+// }
+
+// function getMonthBoundaryDates(year, month) {
+//   const firstDayOfMonth = new Date(year, month, 1);
+//   const lastDayOfMonthObj = new Date(year, month + 1, 0);
+//   return { firstDayOfMonth, lastDayOfMonthObj };
+// }
+
+// function formatDateInfo(day, month, year) {
+//   const formattedDay = day < 10 ? `0${day}` : day;
+//   const formattedMonth = month === 0 ? 12 : month;
+//   const formattedYear = month === 0 ? year - 1 : year;
+
+//   return {
+//     formattedDay,
+//     formattedMonth,
+//     formattedYear,
+//   };
+// }
+
+// function setCellText(cell, day) {
+//   cell.textContent = day;
+// }
+// function setCellAttributes(cell, day, month, year) {
+//   cell.dataset.date = `${day}/${month < 9 ? '0' : ''}${month + 1}/${year}`;
+// }
+
+// function addCellClasses(cell, isDisabledDate, monthType, isToday) {
+//   cell.classList.add(monthType);
+//   if (isDisabledDate) {
+//     cell.classList.add('disabled-day');
+//   }
+//   if (monthType === 'current-month' && isToday) {
+//     cell.classList.add('current-day');
+//   }
+// }
+
+// function addCellClickEvent(cell, isDisabledDate) {
+//   if (!isDisabledDate) {
+//     cell.addEventListener('click', handleCellClick);
+//   }
+// }
+
+// function createCellEl(fd, fm, y, isDisabledDate, monthType) {
+//   const cell = document.createElement('td');
+//   setCellText(cell, fd);
+//   setCellAttributes(cell, fd, fm, y);
+//   addCellClasses(cell, isDisabledDate, monthType);
+//   addCellClickEvent(cell, isDisabledDate);
+
+//   return cell;
+// }
+
+// function createPreviousMonthCell(day) {
+//   const { year, month } = getCurrentYearAndMonth(currentDateObj);
+//   const { formattedDay, formattedMonth, formattedYear } = formatDateInfo(
+//     day,
+//     month,
+//     year
+//   );
+//   const todayObj = new Date();
+//   const isDisabledDate = isDateBeforeToday(
+//     new Date(formattedYear, formattedMonth - 1, day),
+//     todayObj
+//   );
+//   const cell = createCellEl(
+//     formattedDay,
+//     formattedMonth - 1,
+//     formattedYear,
+//     isDisabledDate,
+//     'previous-month'
+//   );
+//   return cell;
+// }
+
+// function createCurrentMonthCell(day) {
+//   const { formattedDay } = formatDateInfo(day);
+//   const { year, month } = getCurrentYearAndMonth(currentDateObj);
+//   const todayObj = new Date();
+//   const isDisabledDate = isDateBeforeToday(
+//     new Date(year, month, day),
+//     todayObj
+//   );
+
+//   const cell = createCellEl(
+//     formattedDay,
+//     month,
+//     year,
+//     isDisabledDate,
+//     'current-month'
+//   );
+//   const isToday =
+//     currentDateObj.getFullYear() === todayObj.getFullYear() &&
+//     currentDateObj.getMonth() === todayObj.getMonth() &&
+//     day === todayObj.getDate();
+//   addCellClasses(cell, isDisabledDate, 'current-month', isToday);
+//   return cell;
+// }
+
+// function createNextMonthCell(day) {
+//   const { year, month } = getCurrentYearAndMonth(currentDateObj);
+//   const { formattedDay } = formatDateInfo(day, month, year);
+//   const formattedMonth = month === 11 ? 1 : month + 2;
+//   const formattedYear = month === 11 ? year + 1 : year;
+//   const todayObj = new Date();
+//   const isDisabledDate = isDateBeforeToday(
+//     new Date(formattedYear, formattedMonth - 1, day),
+//     todayObj
+//   );
+//   const cell = createCellEl(
+//     formattedDay,
+//     formattedMonth - 1,
+//     formattedYear,
+//     isDisabledDate,
+//     'next-month'
+//   );
+//   return cell;
+// }
+
+// function setMonthAndYearName(year) {
+//   const monthName = currentDateObj.toLocaleDateString('uk-UA', {
+//     month: 'long',
+//   });
+//   const capitalizedMonth =
+//     monthName.charAt(0).toUpperCase() + monthName.slice(1);
+//   calendarHeadMonthAndYear.textContent = `${capitalizedMonth} ${year}`;
+// }
+// function createCalendarRow() {
+//   return document.createElement('tr');
+// }
+
+// function appendElement(parent, child) {
+//   parent.appendChild(child);
+// }
+
+// function generateCalendar() {
+//   const { year, month } = getCurrentYearAndMonth(currentDateObj);
+//   setMonthAndYearName(year);
+//   clearCalendarData();
+//   const { firstDayOfMonth, lastDayOfMonthObj } = getMonthBoundaryDates(
+//     year,
+//     month
+//   );
+//   const initialNumberOfWeekDay = calculateStartDay(firstDayOfMonth);
+//   const lastDayOfPrevMonth = getLastDayOfPrevMonth(year, month);
+
 //   let currentDayNumber = 1;
-//   let currentRow = document.createElement('tr');
+//   let currentRow = createCalendarRow();
 
-//   // Fill the first row with days from the previous month
 //   for (let i = initialNumberOfWeekDay - 1; i >= 1; i--) {
-//     const cell = document.createElement('td');
 //     const day = lastDayOfPrevMonth - i + 1;
-//     const formattedDay = day < 10 ? `0${day}` : day;
-//     const formattedMonth = month === 0 ? 12 : month; // Handle January
-//     const formattedYear = month === 0 ? year - 1 : year; // Handle January
-//     cell.textContent = formattedDay;
-//     cell.classList.add('previous-month');
-//     cell.dataset.date = `${formattedDay}/${
-//       formattedMonth < 10 ? '0' : ''
-//     }${formattedMonth}/${formattedYear}`;
-//     currentRow.appendChild(cell);
-//     cell.addEventListener('click', handleCellClick);
-//     if (
-//       isDateBeforeToday(new Date(formattedYear, formattedMonth - 1, day), todayObj)
-//     ) {
-//       cell.classList.add('disabled-day');
-//     }
+//     const cell = createPreviousMonthCell(day);
+//     appendElement(currentRow, cell);
 //   }
 
-//   // Fill the remaining cells with days from the current month
 //   while (currentDayNumber <= lastDayOfMonthObj.getDate()) {
-//     const cell = document.createElement('td');
-//     const formattedDay = currentDayNumber < 10 ? `0${currentDayNumber}` : currentDayNumber;
-//     cell.textContent = formattedDay;
-//     cell.classList.add('current-month');
-//     if (
-//       currentDateObj.getFullYear() === todayObj.getFullYear() &&
-//       currentDateObj.getMonth() === todayObj.getMonth() &&
-//       currentDayNumber === todayObj.getDate()
-//     ) {
-//       cell.classList.add('current-day');
-//     }
-//     cell.dataset.date = `${formattedDay}/${month < 9 ? '0' : ''}${
-//       month + 1
-//     }/${year}`;
-//     currentRow.appendChild(cell);
-//     cell.addEventListener('click', handleCellClick);
-//     if (isDateBeforeToday(new Date(year, month, currentDayNumber), todayObj)) {
-//       cell.classList.add('disabled-day');
-//     }
-//     if (currentRow.children.length === 7) {
-//       calendarBody.appendChild(currentRow);
-//       currentRow = document.createElement('tr');
+//     const cell = createCurrentMonthCell(currentDayNumber);
+//     appendElement(currentRow, cell);
+//     const isWeekRowFull = currentRow.children.length === 7;
+//     if (isWeekRowFull) {
+//       appendElement(calendarBody, currentRow);
+//       currentRow = createCalendarRow();
 //     }
 //     currentDayNumber++;
 //   }
-
-//   // Fill the last row with days from the next month
-//   for (let i = 1; currentRow.children.length < 7; i++) {
-//     const cell = document.createElement('td');
-//     const formattedDay = i < 10 ? `0${i}` : i;
-//     const formattedMonth = month === 11 ? 1 : month + 2; // Handle December
-//     const formattedYear = month === 11 ? year + 1 : year; // Handle December
-//     cell.textContent = formattedDay;
-//     cell.classList.add('next-month');
-//     cell.dataset.date = `${formattedDay}/${
-//       formattedMonth < 10 ? '0' : ''
-//     }${formattedMonth}/${formattedYear}`;
-//     currentRow.appendChild(cell);
-//     cell.addEventListener('click', handleCellClick);
-//     if (
-//       isDateBeforeToday(new Date(formattedYear, formattedMonth - 1, i), todayObj)
-//     ) {
-//       cell.classList.add('disabled-day');
+//   const isAnyEmptyCell = currentRow.children.length > 0;
+//   if (isAnyEmptyCell) {
+//     for (let i = 1; currentRow.children.length < 7; i++) {
+//       const cell = createNextMonthCell(i);
+//       appendElement(currentRow, cell);
 //     }
+//     appendElement(calendarBody, currentRow);
 //   }
-
-//   calendarBody.appendChild(currentRow);
 // }
 
 // function isDateBeforeToday(date, todayObj) {
@@ -112,19 +208,16 @@
 // }
 
 // function convertDateFormat(dateString) {
-//   // Split the input date string by '/'
 //   const parts = dateString.split('/');
-
-//   // Ensure there are three parts (day, month, and year)
-//   if (parts.length !== 3) {
-//     return 'Invalid date format';
-//   }
-
 //   const [day, month, year] = parts;
-
-//   // Swap day and month and rejoin them with '/'
 //   const newDateString = `${month}/${day}/${year}`;
+//   return newDateString;
+// }
 
+// function reverseConvertDateFormat(dateString) {
+//   const parts = dateString.split('/');
+//   const [month, day, year] = parts;
+//   const newDateString = `${day}/${month}/${year}`;
 //   return newDateString;
 // }
 
@@ -141,29 +234,37 @@
 //   const differenceInMilliseconds = clickedDateObj - currentDateObjObj;
 
 //   if (differenceInMilliseconds >= 0) {
-//     console.log('currentDateObj: ', currentDateObj);
-//     console.log('clickedDate: ', clickedDate);
+//     const chosenDate = reverseConvertDateFormat(clickedDate);
+//     dateInput.value = `${chosenDate}`;
+//     toggleCalendarVisibility();
 //   }
 // }
 
-// prevMonthBtn.addEventListener('click', () => {
-//   currentDateObj.setMonth(currentDateObj.getMonth() - 1);
+// function clearCalendarData() {
+//   calendarBody.innerHTML = '';
+// }
+
+// function updateCalendar(monthOffset) {
+//   currentDateObj.setMonth(currentDateObj.getMonth() + monthOffset);
 //   generateCalendar();
+// }
+
+// prevMonthBtn?.addEventListener('click', () => {
+//   updateCalendar(-1);
 // });
 
-// nextMonthBtn.addEventListener('click', () => {
-//   currentDateObj.setMonth(currentDateObj.getMonth() + 1);
-//   generateCalendar();
+// nextMonthBtn?.addEventListener('click', () => {
+//   updateCalendar(1);
 // });
 
-// // Initial calendar generation
-// generateCalendar();
-
-// calendarIcon.addEventListener('click', () => {
+// calendarIcon.addEventListener('click', e => {
 //   toggleCalendarVisibility();
+//   toggleIconActiveStyle(e.target);
 // });
 
 // function toggleCalendarVisibility() {
 //   const calendarElement = document.querySelector('.calendar');
 //   calendarElement.classList.toggle('isHidden');
 // }
+
+// generateCalendar();
