@@ -809,7 +809,10 @@ function onTimeCellClick(e, blockSelector) {
   console.log('blockSelector: ', blockSelector);
   const clickedElement = e.target;
   if (!validateClickedNumber(clickedElement)) return;
-  const elements = document.querySelectorAll('.number');
+  const partTimeName = getTimePartName(blockSelector);
+  console.log('artTimeName: ', partTimeName);
+  const elements = document.querySelectorAll(`.${partTimeName}`);
+  console.log('elements: ', elements);
   updateTimePickerTablo(clickedElement, elements);
   const block = document.querySelector(blockSelector);
   const value = clickedElement.dataset.id;
@@ -870,7 +873,11 @@ function toggleIconActiveStyle(icon) {
 }
 
 function updateTimeInput(selector, value) {
-  const partTime = selector.split('__')[1];
+  const partTime = getTimePartName(selector);
   selectedTimeObj[partTime] = value;
   timeInput.value = `${selectedTimeObj.hours} : ${selectedTimeObj.minutes}`;
+}
+
+function getTimePartName(selector) {
+  return selector.split('__')[1];
 }
