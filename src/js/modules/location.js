@@ -4,8 +4,6 @@ const locationInputList = document.querySelectorAll('.form__input--location');
 
 if (!window.initMap) {
   window.initMap = function () {
-    console.log('window.initMap');
-
     locationInputList.forEach(function (locationInput) {
       const autocomplete = new google.maps.places.Autocomplete(locationInput);
       autocomplete.addListener('place_changed', () => {

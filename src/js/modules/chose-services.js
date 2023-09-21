@@ -124,7 +124,6 @@ function updateTotalCostForService(serviceName) {
   if (orderServiceTotalCost && orderServiceTotalQuantity) {
     const updatedQuantity = updateServiceQuantity(serviceName);
     const cost = (updatedQuantity * price).toFixed(2);
-    console.log('cost: ', cost);
     orderServiceTotalCost.textContent = `${cost}zł`;
     orderServiceTotalQuantity.textContent = updatedQuantity;
   } else {

@@ -11,7 +11,6 @@ const allowedPages = [
 ];
 
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('download');
   const currentPage = window.location.pathname;
   const isAllowedPage = allowedPages.includes(currentPage);
   if (!isAllowedPage && currentPage !== '/error.html') {
