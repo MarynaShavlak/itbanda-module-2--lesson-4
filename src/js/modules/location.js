@@ -1,14 +1,22 @@
-const locationInput = document.querySelector('.form__input--location');
 const backdrop = document.querySelector('.backdrop--subscr');
 
-window.initMap = function () {
-  const autocomplete = new google.maps.places.Autocomplete(locationInput);
-  autocomplete.addListener('place_changed', () => {
-    const place = autocomplete.getPlace();
-  });
-};
+const locationInputList = document.querySelectorAll('.form__input--location');
 
-function handleInputFocusAndNotEmpty() {
+if (!window.initMap) {
+  window.initMap = function () {
+    console.log('window.initMap');
+
+    locationInputList.forEach(function (locationInput) {
+      const autocomplete = new google.maps.places.Autocomplete(locationInput);
+      autocomplete.addListener('place_changed', () => {
+        const place = autocomplete.getPlace();
+      });
+    });
+  };
+}
+
+function handleInputFocusAndNotEmpty(event) {
+  const locationInput = event.target;
   if (backdrop) {
     if (
       locationInput.value.trim() !== '' &&
@@ -21,8 +29,10 @@ function handleInputFocusAndNotEmpty() {
   }
 }
 
-locationInput.addEventListener('input', handleInputFocusAndNotEmpty);
-locationInput.addEventListener('focus', handleInputFocusAndNotEmpty);
-locationInput.addEventListener('blur', handleInputFocusAndNotEmpty);
+locationInputList.forEach(function (locationInput) {
+  locationInput.addEventListener('input', handleInputFocusAndNotEmpty);
+  locationInput.addEventListener('focus', handleInputFocusAndNotEmpty);
+  locationInput.addEventListener('blur', handleInputFocusAndNotEmpty);
 
-handleInputFocusAndNotEmpty();
+  handleInputFocusAndNotEmpty({ target: locationInput });
+});

@@ -123,7 +123,9 @@ function updateTotalCostForService(serviceName) {
   const price = serviceInfo[serviceName].price;
   if (orderServiceTotalCost && orderServiceTotalQuantity) {
     const updatedQuantity = updateServiceQuantity(serviceName);
-    orderServiceTotalCost.textContent = `${updatedQuantity * price}zł`;
+    const cost = (updatedQuantity * price).toFixed(2);
+    console.log('cost: ', cost);
+    orderServiceTotalCost.textContent = `${cost}zł`;
     orderServiceTotalQuantity.textContent = updatedQuantity;
   } else {
     updateServiceQuantity(serviceName, 0);
@@ -188,21 +190,24 @@ function updateServiceQuantity(serviceName, quantity) {
 }
 
 function calculateTotalOrderCost() {
-  const totalOrderCost = Object.keys(userOrderInfo).reduce(
-    (acc, propertyName) => {
+  const totalOrderCost = Object.keys(userOrderInfo)
+    .reduce((acc, propertyName) => {
       const property = userOrderInfo[propertyName];
       return acc + property.quantity * property.price;
-    },
-    0
-  );
+    }, 0)
+    .toFixed(2);
   const totalOrderCostEl = document.querySelector('.total-order-value');
   totalOrderCostEl.textContent = `${totalOrderCost}zł`;
 }
 
 function createSpan(className, textContent) {
   const span = document.createElement('span');
-  span.className = className;
-  span.textContent = textContent;
+  if (className) {
+    span.className = className;
+  }
+  if (textContent) {
+    span.textContent = textContent;
+  }
   return span;
 }
 
@@ -218,17 +223,18 @@ function createServiceItem(element) {
   listItem.id = serviceID;
   listItem.className = 'table__item table__block';
   const nameSpan = createSpan('item__name', `${serviceName}`);
-  const spaceTextNode = document.createTextNode('\u00A0 x');
+  const textSpan = createSpan('', `x`);
+  const nameWrapper = createSpan('name-wrapper');
+  const quantityWrapper = createSpan('quantity-wrapper');
   const quantitySpan = createSpan(
     'item__quantity service-quantity',
     serviceInfo[serviceID].quantity
   );
-
-  quantitySpan.textContent = serviceInfo[serviceID].quantity;
-  appendChildNodes(nameSpan, [spaceTextNode, quantitySpan]);
+  appendChildNodes(quantityWrapper, [textSpan, quantitySpan]);
+  appendChildNodes(nameWrapper, [nameSpan, quantityWrapper]);
   const valueSpan = createSpan('service-value', `${servicePrice}zł`);
   valueSpan.setAttribute('data-service', serviceID);
-  appendChildNodes(listItem, [nameSpan, valueSpan]);
+  appendChildNodes(listItem, [nameWrapper, valueSpan]);
   return listItem;
 }
 

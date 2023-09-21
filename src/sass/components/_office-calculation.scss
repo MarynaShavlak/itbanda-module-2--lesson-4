@@ -200,6 +200,7 @@
 .table__block {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   .service-value {
       font-weight: 600;
     }
@@ -207,6 +208,8 @@
 .item__name {
    display: flex;
    justify-content: space-between;
+   align-items:center;
+   margin-right: 5px;
 }
 
  .item__quantity {
@@ -438,6 +441,19 @@
         line-height: 1.39;
    }
  }
+
+
+ .name-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+ }
+
+
+ .quantity-wrapper {
+  align-self: center;
+ }
+
 
  .service-element__accent {
   font-weight: 700;
