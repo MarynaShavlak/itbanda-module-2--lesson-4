@@ -1,1 +1,0 @@
-{"mappings":"oeAAAA,EAAA,S","sources":["src/js/faq.js"],"sourcesContent":["import './modules/common.js';\nimport bodyScrollLock from 'body-scroll-lock';\nimport './modules/aside-menu.js';\n"],"names":["parcelRequire"],"version":3,"file":"faq.2c1294bf.js.map"}
