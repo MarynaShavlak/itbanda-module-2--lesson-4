@@ -19,11 +19,11 @@ const addressGiveBlock = document.querySelector(
   '.keys-address-block__give-item'
 );
 
-increaseSquareBtn?.addEventListener('click', handleSquareQuantityChange);
-decreaseSquareBtn?.addEventListener('click', handleSquareQuantityChange);
-takeKeysBtn?.addEventListener('click', handleKeyBtn);
-giveKeysBtn?.addEventListener('click', handleKeyBtn);
-buildingsBtnList?.forEach(el => {
+increaseSquareBtn.addEventListener('click', handleSquareQuantityChange);
+decreaseSquareBtn.addEventListener('click', handleSquareQuantityChange);
+takeKeysBtn.addEventListener('click', handleKeyBtn);
+giveKeysBtn.addEventListener('click', handleKeyBtn);
+buildingsBtnList.forEach(el => {
   el.addEventListener('click', e => {
     onBuldingTypeBtnClick(e);
   });

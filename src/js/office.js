@@ -7,3 +7,4 @@ import './modules/calendar.js';
 import './modules/time-picker.js';
 import './modules/location.js';
 import './modules/chose-services.js';
+import './modules/user-order-form.js';

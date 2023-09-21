@@ -53,7 +53,13 @@
 }
 
 
-
+.buildings__link {
+   color: $primary-black-color;
+   transition: color $cubic;
+   &:hover, &:focus {
+    color: $main-accent-color;
+   }
+}
 
 .buildings__text {
   text-align: center;

@@ -26,8 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
   } else if (currentPage === '/office.html') {
     setCurrentNavLink('.nav__list .nav__item:nth-child(2) .nav__link');
     updateDynamicLinks('office.html#office-calc-block');
+    setBuildingsFlexBasis('.buildings__element', 'calc(100% / 3)');
+    setOfficeBuildingsToggleMenu();
   } else if (currentPage === '/after-repair.html') {
+    setBuildingsFlexBasis('.buildings__element', 'calc(100% / 2)');
     hideSelectedItems('.add-services-list__item:nth-child(n+3)');
+    setRepairBuildingsToggleMenu();
+    updateDynamicLinks('after-repair.html#office-calc-block');
   } else if (currentPage === '/calc-order.html') {
     addWhiteBackground('.block');
   } else if (currentPage === '/contacts.html') {
@@ -77,4 +82,22 @@ function modifyMainSection() {
 
 export function toggleIconActiveStyle(icon) {
   icon.classList.toggle('isActive');
+}
+
+function setOfficeBuildingsToggleMenu() {
+  const buildingsElements = document.querySelectorAll('.element--office-page');
+  buildingsElements.forEach(item => item.classList.remove('isHidden'));
+  const repairBuilding = document.querySelector('.element--repair-page');
+  repairBuilding.classList.add('isHidden');
+}
+function setRepairBuildingsToggleMenu() {
+  const buildingsElements = document.querySelectorAll('.element--office-page');
+  buildingsElements.forEach(item => item.classList.add('isHidden'));
+  const repairBuilding = document.querySelector('.element--repair-page');
+  repairBuilding.classList.remove('isHidden');
+}
+
+function setBuildingsFlexBasis(selector, value) {
+  const buildingsElements = document.querySelectorAll(selector);
+  buildingsElements.forEach(item => (item.style.flexBasis = value));
 }
