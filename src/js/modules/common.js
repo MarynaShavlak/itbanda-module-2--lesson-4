@@ -80,6 +80,7 @@ function modifyMainSection() {
 }
 
 export function toggleIconActiveStyle(icon) {
+  console.log('icon: ', icon);
   icon.classList.toggle('isActive');
 }
 

@@ -1,5 +1,6 @@
 import { toggleIconActiveStyle } from './common';
 const selectedTimeObj = { hours: '20', minutes: '00' };
+const timePickerElement = document.querySelector('.time-picker-wrap');
 const clockIcon = document.querySelector('.icon--clock');
 const hourTablo = document.querySelector('.tablo--hours');
 const minuteTablo = document.querySelector('.tablo--minutes');
@@ -7,7 +8,19 @@ const hourPicker = document.querySelector('.time-picker__hours');
 const minutePicker = document.querySelector('.time-picker__minutes');
 const timePickerBtn = document.querySelector('.time-picker__btn');
 const timeInput = document.querySelector('[name="userTime"]');
-timeInput.addEventListener('focus', toggleTimePickerVisibility);
+// timeInput.addEventListener('focus', toggleTimePickerVisibility);
+timeInput.addEventListener('click', () => {
+  toggleIconActiveStyle(clockIcon);
+  toggleTimePickerVisibility();
+  const isTimePickerVisible = !timePickerElement.classList.contains('isHidden');
+  if (isTimePickerVisible) {
+    setTimeInputValue();
+  }
+});
+
+function setTimeInputValue() {
+  timeInput.value = `${selectedTimeObj.hours} : ${selectedTimeObj.minutes}`;
+}
 
 hourTablo.addEventListener('click', e =>
   onTimeCellClick(e, '.time-picker__hours')
@@ -76,14 +89,13 @@ timePickerBtn.addEventListener('click', () => {
 });
 
 function toggleTimePickerVisibility() {
-  const timePickerElement = document.querySelector('.time-picker-wrap');
   timePickerElement.classList.toggle('isHidden');
 }
 
 function updateTimeInput(selector, value) {
   const partTime = getTimePartName(selector);
   selectedTimeObj[partTime] = value;
-  timeInput.value = `${selectedTimeObj.hours} : ${selectedTimeObj.minutes}`;
+  setTimeInputValue();
 }
 
 function getTimePartName(selector) {
