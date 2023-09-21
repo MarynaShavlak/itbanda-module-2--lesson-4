@@ -1,4 +1,4 @@
-import { toggleIconActiveStyle } from './user-order-form';
+import { toggleIconActiveStyle } from './common';
 const selectedTimeObj = { hours: '20', minutes: '00' };
 const clockIcon = document.querySelector('.icon--clock');
 const hourTablo = document.querySelector('.tablo--hours');

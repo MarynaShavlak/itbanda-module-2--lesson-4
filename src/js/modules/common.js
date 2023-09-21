@@ -74,3 +74,7 @@ function modifyMainSection() {
   const main = document.querySelector('main');
   main.classList.add('section--dark-background');
 }
+
+export function toggleIconActiveStyle(icon) {
+  icon.classList.toggle('isActive');
+}

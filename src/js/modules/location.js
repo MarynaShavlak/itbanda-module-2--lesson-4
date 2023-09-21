@@ -1,12 +1,12 @@
-const locationInput = document.querySelector('#location-input');
+const locationInput = document.querySelector('.form__input--location');
 const backdrop = document.querySelector('.backdrop--subscr');
 
-function initMap() {
+window.initMap = function () {
   const autocomplete = new google.maps.places.Autocomplete(locationInput);
   autocomplete.addListener('place_changed', () => {
     const place = autocomplete.getPlace();
   });
-}
+};
 
 function handleInputFocusAndNotEmpty() {
   if (backdrop) {

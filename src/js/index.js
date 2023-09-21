@@ -5,4 +5,6 @@ import './modules/questions.js';
 import './modules/modal.js';
 import './modules/support-modal.js';
 import './modules/subscr-modal.js';
+import './modules/calendar.js';
 import './modules/time-picker.js';
+import './modules/location.js';
