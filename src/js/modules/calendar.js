@@ -12,10 +12,9 @@ let monthToShowInCalendarObj = new Date();
 let orderDay = getCurrentDateAsString();
 
 dateInput.addEventListener('click', () => {
-  console.log('wasChosenDayChanged : ', wasChosenDayChanged);
-
-  toggleIconActiveStyle(calendarIcon);
   toggleCalendarVisibility();
+  toggleIconActiveStyle(calendarIcon);
+  monthToShowInCalendarObj = new Date(selectedDateObj);
   const isCalendarVisible = !calendarElement.classList.contains('isHidden');
   generateCalendar(selectedDateObj);
   if (isCalendarVisible) {
@@ -25,15 +24,13 @@ dateInput.addEventListener('click', () => {
 
 calendarIcon.addEventListener('click', e => {
   toggleCalendarVisibility();
-  console.log('при клике на иконку selectedDateObj: ', selectedDateObj);
+  monthToShowInCalendarObj = new Date(selectedDateObj);
   generateCalendar(selectedDateObj);
   toggleIconActiveStyle(e.target);
   const isCalendarVisible = !calendarElement.classList.contains('isHidden');
   if (isCalendarVisible) {
     setDateInputValue();
   }
-
-  console.log('при клике на иконку ВКОНЦЕ selectedDateObj: ', selectedDateObj);
 });
 
 function calculateStartDay(firstDayOfMonth) {
@@ -130,13 +127,10 @@ function createPreviousMonthCell(day) {
 
 function createCurrentMonthCell(day) {
   const { formattedDay } = formatDateInfo(day);
-  // const { year, month } = getCurrentYearAndMonth(selectedDateObj);
   const { year, month } = getCurrentYearAndMonth(monthToShowInCalendarObj);
   const todayObj = new Date();
   const cellDateObj = new Date(year, month, day);
-  // console.log('_______cellDateObj : ', cellDateObj);
   const isDisabledDate = isDateBeforeToday(cellDateObj, todayObj);
-  // console.log('_______selectedDateObj: ', selectedDateObj);
 
   const cell = createCellEl(
     formattedDay,
@@ -147,24 +141,14 @@ function createCurrentMonthCell(day) {
   );
   const isYearEquel =
     cellDateObj.getFullYear() === selectedDateObj.getFullYear();
-  // console.log('isYearEquel: ', isYearEquel);
   const isMonthEquel = cellDateObj.getMonth() === selectedDateObj.getMonth();
-  // console.log('isMonthEquel: ', isMonthEquel);
   const isDayEquel = day === selectedDateObj.getDate();
-  // console.log('isDayEquel: ', isDayEquel);
-  // console.log('______________');
-  const isCellSelectedDay =
-    cellDateObj.getFullYear() === selectedDateObj.getFullYear() &&
-    cellDateObj.getMonth() === selectedDateObj.getMonth() &&
-    day === selectedDateObj.getDate();
-
-  // console.log('isCellSelectedDay: ', isCellSelectedDay);
+  const isCellSelectedDay = isYearEquel && isMonthEquel && isDayEquel;
   addCellClasses(cell, isDisabledDate, 'current-month', isCellSelectedDay);
   return cell;
 }
 
 function createNextMonthCell(day) {
-  // const { year, month } = getCurrentYearAndMonth(selectedDateObj);
   const { year, month } = getCurrentYearAndMonth(monthToShowInCalendarObj);
   const { formattedDay } = formatDateInfo(day, month, year);
   const formattedMonth = month === 11 ? 1 : month + 2;
@@ -205,10 +189,9 @@ function appendElement(parent, child) {
 }
 
 function generateCalendar(dateobj) {
-  console.log('in function generateCalendar : dateobj: ', dateobj);
+  clearCalendarData();
   const { year, month } = getCurrentYearAndMonth(dateobj);
   setMonthAndYearName(year);
-  clearCalendarData();
   const { firstDayOfMonth, lastDayOfMonthObj } = getMonthBoundaryDates(
     year,
     month
@@ -264,9 +247,7 @@ function reverseConvertDateFormat(dateString) {
 }
 
 function handleCellClick(event) {
-  console.log('MAYBE HERE');
   const clickedDate = convertDateFormat(event.target.dataset.date);
-  console.log('event.target.dataset.date: ', event.target.dataset.date);
   const currentDateObj = new Date().toLocaleDateString('en-US', {
     year: 'numeric',
     month: '2-digit',
@@ -275,9 +256,7 @@ function handleCellClick(event) {
 
   const clickedDateObj = new Date(clickedDate);
 
-  console.log('BEFORE selectedDateObj: ', selectedDateObj);
   selectedDateObj = clickedDateObj;
-  console.log('AFTER selectedDateObj: ', selectedDateObj);
   const currentDateObjObj = new Date(currentDateObj);
   const differenceInMilliseconds = clickedDateObj - currentDateObjObj;
 
@@ -290,7 +269,6 @@ function handleCellClick(event) {
 }
 
 function setDateInputValue() {
-  console.log('orderDay: ', orderDay);
   dateInput.value = `${orderDay}`;
 }
 
@@ -299,20 +277,9 @@ function clearCalendarData() {
 }
 
 function updateCalendar(monthOffset) {
-  // console.log('update before selectedDateObj: ', selectedDateObj);
-  // console.log(
-  //   'update BEFORE monthToShowInCalendarObj: ',
-  //   monthToShowInCalendarObj
-  // );
   monthToShowInCalendarObj.setMonth(
     monthToShowInCalendarObj.getMonth() + monthOffset
   );
-  // console.log('_____________');
-  // console.log('update after selectedDateObj: ', selectedDateObj);
-  // console.log(
-  //   'update AFTER monthToShowInCalendarObj: ',
-  //   monthToShowInCalendarObj
-  // );
 
   generateCalendar(monthToShowInCalendarObj);
 }
