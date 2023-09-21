@@ -8,7 +8,6 @@ const hourPicker = document.querySelector('.time-picker__hours');
 const minutePicker = document.querySelector('.time-picker__minutes');
 const timePickerBtn = document.querySelector('.time-picker__btn');
 const timeInput = document.querySelector('[name="userTime"]');
-// timeInput.addEventListener('focus', toggleTimePickerVisibility);
 timeInput.addEventListener('click', () => {
   toggleIconActiveStyle(clockIcon);
   toggleTimePickerVisibility();

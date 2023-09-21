@@ -87,7 +87,7 @@ td {
   color: $label-text-color;
 }
 
-.current-day, td:not(.disabled-day):hover {
+.order-day, td:not(.disabled-day):hover {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 12px;
