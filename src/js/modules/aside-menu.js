@@ -1,3 +1,5 @@
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+
 (() => {
   const asideMenu = document.querySelector('.aside-menu');
   const openMenuBtn = document.querySelector('.open-menu-btn');
@@ -9,10 +11,8 @@
     openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
     asideMenu.classList.toggle('is-open');
 
-    const scrollLockMethod = !isMenuOpen
-      ? 'disableBodyScroll'
-      : 'enableBodyScroll';
-    bodyScrollLock[scrollLockMethod](document.body);
+    const scrollLockMethod = !isMenuOpen ? disableBodyScroll : enableBodyScroll;
+    scrollLockMethod(document.body);
   };
 
   openMenuBtn.addEventListener('click', toggleMenu);
@@ -22,6 +22,6 @@
     if (!e.matches) return;
     asideMenu.classList.remove('is-open');
     openMenuBtn.setAttribute('aria-expanded', false);
-    bodyScrollLock.enableBodyScroll(document.body);
+    enableBodyScroll(document.body);
   });
 })();

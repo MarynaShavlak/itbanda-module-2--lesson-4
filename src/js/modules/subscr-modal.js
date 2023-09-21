@@ -1,3 +1,5 @@
+import { initializeModal } from './modal';
+
 const refsSubscr = {
   name: 'subscription',
   openModalBtn: document.querySelector('[data-subscription-modal-open]'),

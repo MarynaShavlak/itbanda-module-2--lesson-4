@@ -1,3 +1,5 @@
+import { initializeModal } from './modal';
+
 const refsSupport = {
   name: 'support',
   openModalBtn: document.querySelector('[data-support-modal-open]'),

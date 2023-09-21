@@ -1,4 +1,7 @@
-function initializeModal(refs) {
+import { resetErrors } from './user-order-form';
+import { subscForm } from './user-order-form';
+
+export function initializeModal(refs) {
   refs.openModalBtn.addEventListener('click', () => toggleModal(refs));
   refs.closeModalBtn.addEventListener('click', e => {
     e.stopPropagation();

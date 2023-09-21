@@ -18,6 +18,7 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
+    "body-scroll-lock": "^4.0.0-beta.0",
     "flatpickr": "^4.6.13",
     "modern-normalize": "^1.1.0"
   },
@@ -27,5 +28,19 @@
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4"
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead"
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "parcel": {
+    "entryPoints": {
+      "index": "./src/js/index.js",
+      "office": "./src/js/office.js",
+      "after-repair": "./src/js/after-repair.js",
+      "calc-order": "./src/js/calc-order.js",
+      "services": "./src/js/services.js",
+      "faq": "./src/js/questions.js",
+      "contacts": "./src/js/contacts.js",
+      "error": "./src/js/error.js",
+      "success-order": "./src/js/success-order.js"
+    },
+    "outputDirectory": "./dist"
+  }
 }
