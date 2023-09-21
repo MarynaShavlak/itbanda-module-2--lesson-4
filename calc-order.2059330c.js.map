@@ -1,0 +1,1 @@
+{"mappings":"oeAAAA,EAAA,S","sources":["src/js/calc-order.js"],"sourcesContent":["import './modules/common.js';\nimport './modules/aside-menu.js';\n"],"names":["parcelRequire"],"version":3,"file":"calc-order.2059330c.js.map"}
