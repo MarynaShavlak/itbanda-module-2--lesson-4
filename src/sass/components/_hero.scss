@@ -108,11 +108,9 @@
         width:200px;
         margin: 0 auto;
         margin-bottom: 20px;
-        margin-top: 24px;
       }
   @media screen and (min-width: 768px) {
     font-size: 20px;
-    margin-top: 37px;
   }
   @media screen and (min-width: 1440px) {
     font-size: 22px;
@@ -189,7 +187,7 @@
     height: 450px;
   }
   @media screen and (min-width: 1440px) {
-    top: -13px;
+    top: 50px;
     width: 579px;
     height: 579px;
   }
@@ -219,9 +217,26 @@
   }
   @media screen and (min-width: 1440px) {
       // height: 592px;
-      height: 1000px;
+      // height: 1000px;
+      height: fit-content;
       padding-top: 76px;
+      padding-bottom: 76px;
   }
+}
+
+
+.success__wrap {
+  
+  @media screen and (max-width: 767px) {
+      margin-top: 24px;
+    }
+  
+    @media screen and (min-width: 768px) {
+      margin-top: 37px;
+    }
+  
+
+
 }
 
 .section--service-buildings {
@@ -320,9 +335,9 @@
 .hero__info {
   display: flex;
   flex-direction: column;
-  @media screen and (min-width: 1440px) {
-      min-width: 678px;
-    }
+  // @media screen and (min-width: 1440px) {
+  //     min-width: 678px;
+  //   }
 }
 
 .office-hero__list {

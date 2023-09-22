@@ -6,65 +6,71 @@
       <h1 class="hero__title title--success">
         Дякуємо за замовлення клінінгу!
       </h1>
-      <include src="./partials/success/success-order-table.html"></include>
+
       <p class="hero__text">
         Ми зв’яжемося з вами найближчим часом для підтвердження дати та часу
         клінінгу.
       </p>
-      <p class="hero__text text--success">Слідкуйте за нами в соц. мережах!</p>
-      <ul class="socials socials--success">
-        <li class="socials__item">
-          <a
-            class="socials__link"
-            href="#"
-            aria-label="Посилання на Інстраграм компанії"
+      <include src="./partials/success/success-order-table.html"></include>
+      <include src="./partials/success/success-services-table.html"></include>
+      <div class="success__wrap">
+        <p class="hero__text text--success">
+          Слідкуйте за нами в соц. мережах!
+        </p>
+        <ul class="socials socials--success">
+          <li class="socials__item">
+            <a
+              class="socials__link"
+              href="#"
+              aria-label="Посилання на Інстраграм компанії"
+            >
+              <svg
+                class="socials__icon socials__inst-icon"
+                width="40"
+                height="40"
+              >
+                <use href="./images/sprite.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a
+              class="socials__link"
+              href="#"
+              aria-label="Посилання на Фейсбук компанії"
+              ><svg
+                class="socials__icon socials__facebook-icon"
+                width="40"
+                height="40"
+              >
+                <use href="./images/sprite.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a
+              class="socials__link"
+              href="#"
+              aria-label="Посилання на Вотсап компанії"
+              ><svg
+                class="socials__icon socials__whatsApp-icon"
+                width="40"
+                height="40"
+              >
+                <use href="./images/sprite.svg#icon-whatsApp"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <a href="./index.html"
+          ><button
+            class="hero__btn action-btn btn back-to-home-btn"
+            type="button"
           >
-            <svg
-              class="socials__icon socials__inst-icon"
-              width="40"
-              height="40"
-            >
-              <use href="./images/sprite.svg#icon-instagram"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="socials__item">
-          <a
-            class="socials__link"
-            href="#"
-            aria-label="Посилання на Фейсбук компанії"
-            ><svg
-              class="socials__icon socials__facebook-icon"
-              width="40"
-              height="40"
-            >
-              <use href="./images/sprite.svg#icon-facebook"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="socials__item">
-          <a
-            class="socials__link"
-            href="#"
-            aria-label="Посилання на Вотсап компанії"
-            ><svg
-              class="socials__icon socials__whatsApp-icon"
-              width="40"
-              height="40"
-            >
-              <use href="./images/sprite.svg#icon-whatsApp"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-      <a href="./index.html"
-        ><button
-          class="hero__btn action-btn btn back-to-home-btn"
-          type="button"
+            На головну
+          </button></a
         >
-          На головну
-        </button></a
-      >
+      </div>
     </div>
     <div class="image-success-thumb">
       <div class="image--success"></div>
