@@ -1,0 +1,46 @@
+.success-order-table th,
+.success-order-table td {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.33;
+  letter-spacing: 0.4px;
+  text-align: left;
+  
+}
+
+
+
+.success-order-table {
+  @media screen and (max-width: 767px) {
+    width: 335px;
+  }
+  
+  border-radius: 20px;
+  border-collapse:collapse;
+  background-color: $time-picker-color;
+}
+.success-order__name {
+  padding-left: 15px;
+  padding-top:10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  border-right: 2px solid $primary-white-color;
+    @media screen and (max-width: 767px) {
+    width: 20px;
+  }
+  width: 300px;
+}
+
+
+tr:not(:last-child) .success-order__name, tr:not(:last-child) .success-order__value {
+  border-bottom: 2px solid $primary-white-color;
+}
+
+ .success-order__value {
+      padding-right: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      border-left: 2px solid $primary-white-color;
+  // background-color: green;
+}
