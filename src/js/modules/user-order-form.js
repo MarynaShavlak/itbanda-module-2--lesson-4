@@ -1,7 +1,6 @@
 import { refsSubscr } from './subscr-modal';
 import { toggleModal } from './modal';
 export const subscForm = document.querySelector('.subscr__form');
-console.log('subscForm : ', subscForm);
 const paymentBtnList = document.querySelectorAll('.payment__btn');
 const paymentErrorMessage = document.querySelector('.form__payment-error-text');
 const policyErrorMessage = document.querySelector('.form__policy-error-text');
@@ -40,13 +39,22 @@ const validationFields = [
   'userTime',
 ];
 
-const userOrderData = {
-  userTypePayment: '',
+export const userOrderDataObj = {
+  userPaymentType: '',
+  userBuildingType: '',
+  userTakeKeyAddress: '',
+  userGiveKeyAddress: '',
+  userSquare: '',
+  userServices: {},
 };
 
+export function setPropertyInOrderObj(el) {
+  const propertyName = el.getAttribute('data-type');
+  const propertyValue = el.getAttribute('data-id');
+  userOrderDataObj[propertyName] = propertyValue;
+}
+
 function validateFields(elements, fieldNames) {
-  console.log('fieldNames: ', fieldNames);
-  console.log('elements: ', elements);
   return fieldNames
     .filter(fieldName => elements[fieldName].value.trim() === '')
     .map(fieldName => elements[fieldName]);
@@ -84,9 +92,10 @@ function togglePolicyErrorVisibility() {
 
 function onSubmitForm(e) {
   e.preventDefault();
-  const isButton = e.currentTarget.tagName === 'BUTTON';
-
-  const elements = isButton ? subscForm.elements : e.currentTarget.elements;
+  const isComplexOrder = e.currentTarget.tagName === 'BUTTON';
+  const elements = isComplexOrder
+    ? subscForm.elements
+    : e.currentTarget.elements;
   console.log('e.currentTarget: ', e.currentTarget);
   const elementsWithErrors = validateFields(elements, validationFields);
   resetErrors(elements);
@@ -104,8 +113,9 @@ function onSubmitForm(e) {
   if (!isPaymentTypeChosen || isAnyError || !isPolicyAgreed) {
     return;
   }
-
-  setOrderDataObj(e.target);
+  const form = isComplexOrder ? subscForm : e.target;
+  setOrderDataObj(form);
+  console.log('userOrderDataObj : ', userOrderDataObj);
   resetFormFields(elements);
   resetChosenPaymentType();
   toggleModal(refsSubscr);
@@ -113,7 +123,7 @@ function onSubmitForm(e) {
 
 function onPaymentTypeBtnClick(e) {
   const clickedButton = e.target.closest('button');
-  setPaymentTypeInOrderObj(clickedButton);
+  setPropertyInOrderObj(clickedButton);
   if (clickedButton.classList.contains('active')) return;
   [...paymentBtnList].forEach(button => {
     if (button === clickedButton) {
@@ -144,17 +154,12 @@ function resetChosenPaymentType() {
   });
 }
 
-function setPaymentTypeInOrderObj(paymentBtn) {
-  const paymentType = paymentBtn.getAttribute('data-id');
-  userOrderData.userTypePayment = paymentType;
-}
-
 function setOrderDataObj(form) {
+  console.log('form: ', form);
   const formData = new FormData(form);
   formData.forEach((value, key) => {
     if (key.startsWith('user')) {
-      userOrderData[key] = value;
+      userOrderDataObj[key] = value;
     }
   });
-  console.log('userOrderData: ', userOrderData);
 }

@@ -1,3 +1,4 @@
+import { userOrderData, setPropertyInOrderObj } from './user-order-form';
 const buildingsBtnList = document.querySelectorAll('.buildings__element');
 const increaseSquareBtn = document.querySelector('.control-quantity-btn--plus');
 const decreaseSquareBtn = document.querySelector(
@@ -25,6 +26,7 @@ takeKeysBtn.addEventListener('click', handleKeyBtn);
 giveKeysBtn.addEventListener('click', handleKeyBtn);
 buildingsBtnList.forEach(el => {
   el.addEventListener('click', e => {
+    setPropertyInOrderObj(e.target);
     onBuldingTypeBtnClick(e);
   });
 });
@@ -35,7 +37,7 @@ serviceCheckboxList.forEach(el => {
   });
 });
 
-const serviceInfo = {
+const interfaceServiceInfoObj = {
   square: { quantity: 1, price: 2 },
   windowsStandard: { quantity: 1, price: 35 },
   windowsLarge: { quantity: 1, price: 40 },
@@ -48,7 +50,7 @@ const serviceInfo = {
   sofaDry4x: { quantity: 1, price: 149.99 },
 };
 
-const userOrderInfo = {
+const userServicesOrderInfoObj = {
   square: { quantity: 1, price: 2 },
   windowsStandard: { quantity: 0, price: 35 },
   windowsLarge: { quantity: 0, price: 40 },
@@ -73,21 +75,21 @@ function updateServiceItemInterface(serviceName) {
     .querySelector('.wrap--square')
     .querySelector(`[data-name="${serviceName}"]`);
   if (itemQntEl) {
-    itemQntEl.textContent = serviceInfo[serviceName].quantity;
+    itemQntEl.textContent = interfaceServiceInfoObj[serviceName].quantity;
   }
   if (squareEl) {
-    squareEl.textContent = serviceInfo[serviceName].quantity;
+    squareEl.textContent = interfaceServiceInfoObj[serviceName].quantity;
     const squareInTotal = document.querySelector('.square-value-total');
-    squareInTotal.textContent = serviceInfo[serviceName].quantity;
+    squareInTotal.textContent = interfaceServiceInfoObj[serviceName].quantity;
   }
 }
 
 function updateQuantityData(itemName, operation) {
   if (operation === 'plus') {
-    serviceInfo[itemName].quantity += 1;
+    interfaceServiceInfoObj[itemName].quantity += 1;
   } else if (operation === 'minus') {
-    if (serviceInfo[itemName].quantity === 1) return;
-    serviceInfo[itemName].quantity -= 1;
+    if (interfaceServiceInfoObj[itemName].quantity === 1) return;
+    interfaceServiceInfoObj[itemName].quantity -= 1;
   }
 }
 
@@ -120,7 +122,7 @@ function updateTotalCostForService(serviceName) {
     `#${serviceName} .service-quantity`
   );
 
-  const price = serviceInfo[serviceName].price;
+  const price = interfaceServiceInfoObj[serviceName].price;
   if (orderServiceTotalCost && orderServiceTotalQuantity) {
     const updatedQuantity = updateServiceQuantity(serviceName);
     const cost = (updatedQuantity * price).toFixed(2);
@@ -133,9 +135,11 @@ function updateTotalCostForService(serviceName) {
 
 function updateSquareTotalCost() {
   const totalSquareCostEl = document.querySelector(`[data-service="square"]`);
-  userOrderInfo.square.quantity = serviceInfo.square.quantity;
+  userServicesOrderInfoObj.square.quantity =
+    interfaceServiceInfoObj.square.quantity;
   totalSquareCostEl.textContent = `${
-    userOrderInfo.square.quantity * userOrderInfo.square.price
+    userServicesOrderInfoObj.square.quantity *
+    userServicesOrderInfoObj.square.price
   }zł`;
 }
 
@@ -183,15 +187,17 @@ function updateTotalServicesTable(isServiceChosen, item) {
 
 function updateServiceQuantity(serviceName, quantity) {
   const updatedQuantity =
-    quantity !== undefined ? quantity : serviceInfo[serviceName].quantity;
-  userOrderInfo[serviceName].quantity = updatedQuantity;
+    quantity !== undefined
+      ? quantity
+      : interfaceServiceInfoObj[serviceName].quantity;
+  userServicesOrderInfoObj[serviceName].quantity = updatedQuantity;
   return updatedQuantity;
 }
 
 function calculateTotalOrderCost() {
-  const totalOrderCost = Object.keys(userOrderInfo)
+  const totalOrderCost = Object.keys(userServicesOrderInfoObj)
     .reduce((acc, propertyName) => {
-      const property = userOrderInfo[propertyName];
+      const property = userServicesOrderInfoObj[propertyName];
       return acc + property.quantity * property.price;
     }, 0)
     .toFixed(2);
@@ -227,7 +233,7 @@ function createServiceItem(element) {
   const quantityWrapper = createSpan('quantity-wrapper');
   const quantitySpan = createSpan(
     'item__quantity service-quantity',
-    serviceInfo[serviceID].quantity
+    interfaceServiceInfoObj[serviceID].quantity
   );
   appendChildNodes(quantityWrapper, [textSpan, quantitySpan]);
   appendChildNodes(nameWrapper, [nameSpan, quantityWrapper]);
@@ -292,7 +298,7 @@ function updateMinusBtnStyle(serviceName) {
     .parentNode?.parentNode?.querySelector(
       '.control-quantity-btn--minus .icon--minus'
     );
-  if (serviceInfo[serviceName].quantity === 1) {
+  if (interfaceServiceInfoObj[serviceName].quantity === 1) {
     decreaseSquareIcon.style.fill = 'rgba(	77, 18, 153, 0.3)';
   } else {
     decreaseSquareIcon.style.fill = '#4D1299';
