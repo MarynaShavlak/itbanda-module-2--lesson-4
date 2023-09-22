@@ -1,5 +1,10 @@
 import { refsSubscr } from './subscr-modal';
 import { toggleModal } from './modal';
+import {
+  userServicesOrderInfoObj,
+  calculateServiceCost,
+  filterObjectByQuantity,
+} from './chose-services';
 export const subscForm = document.querySelector('.subscr__form');
 const paymentBtnList = document.querySelectorAll('.payment__btn');
 const paymentErrorMessage = document.querySelector('.form__payment-error-text');
@@ -44,7 +49,7 @@ export const userOrderDataObj = {
   userBuildingType: '',
   userTakeKeyAddress: '',
   userGiveKeyAddress: '',
-  userSquare: '',
+  userSquare: { quantity: '', cost: '' },
   userServices: {},
 };
 
@@ -52,6 +57,28 @@ export function setPropertyInOrderObj(el) {
   const propertyName = el.getAttribute('data-type');
   const propertyValue = el.getAttribute('data-id') ?? '';
   userOrderDataObj[propertyName] = propertyValue;
+}
+
+function setSquarePropertyInOrderObj(orderObj, quantity, price) {
+  orderObj.userSquare = {
+    quantity: `${quantity}`,
+    cost: calculateServiceCost(quantity, price),
+  };
+}
+
+function setServicesPropertyInOrderObj(orderObj) {
+  const filteredObj = filterObjectByQuantity(userServicesOrderInfoObj);
+  orderObj.userServices = Object.keys(filteredObj).reduce(
+    (result, serviceName) => {
+      const { quantity, price } = filteredObj[serviceName];
+      result[serviceName] = {
+        quantity,
+        cost: calculateServiceCost(quantity, price),
+      };
+      return result;
+    },
+    {}
+  );
 }
 
 function validateFields(elements, fieldNames) {
@@ -116,12 +143,20 @@ function onSubmitForm(e) {
   const form = isComplexOrder ? subscForm : e.target;
   if (isComplexOrder) {
     setKeyPropertiesInOrderObj();
+    setSquarePropertyInOrderObj(
+      userOrderDataObj,
+      userServicesOrderInfoObj.square.quantity,
+      userServicesOrderInfoObj.square.price
+    );
+    setServicesPropertyInOrderObj(userOrderDataObj);
   }
   setOrderDataObj(form);
   console.log('userOrderDataObj : ', userOrderDataObj);
   resetFormFields(elements);
   resetChosenPaymentType();
-  toggleModal(refsSubscr);
+  if (!isComplexOrder) {
+    toggleModal(refsSubscr);
+  }
 }
 
 function onPaymentTypeBtnClick(e) {

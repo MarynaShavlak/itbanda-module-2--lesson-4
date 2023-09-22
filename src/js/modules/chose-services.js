@@ -20,10 +20,10 @@ const addressGiveBlock = document.querySelector(
   '.keys-address-block__give-item'
 );
 
-increaseSquareBtn.addEventListener('click', handleSquareQuantityChange);
-decreaseSquareBtn.addEventListener('click', handleSquareQuantityChange);
-takeKeysBtn.addEventListener('click', handleKeyBtn);
-giveKeysBtn.addEventListener('click', handleKeyBtn);
+increaseSquareBtn?.addEventListener('click', handleSquareQuantityChange);
+decreaseSquareBtn?.addEventListener('click', handleSquareQuantityChange);
+takeKeysBtn?.addEventListener('click', handleKeyBtn);
+giveKeysBtn?.addEventListener('click', handleKeyBtn);
 buildingsBtnList.forEach(el => {
   el.addEventListener('click', e => {
     setPropertyInOrderObj(e.target);
@@ -50,7 +50,7 @@ const interfaceServiceInfoObj = {
   sofaDry4x: { quantity: 1, price: 149.99 },
 };
 
-const userServicesOrderInfoObj = {
+export const userServicesOrderInfoObj = {
   square: { quantity: 1, price: 2 },
   windowsStandard: { quantity: 0, price: 35 },
   windowsLarge: { quantity: 0, price: 40 },
@@ -125,12 +125,27 @@ function updateTotalCostForService(serviceName) {
   const price = interfaceServiceInfoObj[serviceName].price;
   if (orderServiceTotalCost && orderServiceTotalQuantity) {
     const updatedQuantity = updateServiceQuantity(serviceName);
-    const cost = (updatedQuantity * price).toFixed(2);
-    orderServiceTotalCost.textContent = `${cost}zł`;
+    const cost = calculateServiceCost(updatedQuantity, price);
+    orderServiceTotalCost.textContent = cost;
     orderServiceTotalQuantity.textContent = updatedQuantity;
   } else {
     updateServiceQuantity(serviceName, 0);
   }
+}
+
+export function calculateServiceCost(quantity, price) {
+  const cost = (quantity * price).toFixed(2);
+  return `${cost}zł`;
+}
+
+export function filterObjectByQuantity(obj) {
+  return Object.keys(obj)
+    .filter(key => obj[key].quantity > 0)
+    .reduce((filteredObj, key) => {
+      filteredObj[key] = { ...obj[key] };
+      delete filteredObj[key].square;
+      return filteredObj;
+    }, {});
 }
 
 function updateSquareTotalCost() {
