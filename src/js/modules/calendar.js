@@ -264,6 +264,7 @@ function handleCellClick(event) {
     const chosenDate = reverseConvertDateFormat(clickedDate);
     orderDay = chosenDate;
     setDateInputValue();
+    toggleIconActiveStyle(calendarIcon);
     toggleCalendarVisibility();
   }
 }

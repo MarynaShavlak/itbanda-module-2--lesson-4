@@ -2,12 +2,12 @@ import { resetErrors } from './user-order-form';
 import { subscForm } from './user-order-form';
 
 export function initializeModal(refs) {
-  refs.openModalBtn.addEventListener('click', () => toggleModal(refs));
-  refs.closeModalBtn.addEventListener('click', e => {
+  refs.openModalBtn?.addEventListener('click', () => toggleModal(refs));
+  refs.closeModalBtn?.addEventListener('click', e => {
     e.stopPropagation();
     toggleModal(refs);
   });
-  refs.backdrop.addEventListener('click', e => {
+  refs.backdrop?.addEventListener('click', e => {
     if (e.target === refs.backdrop) {
       toggleModal(refs);
     }
@@ -16,6 +16,6 @@ export function initializeModal(refs) {
 
 export function toggleModal(refs) {
   document.body.classList.toggle(`${refs.name}-modal-open`);
-  refs.modal.classList.toggle('backdrop--hidden');
+  refs.modal?.classList.toggle('backdrop--hidden');
   if (refs.name === 'subscription') resetErrors(subscForm?.elements);
 }

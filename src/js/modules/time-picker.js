@@ -85,6 +85,7 @@ clockIcon.addEventListener('click', e => {
 
 timePickerBtn.addEventListener('click', () => {
   toggleTimePickerVisibility();
+  toggleIconActiveStyle(clockIcon);
 });
 
 function toggleTimePickerVisibility() {

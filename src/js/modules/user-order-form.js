@@ -1,11 +1,18 @@
 import { refsSubscr } from './subscr-modal';
 import { toggleModal } from './modal';
 export const subscForm = document.querySelector('.subscr__form');
+console.log('subscForm : ', subscForm);
 const paymentBtnList = document.querySelectorAll('.payment__btn');
 const paymentErrorMessage = document.querySelector('.form__payment-error-text');
 const policyErrorMessage = document.querySelector('.form__policy-error-text');
 const formInputList = document.querySelectorAll('.form__input');
+const makeOrderBtn = document.querySelector('.calc-btn');
 subscForm?.addEventListener('submit', onSubmitForm);
+makeOrderBtn?.addEventListener('click', e => {
+  e.preventDefault();
+  onSubmitForm(e);
+  // subscForm.submit();
+});
 
 paymentBtnList.forEach(el => {
   el.addEventListener('click', e => {
@@ -38,6 +45,8 @@ const userOrderData = {
 };
 
 function validateFields(elements, fieldNames) {
+  console.log('fieldNames: ', fieldNames);
+  console.log('elements: ', elements);
   return fieldNames
     .filter(fieldName => elements[fieldName].value.trim() === '')
     .map(fieldName => elements[fieldName]);
@@ -75,7 +84,10 @@ function togglePolicyErrorVisibility() {
 
 function onSubmitForm(e) {
   e.preventDefault();
-  const elements = e.currentTarget.elements;
+  const isButton = e.currentTarget.tagName === 'BUTTON';
+
+  const elements = isButton ? subscForm.elements : e.currentTarget.elements;
+  console.log('e.currentTarget: ', e.currentTarget);
   const elementsWithErrors = validateFields(elements, validationFields);
   resetErrors(elements);
   addErrorClass(elementsWithErrors);
