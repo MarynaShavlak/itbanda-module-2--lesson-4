@@ -173,7 +173,8 @@ padding: 17px 25px;
 }
     
 #take-keys-btn.active,
-#give-keys-btn.active {
+#give-keys-btn.active,
+.payment__btn.active {
   background-color: $main-accent-color;
   color: $primary-white-color;
 }

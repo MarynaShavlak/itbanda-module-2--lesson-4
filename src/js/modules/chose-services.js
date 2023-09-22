@@ -276,7 +276,7 @@ function removeFromTotalCostTable(item) {
 function onBuldingTypeBtnClick(e) {
   const clickedButton = e.target;
   if (clickedButton.classList.contains('buildings__element--current')) return;
-  buildingsBtnList.forEach(button => {
+  [...buildingsBtnList].forEach(button => {
     if (button === clickedButton) {
       const id = button.id;
       button.classList.add('buildings__element--current');
