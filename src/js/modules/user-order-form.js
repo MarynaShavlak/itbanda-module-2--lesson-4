@@ -2,15 +2,17 @@ import { refsSubscr } from './subscr-modal';
 import { toggleModal } from './modal';
 export const subscForm = document.querySelector('.subscr__form');
 const paymentBtnList = document.querySelectorAll('.payment__btn');
-const errorMessage = document.querySelector('.form__error-text');
+const paymentErrorMessage = document.querySelector('.form__payment-error-text');
+const policyErrorMessage = document.querySelector('.form__policy-error-text');
 const formInputList = document.querySelectorAll('.form__input');
 subscForm?.addEventListener('submit', onSubmitForm);
 
 paymentBtnList.forEach(el => {
   el.addEventListener('click', e => {
     onPaymentTypeBtnClick(e);
-    const isErrorMessageVisible = !errorMessage.classList.contains('isHidden');
-    if (isErrorMessageVisible) {
+    const isPaymentErrorMessageVisible =
+      !paymentErrorMessage.classList.contains('isHidden');
+    if (isPaymentErrorMessageVisible) {
       togglePaymentTypeErrorVisibility();
     }
   });
@@ -48,7 +50,6 @@ export function resetErrors(elements) {
 }
 
 function addErrorClass(elementsWithErrors) {
-  console.log('elementsWithErrors: ', elementsWithErrors);
   elementsWithErrors.forEach(element => {
     element.classList.add('error');
   });
@@ -58,8 +59,18 @@ function checkIfPaymentTypeChosen() {
   return [...paymentBtnList].some(btn => btn.classList.contains('active'));
 }
 
+function checkIfPolicyAgreed() {
+  const policyCheckBox = document.querySelector('[name="studio-policy-check"]');
+  const isAgreed = policyCheckBox.checked;
+  return isAgreed;
+}
+
 function togglePaymentTypeErrorVisibility() {
-  errorMessage.classList.toggle('isHidden');
+  paymentErrorMessage.classList.toggle('isHidden');
+}
+
+function togglePolicyErrorVisibility() {
+  policyErrorMessage.classList.toggle('isHidden');
 }
 
 function onSubmitForm(e) {
@@ -69,14 +80,22 @@ function onSubmitForm(e) {
   resetErrors(elements);
   addErrorClass(elementsWithErrors);
   const isPaymentTypeChosen = checkIfPaymentTypeChosen();
+  const isPolicyAgreed = checkIfPolicyAgreed();
   const isAnyError = elementsWithErrors.length > 0;
+
   if (!isPaymentTypeChosen) {
     togglePaymentTypeErrorVisibility();
   }
-  if (!isPaymentTypeChosen || isAnyError) {
+  if (!isPolicyAgreed) {
+    togglePolicyErrorVisibility();
+  }
+  if (!isPaymentTypeChosen || isAnyError || !isPolicyAgreed) {
     return;
   }
+
   setOrderDataObj(e.target);
+  resetFormFields(elements);
+  resetChosenPaymentType();
   toggleModal(refsSubscr);
 }
 
@@ -90,6 +109,26 @@ function onPaymentTypeBtnClick(e) {
     } else {
       button.classList.remove('active');
     }
+  });
+}
+
+function resetFormFields(elements) {
+  [...elements].forEach(element => {
+    if (
+      element.type === 'text' ||
+      element.type === 'email' ||
+      element.type === 'tel' ||
+      element.tagName === 'TEXTAREA'
+    ) {
+      element.value = '';
+    } else if (element.type === 'checkbox') {
+      element.checked = true;
+    }
+  });
+}
+function resetChosenPaymentType() {
+  [...paymentBtnList].forEach(button => {
+    button.classList.remove('active');
   });
 }
 
