@@ -1,16 +1,38 @@
 export const subscForm = document.querySelector('.subscr__form');
 const paymentBtnList = document.querySelectorAll('.payment__btn');
+const errorMessage = document.querySelector('.form__error-text');
+const formInputList = document.querySelectorAll('.form__input');
 subscForm?.addEventListener('submit', onSubmitForm);
 
-function validateFields(elements, fieldNames) {
-  const elementsWithErrors = [];
-  fieldNames.forEach(fieldName => {
-    const fieldValue = elements[fieldName].value;
-    if (fieldValue.length === 0) {
-      elementsWithErrors.push(elements[fieldName]);
+paymentBtnList.forEach(el => {
+  el.addEventListener('click', e => {
+    onPaymentTypeBtnClick(e);
+    const isErrorMessageVisible = !errorMessage.classList.contains('isHidden');
+    if (isErrorMessageVisible) {
+      togglePaymentTypeErrorVisibility();
     }
   });
-  return elementsWithErrors;
+});
+formInputList.forEach(el => {
+  el.addEventListener('focus', () => {
+    el.classList.remove('error');
+  });
+});
+
+const validationFields = [
+  'userName',
+  'userSurname',
+  'userTel',
+  'userEmail',
+  'userLocation',
+  'userDate',
+  'userTime',
+];
+
+function validateFields(elements, fieldNames) {
+  return fieldNames
+    .filter(fieldName => elements[fieldName].value.trim() === '')
+    .map(fieldName => elements[fieldName]);
 }
 
 export function resetErrors(elements) {
@@ -20,42 +42,39 @@ export function resetErrors(elements) {
 }
 
 function addErrorClass(elementsWithErrors) {
+  console.log('elementsWithErrors: ', elementsWithErrors);
   elementsWithErrors.forEach(element => {
     element.classList.add('error');
   });
 }
 
-function onSubmitForm(e) {
-  e.preventDefault();
-  // const elements = e.currentTarget.elements;
-  // const validationFields = [
-  //   'userName',
-  //   'userSurname',
-  //   'userTel',
-  //   'userEmail',
-  //   'userLocation',
-  //   'userDate',
-  //   'userTime',
-  // ];
-
-  // const elementsWithErrors = validateFields(elements, validationFields);
-  // resetErrors(elements);
-  // addErrorClass(elementsWithErrors);
-  const isPaymentTypeChosen = checkIfPaymentTypeChosen();
-  console.log('isPaymentTypeChosen: ', isPaymentTypeChosen);
-
-  if (elementsWithErrors.length === 0) {
-    console.log('form submit');
-    e.currentTarget.submit();
-    window.location.href = 'success-order.html';
-  }
+function checkIfPaymentTypeChosen() {
+  return [...paymentBtnList].some(btn => btn.classList.contains('active'));
 }
 
-paymentBtnList.forEach(el => {
-  el.addEventListener('click', e => {
-    onPaymentTypeBtnClick(e);
-  });
-});
+function togglePaymentTypeErrorVisibility() {
+  errorMessage.classList.toggle('isHidden');
+}
+
+function onSubmitForm(e) {
+  e.preventDefault();
+  const elements = e.currentTarget.elements;
+  const elementsWithErrors = validateFields(elements, validationFields);
+  resetErrors(elements);
+  addErrorClass(elementsWithErrors);
+  const isPaymentTypeChosen = checkIfPaymentTypeChosen();
+  const isAnyError = elementsWithErrors.length > 0;
+  if (!isPaymentTypeChosen) {
+    togglePaymentTypeErrorVisibility();
+  }
+  if (!isPaymentTypeChosen || isAnyError) {
+    return;
+  }
+  console.log('submit');
+  console.log('elements: ', elements);
+
+  // e.currentTarget.submit();
+}
 
 function onPaymentTypeBtnClick(e) {
   const clickedButton = e.target.closest('button');
@@ -67,8 +86,4 @@ function onPaymentTypeBtnClick(e) {
       button.classList.remove('active');
     }
   });
-}
-
-function checkIfPaymentTypeChosen() {
-  return [...paymentBtnList].some(btn => btn.classList.contains('active'));
 }

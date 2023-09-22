@@ -27,9 +27,10 @@
       <input
         class="form__input"
         type="tel"
+        pattern="[0-9]*"
         name="userTel"
         placeholder="Номер телефону"
-        oninvalid="this.setCustomValidity('Будь ласка, заповніть Ваш номер телефону')"
+        oninvalid="this.setCustomValidity('Будь ласка, заповніть Ваш номер телефону, використовуючи тільки цифри')"
         onchange="try{setCustomValidity('')}catch(e){};"
       />
     </label>
@@ -40,7 +41,7 @@
       type="email"
       name="userEmail"
       placeholder="Email"
-      oninvalid="this.setCustomValidity('Будь ласка, заповніть Ваш email')"
+      oninvalid="this.setCustomValidity('Будь ласка, заповніть Ваш email у форматі email@mail.com')"
       onchange="try{setCustomValidity('')}catch(e){};"
     />
   </li>
@@ -145,7 +146,7 @@
     >
   </label>
 </div>
-<p class="form__error-text">*Оберіть спосіб оплати</p>
+<p class="form__error-text isHidden">*Оберіть спосіб оплати</p>
 <ul class="form__payment-buttons">
   <li class="payment__item">
     <button
