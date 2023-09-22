@@ -1,6 +1,6 @@
 import { initializeModal } from './modal';
 
-const refsSubscr = {
+export const refsSubscr = {
   name: 'subscription',
   openModalBtn: document.querySelector('[data-subscription-modal-open]'),
   closeModalBtn: document.querySelector('[data-subscription-modal-close]'),

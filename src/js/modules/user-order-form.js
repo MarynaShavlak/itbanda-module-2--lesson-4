@@ -1,3 +1,5 @@
+import { refsSubscr } from './subscr-modal';
+import { toggleModal } from './modal';
 export const subscForm = document.querySelector('.subscr__form');
 const paymentBtnList = document.querySelectorAll('.payment__btn');
 const errorMessage = document.querySelector('.form__error-text');
@@ -28,6 +30,10 @@ const validationFields = [
   'userDate',
   'userTime',
 ];
+
+const userOrderData = {
+  userTypePayment: '',
+};
 
 function validateFields(elements, fieldNames) {
   return fieldNames
@@ -70,14 +76,13 @@ function onSubmitForm(e) {
   if (!isPaymentTypeChosen || isAnyError) {
     return;
   }
-  console.log('submit');
-  console.log('elements: ', elements);
-
-  // e.currentTarget.submit();
+  setOrderDataObj(e.target);
+  toggleModal(refsSubscr);
 }
 
 function onPaymentTypeBtnClick(e) {
   const clickedButton = e.target.closest('button');
+  setPaymentTypeInOrderObj(clickedButton);
   if (clickedButton.classList.contains('active')) return;
   [...paymentBtnList].forEach(button => {
     if (button === clickedButton) {
@@ -86,4 +91,19 @@ function onPaymentTypeBtnClick(e) {
       button.classList.remove('active');
     }
   });
+}
+
+function setPaymentTypeInOrderObj(paymentBtn) {
+  const paymentType = paymentBtn.getAttribute('data-id');
+  userOrderData.userTypePayment = paymentType;
+}
+
+function setOrderDataObj(form) {
+  const formData = new FormData(form);
+  formData.forEach((value, key) => {
+    if (key.startsWith('user')) {
+      userOrderData[key] = value;
+    }
+  });
+  console.log('userOrderData: ', userOrderData);
 }
