@@ -16,6 +16,10 @@ timeInput.addEventListener('click', () => {
     setTimeInputValue();
   }
 });
+timeInput.addEventListener('blur', e => {
+  const trimmedValue = extractTime(e.target.value);
+  timeInput.value = trimmedValue;
+});
 
 function setTimeInputValue() {
   timeInput.value = `${selectedTimeObj.hours} : ${selectedTimeObj.minutes}`;
@@ -100,4 +104,10 @@ function updateTimeInput(selector, value) {
 
 function getTimePartName(selector) {
   return selector.split('__')[1];
+}
+
+function extractTime(inputString) {
+  const trimmedString = inputString.trim();
+  const timeMatch = trimmedString.match(/\d{2}\s*:\s*\d{2}/);
+  return timeMatch ? timeMatch[0] : null;
 }

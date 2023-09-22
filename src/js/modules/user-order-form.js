@@ -142,13 +142,7 @@ function onSubmitForm(e) {
   }
   const form = isComplexOrder ? subscForm : e.target;
   if (isComplexOrder) {
-    setKeyPropertiesInOrderObj();
-    setSquarePropertyInOrderObj(
-      userOrderDataObj,
-      userServicesOrderInfoObj.square.quantity,
-      userServicesOrderInfoObj.square.price
-    );
-    setServicesPropertyInOrderObj(userOrderDataObj);
+    initializeComplexOrder();
   }
   setOrderDataObj(form);
   console.log('userOrderDataObj : ', userOrderDataObj);
@@ -157,6 +151,16 @@ function onSubmitForm(e) {
   if (!isComplexOrder) {
     toggleModal(refsSubscr);
   }
+}
+
+function initializeComplexOrder() {
+  setKeyPropertiesInOrderObj();
+  setSquarePropertyInOrderObj(
+    userOrderDataObj,
+    userServicesOrderInfoObj.square.quantity,
+    userServicesOrderInfoObj.square.price
+  );
+  setServicesPropertyInOrderObj(userOrderDataObj);
 }
 
 function onPaymentTypeBtnClick(e) {
@@ -186,6 +190,7 @@ function resetFormFields(elements) {
     }
   });
 }
+
 function resetChosenPaymentType() {
   [...paymentBtnList].forEach(button => {
     button.classList.remove('active');

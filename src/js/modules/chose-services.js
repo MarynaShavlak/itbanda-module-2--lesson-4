@@ -5,7 +5,6 @@ const decreaseSquareBtn = document.querySelector(
   '.control-quantity-btn--minus'
 );
 
-const squareValueElementsList = document.querySelectorAll('.square-value');
 const serviceCheckboxList = document.querySelectorAll(
   '.service-element .checkbox'
 );

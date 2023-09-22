@@ -22,6 +22,11 @@ dateInput.addEventListener('click', () => {
   }
 });
 
+dateInput.addEventListener('blur', e => {
+  const trimmedValue = extractDate(e.target.value);
+  dateInput.value = trimmedValue;
+});
+
 calendarIcon.addEventListener('click', e => {
   toggleCalendarVisibility();
   monthToShowInCalendarObj = new Date(selectedDateObj);
@@ -302,8 +307,18 @@ function getCurrentDateAsString() {
   const day = currentDate.getDate().toString().padStart(2, '0');
   const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
   const year = currentDate.getFullYear();
-
   return `${day}/${month}/${year}`;
+}
+
+function extractDate(inputString) {
+  const trimmedString = inputString.trim();
+  const datePattern = /\d{2}\/\d{2}\/\d{4}/;
+  const match = trimmedString.match(datePattern);
+  if (match) {
+    return match[0];
+  } else {
+    return null;
+  }
 }
 
 generateCalendar(selectedDateObj);
