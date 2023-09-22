@@ -50,7 +50,7 @@ export const userOrderDataObj = {
 
 export function setPropertyInOrderObj(el) {
   const propertyName = el.getAttribute('data-type');
-  const propertyValue = el.getAttribute('data-id');
+  const propertyValue = el.getAttribute('data-id') ?? '';
   userOrderDataObj[propertyName] = propertyValue;
 }
 
@@ -114,6 +114,9 @@ function onSubmitForm(e) {
     return;
   }
   const form = isComplexOrder ? subscForm : e.target;
+  if (isComplexOrder) {
+    setKeyPropertiesInOrderObj();
+  }
   setOrderDataObj(form);
   console.log('userOrderDataObj : ', userOrderDataObj);
   resetFormFields(elements);
@@ -162,4 +165,15 @@ function setOrderDataObj(form) {
       userOrderDataObj[key] = value;
     }
   });
+}
+
+function setKeyPropertiesInOrderObj() {
+  const takeKeyInput = document.querySelector(
+    '[data-type="userTakeKeyAddress"]'
+  );
+  const giveKeyInput = document.querySelector(
+    '[data-type="userGiveKeyAddress"]'
+  );
+  setPropertyInOrderObj(takeKeyInput);
+  setPropertyInOrderObj(giveKeyInput);
 }

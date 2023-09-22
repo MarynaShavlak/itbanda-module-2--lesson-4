@@ -8,6 +8,7 @@ if (!window.initMap) {
       const autocomplete = new google.maps.places.Autocomplete(locationInput);
       autocomplete.addListener('place_changed', () => {
         const place = autocomplete.getPlace();
+        locationInput.setAttribute('data-id', locationInput.value);
       });
     });
   };
