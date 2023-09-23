@@ -1,4 +1,4 @@
-import { toggleIconActiveStyle } from './common';
+import { toggleIconActiveStyle, appendElement } from './common';
 const calendarElement = document.querySelector('.calendar');
 const calendarIcon = document.querySelector('.icon--calendar');
 const calendarBody = document.querySelector('.calendar__body');
@@ -187,10 +187,6 @@ function setMonthAndYearName(year) {
 }
 function createCalendarRow() {
   return document.createElement('tr');
-}
-
-function appendElement(parent, child) {
-  parent.appendChild(child);
 }
 
 function generateCalendar(dateobj) {

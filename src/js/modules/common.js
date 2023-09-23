@@ -100,3 +100,7 @@ function setBuildingsFlexBasis(selector, value) {
   const buildingsElements = document.querySelectorAll(selector);
   buildingsElements.forEach(item => (item.style.flexBasis = value));
 }
+
+export function appendElement(parent, child) {
+  parent.appendChild(child);
+}

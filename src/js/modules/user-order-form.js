@@ -68,17 +68,31 @@ function setSquarePropertyInOrderObj(orderObj, quantity, price) {
 
 function setServicesPropertyInOrderObj(orderObj) {
   const filteredObj = filterObjectByQuantity(userServicesOrderInfoObj);
-  orderObj.userServices = Object.keys(filteredObj).reduce(
-    (result, serviceName) => {
-      const { quantity, price } = filteredObj[serviceName];
-      result[serviceName] = {
-        quantity,
-        cost: calculateServiceCost(quantity, price),
+  orderObj.userServices = Object.keys(filteredObj)
+    .filter(key => key !== 'square')
+    .map(key => {
+      const { name, quantity, price } = filteredObj[key];
+      const cost = calculateServiceCost(quantity, price);
+      return {
+        name: name,
+        quantity: quantity,
+        cost: cost,
       };
-      return result;
-    },
-    {}
-  );
+    });
+
+  // orderObj.userServices = Object.keys(filteredObj).reduce(
+  //   (result, serviceName) => {
+  //     if (serviceName !== 'square') {
+  //       const { quantity, price } = filteredObj[serviceName];
+  //       result[serviceName] = {
+  //         quantity,
+  //         cost: calculateServiceCost(quantity, price),
+  //       };
+  //     }
+  //     return result;
+  //   },
+  //   {}
+  // );
 }
 
 function validateFields(elements, fieldNames) {
@@ -146,11 +160,23 @@ function onSubmitForm(e) {
   }
   setOrderDataObj(form);
   console.log('userOrderDataObj : ', userOrderDataObj);
+  storeUserOrderData(userOrderDataObj);
   resetFormFields(elements);
   resetChosenPaymentType();
   if (!isComplexOrder) {
     toggleModal(refsSubscr);
   }
+  window.location.href = '/success-order.html';
+}
+
+function storeUserOrderData(obj) {
+  const userOrderDataJSON = JSON.stringify(obj);
+  localStorage.setItem('userOrderDataObj', userOrderDataJSON);
+}
+export function getUserOrderDataFromStorage() {
+  const userOrderDataJSON = localStorage.getItem('userOrderDataObj');
+  const userOrderDataObj = JSON.parse(userOrderDataJSON);
+  return userOrderDataObj;
 }
 
 function initializeComplexOrder() {

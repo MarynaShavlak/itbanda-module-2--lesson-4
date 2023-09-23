@@ -37,29 +37,33 @@ serviceCheckboxList.forEach(el => {
 });
 
 const interfaceServiceInfoObj = {
-  square: { quantity: 1, price: 2 },
-  windowsStandard: { quantity: 1, price: 35 },
-  windowsLarge: { quantity: 1, price: 40 },
-  microWave: { quantity: 1, price: 15 },
-  refrigerator: { quantity: 1, price: 40 },
-  plate: { quantity: 1, price: 35 },
-  officeChair: { quantity: 1, price: 20 },
-  sofaDry2x: { quantity: 1, price: 109.99 },
-  sofaDry3x: { quantity: 1, price: 129.99 },
-  sofaDry4x: { quantity: 1, price: 149.99 },
+  square: { name: 'Площа', quantity: 1, price: 2 },
+  windowsStandard: { name: 'Миття вікон (стандартні)', quantity: 1, price: 35 },
+  windowsLarge: { name: 'Миття вікон (до підлоги)', quantity: 1, price: 40 },
+  microWave: { name: 'Мікрохвильовка', quantity: 1, price: 15 },
+  refrigerator: { name: 'Холодильник', quantity: 1, price: 40 },
+  plate: { name: 'Плита', quantity: 1, price: 35 },
+  officeChair: {
+    name: 'Хімчистка офісних стільців',
+    quantity: 1,
+    price: 20,
+  },
+  sofaDry2x: { name: 'Хімчистка дивану 2х', quantity: 1, price: 109.99 },
+  sofaDry3x: { name: 'Хімчистка дивану 3х', quantity: 1, price: 129.99 },
+  sofaDry4x: { name: 'Хімчистка дивану 4х', quantity: 1, price: 149.99 },
 };
 
 export const userServicesOrderInfoObj = {
-  square: { quantity: 1, price: 2 },
-  windowsStandard: { quantity: 0, price: 35 },
-  windowsLarge: { quantity: 0, price: 40 },
-  microWave: { quantity: 0, price: 15 },
-  refrigerator: { quantity: 0, price: 40 },
-  plate: { quantity: 0, price: 35 },
-  officeChair: { quantity: 0, price: 20 },
-  sofaDry2x: { quantity: 0, price: 109.99 },
-  sofaDry3x: { quantity: 0, price: 129.99 },
-  sofaDry4x: { quantity: 0, price: 149.99 },
+  square: { name: 'Площа', quantity: 1, price: 2 },
+  windowsStandard: { name: 'Миття вікон (стандартні)', quantity: 0, price: 35 },
+  windowsLarge: { name: 'Миття вікон (до підлоги)', quantity: 0, price: 40 },
+  microWave: { name: 'Мікрохвильовка', quantity: 0, price: 15 },
+  refrigerator: { name: 'Холодильник', quantity: 0, price: 40 },
+  plate: { name: 'Плита', quantity: 0, price: 35 },
+  officeChair: { name: 'Хімчистка офісних стільців', quantity: 0, price: 20 },
+  sofaDry2x: { name: 'Хімчистка дивану 2х', quantity: 0, price: 109.99 },
+  sofaDry3x: { name: 'Хімчистка дивану 3х', quantity: 0, price: 129.99 },
+  sofaDry4x: { name: 'Хімчистка дивану 4х', quantity: 0, price: 149.99 },
 };
 
 function updateServiceItemInterface(serviceName) {
