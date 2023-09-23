@@ -1,47 +1,46 @@
-import { resetLocalStorage } from './local-storage';
+import { resetLocalStorage } from '.cleaning/local-storage';
 const allowedPages = [
-  '/',
-  '/index.html',
-  '/office.html',
-  '/success-order.html',
-  '/after-repair.html',
-  '/calc-order.html',
-  '/services.html',
-  '/contacts.html',
-  '/faq.html',
+  'cleaning/',
+  'cleaning/index.html',
+  'cleaning/office.html',
+  'cleaning/success-order.html',
+  'cleaning/after-repair.html',
+  'cleaning/calc-order.html',
+  'cleaning/services.html',
+  'cleaning/contacts.html',
+  'cleaning/faq.html',
 ];
 
 document.addEventListener('DOMContentLoaded', function () {
-  // const currentPage = window.location.pathname;
+  const currentPage = window.location.pathname;
   // const isAllowedPage = allowedPages.includes(currentPage);
   // if (!isAllowedPage && currentPage !== '/error.html') {
   //   if (!allowedPages.includes('/error.html')) {
   //     window.location.href = '/error.html';
   //   }
   // }
-
-  if (currentPage === '/' || currentPage === '/index.html') {
+  if (currentPage === 'cleaning/' || currentPage === 'cleaning/index.html') {
     setCurrentNavLink('.nav__link');
     updateDynamicLinks('index.html#order-cleaning-block');
-  } else if (currentPage === '/office.html') {
+  } else if (currentPage === 'cleaning/office.html') {
     setCurrentNavLink('.nav__list .nav__item:nth-child(2) .nav__link');
     updateDynamicLinks('office.html#office-calc-block');
-    setBuildingsFlexBasis('.buildings__element', 'calc(100% / 3)');
+    setBuildingsFlexBasis('.buildings__element', 'calc(100% cleaning/ 3)');
     setOfficeBuildingsToggleMenu();
-  } else if (currentPage === '/after-repair.html') {
+  } else if (currentPage === 'cleaning/after-repair.html') {
     hideBuildingsToggleMenu();
     hideSelectedItems('.add-services-list__item:nth-child(n+3)');
     updateDynamicLinks('after-repair.html#office-calc-block');
-  } else if (currentPage === '/calc-order.html') {
-    setBuildingsFlexBasis('.buildings__element', 'calc(100% / 2)');
+  } else if (currentPage === 'cleaning/calc-order.html') {
+    setBuildingsFlexBasis('.buildings__element', 'calc(100% cleaning/ 2)');
     setCalculatorBuildingsToggleMenu();
     addWhiteBackground('.block');
-  } else if (currentPage === '/contacts.html') {
+  } else if (currentPage === 'cleaning/contacts.html') {
     modifyContactPage();
     modifyMainSection();
   } else if (
-    currentPage === '/success-order.html' ||
-    currentPage === '/error.html'
+    currentPage === 'cleaning/success-order.html' ||
+    currentPage === 'cleaning/error.html'
   ) {
     modifyMainSection();
     window.addEventListener('beforeunload', function () {
