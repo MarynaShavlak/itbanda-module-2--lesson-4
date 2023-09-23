@@ -226,6 +226,11 @@
   }
 }
 
+.section--success.isComplexOrder {
+@media screen and (min-width: 1440px) {
+    min-height: 1200px;
+  }
+}
 
 .success__wrap {
   
@@ -236,6 +241,9 @@
   
     @media screen and (min-width: 768px) {
       margin-top: 37px;
+    }
+    @media screen and (min-width: 1440px) {
+      margin-top: 80px;
     }
   
 

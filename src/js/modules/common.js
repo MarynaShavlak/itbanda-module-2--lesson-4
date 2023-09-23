@@ -1,3 +1,4 @@
+import { resetLocalStorage } from './local-storage';
 const allowedPages = [
   '/',
   '/index.html',
@@ -28,11 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
     setBuildingsFlexBasis('.buildings__element', 'calc(100% / 3)');
     setOfficeBuildingsToggleMenu();
   } else if (currentPage === '/after-repair.html') {
-    setBuildingsFlexBasis('.buildings__element', 'calc(100% / 2)');
+    hideBuildingsToggleMenu();
     hideSelectedItems('.add-services-list__item:nth-child(n+3)');
-    setRepairBuildingsToggleMenu();
     updateDynamicLinks('after-repair.html#office-calc-block');
   } else if (currentPage === '/calc-order.html') {
+    setBuildingsFlexBasis('.buildings__element', 'calc(100% / 2)');
+    setCalculatorBuildingsToggleMenu();
     addWhiteBackground('.block');
   } else if (currentPage === '/contacts.html') {
     modifyContactPage();
@@ -42,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
     currentPage === '/error.html'
   ) {
     modifyMainSection();
+    window.addEventListener('beforeunload', function () {
+      resetLocalStorage('userOrderDataObj');
+    });
   }
 });
 
@@ -83,17 +88,28 @@ export function toggleIconActiveStyle(icon) {
   icon.classList.toggle('isActive');
 }
 
+function hideBuildingsToggleMenu() {
+  const title = document.querySelector('.data-order .data-order__title');
+  const toggleMenu = document.querySelector('.buildings');
+  toggleMenu.style.display = 'none';
+  title.style.display = 'none';
+}
+
 function setOfficeBuildingsToggleMenu() {
   const buildingsElements = document.querySelectorAll('.element--office-page');
   buildingsElements.forEach(item => item.classList.remove('isHidden'));
-  const repairBuilding = document.querySelector('.element--repair-page');
-  repairBuilding.classList.add('isHidden');
+  const calculatorBuilding = document.querySelector(
+    '.element--calculator-page'
+  );
+  calculatorBuilding.classList.add('isHidden');
 }
-function setRepairBuildingsToggleMenu() {
+function setCalculatorBuildingsToggleMenu() {
   const buildingsElements = document.querySelectorAll('.element--office-page');
   buildingsElements.forEach(item => item.classList.add('isHidden'));
-  const repairBuilding = document.querySelector('.element--repair-page');
-  repairBuilding.classList.remove('isHidden');
+  const calculatorBuilding = document.querySelector(
+    '.element--calculator-page'
+  );
+  calculatorBuilding.classList.remove('isHidden');
 }
 
 function setBuildingsFlexBasis(selector, value) {

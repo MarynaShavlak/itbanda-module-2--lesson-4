@@ -18,7 +18,13 @@
 .success-order-info-table {
   @media screen and (max-width: 767px) {
     width: 335px;
+
   }
+  @media screen and (max-width: 1439px) {
+    z-index: 2;
+    opacity: 0.8;
+  }
+
     @media screen and (min-width: 1440px) {
       width: 650px;
     }

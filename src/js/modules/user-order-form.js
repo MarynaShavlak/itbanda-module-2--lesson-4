@@ -1,5 +1,6 @@
 import { refsSubscr } from './subscr-modal';
 import { toggleModal } from './modal';
+import { storeDataInLocalStorage } from './local-storage';
 import {
   userServicesOrderInfoObj,
   calculateServiceCost,
@@ -15,7 +16,6 @@ subscForm?.addEventListener('submit', onSubmitForm);
 makeOrderBtn?.addEventListener('click', e => {
   e.preventDefault();
   onSubmitForm(e);
-  // subscForm.submit();
 });
 
 paymentBtnList.forEach(el => {
@@ -79,20 +79,6 @@ function setServicesPropertyInOrderObj(orderObj) {
         cost: cost,
       };
     });
-
-  // orderObj.userServices = Object.keys(filteredObj).reduce(
-  //   (result, serviceName) => {
-  //     if (serviceName !== 'square') {
-  //       const { quantity, price } = filteredObj[serviceName];
-  //       result[serviceName] = {
-  //         quantity,
-  //         cost: calculateServiceCost(quantity, price),
-  //       };
-  //     }
-  //     return result;
-  //   },
-  //   {}
-  // );
 }
 
 function validateFields(elements, fieldNames) {
@@ -159,24 +145,13 @@ function onSubmitForm(e) {
     initializeComplexOrder();
   }
   setOrderDataObj(form);
-  console.log('userOrderDataObj : ', userOrderDataObj);
-  storeUserOrderData(userOrderDataObj);
+  storeDataInLocalStorage('userOrderDataObj', userOrderDataObj);
   resetFormFields(elements);
   resetChosenPaymentType();
   if (!isComplexOrder) {
     toggleModal(refsSubscr);
   }
   window.location.href = '/success-order.html';
-}
-
-function storeUserOrderData(obj) {
-  const userOrderDataJSON = JSON.stringify(obj);
-  localStorage.setItem('userOrderDataObj', userOrderDataJSON);
-}
-export function getUserOrderDataFromStorage() {
-  const userOrderDataJSON = localStorage.getItem('userOrderDataObj');
-  const userOrderDataObj = JSON.parse(userOrderDataJSON);
-  return userOrderDataObj;
 }
 
 function initializeComplexOrder() {

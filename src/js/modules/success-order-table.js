@@ -1,11 +1,16 @@
-import { getUserOrderDataFromStorage } from './user-order-form';
 import { appendElement } from './common';
-const userOrderDataObj = getUserOrderDataFromStorage();
+import { getDataFromStorage, resetLocalStorage } from './local-storage';
+const userOrderDataObj = getDataFromStorage('userOrderDataObj');
 const tableServices = document.querySelector('.success-order-services-table');
+const tableInfo = document.querySelector('.success-order-info-table');
+const sectionSuccess = document.querySelector('.section--success');
 const tableServicesBody = document.querySelector(
   '.success-order-services-table tbody'
 );
-console.log('userOrderDataObj: ', userOrderDataObj);
+const backToHomeBtn = document.querySelector('.back-to-home-btn');
+backToHomeBtn.addEventListener('click', () =>
+  resetLocalStorage('userOrderDataObj')
+);
 
 function populateUserOrderTable() {
   Object.entries(userOrderDataObj).forEach(([key, value]) => {
@@ -48,11 +53,11 @@ function populateUserServicesTable() {
       userSquare.cost
     );
     appendElement(tableServicesBody, newRow);
+    populateServiceRows(userServices);
   } else {
-    hideOrderServicesTable();
+    hideTable(tableServices);
   }
-
-  populateServiceRows(userServices);
+  setSectionSuccessStyle(isComplexOrder);
 }
 
 function populateServiceRows(userServices) {
@@ -62,13 +67,26 @@ function populateServiceRows(userServices) {
   });
 }
 
-function hideOrderServicesTable() {
-  tableServices.style.display = 'none';
+function hideTable(table) {
+  table.style.display = 'none';
+}
+
+function setSectionSuccessStyle(isComplexOrder) {
+  if (isComplexOrder) {
+    sectionSuccess.classList.add('isComplexOrder');
+  } else {
+    sectionSuccess.classList.remove('isComplexOrder');
+  }
 }
 
 function showUserOrderResultData() {
-  populateUserOrderTable();
-  populateUserServicesTable();
+  if (userOrderDataObj) {
+    populateUserOrderTable();
+    populateUserServicesTable();
+  } else {
+    hideTable(tableInfo);
+    hideTable(tableServices);
+  }
 }
 
 showUserOrderResultData();
