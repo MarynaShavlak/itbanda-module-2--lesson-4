@@ -1,4 +1,4 @@
-import { resetLocalStorage } from '.cleaning/local-storage';
+import { resetLocalStorage } from './local-storage';
 const allowedPages = [
   'cleaning/',
   'cleaning/index.html',
