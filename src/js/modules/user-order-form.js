@@ -123,7 +123,6 @@ function onSubmitForm(e) {
   const elements = isComplexOrder
     ? subscForm.elements
     : e.currentTarget.elements;
-  console.log('e.currentTarget: ', e.currentTarget);
   const elementsWithErrors = validateFields(elements, validationFields);
   resetErrors(elements);
   addErrorClass(elementsWithErrors);
@@ -199,7 +198,6 @@ function resetChosenPaymentType() {
 }
 
 function setOrderDataObj(form) {
-  console.log('form: ', form);
   const formData = new FormData(form);
   formData.forEach((value, key) => {
     if (key.startsWith('user')) {

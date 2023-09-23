@@ -108,13 +108,13 @@ function handleServiceQuantityChange(e) {
   const serviceName = getChosenServiceName(e);
   changeOrderItemQuantity(e);
   updateTotalCostForService(serviceName);
-  calculateTotalOrderCost();
+  setTotalOrderCost(userServicesOrderInfoObj);
 }
 
 function handleSquareQuantityChange(e) {
   changeOrderItemQuantity(e);
   updateSquareTotalCost();
-  calculateTotalOrderCost();
+  setTotalOrderCost(userServicesOrderInfoObj);
 }
 
 function updateTotalCostForService(serviceName) {
@@ -172,7 +172,7 @@ function toggleServiceItem(e) {
   const serviceName = label.getAttribute('data-id');
   updateTotalServicesTable(isServiceChosen, serviceItem);
   updateTotalCostForService(serviceName);
-  calculateTotalOrderCost();
+  setTotalOrderCost(userServicesOrderInfoObj);
 }
 
 function toggleControlQuantityBlock(controlQuantityBlock, isVisible) {
@@ -212,15 +212,20 @@ function updateServiceQuantity(serviceName, quantity) {
   return updatedQuantity;
 }
 
-function calculateTotalOrderCost() {
-  const totalOrderCost = Object.keys(userServicesOrderInfoObj)
+export function calculateTotalOrderCost(obj) {
+  const totalOrderCost = Object.keys(obj)
     .reduce((acc, propertyName) => {
-      const property = userServicesOrderInfoObj[propertyName];
+      const property = obj[propertyName];
       return acc + property.quantity * property.price;
     }, 0)
     .toFixed(2);
+  return totalOrderCost;
+}
+
+function setTotalOrderCost(userServicesOrderInfoObj) {
+  const costValue = calculateTotalOrderCost(userServicesOrderInfoObj);
   const totalOrderCostEl = document.querySelector('.total-order-value');
-  totalOrderCostEl.textContent = `${totalOrderCost}zł`;
+  totalOrderCostEl.textContent = `${costValue}zł`;
 }
 
 function createSpan(className, textContent) {

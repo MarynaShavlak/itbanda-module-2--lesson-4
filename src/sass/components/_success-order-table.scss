@@ -48,6 +48,19 @@
     }
   
 }
+.success-table .success-order--total {
+  font-size: 16px;
+}
+.success-order--total {
+  color: $primary-white-color;
+  background-color: $light-accent-color;
+}
+.success-order--total:first-child {
+  border-bottom-left-radius: 20px;
+}
+.success-order--total:nth-child(2) {
+  border-bottom-right-radius: 20px;
+}
 
 .success-order-services-table .success-order__name {
   @media screen and (min-width: 768px) and (max-width: 1439px) {

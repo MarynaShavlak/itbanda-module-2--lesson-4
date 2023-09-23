@@ -1,5 +1,6 @@
 import { appendElement } from './common';
 import { getDataFromStorage, resetLocalStorage } from './local-storage';
+import { calculateTotalOrderCost } from './chose-services';
 const userOrderDataObj = getDataFromStorage('userOrderDataObj');
 const tableServices = document.querySelector('.success-order-services-table');
 const tableInfo = document.querySelector('.success-order-info-table');
@@ -25,6 +26,17 @@ function populateUserOrderTable() {
   });
 }
 
+function setTotalOrderCostInTable(isComplexOrder) {
+  const cell = document.querySelector(
+    '.success-order--total[data-field="total"]'
+  );
+  if (isComplexOrder) {
+    const value = calculateTotalOrderCost(userServicesOrderInfoObj);
+    cell.textContent = value;
+  } else {
+    cell.textContent = '399zł';
+  }
+}
 function toggleRowDisplay(row, value) {
   if (row) {
     row.style.display = value ? '' : 'none';
@@ -58,6 +70,7 @@ function populateUserServicesTable() {
     hideTable(tableServices);
   }
   setSectionSuccessStyle(isComplexOrder);
+  setTotalOrderCostInTable(isComplexOrder);
 }
 
 function populateServiceRows(userServices) {
