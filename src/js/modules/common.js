@@ -13,6 +13,8 @@ const allowedPages = [
 
 document.addEventListener('DOMContentLoaded', function () {
   const currentPage = window.location.pathname;
+  console.log('window.location: ', window.location);
+  console.log('currentPage: ', currentPage);
   // const isAllowedPage = allowedPages.includes(currentPage);
   // if (!isAllowedPage && currentPage !== '/error.html') {
   //   if (!allowedPages.includes('/error.html')) {
