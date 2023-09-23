@@ -12,7 +12,7 @@ const allowedPages = [
 ];
 
 document.addEventListener('DOMContentLoaded', function () {
-  const currentPage = window.location.pathname;
+  // const currentPage = window.location.pathname;
   // const isAllowedPage = allowedPages.includes(currentPage);
   // if (!isAllowedPage && currentPage !== '/error.html') {
   //   if (!allowedPages.includes('/error.html')) {
@@ -96,6 +96,7 @@ function hideBuildingsToggleMenu() {
 }
 
 function setOfficeBuildingsToggleMenu() {
+  console.log('BuildingsToggleMenu');
   const buildingsElements = document.querySelectorAll('.element--office-page');
   buildingsElements.forEach(item => item.classList.remove('isHidden'));
   const calculatorBuilding = document.querySelector(

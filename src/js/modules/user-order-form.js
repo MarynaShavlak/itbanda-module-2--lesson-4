@@ -150,7 +150,7 @@ function onSubmitForm(e) {
   if (!isComplexOrder) {
     toggleModal(refsSubscr);
   }
-  window.location.href = '/success-order.html';
+  window.location.href = 'cleaning/success-order.html';
 }
 
 function initializeComplexOrder() {
