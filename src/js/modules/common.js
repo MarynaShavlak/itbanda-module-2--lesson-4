@@ -13,12 +13,12 @@ const allowedPages = [
 
 document.addEventListener('DOMContentLoaded', function () {
   const currentPage = window.location.pathname;
-  const isAllowedPage = allowedPages.includes(currentPage);
-  if (!isAllowedPage && currentPage !== '/error.html') {
-    if (!allowedPages.includes('/error.html')) {
-      window.location.href = '/error.html';
-    }
-  }
+  // const isAllowedPage = allowedPages.includes(currentPage);
+  // if (!isAllowedPage && currentPage !== '/error.html') {
+  //   if (!allowedPages.includes('/error.html')) {
+  //     window.location.href = '/error.html';
+  //   }
+  // }
 
   if (currentPage === '/' || currentPage === '/index.html') {
     setCurrentNavLink('.nav__link');
