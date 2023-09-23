@@ -1,6 +1,5 @@
 import { appendElement } from './common';
 import { getDataFromStorage, resetLocalStorage } from './local-storage';
-import { calculateTotalOrderCost } from './chose-services';
 const userOrderDataObj = getDataFromStorage('userOrderDataObj');
 const tableServices = document.querySelector('.success-order-services-table');
 const tableInfo = document.querySelector('.success-order-info-table');
@@ -31,8 +30,7 @@ function setTotalOrderCostInTable(isComplexOrder) {
     '.success-order--total[data-field="total"]'
   );
   if (isComplexOrder) {
-    const value = calculateTotalOrderCost(userServicesOrderInfoObj);
-    cell.textContent = value;
+    cell.textContent = calculateTotalCost(userOrderDataObj);
   } else {
     cell.textContent = '399zł';
   }
@@ -51,6 +49,20 @@ function createTableRow(name, quantity, cost) {
     <td class="success-order__value success-order__cost">${cost}</td>
   `;
   return newRow;
+}
+
+function calculateTotalCost(obj) {
+  const { userSquare, userServices } = obj;
+  const parseCost = cost =>
+    parseFloat(cost.replace('zł', '').replace(',', '.'));
+
+  const squareCost = parseCost(userSquare.cost);
+  const totalServicesCost = userServices.reduce(
+    (acc, service) => acc + parseCost(service.cost),
+    0
+  );
+
+  return `${squareCost + totalServicesCost}zł`;
 }
 
 function populateUserServicesTable() {
