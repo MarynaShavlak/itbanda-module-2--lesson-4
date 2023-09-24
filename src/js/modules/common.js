@@ -15,12 +15,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const currentPage = window.location.pathname;
   console.log('window.location: ', window.location);
   console.log('currentPage: ', currentPage);
-  // const isAllowedPage = allowedPages.includes(currentPage);
-  // if (!isAllowedPage && currentPage !== '/error.html') {
-  //   if (!allowedPages.includes('/error.html')) {
-  //     window.location.href = '/error.html';
-  //   }
-  // }
+  const isAllowedPage = allowedPages.includes(currentPage);
+  console.log('isAllowedPage: ', isAllowedPage);
+  if (!isAllowedPage && currentPage !== '/cleaning/error.html') {
+    if (!allowedPages.includes('/cleaning/error.html')) {
+      window.location.href = window.location.href =
+        'https://marynashavlak.github.io/cleaning/error.html';
+    }
+  }
   if (currentPage === '/cleaning/' || currentPage === '/cleaning/index.html') {
     setCurrentNavLink('.nav__link');
     updateDynamicLinks('index.html#order-cleaning-block');
