@@ -27,14 +27,14 @@ document.addEventListener('DOMContentLoaded', function () {
   } else if (currentPage === '/cleaning/office.html') {
     setCurrentNavLink('.nav__list .nav__item:nth-child(2) .nav__link');
     updateDynamicLinks('office.html#office-calc-block');
-    setBuildingsFlexBasis('.buildings__element', 'calc(100% /cleaning/ 3)');
+    setBuildingsFlexBasis('.buildings__element', 'calc(100% / 3)');
     setOfficeBuildingsToggleMenu();
   } else if (currentPage === '/cleaning/after-repair.html') {
     hideBuildingsToggleMenu();
     hideSelectedItems('.add-services-list__item:nth-child(n+3)');
     updateDynamicLinks('after-repair.html#office-calc-block');
   } else if (currentPage === '/cleaning/calc-order.html') {
-    setBuildingsFlexBasis('.buildings__element', 'calc(100% /cleaning/ 2)');
+    setBuildingsFlexBasis('.buildings__element', 'calc(100% / 2)');
     setCalculatorBuildingsToggleMenu();
     addWhiteBackground('.block');
   } else if (currentPage === '/cleaning/contacts.html') {
