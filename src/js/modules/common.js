@@ -13,16 +13,8 @@ const allowedPages = [
 
 document.addEventListener('DOMContentLoaded', function () {
   const currentPage = window.location.pathname;
-  console.log('window.location: ', window.location);
-  console.log('currentPage: ', currentPage);
   const isAllowedPage = allowedPages.includes(currentPage);
-  console.log('isAllowedPage: ', isAllowedPage);
-  // if (!isAllowedPage && currentPage !== '/cleaning/404.html') {
-  //   if (!allowedPages.includes('/cleaning/404.html')) {
-  //     window.location.href =
-  //       'https://marynashavlak.github.io/cleaning/404.html';
-  //   }
-  // }
+
   if (currentPage === '/cleaning/' || currentPage === '/cleaning/index.html') {
     setCurrentNavLink('.nav__link');
     updateDynamicLinks('index.html#order-cleaning-block');
@@ -99,7 +91,6 @@ function hideBuildingsToggleMenu() {
 }
 
 function setOfficeBuildingsToggleMenu() {
-  console.log('BuildingsToggleMenu');
   const buildingsElements = document.querySelectorAll('.element--office-page');
   buildingsElements.forEach(item => item.classList.remove('isHidden'));
   const calculatorBuilding = document.querySelector(

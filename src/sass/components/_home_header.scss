@@ -165,34 +165,13 @@ fill: $main-accent-color;
    gap:12px;
  }
 
-// .socials__item {
-//   border-radius: 50%;
-//   background-color: transparent;
-//   transition:  background-color $cubic;
-// &:hover, &:focus {
-//     color: $primary-white-color;
-//     background-color: $main-accent-color;
-//     .socials__icon {
-//       fill:$primary-white-color;
-//     }
-//   }
-// }
 
 .socials__item {
   border-radius: 50%;
-//   background-color: transparent;
-//   transition:  background-color $cubic;
-// &:hover, &:focus {
-//     color: $primary-white-color;
-//     background-color: $main-accent-color;
-//     .socials__icon {
-//       fill:$primary-white-color;
-//     }
-//   }
+
 }
 .socials__link {
   border-radius: 50%;
-  // background-color: transparent;
   transition:  background-color $cubic;
 &:hover, &:focus {
     color: $primary-white-color;

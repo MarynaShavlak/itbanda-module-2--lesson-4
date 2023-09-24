@@ -108,7 +108,6 @@ function createCellEl(fd, fm, y, isDisabledDate, monthType) {
 }
 
 function createPreviousMonthCell(day) {
-  // const { year, month } = getCurrentYearAndMonth(currentDateObj);
   const { year, month } = getCurrentYearAndMonth(monthToShowInCalendarObj);
   const { formattedDay, formattedMonth, formattedYear } = formatDateInfo(
     day,
