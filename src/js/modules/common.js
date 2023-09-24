@@ -11,47 +11,47 @@ const allowedPages = [
   '/cleaning/faq.html',
 ];
 
-document.addEventListener('DOMContentLoaded', function () {
-  const currentPage = window.location.pathname;
-  console.log('window.location: ', window.location);
-  console.log('currentPage: ', currentPage);
-  const isAllowedPage = allowedPages.includes(currentPage);
-  console.log('isAllowedPage: ', isAllowedPage);
-  if (!isAllowedPage && currentPage !== '/cleaning/error.html') {
-    if (!allowedPages.includes('/cleaning/error.html')) {
-      window.location.href =
-        'https://marynashavlak.github.io/cleaning/error.html';
-    }
-  }
-  if (currentPage === '/cleaning/' || currentPage === '/cleaning/index.html') {
-    setCurrentNavLink('.nav__link');
-    updateDynamicLinks('index.html#order-cleaning-block');
-  } else if (currentPage === '/cleaning/office.html') {
-    setCurrentNavLink('.nav__list .nav__item:nth-child(2) .nav__link');
-    updateDynamicLinks('office.html#office-calc-block');
-    setBuildingsFlexBasis('.buildings__element', 'calc(100% / 3)');
-    setOfficeBuildingsToggleMenu();
-  } else if (currentPage === '/cleaning/after-repair.html') {
-    hideBuildingsToggleMenu();
-    hideSelectedItems('.add-services-list__item:nth-child(n+3)');
-    updateDynamicLinks('after-repair.html#office-calc-block');
-  } else if (currentPage === '/cleaning/calc-order.html') {
-    setBuildingsFlexBasis('.buildings__element', 'calc(100% / 2)');
-    setCalculatorBuildingsToggleMenu();
-    addWhiteBackground('.block');
-  } else if (currentPage === '/cleaning/contacts.html') {
-    modifyContactPage();
-    modifyMainSection();
-  } else if (
-    currentPage === '/cleaning/success-order.html' ||
-    currentPage === '/cleaning/error.html'
-  ) {
-    modifyMainSection();
-    window.addEventListener('beforeunload', function () {
-      resetLocalStorage('userOrderDataObj');
-    });
-  }
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//   const currentPage = window.location.pathname;
+//   console.log('window.location: ', window.location);
+//   console.log('currentPage: ', currentPage);
+//   const isAllowedPage = allowedPages.includes(currentPage);
+//   console.log('isAllowedPage: ', isAllowedPage);
+//   if (!isAllowedPage && currentPage !== '/cleaning/404.html') {
+//     if (!allowedPages.includes('/cleaning/404.html')) {
+//       window.location.href =
+//         'https://marynashavlak.github.io/cleaning/404.html';
+//     }
+//   }
+//   if (currentPage === '/cleaning/' || currentPage === '/cleaning/index.html') {
+//     setCurrentNavLink('.nav__link');
+//     updateDynamicLinks('index.html#order-cleaning-block');
+//   } else if (currentPage === '/cleaning/office.html') {
+//     setCurrentNavLink('.nav__list .nav__item:nth-child(2) .nav__link');
+//     updateDynamicLinks('office.html#office-calc-block');
+//     setBuildingsFlexBasis('.buildings__element', 'calc(100% / 3)');
+//     setOfficeBuildingsToggleMenu();
+//   } else if (currentPage === '/cleaning/after-repair.html') {
+//     hideBuildingsToggleMenu();
+//     hideSelectedItems('.add-services-list__item:nth-child(n+3)');
+//     updateDynamicLinks('after-repair.html#office-calc-block');
+//   } else if (currentPage === '/cleaning/calc-order.html') {
+//     setBuildingsFlexBasis('.buildings__element', 'calc(100% / 2)');
+//     setCalculatorBuildingsToggleMenu();
+//     addWhiteBackground('.block');
+//   } else if (currentPage === '/cleaning/contacts.html') {
+//     modifyContactPage();
+//     modifyMainSection();
+//   } else if (
+//     currentPage === '/cleaning/success-order.html' ||
+//     currentPage === '/cleaning/404.html'
+//   ) {
+//     modifyMainSection();
+//     window.addEventListener('beforeunload', function () {
+//       resetLocalStorage('userOrderDataObj');
+//     });
+//   }
+// });
 
 function updateDynamicLinks(href) {
   const dynamicLinkList = document.querySelectorAll('.dynamic-link');
