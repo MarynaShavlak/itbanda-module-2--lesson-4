@@ -150,7 +150,8 @@ function onSubmitForm(e) {
   if (!isComplexOrder) {
     toggleModal(refsSubscr);
   }
-  window.location.href = '/cleaning/success-order.html';
+  window.location.href = window.location.href =
+    'https://marynashavlak.github.io/cleaning/success-order.html';
 }
 
 function initializeComplexOrder() {
