@@ -13,7 +13,6 @@ const allowedPages = [
 
 document.addEventListener('DOMContentLoaded', function () {
   const currentPage = window.location.pathname;
-  const isAllowedPage = allowedPages.includes(currentPage);
 
   if (currentPage === '/cleaning/' || currentPage === '/cleaning/index.html') {
     setCurrentNavLink('.nav__link');

@@ -1,4 +1,7 @@
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid transparent;
   border-radius: 50px;
   background-color: $main-accent-color;
@@ -77,6 +80,7 @@ padding: 17px 25px;
 }
 
 .action-btn {
+  width: fit-content;
   padding: 15px 50px;
 
   @media screen and (min-width: 768px) {
@@ -185,6 +189,7 @@ padding: 17px 25px;
 }
 
 .office-order .calc-btn {
+  width: fit-content;
   margin-top: 0;
 }
 
