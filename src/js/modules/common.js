@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log('isAllowedPage: ', isAllowedPage);
   if (!isAllowedPage && currentPage !== '/cleaning/error.html') {
     if (!allowedPages.includes('/cleaning/error.html')) {
-      window.location.href = window.location.href =
+      window.location.href =
         'https://marynashavlak.github.io/cleaning/error.html';
     }
   }
