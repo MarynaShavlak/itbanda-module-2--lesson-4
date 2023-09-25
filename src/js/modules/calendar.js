@@ -62,21 +62,6 @@ nextMonthBtn?.addEventListener('click', () => {
   updateCalendar(1);
 });
 
-// function addCellClasses(cell, isDisabledDate, monthType, isToday) {
-//   cell.classList.add(monthType);
-//   if (isDisabledDate) {
-//     cell.classList.add('disabled-day');
-//   }
-//   if (monthType === 'current-month' && isToday) {
-//     cell.classList.add('order-day');
-//   }
-// }
-
-// function addCellClickEvent(cell, isDisabledDate) {
-//   if (!isDisabledDate) {
-//     cell.addEventListener('click', handleCellClick);
-//   }
-// }
 function setCellText(cell, day) {
   cell.textContent = day;
 }
@@ -118,45 +103,38 @@ function createCellEl(cellData) {
 function createCalendarCell(day, monthType) {
   const { year, month } = getCurrentYearAndMonth(monthToShowInCalendarObj);
   const todayObj = new Date();
-  let cellDay;
-  let cellMonth;
-  let cellYear;
   let cellDateObj;
+
   if (monthType === 'previous-month') {
     const { formattedDay, formattedMonth, formattedYear } = formatDateInfo(
       day,
       month,
       year
     );
-    cellDay = formattedDay;
-    cellMonth = formattedMonth - 1;
-    cellYear = formattedYear;
-    cellDateObj = new Date(cellYear, cellMonth, cellDay);
+    cellDateObj = new Date(formattedYear, formattedMonth - 1, formattedDay);
   } else if (monthType === 'current-month') {
     const { formattedDay } = formatDateInfo(day);
-    cellDay = formattedDay;
-    cellMonth = month;
-    cellYear = year;
-    cellDateObj = new Date(cellYear, cellMonth, cellDay);
+    cellDateObj = new Date(year, month, formattedDay);
   } else if (monthType === 'next-month') {
     const { formattedDay } = formatDateInfo(day, month, year);
-    const formattedMonth = month === 11 ? 1 : month + 2;
-    const formattedYear = month === 11 ? year + 1 : year;
-    cellDay = formattedDay;
-    cellMonth = formattedMonth - 1;
-    cellYear = formattedYear;
-    cellDateObj = new Date(cellYear, cellMonth, cellDay);
+    const nextMonth = month === 11 ? 0 : month + 1;
+    const nextYear = month === 11 ? year + 1 : year;
+    cellDateObj = new Date(nextYear, nextMonth, formattedDay);
   }
+
   const isDisabledDate = isDateBeforeToday(cellDateObj, todayObj);
   const isCellSelectedDay = isCellSelected(cellDateObj, selectedDateObj, day);
+  const formattedDay = String(cellDateObj.getDate()).padStart(2, '0');
+
   const cellData = {
-    day: cellDay,
-    month: cellMonth,
-    year: cellYear,
-    isDisabledDate: isDisabledDate,
-    monthType: monthType,
-    isCellSelectedDay: isCellSelectedDay,
+    day: formattedDay,
+    month: cellDateObj.getMonth(),
+    year: cellDateObj.getFullYear(),
+    isDisabledDate,
+    monthType,
+    isCellSelectedDay,
   };
+
   const cell = createCellEl(cellData);
   return cell;
 }
@@ -170,113 +148,6 @@ function isCellSelected(cellDateObj, selectedDateObj, day) {
   return isCellSelectedDay;
 }
 
-// function createPreviousMonthCell(day) {
-//   return createCalendarCell(day, 'previous-month');
-// }
-
-// function createCurrentMonthCell(day) {
-//   return createCalendarCell(day, 'current-month');
-// }
-
-// function createNextMonthCell(day) {
-//   return createCalendarCell(day, 'next-month');
-// }
-
-// function addCellClasses(cell, isDisabledDate, monthType, isToday) {
-//   cell.classList.add(monthType);
-//   if (isDisabledDate) {
-//     cell.classList.add('disabled-day');
-//   }
-//   if (monthType === 'current-month' && isToday) {
-//     cell.classList.add('order-day');
-//   }
-// }
-
-// function addCellClickEvent(cell, isDisabledDate) {
-//   if (!isDisabledDate) {
-//     cell.addEventListener('click', handleCellClick);
-//   }
-// }
-
-// function createCellEl(fd, fm, y, isDisabledDate, monthType) {
-//   const cell = document.createElement('td');
-//   setCellText(cell, fd);
-//   setCellAttributes(cell, fd, fm, y);
-//   addCellClasses(cell, isDisabledDate, monthType);
-//   addCellClickEvent(cell, isDisabledDate);
-
-//   return cell;
-// }
-
-// function createPreviousMonthCell(day) {
-//   const { year, month } = getCurrentYearAndMonth(monthToShowInCalendarObj);
-//   const { formattedDay, formattedMonth, formattedYear } = formatDateInfo(
-//     day,
-//     month,
-//     year
-//   );
-//   const todayObj = new Date();
-//   const isDisabledDate = isDateBeforeToday(
-//     new Date(formattedYear, formattedMonth - 1, day),
-//     todayObj
-//   );
-//   const cell = createCellEl(
-//     formattedDay,
-//     formattedMonth - 1,
-//     formattedYear,
-//     isDisabledDate,
-//     'previous-month'
-//   );
-//   return cell;
-// }
-
-// function createCurrentMonthCell(day) {
-//   const { formattedDay } = formatDateInfo(day);
-//   const { year, month } = getCurrentYearAndMonth(monthToShowInCalendarObj);
-//   const todayObj = new Date();
-//   const cellDateObj = new Date(year, month, day);
-//   const isDisabledDate = isDateBeforeToday(cellDateObj, todayObj);
-
-//   const cell = createCellEl(
-//     formattedDay,
-//     month,
-//     year,
-//     isDisabledDate,
-//     'current-month'
-//   );
-//   const isYearEquel =
-//     cellDateObj.getFullYear() === selectedDateObj.getFullYear();
-//   const isMonthEquel = cellDateObj.getMonth() === selectedDateObj.getMonth();
-//   const isDayEquel = day === selectedDateObj.getDate();
-//   const isCellSelectedDay = isYearEquel && isMonthEquel && isDayEquel;
-//   addCellClasses(cell, isDisabledDate, 'current-month', isCellSelectedDay);
-//   return cell;
-// }
-
-// function createNextMonthCell(day) {
-//   const { year, month } = getCurrentYearAndMonth(monthToShowInCalendarObj);
-//   const { formattedDay } = formatDateInfo(day, month, year);
-//   const formattedMonth = month === 11 ? 1 : month + 2;
-//   const formattedYear = month === 11 ? year + 1 : year;
-//   const todayObj = new Date();
-//   const cellDateObj = new Date(formattedYear, formattedMonth - 1, day);
-//   const isDisabledDate = isDateBeforeToday(cellDateObj, todayObj);
-
-//   const isCellSelectedDay =
-//     cellDateObj.getFullYear() === selectedDateObj.getFullYear() &&
-//     cellDateObj.getMonth() === selectedDateObj.getMonth() &&
-//     day === selectedDateObj.getDate();
-//   const cell = createCellEl(
-//     formattedDay,
-//     formattedMonth - 1,
-//     formattedYear,
-//     isDisabledDate,
-//     'next-month'
-//   );
-//   addCellClasses(cell, isDisabledDate, 'next-month', isCellSelectedDay);
-//   return cell;
-// }
-
 function setMonthAndYearName(year) {
   const monthName = monthToShowInCalendarObj.toLocaleDateString('uk-UA', {
     month: 'long',
@@ -284,9 +155,6 @@ function setMonthAndYearName(year) {
   const capitalizedMonth =
     monthName.charAt(0).toUpperCase() + monthName.slice(1);
   calendarHeadMonthAndYear.textContent = `${capitalizedMonth} ${year}`;
-}
-function createCalendarRow() {
-  return document.createElement('tr');
 }
 
 function generateCalendar(dateobj) {
@@ -373,3 +241,8 @@ function toggleCalendarVisibility() {
 }
 
 generateCalendar(selectedDateObj);
+
+//____________
+function createCalendarRow() {
+  return document.createElement('tr');
+}
