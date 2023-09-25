@@ -11,13 +11,17 @@ import {
   getMonthBoundaryDates,
   formatDateInfo,
 } from './dates';
-const calendarElement = document.querySelector('.calendar');
-const calendarIcon = document.querySelector('.icon--calendar');
-const calendarBody = document.querySelector('.calendar__body');
-const calendarHeadMonthAndYear = document.querySelector('.calendar__monthYear');
-const prevMonthBtn = document.querySelector('.calendar__prevMonth-btn');
-const nextMonthBtn = document.querySelector('.calendar__nextMonth-btn');
-const dateInput = document.querySelector('[name="userDate"]');
+const calendarBlock = document.querySelector('.calendar');
+const calendarBody = calendarBlock.querySelector('.calendar__body');
+const calendarHeadMonthAndYear = calendarBlock.querySelector(
+  '.calendar__monthYear'
+);
+const prevMonthBtn = calendarBlock.querySelector('.calendar__prevMonth-btn');
+const nextMonthBtn = calendarBlock.querySelector('.calendar__nextMonth-btn');
+const dateInput =
+  calendarBlock.previousElementSibling.querySelector('[name="userDate"]');
+const calendarIcon =
+  calendarBlock.previousElementSibling.querySelector('.icon--calendar');
 
 let selectedDateObj = new Date();
 let monthToShowInCalendarObj = new Date();
@@ -27,7 +31,7 @@ dateInput.addEventListener('click', () => {
   toggleCalendarVisibility();
   toggleIconActiveStyle(calendarIcon);
   monthToShowInCalendarObj = new Date(selectedDateObj);
-  const isCalendarVisible = !calendarElement.classList.contains('isHidden');
+  const isCalendarVisible = !calendarBlock.classList.contains('isHidden');
   generateCalendar(selectedDateObj);
   if (isCalendarVisible) {
     setDateInputValue();
@@ -44,7 +48,7 @@ calendarIcon.addEventListener('click', e => {
   monthToShowInCalendarObj = new Date(selectedDateObj);
   generateCalendar(selectedDateObj);
   toggleIconActiveStyle(e.target);
-  const isCalendarVisible = !calendarElement.classList.contains('isHidden');
+  const isCalendarVisible = !calendarBlock.classList.contains('isHidden');
   if (isCalendarVisible) {
     setDateInputValue();
   }
@@ -65,15 +69,15 @@ function setCellAttributes(cell, day, month, year) {
   cell.dataset.date = `${day}/${month < 9 ? '0' : ''}${month + 1}/${year}`;
 }
 
-function addCellClasses(cell, isDisabledDate, monthType, isToday) {
-  cell.classList.add(monthType);
-  if (isDisabledDate) {
-    cell.classList.add('disabled-day');
-  }
-  if (monthType === 'current-month' && isToday) {
-    cell.classList.add('order-day');
-  }
-}
+// function addCellClasses(cell, isDisabledDate, monthType, isToday) {
+//   cell.classList.add(monthType);
+//   if (isDisabledDate) {
+//     cell.classList.add('disabled-day');
+//   }
+//   if (monthType === 'current-month' && isToday) {
+//     cell.classList.add('order-day');
+//   }
+// }
 
 function addCellClickEvent(cell, isDisabledDate) {
   if (!isDisabledDate) {
@@ -81,12 +85,19 @@ function addCellClickEvent(cell, isDisabledDate) {
   }
 }
 
-function createCellEl(fd, fm, y, isDisabledDate, monthType) {
+function createCellEl(fd, fm, y, isDisabledDate, monthType, isCellSelectedDay) {
   const cell = document.createElement('td');
   setCellText(cell, fd);
   setCellAttributes(cell, fd, fm, y);
-  addCellClasses(cell, isDisabledDate, monthType);
+  // addCellClasses(cell, isDisabledDate, monthType);
   addCellClickEvent(cell, isDisabledDate);
+  cell.classList.add(monthType);
+  if (isDisabledDate) {
+    cell.classList.add('disabled-day');
+  }
+  if (monthType === 'current-month' && isCellSelectedDay) {
+    cell.classList.add('order-day');
+  }
 
   return cell;
 }
@@ -120,19 +131,20 @@ function createCurrentMonthCell(day) {
   const cellDateObj = new Date(year, month, day);
   const isDisabledDate = isDateBeforeToday(cellDateObj, todayObj);
 
-  const cell = createCellEl(
-    formattedDay,
-    month,
-    year,
-    isDisabledDate,
-    'current-month'
-  );
   const isYearEquel =
     cellDateObj.getFullYear() === selectedDateObj.getFullYear();
   const isMonthEquel = cellDateObj.getMonth() === selectedDateObj.getMonth();
   const isDayEquel = day === selectedDateObj.getDate();
   const isCellSelectedDay = isYearEquel && isMonthEquel && isDayEquel;
-  addCellClasses(cell, isDisabledDate, 'current-month', isCellSelectedDay);
+  const cell = createCellEl(
+    formattedDay,
+    month,
+    year,
+    isDisabledDate,
+    'current-month',
+    isCellSelectedDay
+  );
+  // addCellClasses(cell, isDisabledDate, 'current-month', isCellSelectedDay);
   return cell;
 }
 
@@ -154,11 +166,106 @@ function createNextMonthCell(day) {
     formattedMonth - 1,
     formattedYear,
     isDisabledDate,
-    'next-month'
+    'next-month',
+    isCellSelectedDay
   );
-  addCellClasses(cell, isDisabledDate, 'next-month', isCellSelectedDay);
+  // addCellClasses(cell, isDisabledDate, 'next-month', isCellSelectedDay);
   return cell;
 }
+// function addCellClasses(cell, isDisabledDate, monthType, isToday) {
+//   cell.classList.add(monthType);
+//   if (isDisabledDate) {
+//     cell.classList.add('disabled-day');
+//   }
+//   if (monthType === 'current-month' && isToday) {
+//     cell.classList.add('order-day');
+//   }
+// }
+
+// function addCellClickEvent(cell, isDisabledDate) {
+//   if (!isDisabledDate) {
+//     cell.addEventListener('click', handleCellClick);
+//   }
+// }
+
+// function createCellEl(fd, fm, y, isDisabledDate, monthType) {
+//   const cell = document.createElement('td');
+//   setCellText(cell, fd);
+//   setCellAttributes(cell, fd, fm, y);
+//   addCellClasses(cell, isDisabledDate, monthType);
+//   addCellClickEvent(cell, isDisabledDate);
+
+//   return cell;
+// }
+
+// function createPreviousMonthCell(day) {
+//   const { year, month } = getCurrentYearAndMonth(monthToShowInCalendarObj);
+//   const { formattedDay, formattedMonth, formattedYear } = formatDateInfo(
+//     day,
+//     month,
+//     year
+//   );
+//   const todayObj = new Date();
+//   const isDisabledDate = isDateBeforeToday(
+//     new Date(formattedYear, formattedMonth - 1, day),
+//     todayObj
+//   );
+//   const cell = createCellEl(
+//     formattedDay,
+//     formattedMonth - 1,
+//     formattedYear,
+//     isDisabledDate,
+//     'previous-month'
+//   );
+//   return cell;
+// }
+
+// function createCurrentMonthCell(day) {
+//   const { formattedDay } = formatDateInfo(day);
+//   const { year, month } = getCurrentYearAndMonth(monthToShowInCalendarObj);
+//   const todayObj = new Date();
+//   const cellDateObj = new Date(year, month, day);
+//   const isDisabledDate = isDateBeforeToday(cellDateObj, todayObj);
+
+//   const cell = createCellEl(
+//     formattedDay,
+//     month,
+//     year,
+//     isDisabledDate,
+//     'current-month'
+//   );
+//   const isYearEquel =
+//     cellDateObj.getFullYear() === selectedDateObj.getFullYear();
+//   const isMonthEquel = cellDateObj.getMonth() === selectedDateObj.getMonth();
+//   const isDayEquel = day === selectedDateObj.getDate();
+//   const isCellSelectedDay = isYearEquel && isMonthEquel && isDayEquel;
+//   addCellClasses(cell, isDisabledDate, 'current-month', isCellSelectedDay);
+//   return cell;
+// }
+
+// function createNextMonthCell(day) {
+//   const { year, month } = getCurrentYearAndMonth(monthToShowInCalendarObj);
+//   const { formattedDay } = formatDateInfo(day, month, year);
+//   const formattedMonth = month === 11 ? 1 : month + 2;
+//   const formattedYear = month === 11 ? year + 1 : year;
+//   const todayObj = new Date();
+//   const cellDateObj = new Date(formattedYear, formattedMonth - 1, day);
+//   const isDisabledDate = isDateBeforeToday(cellDateObj, todayObj);
+
+//   const isCellSelectedDay =
+//     cellDateObj.getFullYear() === selectedDateObj.getFullYear() &&
+//     cellDateObj.getMonth() === selectedDateObj.getMonth() &&
+//     day === selectedDateObj.getDate();
+//   const cell = createCellEl(
+//     formattedDay,
+//     formattedMonth - 1,
+//     formattedYear,
+//     isDisabledDate,
+//     'next-month'
+//   );
+//   addCellClasses(cell, isDisabledDate, 'next-month', isCellSelectedDay);
+//   return cell;
+// }
 
 function setMonthAndYearName(year) {
   const monthName = monthToShowInCalendarObj.toLocaleDateString('uk-UA', {
@@ -252,7 +359,7 @@ function updateCalendar(monthOffset) {
 }
 
 function toggleCalendarVisibility() {
-  calendarElement.classList.toggle('isHidden');
+  calendarBlock.classList.toggle('isHidden');
 }
 
 generateCalendar(selectedDateObj);
