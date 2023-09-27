@@ -1,4 +1,5 @@
 const toggleAnswerBtnList = document.querySelectorAll('.toggle-question-btn');
+const accordionsList = document.querySelectorAll('.accordion');
 
 toggleAnswerBtnList.forEach(button => {
   button.addEventListener('click', () => {
@@ -7,18 +8,9 @@ toggleAnswerBtnList.forEach(button => {
 });
 
 function onToggleAnswerBtnClick(btn) {
-  const parentListItem = btn.closest('.questions__item');
-  const questionTextList = parentListItem.querySelectorAll('.questions__text');
-  questionTextList.forEach(questionText => {
-    toggleAnswerToQuestion(questionText);
-  });
+  console.log('btn: ', btn);
+  const accordion = btn.closest('.questions__item');
   toggleBtnIcon(btn);
-}
-
-function toggleAnswerToQuestion(el) {
-  const computedStyles = window.getComputedStyle(el);
-  const isHidden = computedStyles.display === 'none';
-  el.style.display = isHidden ? 'block' : 'none';
 }
 
 function toggleBtnIcon(btn) {
@@ -32,3 +24,39 @@ function toggleBtnIcon(btn) {
     minusIcon.style.display = 'block';
   }
 }
+
+function openAccordion(accordion) {
+  const content = accordion.querySelector('.accordion__content');
+  accordion.classList.add('accordion__active');
+  content.style.maxHeight = content.scrollHeight + 'px';
+}
+
+function closeAccordion(accordion) {
+  const content = accordion.querySelector('.accordion__content');
+  accordion.classList.remove('accordion__active');
+  content.style.maxHeight = null;
+}
+
+function toggleAccordion(accordion) {
+  const content = accordion.querySelector('.accordion__content');
+
+  if (content.style.maxHeight) {
+    const btn = accordion.querySelector('.toggle-question-btn');
+    closeAccordion(accordion);
+  } else {
+    accordionsList.forEach(accordion => {
+      const btn = accordion.querySelector('.toggle-question-btn');
+      closeAccordion(accordion);
+    });
+    openAccordion(accordion);
+  }
+}
+
+accordionsList.forEach(accordion => {
+  const intro = accordion.querySelector('.accordion__intro');
+  intro.addEventListener('click', () => {
+    const btn = accordion.querySelector('.toggle-question-btn');
+    toggleAccordion(accordion);
+    toggleBtnIcon(btn);
+  });
+});

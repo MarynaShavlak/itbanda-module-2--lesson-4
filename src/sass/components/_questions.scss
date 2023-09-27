@@ -55,7 +55,6 @@
 
 
 .questions__text {
-    display: none;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.38;
@@ -69,11 +68,8 @@
     }
 }
 
-.questions__text:nth-child(2){
-  margin-top: 24px;
-}
 
-.questions__text:nth-child(3) {
+.questions__text:nth-child(2) {
   margin-bottom: 16px;
   @media screen and (min-width: 1440px) {
     margin-bottom: 12px;
@@ -132,6 +128,9 @@
    
 }
 
+
+
+
 .questions-expanded__text {
   max-width: 285px;
   margin-left: 50px;
@@ -176,3 +175,30 @@
       background-size: 137px 137px, 105px 105px;
   
 }}
+
+.accordion {
+  width: 100%;
+  overflow: hidden;
+}
+
+.accordion__intro {
+  position: relative;
+}
+
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  will-change: max-height;
+  transition: all $cubic;
+  opacity: 0;
+}
+
+
+  .accordion__active .accordion__content {
+      opacity: 1;
+      margin-top: 24px;
+    }
+     
+  
+       
+    
