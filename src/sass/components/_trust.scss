@@ -31,11 +31,13 @@
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       background-image: url('../images/trust/washcloth_tablet@2x.png');
+      background-size: contain;
     }
 
   @media screen and (min-width: 768px) {
     top: 496px;
     right: -6px;
+    background-size: contain;
   }
   @media screen and (min-width: 1440px) {
     top: 492px;
@@ -65,6 +67,7 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
     background-image: url('../images/trust/brush__mobile@2x.png');
+    background-size: contain;
   }
 
   @media screen and (min-width: 768px) {
@@ -78,6 +81,7 @@
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
         background-image: url('../images/trust/brush_tablet@2x.png');
+        background-size: contain;
       }
   }
 

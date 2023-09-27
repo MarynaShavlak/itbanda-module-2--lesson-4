@@ -5,7 +5,8 @@
 }
 .home-order__banner {
   background-image: url('../images/banner/pail@1x.png');
-  background-position: right top 125px;
+  background-position: right 20px top 125px;
+  background-size: 80px 100px;
   @media screen and (min-width: 768px) {
       padding: 60px 90px;
     }
@@ -26,6 +27,7 @@
       (min-resolution: 2dppx) {
         background-image: url('../images/banner/tablet/girl_tablet@2x.png'),
           url('../images/banner/tablet/boy_tablet@2x.png');
+         
       }
   }
 
