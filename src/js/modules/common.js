@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // } else if (currentPage === '/cleaning/calc-order.html') {
   } else if (currentPage === '/cleaning/calc-order.html') {
     setBuildingsFlexBasis('.buildings__element', 'calc(100% / 2)');
-    setCalculatorBuildingsToggleMenu();
     addWhiteBackground('.block');
+    setCalculatorBuildingsToggleMenu();
   } else if (currentPage === '/cleaning/contacts.html') {
     modifyContactPage();
     modifyMainSection();
