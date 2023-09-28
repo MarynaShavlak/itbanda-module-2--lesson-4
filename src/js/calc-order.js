@@ -6,3 +6,4 @@ import './modules/subscr-modal.js';
 import './modules/calendar.js';
 import './modules/time-picker.js';
 import './modules/location.js';
+import './modules/location-modal.js';

@@ -16,7 +16,7 @@
   
 }
 
-.backdrop--support {
+.backdrop--support, .backdrop--location {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,6 +85,30 @@
       font-size: 22px;
       line-height: 1.23;
     }
+}
+
+.modal--location {
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 60px;
+    
+  }
+
+}
+
+
+
+.location__map {
+  height: 300px;
+  border: none;
+  border-radius: 20px;
+  width: calc(100% - 40px);
 }
 
 

@@ -6,3 +6,4 @@ import './modules/location.js';
 import './modules/chose-services.js';
 import './modules/modal.js';
 import './modules/support-modal.js';
+import './modules/location-modal.js';

@@ -106,6 +106,7 @@
     }
 }
 .footer__link {
+  cursor: pointer;
   color: $primary-black-color;
   &:hover, &:focus {
     color: $main-accent-color;

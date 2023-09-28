@@ -3,3 +3,4 @@ import './modules/aside-menu.js';
 import './modules/questions.js';
 import './modules/modal.js';
 import './modules/support-modal.js';
+import './modules/location-modal.js';
