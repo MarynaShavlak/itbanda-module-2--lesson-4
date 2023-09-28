@@ -42,7 +42,7 @@ user experience:
   an optimal user experience across various platforms, enhancing accessibility,
   satisfaction, and engagement.
 
-  ## Features
+  ## ⚙️ Features
 
   ### Versatile Cleaning Services 🧹:
 
