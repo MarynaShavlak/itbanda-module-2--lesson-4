@@ -1,5 +1,6 @@
 import './modules/common.js';
 import './modules/aside-menu.js';
+import './modules/scroll-to-top.js';
 import './modules/toolkit.js';
 import './modules/questions.js';
 import './modules/modal.js';
