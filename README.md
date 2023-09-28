@@ -68,6 +68,16 @@ user experience:
   minimizing any inconvenience or security concerns associated with key
   transfers, ultimately enhancing the overall customer experience.
 
+  ### Address with Interactive Map 📍:
+
+  Clicking our address reveals an interactive map in a modal window, pinpointing
+  our office location. Users can open the full Google Maps interface in a new
+  tab for detailed directions. It enhances user convenience by offering a clear
+  visual representation of our office location. It simplifies the process of
+  finding our office, which is crucial for clients visiting us in person. It
+  demonstrates our commitment to transparency and accessibility, reinforcing
+  trust in our services.
+
   ### Custom Calendar with Date Blocking 📅:
 
   Users can easily select their desired cleaning date from a visually appealing
