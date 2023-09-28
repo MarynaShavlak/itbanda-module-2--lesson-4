@@ -43,3 +43,60 @@ user experience:
   satisfaction, and engagement.
 
   ## Features
+
+  - **Versatile Cleaning Services**: Our cleaning company offers a diverse range
+    of services catering not only to residential spaces but also to offices,
+    restaurants, shops, and post-construction sites. This versatility makes our
+    website valuable to a wide array of clients with varying needs. Whether it's
+    individuals seeking home cleaning or larger businesses like shops and
+    restaurants looking for regular cleaning services, our platform accommodates
+    them all, helping us build a diverse clientele base.
+
+  - **FAQ Accordion**: Dynamic section efficiently addresses frequently asked
+    questions, streamlining our customer support efforts and making it easier
+    for users to find the information they need.
+  - **Location Picker** via Google Maps API: Users can precisely mark their
+    location for the service team, as well as specify additional locations for
+    key pick-up before cleaning and key return after cleaning, if needed. It
+    ensures a smooth and reliable cleaning process, minimizing any inconvenience
+    or security concerns associated with key transfers, ultimately enhancing the
+    overall customer experience.
+  - **Custom Calendar with Date Blocking**: Users can easily select their
+    desired cleaning date from a visually appealing calendar interface, with
+    past dates intelligently blocked to streamline the booking process.
+  - **Custom Circular Time Picker**: Our unique time selection tool mimics the
+    design of a real clock, allowing users to effortlessly choose the time for
+    their cleaning order. With separate tabs for selecting hours and minutes, it
+    ensures a clear and intuitive user experience.
+  - **Customized Cleaning Selection and Instant Cost Estimation**: Users can
+    effortlessly customize their cleaning preferences by specifying the type of
+    cleaning, square footage, and selecting additional cleaning items along with
+    quantities. Our real-time cost calculator not only provides clarity and
+    satisfaction but also saves users time as they don't need external
+    calculators. This high degree of customization, coupled with transparent
+    cost estimation, fosters trust and confidence, significantly boosting user
+    engagement and increasing the likelihood of successful bookings. This
+    commitment to detail and customization underpins our dedication to
+    delivering exceptional service.
+
+  - **Customer Review Section**: This visually captivating layout, powered by
+    CSS Grid Layout, is not just about aesthetics; it's an essential element
+    that highlights the feedback and experiences of our satisfied customers. The
+    engaging design not only makes our website visually appealing but also
+    serves as a valuable trust-building tool, allowing prospective clients to
+    make informed decisions based on the experiences of others.
+  - **Trust-Building Section**: This section highlights our commitment to
+    individualized, high-quality cleaning, professional equipment, safe cleaning
+    products, and transparent pricing. It emphasizes our dedication to
+    exceptional service and their satisfaction.
+  - **Interactive Room Visualizations**: Users can toggle between kitchen, room,
+    and bathroom photos, with animated tooltips visually displaying the
+    available cleaning services and items for each room. This engaging feature
+    transforms our website It transforms our website from a static list of
+    services into an into an attractive and informative platform, making it
+    easier for users to understand the scope of our services.
+  - **Error Notification and Field Validation**: In our order form, incomplete
+    or missed information triggers clear, highlighted messages guiding users for
+    a successful submission. This crucial feature reduces frustration, errors,
+    and manual resolution efforts, ensuring a smooth, efficient user experience
+    and improving overall satisfaction and order completion rates.
