@@ -1,8 +1,8 @@
-const scrollToTopBtn = document.querySelector('#scrollToTopBtn');
+const scrollToTopBtn = document.querySelector('.scroll-to-top-btn');
 
 function toggleButtonVisibility() {
   if (window.scrollY >= 50) {
-    scrollToTopBtn.style.display = 'block';
+    scrollToTopBtn.style.display = 'flex';
   } else {
     scrollToTopBtn.style.display = 'none';
   }

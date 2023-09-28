@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 3;
+  z-index: 50;
   background-color: $primary-white-color;
   border-bottom: 1px solid $light-accent-color;
  }
@@ -212,7 +212,7 @@ fill: $main-accent-color;
 
     .aside-menu & {
       position: absolute;
-      z-index: 20;
+      z-index: 50;
       transform: rotate(45deg);
       width: 42px;
       height: 42px;
@@ -233,7 +233,7 @@ fill: $main-accent-color;
   right: 0;
   width:100vw;
   height: 100vh;
-  z-index: 30;
+  z-index: 50;
   padding-top: 20px;
   background-color: $main-accent-color;
   transition: transform $cubic;
