@@ -2,27 +2,34 @@ const toggleAnswerBtnList = document.querySelectorAll('.toggle-question-btn');
 const accordionsList = document.querySelectorAll('.accordion');
 
 toggleAnswerBtnList.forEach(button => {
-  button.addEventListener('click', () => {
-    onToggleAnswerBtnClick(button);
+  button.addEventListener('click', e => {
+    toggleAnswerBtnList.forEach(closeBtnIcon);
+    if (e.target === button) {
+      toggleBtnIcon(button);
+    }
   });
 });
 
-function onToggleAnswerBtnClick(btn) {
-  console.log('btn: ', btn);
-  const accordion = btn.closest('.questions__item');
-  toggleBtnIcon(btn);
+accordionsList.forEach(accordion => {
+  const intro = accordion.querySelector('.accordion__intro');
+  intro.addEventListener('click', () => {
+    handleAccordionClick(accordion);
+  });
+});
+
+function closeBtnIcon(btn) {
+  const plusIcon = btn.querySelector('.icon--plus');
+  const minusIcon = btn.querySelector('.icon--minus');
+  plusIcon.style.display = 'block';
+  minusIcon.style.display = 'none';
 }
 
 function toggleBtnIcon(btn) {
   const plusIcon = btn.querySelector('.icon--plus');
   const minusIcon = btn.querySelector('.icon--minus');
-  if (plusIcon.style.display === 'none') {
-    plusIcon.style.display = 'block';
-    minusIcon.style.display = 'none';
-  } else {
-    plusIcon.style.display = 'none';
-    minusIcon.style.display = 'block';
-  }
+  plusIcon.style.display = plusIcon.style.display === 'none' ? 'block' : 'none';
+  minusIcon.style.display =
+    minusIcon.style.display === 'none' ? 'block' : 'none';
 }
 
 function openAccordion(accordion) {
@@ -41,22 +48,18 @@ function toggleAccordion(accordion) {
   const content = accordion.querySelector('.accordion__content');
 
   if (content.style.maxHeight) {
-    const btn = accordion.querySelector('.toggle-question-btn');
     closeAccordion(accordion);
   } else {
     accordionsList.forEach(accordion => {
-      const btn = accordion.querySelector('.toggle-question-btn');
       closeAccordion(accordion);
     });
     openAccordion(accordion);
   }
 }
 
-accordionsList.forEach(accordion => {
-  const intro = accordion.querySelector('.accordion__intro');
-  intro.addEventListener('click', () => {
-    const btn = accordion.querySelector('.toggle-question-btn');
-    toggleAccordion(accordion);
-    toggleBtnIcon(btn);
-  });
-});
+function handleAccordionClick(accordion) {
+  const btn = accordion.querySelector('.toggle-question-btn');
+  toggleAccordion(accordion);
+  toggleAnswerBtnList.forEach(closeBtnIcon);
+  toggleBtnIcon(btn);
+}
