@@ -86,35 +86,35 @@ user experience:
     leverages social proof, showcasing client satisfaction and encouraging
     user-generated content. It's essential for building trust, attracting new
     clients, and maintaining an authentic online reputation.
-
-- **Trust-Building Section**: This section highlights our commitment to
-  individualized, high-quality cleaning, professional equipment, safe cleaning
-  products, and transparent pricing. It emphasizes our dedication to exceptional
-  service and their satisfaction.
-- **Interactive Room Visualizations**: Users can toggle between kitchen, room,
-  and bathroom photos, with animated tooltips visually displaying the available
-  cleaning services and items for each room. This engaging feature transforms
-  our website It transforms our website from a static list of services into an
-  into an attractive and informative platform, making it easier for users to
-  understand the scope of our services.
-- **Error Notification and Field Validation**: In our order form, incomplete or
-  missed information triggers clear, highlighted messages guiding users for a
-  successful submission. This crucial feature reduces frustration, errors, and
-  manual resolution efforts, ensuring a smooth, efficient user experience and
-  improving overall satisfaction and order completion rates.
-- **Convenient Contact Accessibility** : Vital contact information is readily
-  available across our site, including the header and footer, modal windows, as
-  well as within dedicated sections on home cleaning, office cleaning,
-  post-construction, and services cleaning pages. We also offer a separate page
-  solely for contact details, simplifying user access and eliminating any need
-  for users to expend additional time and effort searching for this information.
-  This ensures streamlined communication, builds trust, and enhances overall
-  user experience, underlining our commitment to accessibility and transparency.
-- **Comprehensive Service Information**: Our website features a dedicated page
-  where users can easily access information about the types of cleaning
-  territories and a detailed list of services, complete with images.It enhances
-  user understanding and engagement. It provides a comprehensive visual guide to
-  our cleaning offerings, making it easier for users to explore and select the
-  services that best suit their needs. By presenting information in a clear and
-  visual manner, it helps users make informed choices and boosts their
-  confidence in our services.
+  - **Trust-Building Section**: This section highlights our commitment to
+    individualized, high-quality cleaning, professional equipment, safe cleaning
+    products, and transparent pricing. It emphasizes our dedication to
+    exceptional service and their satisfaction.
+  - **Interactive Room Visualizations**: Users can toggle between kitchen, room,
+    and bathroom photos, with animated tooltips visually displaying the
+    available cleaning services and items for each room. This engaging feature
+    transforms our website It transforms our website from a static list of
+    services into an into an attractive and informative platform, making it
+    easier for users to understand the scope of our services.
+  - **Error Notification and Field Validation**: In our order form, incomplete
+    or missed information triggers clear, highlighted messages guiding users for
+    a successful submission. This crucial feature reduces frustration, errors,
+    and manual resolution efforts, ensuring a smooth, efficient user experience
+    and improving overall satisfaction and order completion rates.
+  - **Convenient Contact Accessibility** : Vital contact information is readily
+    available across our site, including the header and footer, modal windows,
+    as well as within dedicated sections on home cleaning, office cleaning,
+    post-construction, and services cleaning pages. We also offer a separate
+    page solely for contact details, simplifying user access and eliminating any
+    need for users to expend additional time and effort searching for this
+    information. This ensures streamlined communication, builds trust, and
+    enhances overall user experience, underlining our commitment to
+    accessibility and transparency.
+  - **Comprehensive Service Information**: Our website features a dedicated page
+    where users can easily access information about the types of cleaning
+    territories and a detailed list of services, complete with images.It
+    enhances user understanding and engagement. It provides a comprehensive
+    visual guide to our cleaning offerings, making it easier for users to
+    explore and select the services that best suit their needs. By presenting
+    information in a clear and visual manner, it helps users make informed
+    choices and boosts their confidence in our services.
