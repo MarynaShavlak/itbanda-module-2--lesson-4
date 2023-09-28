@@ -3,7 +3,7 @@
 ## 🔍 Introduction
 
 Experience hassle-free cleaning with our user-friendly website. Simply input
-your square footage, select your cleaning services, and get an instant cost
+your square footage, select your cleaning services, and receive an instant cost
 estimate. Book your preferred date and time, share your location and key
 details, and we'll handle the rest. We'll reach out to you promptly for
 confirmation. At Comfort Group, cleanliness is just a click away!
@@ -72,9 +72,9 @@ user experience:
 
   Clicking our address reveals an interactive map in a modal window, pinpointing
   our office location. Users can open the full Google Maps interface in a new
-  tab for detailed directions. It enhances user convenience by offering a clear
-  visual representation of our office location. It simplifies the process of
-  finding our office, which is crucial for clients visiting us in person. It
+  tab for detailed directions. This enhances user convenience by offering a
+  clear visual representation of our office location. It simplifies the process
+  of finding our office, which is crucial for clients visiting us in person. It
   demonstrates our commitment to transparency and accessibility, reinforcing
   trust in our services.
 
@@ -124,10 +124,9 @@ user experience:
 
   Users can toggle between kitchen, room, and bathroom photos, with animated
   tooltips visually displaying the available cleaning services and items for
-  each room. This engaging feature transforms our website It transforms our
-  website from a static list of services into an into an attractive and
-  informative platform, making it easier for users to understand the scope of
-  our services.
+  each room. It transforms website from a static list of services into an into
+  an attractive and informative platform, making it easier for users to
+  understand the scope of our services.
 
   ### Streamlined Order Placement 🛒:
 
@@ -138,6 +137,16 @@ user experience:
   user-friendly. By reducing friction in the order placement process, it
   encourages more users to take action, ultimately driving conversions and
   increasing customer satisfaction.
+
+  ### Smooth Scroll to Top ⬆️:
+
+  Our website features a custom animated arrow button. When clicked, it delivers
+  a visually pleasing and smooth scrolling experience, swiftly guiding users
+  back to the top of the site. This button's design is thoughtfully optimized
+  for mobile devices, ensuring a seamless and engaging interaction. It enhances
+  user navigation by providing a quick way to return to the top of the page,
+  especially on long-scrolling pages. It improves overall user experience and
+  ease of site exploration, making it a valuable addition to our project.
 
   ### Error Notification and Field Validation ❌:
 
@@ -179,12 +188,12 @@ user experience:
 
   ### Order Success Confirmation Page ✅:
 
-  it is implemented an Order Success Confirmation Page that users are redirected
-  to after successfully completing an order form. On this page, users can review
-  all the information they provided in their order, instilling confidence that
-  their order was submitted accurately. Additionally, there's a button link that
-  redirects users to the homepage. It enhances user trust and satisfaction. It
-  assures users that their order details have been recorded correctly,
-  minimizing any doubts or concerns. Moreover, the inclusion of a link to the
-  homepage encourages users to explore further, potentially leading to
-  additional engagement and conversions on our website.
+  We have implemented an Order Success Confirmation Page that users are
+  redirected to after successfully completing an order form. On this page, users
+  can review all the information they provided in their order, instilling
+  confidence that their order was submitted accurately. Additionally, there's a
+  button link that redirects users to the homepage. It enhances user trust and
+  satisfaction. This assures users that their order details have been recorded
+  correctly, minimizing any doubts or concerns. Moreover, the inclusion of a
+  link to the homepage encourages users to explore further, potentially leading
+  to additional engagement and conversions on our website.

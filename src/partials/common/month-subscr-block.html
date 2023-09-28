@@ -20,12 +20,23 @@
     <p class="text text--secondary">
       1 генеральне прибирання + 1 підтримуюче прибирання
     </p>
-    <button
-      class="cleaning__btn btn"
-      type="button"
-      data-subscription-modal-open
-    >
-      Замовити прибирання
-    </button>
+    <div class="animated-btn-wrap">
+      <button
+        class="cleaning__btn btn blob-btn"
+        type="button"
+        data-subscription-modal-open
+      >
+        Замовити прибирання
+        <span class="blob-btn__inner">
+          <span class="blob-btn__blobs">
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+            <span class="blob-btn__blob"></span>
+          </span>
+        </span>
+      </button>
+      <include src="partials/common/btn-animation-svg.html"></include>
+    </div>
   </div>
 </div>

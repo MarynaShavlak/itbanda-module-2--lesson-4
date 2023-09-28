@@ -501,9 +501,24 @@
           <span>Вартість</span>
           <span class="total-order-value">2zł</span>
         </div>
-        <button class="action-btn btn calc-btn" type="submit">
-          Замовити прибирання
-        </button>
+       
+        <div class="animated-btn-wrap">
+            <button
+              type="submit"
+              class=" action-btn btn calc-btn blob-btn"
+            >
+              Замовити прибирання
+              <span class="blob-btn__inner">
+                <span class="blob-btn__blobs">
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                </span>
+              </span>
+            </и>
+            <include src="partials/common/btn-animation-svg.html"></include>
+          </div>
       </div>
       <div class="discount" id="office-calc-discount">
         <span class="discount__value">-10%</span>

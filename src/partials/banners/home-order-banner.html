@@ -13,12 +13,23 @@
           1 генеральне прибирання + 1 підтримуюче прибирання
         </p>
 
-        <a
-          href="#order-cleaning-block"
-          class="cleaning__order-link dynamic-link cleaning__btn btn btn--light"
-        >
-          Замовити прибирання
-        </a>
+        <div class="animated-btn-wrap">
+          <a
+            href="#order-cleaning-block"
+            class="btn--centered dynamic-link cleaning__btn btn btn--light blob-btn"
+          >
+            Замовити прибирання
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </a>
+          <include src="partials/common/btn-animation-svg.html"></include>
+        </div>
       </div>
     </div>
   </div>

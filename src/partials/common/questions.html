@@ -5,13 +5,26 @@
     <h2 class="section__title title">Популярні запитання</h2>
     <div class="section__container questions__container">
       <include src="./partials/common/popular-questions-block.html"></include>
-      <button
-        class="btn action-btn order-btn btn--centered ask-btn"
-        type="button"
-        data-support-modal-open
-      >
-        Задати своє питання
-      </button>
+      
+      <div class="animated-btn-wrap">
+        <button
+          type="button"
+          data-support-modal-open
+          class="btn action-btn order-btn btn--centered ask-btn blob-btn"
+        >
+          Задати своє питання
+          <span class="blob-btn__inner">
+            <span class="blob-btn__blobs">
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+            </span>
+          </span>
+        </и>
+        <include src="partials/common/btn-animation-svg.html"></include>
+      </div>
+
     </div>
   </div>
 </section>

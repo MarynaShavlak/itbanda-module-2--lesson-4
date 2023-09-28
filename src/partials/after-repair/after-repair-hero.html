@@ -15,9 +15,23 @@
       </p>
       <ul class="hero__button-list">
         <li class="button-list__item">
-          <a href="#office-calc-block" class="hero__btn action-btn btn">
-            Замовити прибирання
-          </a>
+          <div class="animated-btn-wrap">
+            <a
+              href="#office-calc-block"
+              class="btn hero__btn action-btn blob-btn"
+            >
+              Замовити прибирання
+              <span class="blob-btn__inner">
+                <span class="blob-btn__blobs">
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                </span>
+              </span>
+            </a>
+            <include src="partials/common/btn-animation-svg.html"></include>
+          </div>
         </li>
         <li class="button-list__item">
           <a
