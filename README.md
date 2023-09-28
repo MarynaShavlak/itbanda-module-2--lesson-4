@@ -125,3 +125,20 @@ user experience:
     explore and select the services that best suit their needs. By presenting
     information in a clear and visual manner, it helps users make informed
     choices and boosts their confidence in our services.
+  - **Custom 404 Error Page**: Our project includes a custom-designed 404 error
+    page that appears when users enter a non-existent URL. This page features a
+    button that redirects users to the homepage. It ensures that even when users
+    encounter a dead end, they have an easy way to navigate back to the
+    homepage, reducing frustration and helping them continue their journey on
+    our website. It also presents a professional and user-centric image for our
+    project.
+  - **Order Success Confirmation Page**: it is implemented an Order Success
+    Confirmation Page that users are redirected to after successfully completing
+    an order form. On this page, users can review all the information they
+    provided in their order, instilling confidence that their order was
+    submitted accurately. Additionally, there's a button link that redirects
+    users to the homepage. It enhances user trust and satisfaction. It assures
+    users that their order details have been recorded correctly, minimizing any
+    doubts or concerns. Moreover, the inclusion of a link to the homepage
+    encourages users to explore further, potentially leading to additional
+    engagement and conversions on our website.
