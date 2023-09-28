@@ -102,14 +102,14 @@ user experience:
     and manual resolution efforts, ensuring a smooth, efficient user experience
     and improving overall satisfaction and order completion rates.
   - **Convenient Contact Accessibility** : Vital contact information is readily
-    available across our site, including the header and footer, modal windows,
-    as well as within dedicated sections on home cleaning, office cleaning,
-    post-construction, and services cleaning pages. We also offer a separate
-    page solely for contact details, simplifying user access and eliminating any
-    need for users to expend additional time and effort searching for this
-    information. This ensures streamlined communication, builds trust, and
-    enhances overall user experience, underlining our commitment to
-    accessibility and transparency.
+    available across our site, including the header and footer, aside-menu,
+    modal windows, as well as within dedicated sections on home cleaning, office
+    cleaning, post-construction, and services cleaning pages. We also offer a
+    separate page solely for contact details, simplifying user access and
+    eliminating any need for users to expend additional time and effort
+    searching for this information. This ensures streamlined communication,
+    builds trust, and enhances overall user experience, underlining our
+    commitment to accessibility and transparency.
   - **Comprehensive Service Information**: Our website features a dedicated page
     where users can easily access information about the types of cleaning
     territories and a detailed list of services, complete with images.It

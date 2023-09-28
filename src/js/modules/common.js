@@ -106,6 +106,7 @@ function setCalculatorBuildingsToggleMenu() {
   const calculatorBuilding = document.querySelector(
     '.element--calculator-page'
   );
+  console.log('calculatorBuilding: ', calculatorBuilding);
   calculatorBuilding.classList.remove('isHidden');
 }
 
