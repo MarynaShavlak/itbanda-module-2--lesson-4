@@ -1,4 +1,4 @@
-# 🧹 Comfort Group: Your Convenient Cleaning Solution! :broom:
+# 🧹 Comfort Group: Your Convenient Cleaning Solution!
 
 ## 🔍 Introduction
 
@@ -13,24 +13,17 @@ confirmation. At Comfort Group, cleanliness is just a click away!
 Cleaning Website is built using a variety of technologies to ensure a seamless
 user experience:
 
-1. HTML5 and CSS3 are used to create a clean and user-friendly interface that is
-   easy to navigate.
-2. JavaScript adds interactivity to the website, allowing you to set reminders
-   on the cleaning scheduler and engage with the Q&A section.
-3. Responsive Design ensures that Cleaning Website is accessible and functional
-   on a wide range of devices, from desktop computers to smartphones.
-
 - **HTML5** is used to structure the project interface, organizing content and
   interactive elements for a solid user interface foundation.
 - **SCSS/SASS** is responsible for styling and enhancing the project visually,
   with custom styles, animations, and responsive design techniques that ensure a
   visually appealing and consistent user experience across different devices.
-  - **CSS Grid Layout** was instrumental in creating an innovative and
-    aesthetically engaging layout for the reviews section. In this design, the
-    placement of reviews transcends conventional column and row arrangements,
-    adapting to the varying heights of individual blocks. It adds a distinctive
-    and visually appealing dimension to the section, enhancing its overall
-    appeal and user experience.
+- **CSS Grid Layout** was instrumental in creating an innovative and
+  aesthetically engaging layout for the reviews section. In this design, the
+  placement of reviews transcends conventional column and row arrangements,
+  adapting to the varying heights of individual blocks. It adds a distinctive
+  and visually appealing dimension to the section, enhancing its overall appeal
+  and user experience.
 - **JavaScript** powers every aspect of this project for a smooth user
   experience. It handles the aside menu, room slider with tooltips, FAQ
   accordion, modals, form data collection with error checking, custom calendar
@@ -48,3 +41,5 @@ user experience:
   and devices. By utilizing CSS media queries and flexible layouts, it provides
   an optimal user experience across various platforms, enhancing accessibility,
   satisfaction, and engagement.
+
+  ## Features
