@@ -1,0 +1,1 @@
+{"mappings":"gfAAAA,EAAA,S","sources":["src/js/contacts.js"],"sourcesContent":["import './modules/common.js';\nimport './modules/aside-menu.js';\nimport './modules/location-modal.js';\n"],"names":["parcelRequire"],"version":3,"file":"contacts.ec5b157c.js.map"}
