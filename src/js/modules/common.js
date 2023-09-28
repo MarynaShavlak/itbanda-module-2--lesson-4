@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     hideBuildingsToggleMenu();
     hideSelectedItems('.add-services-list__item:nth-child(n+3)');
     updateDynamicLinks('after-repair.html#office-calc-block');
+    // } else if (currentPage === '/cleaning/calc-order.html') {
   } else if (currentPage === '/cleaning/calc-order.html') {
     setBuildingsFlexBasis('.buildings__element', 'calc(100% / 2)');
     setCalculatorBuildingsToggleMenu();
@@ -55,7 +56,9 @@ function hideSelectedItems(selector) {
 }
 
 function addWhiteBackground(selector) {
+  console.log('add white bg');
   const items = document.querySelectorAll(selector);
+  console.log('items: ', items);
   items.forEach(item => item.classList.add('block--white'));
 }
 
