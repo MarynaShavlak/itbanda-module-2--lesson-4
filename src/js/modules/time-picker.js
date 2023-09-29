@@ -1,35 +1,54 @@
 import { toggleIconActiveStyle } from './common';
+import { parseDateStringToDate, getDayNameFromDate } from './dates';
+
+const workShedule = [
+  { day: 'пн', start: '07', finish: '21' },
+  { day: 'вт', start: '07', finish: '21' },
+  { day: 'ср', start: '07', finish: '21' },
+  { day: 'чт', start: '07', finish: '21' },
+  { day: 'пт', start: '07', finish: '21' },
+  { day: 'сб', start: '10', finish: '19' },
+  { day: 'нд', start: '10', finish: '19' },
+];
+
 const timePickerElements = document.querySelectorAll('.time-picker-wrap');
 timePickerElements.forEach(element => {
   initializeTimePicker(element);
 });
 
 function initializeTimePicker(timePickerElement) {
-  const clockIcon =
-    timePickerElement.parentElement.previousElementSibling.querySelector(
-      '.icon--clock'
-    );
-  const sheduleEl =
-    timePickerElement.parentElement.querySelector('.work-shedule');
-  const hourTablo = timePickerElement.querySelector('.tablo--hours');
-  const minuteTablo = timePickerElement.querySelector('.tablo--minutes');
-  const hourPicker = timePickerElement.querySelector('.time-picker__hours');
-  const minutePicker = timePickerElement.querySelector('.time-picker__minutes');
-  const timePickerBtn = timePickerElement.querySelector('.time-picker__btn');
-  const timeInput =
-    timePickerElement.parentElement.previousElementSibling.querySelector(
-      '[name="userTime"]'
-    );
-  const selectedTimeObj = { hours: '20', minutes: '00' };
+  const {
+    clockIcon,
+    sheduleEl,
+    hourTablo,
+    minuteTablo,
+    hourPicker,
+    minutePicker,
+    timePickerBtn,
+    timeInput,
+  } = getTimePickerElements(timePickerElement);
+
+  const selectedTimeObj = { hours: '15', minutes: '00' };
 
   timeInput.addEventListener('click', () => {
-    toggleIconActiveStyle(clockIcon);
-    toggleTimePickerVisibility();
-    toggleSheduleVisibility();
-    const isTimePickerVisible =
-      !timePickerElement.classList.contains('isHidden');
-    if (isTimePickerVisible) {
-      setTimeInputValue();
+    const dateInput = getClosestDateInput(timeInput);
+    const isDateChosen = !!dateInput.value;
+    if (isDateChosen) {
+      const dateObject = parseDateStringToDate(dateInput.value);
+      console.log('dateObject: ', dateObject);
+      const dayName = getDayNameFromDate(dateObject);
+      console.log('dayName: ', dayName);
+
+      toggleIconActiveStyle(clockIcon);
+      toggleTimePickerVisibility();
+      toggleSheduleVisibility();
+      const isTimePickerVisible =
+        !timePickerElement.classList.contains('isHidden');
+      if (isTimePickerVisible) {
+        setTimeInputValue();
+      }
+    } else {
+      timeInput.value = 'Оберіть спочатку дату для прибирання';
     }
   });
 
@@ -66,9 +85,42 @@ function initializeTimePicker(timePickerElement) {
 
     toggleIconActiveStyle(clockIcon);
   });
+
+  function getClosestDateInput(timeInput) {
+    return timeInput
+      .closest('li')
+      .previousElementSibling.querySelector('[name="userDate"]');
+  }
+
+  function getTimePickerElements(el) {
+    const clockIcon =
+      el.parentElement.previousElementSibling.querySelector('.icon--clock');
+    const sheduleEl = el.parentElement.querySelector('.work-shedule');
+    const hourTablo = el.querySelector('.tablo--hours');
+    const minuteTablo = el.querySelector('.tablo--minutes');
+    const hourPicker = el.querySelector('.time-picker__hours');
+    const minutePicker = el.querySelector('.time-picker__minutes');
+    const timePickerBtn = el.querySelector('.time-picker__btn');
+    const timeInput =
+      el.parentElement.previousElementSibling.querySelector(
+        '[name="userTime"]'
+      );
+    return {
+      clockIcon,
+      sheduleEl,
+      hourTablo,
+      minuteTablo,
+      hourPicker,
+      minutePicker,
+      timePickerBtn,
+      timeInput,
+    };
+  }
+
   function setTimeInputValue() {
     timeInput.value = `${selectedTimeObj.hours} : ${selectedTimeObj.minutes}`;
   }
+
   function onTimeCellClick(e, blockSelector) {
     const clickedElement = e.target;
     if (!validateClickedNumber(clickedElement)) return;

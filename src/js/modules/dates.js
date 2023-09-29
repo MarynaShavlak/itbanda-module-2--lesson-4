@@ -70,3 +70,20 @@ export function formatDateInfo(day, month, year) {
     formattedYear,
   };
 }
+
+export function parseDateStringToDate(dateString) {
+  const dateParts = dateString.split('/');
+
+  var day = parseInt(dateParts[0], 10);
+  var month = parseInt(dateParts[1], 10) - 1;
+  var year = parseInt(dateParts[2], 10);
+
+  return new Date(year, month, day);
+}
+
+export function getDayNameFromDate(dateObj) {
+  const locale = 'uk-UA';
+  const options = { weekday: 'short' };
+  const dayOfWeekString = dateObj.toLocaleDateString(locale, options);
+  return dayOfWeekString;
+}
