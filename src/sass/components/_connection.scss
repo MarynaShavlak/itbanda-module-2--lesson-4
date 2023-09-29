@@ -101,6 +101,7 @@
   background-repeat: no-repeat;
   z-index: 2;
   background-position: center;
+  animation: tiltShake 0.5s infinite;
   
   @media screen and (max-width: 767px) { 
     top: -110px;
