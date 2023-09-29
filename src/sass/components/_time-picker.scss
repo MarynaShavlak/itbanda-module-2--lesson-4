@@ -74,14 +74,13 @@
 }
 
 
-.number {
-  cursor: pointer;
-  transition: color $cubic, background-color $cubic;
-  &:hover {
-    color: $primary-white-color;
-    background-color: $main-accent-color;
-  }
+.number:not(.disabled):hover {
+  color: $primary-white-color;
+  background-color: $main-accent-color;
 }
+
+
+
  .number {
     display: flex;
     align-items: center;
@@ -97,8 +96,13 @@
     letter-spacing: 0.5px;
     font-weight: 400;
     transition: color $cubic, background-color $cubic;
+    cursor: pointer;
   }
 
+.disabled {
+  color: $second-additional-text-color;
+  cursor:auto;
+}
   .number.active {
     color: $primary-white-color;
     background-color: $main-accent-color;

@@ -2,13 +2,13 @@ import { toggleIconActiveStyle } from './common';
 import { parseDateStringToDate, getDayNameFromDate } from './dates';
 
 const workShedule = [
-  { day: 'пн', start: '07', finish: '21' },
-  { day: 'вт', start: '07', finish: '21' },
-  { day: 'ср', start: '07', finish: '21' },
-  { day: 'чт', start: '07', finish: '21' },
-  { day: 'пт', start: '07', finish: '21' },
-  { day: 'сб', start: '10', finish: '19' },
-  { day: 'нд', start: '10', finish: '19' },
+  { day: 'пн', min: '07', max: '21' },
+  { day: 'вт', min: '07', max: '21' },
+  { day: 'ср', min: '07', max: '21' },
+  { day: 'чт', min: '07', max: '21' },
+  { day: 'пт', min: '07', max: '21' },
+  { day: 'сб', min: '10', max: '19' },
+  { day: 'нд', min: '10', max: '19' },
 ];
 
 const timePickerElements = document.querySelectorAll('.time-picker-wrap');
@@ -38,6 +38,20 @@ function initializeTimePicker(timePickerElement) {
       console.log('dateObject: ', dateObject);
       const dayName = getDayNameFromDate(dateObject);
       console.log('dayName: ', dayName);
+      const dayInfoObj = workShedule.find(d => d.day === dayName);
+      const minHour = parseInt(dayInfoObj.min);
+      const maxHour = parseInt(dayInfoObj.max);
+      const hourCells = [...timePickerElement.querySelectorAll('.hours')];
+      console.log('hourCells: ', hourCells);
+      let cellsToMakeDisable = [];
+      hourCells.forEach(cell => {
+        const value = parseInt(cell.getAttribute('data-id'));
+        const isEarlier = value < minHour;
+        const isLater = value > maxHour;
+        if (isEarlier || isLater) {
+          cellsToMakeDisable.push(cell);
+        }
+      });
 
       toggleIconActiveStyle(clockIcon);
       toggleTimePickerVisibility();
@@ -123,6 +137,8 @@ function initializeTimePicker(timePickerElement) {
 
   function onTimeCellClick(e, blockSelector) {
     const clickedElement = e.target;
+    const isDisabled = clickedElement.classList.contains('disabled');
+    if (isDisabled) return;
     if (!validateClickedNumber(clickedElement)) return;
     const partTimeName = getTimePartName(blockSelector);
     const elements = timePickerElement.querySelectorAll(`.${partTimeName}`);
