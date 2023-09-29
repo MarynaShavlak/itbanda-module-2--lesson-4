@@ -30,51 +30,12 @@ function initializeTimePicker(timePickerElement) {
 
   const selectedTimeObj = { hours: '15', minutes: '00' };
 
-  timeInput.addEventListener('click', () => {
-    const dateInput = getClosestDateInput(timeInput);
-    const isDateChosen = !!dateInput.value;
-    if (isDateChosen) {
-      const dateObject = parseDateStringToDate(dateInput.value);
-      console.log('dateObject: ', dateObject);
-      const dayName = getDayNameFromDate(dateObject);
-      console.log('dayName: ', dayName);
-      const dayInfoObj = workShedule.find(d => d.day === dayName);
-      const minHour = parseInt(dayInfoObj.min);
-      const maxHour = parseInt(dayInfoObj.max);
-      const hourCells = [...timePickerElement.querySelectorAll('.hours')];
-      console.log('hourCells: ', hourCells);
-      let cellsToMakeDisable = [];
-      hourCells.forEach(cell => {
-        const value = parseInt(cell.getAttribute('data-id'));
-        const isEarlier = value < minHour;
-        const isLater = value > maxHour;
-        if (isEarlier || isLater) {
-          cellsToMakeDisable.push(cell);
-        }
-      });
-
-      toggleIconActiveStyle(clockIcon);
-      toggleTimePickerVisibility();
-      toggleSheduleVisibility();
-      const isTimePickerVisible =
-        !timePickerElement.classList.contains('isHidden');
-      if (isTimePickerVisible) {
-        setTimeInputValue();
-      }
-    } else {
-      timeInput.value = 'Оберіть спочатку дату для прибирання';
-    }
-  });
+  timeInput.addEventListener('click', handleTimePicker);
+  clockIcon.addEventListener('click', handleTimePicker);
 
   timeInput.addEventListener('blur', e => {
     const trimmedValue = extractTime(e.target.value);
     timeInput.value = trimmedValue;
-  });
-
-  clockIcon.addEventListener('click', e => {
-    toggleTimePickerVisibility();
-    toggleSheduleVisibility();
-    toggleIconActiveStyle(e.target);
   });
 
   hourTablo.addEventListener('click', e =>
@@ -96,10 +57,65 @@ function initializeTimePicker(timePickerElement) {
   timePickerBtn.addEventListener('click', () => {
     toggleTimePickerVisibility();
     toggleSheduleVisibility();
+    resetDisabledTabloCells(timePickerElement);
 
     toggleIconActiveStyle(clockIcon);
   });
 
+  function handleTimePicker() {
+    const dateInput = getClosestDateInput(timeInput);
+    const dateString = dateInput.value;
+    if (!!dateString) {
+      resetDisabledTabloCells(timePickerElement);
+      const { minHour, maxHour } = getMinAndMaxHours(dateString, workShedule);
+      disableHourCells(timePickerElement, minHour, maxHour);
+      toggleIconActiveStyle(clockIcon);
+      toggleTimePickerVisibility();
+      toggleSheduleVisibility();
+      const isTimePickerVisible =
+        !timePickerElement.classList.contains('isHidden');
+      if (isTimePickerVisible) {
+        setTimeInputValue();
+      }
+    } else {
+      showWarningMessage(timeInput);
+    }
+  }
+
+  function getMinAndMaxHours(dateString, workShedule) {
+    const dateObject = parseDateStringToDate(dateString);
+    const dayName = getDayNameFromDate(dateObject);
+    const dayInfoObj = workShedule.find(d => d.day === dayName);
+    const minHour = parseInt(dayInfoObj.min);
+    const maxHour = parseInt(dayInfoObj.max);
+    return { minHour, maxHour };
+  }
+  function showWarningMessage(timeInput) {
+    timeInput.value = 'Оберіть спочатку дату для прибирання';
+  }
+
+  function disableHourCells(timePickerElement, minHour, maxHour) {
+    const hourCells = [...timePickerElement.querySelectorAll('.hours')];
+
+    const cellsToMakeDisable = hourCells.filter(cell => {
+      const value = parseInt(cell.getAttribute('data-id'));
+      return value < minHour || value > maxHour;
+    });
+
+    cellsToMakeDisable.forEach(cell => {
+      if (!cell.classList.contains('disabled')) {
+        cell.classList.add('disabled');
+        cell.classList.remove('active');
+      }
+    });
+  }
+
+  function resetDisabledTabloCells(timePickerElement) {
+    const hourCells = [...timePickerElement.querySelectorAll('.hours')];
+    hourCells.forEach(cell => {
+      cell.classList.remove('disabled');
+    });
+  }
   function getClosestDateInput(timeInput) {
     return timeInput
       .closest('li')
