@@ -8,5 +8,6 @@ export function getDataFromStorage(key) {
 }
 
 export function resetLocalStorage(key) {
+  console.log('reset');
   localStorage.removeItem(key);
 }

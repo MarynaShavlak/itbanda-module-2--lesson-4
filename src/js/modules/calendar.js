@@ -11,6 +11,11 @@ import {
   getMonthBoundaryDates,
   formatDateInfo,
 } from './dates';
+import {
+  storeDataInLocalStorage,
+  getDataFromStorage,
+  resetLocalStorage,
+} from './local-storage';
 
 const calendarBlocks = document.querySelectorAll('.calendar');
 calendarBlocks.forEach(calendarBlock => {
@@ -24,6 +29,7 @@ calendarBlocks.forEach(calendarBlock => {
     );
 
   const sheduleEl = calendarBlock.parentElement.querySelector('.work-shedule');
+
   let selectedDateObj = new Date();
   let monthToShowInCalendarObj = new Date();
   let orderDayString = getCurrentDateAsString();
@@ -243,6 +249,13 @@ function createCalendar(
     if (differenceInMilliseconds >= 0) {
       const chosenDate = reverseConvertDateFormat(clickedDate);
       orderDayString = chosenDate;
+      const timeInput = getClosestTimeInput(dateInput);
+      // storeDataInLocalStorage('selectedTimeObj', {
+      //   hours: '15',
+      //   minutes: '00',
+      // });
+      timeInput.value = '';
+      resetLocalStorage('selectedTimeObj');
       setDateInputValue();
       toggleIconActiveStyle(calendarIcon);
       toggleCalendarVisibility();
@@ -275,6 +288,12 @@ function createCalendar(
 
   function createCalendarRow() {
     return document.createElement('tr');
+  }
+
+  function getClosestTimeInput(dateInput) {
+    return dateInput
+      .closest('li')
+      .nextElementSibling.querySelector('[name="userTime"]');
   }
 
   generateCalendar(selectedDateObj);

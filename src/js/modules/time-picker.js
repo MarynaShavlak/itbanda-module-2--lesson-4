@@ -1,5 +1,6 @@
 import { toggleIconActiveStyle } from './common';
 import { parseDateStringToDate, getDayNameFromDate } from './dates';
+import { storeDataInLocalStorage, getDataFromStorage } from './local-storage';
 
 const workShedule = [
   { day: 'пн', min: '07', max: '21' },
@@ -28,7 +29,11 @@ function initializeTimePicker(timePickerElement) {
     timeInput,
   } = getTimePickerElements(timePickerElement);
 
-  const selectedTimeObj = { hours: '15', minutes: '00' };
+  let selectedTimeObj = getDataFromStorage('selectedTimeObj') || {
+    hours: '15',
+    minutes: '00',
+  };
+  storeDataInLocalStorage('selectedTimeObj', selectedTimeObj);
 
   timeInput.addEventListener('click', handleTimePicker);
   clockIcon.addEventListener('click', handleTimePicker);
@@ -63,13 +68,21 @@ function initializeTimePicker(timePickerElement) {
   });
 
   function handleTimePicker() {
+    selectedTimeObj = getDataFromStorage('selectedTimeObj') || {
+      hours: '15',
+      minutes: '00',
+    };
+    console.log('IN HANDLER selectedTimeObj : ', selectedTimeObj);
     const dateInput = getClosestDateInput(timeInput);
     const dateString = dateInput.value;
     if (!!dateString) {
       resetDisabledTabloCells(timePickerElement);
       const { minHour, maxHour } = getMinAndMaxHours(dateString, workShedule);
+      const orderHour = selectedTimeObj.hours;
+      const orderMinute = selectedTimeObj.minutes;
       disableHourCells(timePickerElement, minHour, maxHour);
       toggleIconActiveStyle(clockIcon);
+      updateDigitsPickerBlocks(orderHour, orderMinute);
       toggleTimePickerVisibility();
       toggleSheduleVisibility();
       const isTimePickerVisible =
@@ -99,13 +112,13 @@ function initializeTimePicker(timePickerElement) {
 
     const cellsToMakeDisable = hourCells.filter(cell => {
       const value = parseInt(cell.getAttribute('data-id'));
-      return value < minHour || value > maxHour;
+      return value <= minHour || value >= maxHour;
     });
 
     cellsToMakeDisable.forEach(cell => {
       if (!cell.classList.contains('disabled')) {
-        cell.classList.add('disabled');
         cell.classList.remove('active');
+        cell.classList.add('disabled');
       }
     });
   }
@@ -185,6 +198,16 @@ function initializeTimePicker(timePickerElement) {
   function updateTimePickerBlock(block, value) {
     block.innerHTML = value;
   }
+
+  function updateDigitsPickerBlocks(orderHour, orderMinute) {
+    const blockHour = timePickerElement.querySelector('.time-picker__hours');
+    const blockMinute = timePickerElement.querySelector(
+      '.time-picker__minutes'
+    );
+    updateTimePickerBlock(blockHour, orderHour);
+    updateTimePickerBlock(blockMinute, orderMinute);
+  }
+
   function toggleTablo(tabloToShow, tabloToHide) {
     const isVisible = !tabloToShow.classList.contains('isHidden');
     if (isVisible) return;
@@ -197,6 +220,7 @@ function initializeTimePicker(timePickerElement) {
   function updateTimeInput(selector, value) {
     const partTime = getTimePartName(selector);
     selectedTimeObj[partTime] = value;
+    storeDataInLocalStorage('selectedTimeObj', selectedTimeObj);
     setTimeInputValue();
   }
   function selectElement(element) {
