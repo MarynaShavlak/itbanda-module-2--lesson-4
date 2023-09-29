@@ -24,7 +24,6 @@ calendarBlocks.forEach(calendarBlock => {
     );
 
   const sheduleEl = calendarBlock.parentElement.querySelector('.work-shedule');
-  console.log('sheduleEl: ', sheduleEl);
   let selectedDateObj = new Date();
   let monthToShowInCalendarObj = new Date();
   let orderDayString = getCurrentDateAsString();

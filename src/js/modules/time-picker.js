@@ -6,19 +6,26 @@ timePickerElements.forEach(element => {
 
 function initializeTimePicker(timePickerElement) {
   const clockIcon =
-    timePickerElement.previousElementSibling.querySelector('.icon--clock');
+    timePickerElement.parentElement.previousElementSibling.querySelector(
+      '.icon--clock'
+    );
+  const sheduleEl =
+    timePickerElement.parentElement.querySelector('.work-shedule');
   const hourTablo = timePickerElement.querySelector('.tablo--hours');
   const minuteTablo = timePickerElement.querySelector('.tablo--minutes');
   const hourPicker = timePickerElement.querySelector('.time-picker__hours');
   const minutePicker = timePickerElement.querySelector('.time-picker__minutes');
   const timePickerBtn = timePickerElement.querySelector('.time-picker__btn');
   const timeInput =
-    timePickerElement.previousElementSibling.querySelector('[name="userTime"]');
+    timePickerElement.parentElement.previousElementSibling.querySelector(
+      '[name="userTime"]'
+    );
   const selectedTimeObj = { hours: '20', minutes: '00' };
 
   timeInput.addEventListener('click', () => {
     toggleIconActiveStyle(clockIcon);
     toggleTimePickerVisibility();
+    toggleSheduleVisibility();
     const isTimePickerVisible =
       !timePickerElement.classList.contains('isHidden');
     if (isTimePickerVisible) {
@@ -33,6 +40,7 @@ function initializeTimePicker(timePickerElement) {
 
   clockIcon.addEventListener('click', e => {
     toggleTimePickerVisibility();
+    toggleSheduleVisibility();
     toggleIconActiveStyle(e.target);
   });
 
@@ -54,6 +62,8 @@ function initializeTimePicker(timePickerElement) {
 
   timePickerBtn.addEventListener('click', () => {
     toggleTimePickerVisibility();
+    toggleSheduleVisibility();
+
     toggleIconActiveStyle(clockIcon);
   });
   function setTimeInputValue() {
@@ -70,7 +80,9 @@ function initializeTimePicker(timePickerElement) {
     updateTimePickerBlock(block, value);
     updateTimeInput(blockSelector, value);
   }
-
+  function toggleSheduleVisibility() {
+    sheduleEl.classList.toggle('isHidden');
+  }
   function validateClickedNumber(clickedElement) {
     return (
       clickedElement.classList.contains('number') &&
