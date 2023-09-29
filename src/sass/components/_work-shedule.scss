@@ -1,6 +1,11 @@
 .shedule-wrap {
   display: flex;
-  justify-content: space-between;
+  @media screen and (max-width: 767px) {
+     flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    }
+  gap: 50px;
 }
 
 
@@ -10,7 +15,6 @@
   display: flex;
   flex-direction: column;
   border-radius: 16px;
-    // background-color: $second-additional-bg-color;
     text-align: center;
     width:200px;
     margin-top: 8px;

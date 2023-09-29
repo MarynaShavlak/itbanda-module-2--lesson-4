@@ -22,6 +22,9 @@ calendarBlocks.forEach(calendarBlock => {
     calendarBlock.parentElement.previousElementSibling.querySelector(
       '.icon--calendar'
     );
+
+  const sheduleEl = calendarBlock.parentElement.querySelector('.work-shedule');
+  console.log('sheduleEl: ', sheduleEl);
   let selectedDateObj = new Date();
   let monthToShowInCalendarObj = new Date();
   let orderDayString = getCurrentDateAsString();
@@ -30,6 +33,7 @@ calendarBlocks.forEach(calendarBlock => {
     calendarBlock,
     dateInput,
     calendarIcon,
+    sheduleEl,
     selectedDateObj,
     monthToShowInCalendarObj,
     orderDayString
@@ -40,6 +44,7 @@ function createCalendar(
   calendarBlock,
   dateInput,
   calendarIcon,
+  sheduleEl,
   selectedDateObj,
   monthToShowInCalendarObj,
   orderDayString
@@ -52,6 +57,7 @@ function createCalendar(
   const nextMonthBtn = calendarBlock.querySelector('.calendar__nextMonth-btn');
   dateInput.addEventListener('click', () => {
     toggleCalendarVisibility();
+    toggleSheduleVisibility();
     toggleIconActiveStyle(calendarIcon);
     monthToShowInCalendarObj = new Date(selectedDateObj);
     const isCalendarVisible = !calendarBlock.classList.contains('isHidden');
@@ -68,6 +74,7 @@ function createCalendar(
 
   calendarIcon.addEventListener('click', e => {
     toggleCalendarVisibility();
+    toggleSheduleVisibility();
     monthToShowInCalendarObj = new Date(selectedDateObj);
     generateCalendar(selectedDateObj);
     toggleIconActiveStyle(e.target);
@@ -240,6 +247,7 @@ function createCalendar(
       setDateInputValue();
       toggleIconActiveStyle(calendarIcon);
       toggleCalendarVisibility();
+      toggleSheduleVisibility();
     }
   }
 
@@ -262,6 +270,10 @@ function createCalendar(
   function toggleCalendarVisibility() {
     calendarBlock.classList.toggle('isHidden');
   }
+  function toggleSheduleVisibility() {
+    sheduleEl.classList.toggle('isHidden');
+  }
+
   function createCalendarRow() {
     return document.createElement('tr');
   }
