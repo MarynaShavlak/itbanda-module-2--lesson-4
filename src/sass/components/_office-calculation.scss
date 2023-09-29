@@ -246,6 +246,7 @@
     position: absolute;
     left: 655px;
   }
+animation: pulse 2s infinite;
 }
 
 .discount__value {
@@ -253,6 +254,7 @@
   font-weight: 700;
   line-height: 1.22;
   font-size: 46px;
+  animation: color-cycle 4s infinite;
 }
 
 .discount__text {

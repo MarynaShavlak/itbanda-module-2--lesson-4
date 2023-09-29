@@ -261,7 +261,7 @@ padding: 17px 25px;
 
 
 .blob-btn {
-  z-index: 1;
+  z-index: 2;
   position: relative;
   text-align: center;
   color: $primary-white-color;
@@ -281,7 +281,7 @@ padding: 17px 25px;
 
 .blob-btn:before {
   content: "";
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   left: 0;
   top: 0;
