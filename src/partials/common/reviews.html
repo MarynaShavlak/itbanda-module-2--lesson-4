@@ -752,17 +752,45 @@
     </ul>
     <ul class="reviews__button-list">
       <li class="button-list__item">
-        <a class="btn action-btn reviews__btn btn--centered"  target="_blank" href="https://www.google.com/search?q=comfort+group+lodz">
+      
+        <div class="animated-btn-wrap">
+        <a
+          target="_blank" href="https://www.google.com/search?q=comfort+group+lodz"
+          class="btn action-btn reviews__btn btn--centered blob-btn"
+        >
           Залишити відгук у Google
-        </ф>
+          <span class="blob-btn__inner">
+            <span class="blob-btn__blobs">
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+            </span>
+          </span>
+        </и>
+        <include src="partials/common/btn-animation-svg.html"></include>
+      </div>
       </li>
       <li class="button-list__item">
-        <a
-        href="https://www.facebook.com"
-          class="btn action-btn reviews__btn btn--centered btn--light" target="_blank"
-        >
-          Залишити відгук у Facebook
-        </a>
+     
+        <div class="animated-btn-wrap">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              class="btn action-btn reviews__btn btn--centered blob-btn blob-btn--light"
+            >
+              Залишити відгук у Facebook
+              <span class="blob-btn__inner blob-btn__inner--light">
+                <span class="blob-btn__blobs">
+                  <span class="blob-btn__blob blob-btn__blob--light"></span>
+                  <span class="blob-btn__blob blob-btn__blob--light"></span>
+                  <span class="blob-btn__blob blob-btn__blob--light"></span>
+                  <span class="blob-btn__blob blob-btn__blob--light"></span>
+                </span>
+              </span>
+            </a>
+            <include src="partials/common/btn-animation-svg.html"></include>
+          </div>
       </li>
     </ul>
   </div>

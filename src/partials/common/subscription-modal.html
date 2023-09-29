@@ -24,9 +24,24 @@
     <h4 class="form-title">Ваші дані</h4>
     <form class="subscr__form form" method="POST">
       <include src="./partials/common/user-order-data.html"></include>
-      <button class="form__submit-btn action-btn btn modal-btn" type="submit">
-        Оплатити 399zł
-      </button>
+
+      <div class="animated-btn-wrap">
+        <button
+          type="submit"
+          class="form__submit-btn action-btn btn modal-btn blob-btn"
+        >
+          Оплатити 399zł
+          <span class="blob-btn__inner">
+            <span class="blob-btn__blobs">
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+            </span>
+          </span>
+        </button>
+        <include src="partials/common/btn-animation-svg.html"></include>
+      </div>
     </form>
 
     <button class="close-modal-btn" type="button" data-subscription-modal-close>
