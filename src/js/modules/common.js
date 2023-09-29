@@ -56,9 +56,7 @@ function hideSelectedItems(selector) {
 }
 
 function addWhiteBackground(selector) {
-  console.log('add white bg');
   const items = document.querySelectorAll(selector);
-  console.log('items: ', items);
   items.forEach(item => item.classList.add('block--white'));
 }
 
@@ -106,7 +104,6 @@ function setCalculatorBuildingsToggleMenu() {
   const calculatorBuilding = document.querySelector(
     '.element--calculator-page'
   );
-  console.log('calculatorBuilding: ', calculatorBuilding);
   calculatorBuilding.classList.remove('isHidden');
 }
 

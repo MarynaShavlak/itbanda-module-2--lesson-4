@@ -139,11 +139,11 @@ transform: rotate(180deg);
   }
 
   25% {
-    color: $additional-accent-color
+    color: $additional-accent-color;
   }
 
   50% {
-    color: $error-color;
+    color: $main-accent-color;
   }
   75% {
     color: $additional-accent-color
@@ -154,3 +154,47 @@ transform: rotate(180deg);
   }
 }
 
+@keyframes background-color-cycle {
+  0% {
+    background-color: $second-additional-bg-color;
+  }
+
+  25% {
+    background-color: $first-additional-bg-color;
+  }
+
+  50% {
+    background-color: $second-additional-bg-color;
+  }
+
+  75% {
+    background-color: $first-additional-bg-color;
+  }
+
+  100% {
+    background-color: $second-additional-bg-color;
+  }
+}
+
+@keyframes tiltShake {
+
+0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(5deg);
+  }
+
+  50% {
+    transform: rotate(0eg);
+  }
+
+  75% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
