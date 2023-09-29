@@ -15,9 +15,13 @@ import {
 const calendarBlocks = document.querySelectorAll('.calendar');
 calendarBlocks.forEach(calendarBlock => {
   const dateInput =
-    calendarBlock.previousElementSibling.querySelector('[name="userDate"]');
+    calendarBlock.parentElement.previousElementSibling.querySelector(
+      '[name="userDate"]'
+    );
   const calendarIcon =
-    calendarBlock.previousElementSibling.querySelector('.icon--calendar');
+    calendarBlock.parentElement.previousElementSibling.querySelector(
+      '.icon--calendar'
+    );
   let selectedDateObj = new Date();
   let monthToShowInCalendarObj = new Date();
   let orderDayString = getCurrentDateAsString();
