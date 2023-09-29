@@ -15,5 +15,5 @@ function scrollToTop() {
   });
 }
 
-window.addEventListener('scroll', toggleButtonVisibility);
+window.addEventListener('scroll', toggleButtonVisibility, { passive: true });
 scrollToTopBtn.addEventListener('click', scrollToTop);
