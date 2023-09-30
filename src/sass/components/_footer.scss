@@ -5,6 +5,7 @@
 
 .footer__wrap {
   background-color: $second-additional-bg-color;
+  transition: background-color;
   border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     padding-top: 32px;
@@ -20,6 +21,9 @@
       border-top-right-radius: 30px;
       padding-bottom: 16px;
     }
+}
+.active-dark-theme .footer__wrap {
+background-color: $dark-theme;
 }
 
 .footer__container {
@@ -71,6 +75,8 @@
   font-size: 16px;
   line-height: 1.38;
   margin-bottom: 16px;
+  color: $primary-black-color;
+  transition: color $cubic;
 @media screen and (min-width: 768px) {
   font-size: 18px;
   line-height: 1.39;
@@ -82,6 +88,9 @@
 
 }
 
+.active-dark-theme .footer__title{
+  color: $primary-white-color;
+}
 .about, .services, .footer__contacts, .support {
   display: flex;
   flex-direction: column;
@@ -90,6 +99,9 @@
 }
 
 .footer__item {
+  color: $primary-black-color;
+  
+  transition: color $cubic;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.36;
@@ -105,17 +117,37 @@
       line-height: 1.39;
     }
 }
+
+.active-dark-theme .footer__item {
+  color: $first-additional-bg-color;
+}
+
 .footer__link {
   cursor: pointer;
+  transition: color $cubic;
   color: $primary-black-color;
   &:hover, &:focus {
     color: $main-accent-color;
   }
 }
 
+.active-dark-theme .footer__link {
+color: $first-additional-bg-color;
+
+  &:hover,
+  &:focus {
+    color: $card-hover-effect-color;
+  }
+}
+
 .contacts__link {
   font-weight: 700;
   color: $main-accent-color;
+  transition: color $cubic;
+}
+
+.active-dark-theme .contacts__link {
+  color: $card-hover-effect-color;
 }
 
 .footer__socials {
@@ -132,13 +164,35 @@
 }
 
 
+.footer .socials__item {
+  border: 1px solid $first-additional-bg-color;
+}
+
+.active-dark-theme .footer .socials__link {
+  &:hover,
+      &:focus {
+        color: $first-additional-bg-color;
+        background-color: $dark-theme;
+        // border: 1px solid $first-additional-bg-color;
+  
+        .socials__icon {
+          fill: $first-additional-bg-color;
+        }
+      }
+}
 
  .socials__icon--footer {
+  transition: fill $cubic;
    @media screen and (min-width: 1440px) {
      width: 42px;
      height: 42px;
    }
  }
+
+.active-dark-theme .socials__icon--footer {
+  fill: $main-accent-color;
+
+}
 
 .footer__copyright {
   display:flex;

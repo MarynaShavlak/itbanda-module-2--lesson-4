@@ -300,6 +300,16 @@ border: 2px solid $first-additional-bg-color;
     }
   }
 }
+.active-dark-theme .aside-menu .socials__link {
+  color:$main-accent-color;
+&:hover, &:focus {
+    color: $first-additional-bg-color;
+    background-color: $main-accent-color;
+    .socials__icon {
+      fill:$first-additional-bg-color;
+    }
+  }
+}
 
  
 
@@ -309,6 +319,10 @@ border: 2px solid $first-additional-bg-color;
     border: none;
     outline: none;
     cursor: pointer;
+    svg {
+      stroke: $main-accent-color;
+      transition: stroke $cubic;
+    }
 
     .aside-menu & {
       position: absolute;
@@ -326,6 +340,11 @@ border: 2px solid $first-additional-bg-color;
       }
     }
  }
+
+.active-dark-theme .menu-toggle svg {
+  stroke: $first-additional-bg-color;
+}
+
 
  .aside-menu {
   position: fixed;
