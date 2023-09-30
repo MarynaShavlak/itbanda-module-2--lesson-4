@@ -300,6 +300,9 @@ border: 2px solid $first-additional-bg-color;
     }
   }
 }
+
+
+
 .active-dark-theme .aside-menu .socials__link {
   color:$main-accent-color;
 &:hover, &:focus {
@@ -311,7 +314,19 @@ border: 2px solid $first-additional-bg-color;
   }
 }
 
- 
+.active-dark-theme .socials__item--modal .socials__link {
+  color: $main-accent-color;
+
+  &:hover,
+  &:focus {
+    color: $first-additional-bg-color;
+    background-color: $main-accent-color;
+
+    .socials__icon {
+      fill: $first-additional-bg-color;
+    }
+  }
+}
 
  .menu-toggle {
     margin-left: auto;

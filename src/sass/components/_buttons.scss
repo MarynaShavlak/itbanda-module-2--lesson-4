@@ -29,10 +29,15 @@
   border: 2px solid $main-accent-color;
   background-color: $primary-white-color;
   color: $main-accent-color;
+  transition: background-color $cubic;
   &:hover,
   &:focus {
       background-color: $second-additional-bg-color;
   }
+}
+
+.active-dark-theme .btn--light {
+  background-color: $first-additional-bg-color;
 }
 
 .tel-btn {
