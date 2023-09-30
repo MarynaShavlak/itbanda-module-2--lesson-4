@@ -72,7 +72,6 @@ function initializeTimePicker(timePickerElement) {
       hours: '15',
       minutes: '00',
     };
-    console.log('IN HANDLER selectedTimeObj : ', selectedTimeObj);
     const dateInput = getClosestDateInput(timeInput);
     const dateString = dateInput.value;
     if (!!dateString) {
@@ -83,6 +82,16 @@ function initializeTimePicker(timePickerElement) {
       disableHourCells(timePickerElement, minHour, maxHour);
       toggleIconActiveStyle(clockIcon);
       updateDigitsPickerBlocks(orderHour, orderMinute);
+      const allHourElements = timePickerElement.querySelectorAll('.hours');
+      const allMinuteElements = timePickerElement.querySelectorAll('.minutes');
+      const hourElement = [...allHourElements].find(
+        el => el.getAttribute('data-id') == orderHour
+      );
+      const minuteElement = [...allMinuteElements].find(
+        el => el.getAttribute('data-id') == orderMinute
+      );
+      updateTimePickerTablo(hourElement, allHourElements);
+      updateTimePickerTablo(minuteElement, allMinuteElements);
       toggleTimePickerVisibility();
       toggleSheduleVisibility();
       const isTimePickerVisible =
@@ -112,7 +121,7 @@ function initializeTimePicker(timePickerElement) {
 
     const cellsToMakeDisable = hourCells.filter(cell => {
       const value = parseInt(cell.getAttribute('data-id'));
-      return value <= minHour || value >= maxHour;
+      return value < minHour || value > maxHour;
     });
 
     cellsToMakeDisable.forEach(cell => {

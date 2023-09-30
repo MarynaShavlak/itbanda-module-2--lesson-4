@@ -250,10 +250,7 @@ function createCalendar(
       const chosenDate = reverseConvertDateFormat(clickedDate);
       orderDayString = chosenDate;
       const timeInput = getClosestTimeInput(dateInput);
-      // storeDataInLocalStorage('selectedTimeObj', {
-      //   hours: '15',
-      //   minutes: '00',
-      // });
+
       timeInput.value = '';
       resetLocalStorage('selectedTimeObj');
       setDateInputValue();
