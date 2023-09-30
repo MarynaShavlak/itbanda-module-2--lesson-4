@@ -1,8 +1,5 @@
 import {
-  toggleIconActiveStyle,
-  getClosestIcon,
   appendElement,
-  toggleElementVisibility,
   handleInputBlur,
   setShedulerVisibilityOptions,
   toggleClosestVisibility,
@@ -20,10 +17,11 @@ import {
   formatDateInfo,
 } from './dates';
 import {
-  storeDataInLocalStorage,
-  getDataFromStorage,
-  resetLocalStorage,
-} from './local-storage';
+  getCalendarElements,
+  getClosestTimeInput,
+  getClosestTimePickerBlock,
+} from './get-elements';
+import { resetLocalStorage } from './local-storage';
 
 const calendarBlocks = document.querySelectorAll('.calendar');
 calendarBlocks.forEach(initializeCalendar);
@@ -59,10 +57,7 @@ function initializeCalendar(calendarBlock) {
     toggleClosestTimePickerVisibility(dateInput);
     monthToShowInCalendarObj = new Date(selectedDateObj);
     generateCalendar(selectedDateObj);
-    const isCalendarVisible = !calendarBlock.classList.contains('isHidden');
-    if (isCalendarVisible) {
-      setDateInputValue();
-    }
+    setDateInputInterface(calendarBlock, dateInput);
   }
   function handleCellClick(event) {
     const clickedDate = convertDateFormat(event.target.dataset.date);
@@ -85,10 +80,8 @@ function initializeCalendar(calendarBlock) {
 
       timeInput.value = '';
       resetLocalStorage('selectedTimeObj');
-      setDateInputValue();
-      toggleIconActiveStyle(calendarIcon);
-      toggleElementVisibility(calendarBlock);
-      toggleElementVisibility(sheduleEl);
+      setDateInputInterface(calendarBlock, dateInput);
+      setShedulerVisibilityOptions(calendarBlock, sheduleEl, calendarIcon);
     }
   }
 
@@ -227,8 +220,11 @@ function initializeCalendar(calendarBlock) {
     calendarHeadMonthAndYear.textContent = `${capitalizedMonth} ${year}`;
   }
 
-  function setDateInputValue() {
-    dateInput.value = `${orderDayString}`;
+  function setDateInputInterface(calendarBlock, dateInput) {
+    const isCalendarVisible = !calendarBlock.classList.contains('isHidden');
+    if (isCalendarVisible) {
+      dateInput.value = `${orderDayString}`;
+    }
   }
 
   function clearCalendarData() {
@@ -245,49 +241,6 @@ function initializeCalendar(calendarBlock) {
 
   function createCalendarRow() {
     return document.createElement('tr');
-  }
-
-  function getCalendarElements(el) {
-    const calendarIcon = getClosestIcon(el, 'icon--calendar');
-    const dateInput =
-      el.parentElement.previousElementSibling.querySelector(
-        '[name="userDate"]'
-      );
-    el.parentElement.previousElementSibling.querySelector('.icon--calendar');
-
-    const sheduleEl = el.parentElement.querySelector('.work-shedule');
-    const calendarBody = calendarBlock.querySelector('.calendar__body');
-    const calendarHeadMonthAndYear = calendarBlock.querySelector(
-      '.calendar__monthYear'
-    );
-    const prevMonthBtn = calendarBlock.querySelector(
-      '.calendar__prevMonth-btn'
-    );
-    const nextMonthBtn = calendarBlock.querySelector(
-      '.calendar__nextMonth-btn'
-    );
-
-    return {
-      calendarIcon,
-      dateInput,
-      sheduleEl,
-      calendarBody,
-      calendarHeadMonthAndYear,
-      prevMonthBtn,
-      nextMonthBtn,
-    };
-  }
-
-  function getClosestTimeInput(dateInput) {
-    return dateInput
-      .closest('li')
-      .nextElementSibling.querySelector('[name="userTime"]');
-  }
-
-  function getClosestTimePickerBlock(dateInput) {
-    return dateInput
-      .closest('li')
-      .nextElementSibling.querySelector('.shedule-wrap');
   }
 
   function toggleClosestTimePickerVisibility(dateInput) {
