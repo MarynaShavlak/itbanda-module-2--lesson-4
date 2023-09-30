@@ -61,8 +61,15 @@ function createCalendar(
   const prevMonthBtn = calendarBlock.querySelector('.calendar__prevMonth-btn');
   const nextMonthBtn = calendarBlock.querySelector('.calendar__nextMonth-btn');
   dateInput.addEventListener('click', () => {
-    toggleCalendarVisibility();
-    toggleSheduleVisibility();
+    toggleElementVisibility(calendarBlock);
+    toggleElementVisibility(sheduleEl);
+    const wrap = getClosestTimePickerBlock(dateInput);
+    console.log('wrap: ', wrap);
+    const timeWorkShedule = wrap.querySelector('.work-shedule');
+    if (!timeWorkShedule.classList.contains('isHidden')) {
+      toggleElementVisibility(timeWorkShedule);
+    }
+
     toggleIconActiveStyle(calendarIcon);
     monthToShowInCalendarObj = new Date(selectedDateObj);
     const isCalendarVisible = !calendarBlock.classList.contains('isHidden');
@@ -78,8 +85,8 @@ function createCalendar(
   });
 
   calendarIcon.addEventListener('click', e => {
-    toggleCalendarVisibility();
-    toggleSheduleVisibility();
+    toggleElementVisibility(calendarBlock);
+    toggleElementVisibility(sheduleEl);
     monthToShowInCalendarObj = new Date(selectedDateObj);
     generateCalendar(selectedDateObj);
     toggleIconActiveStyle(e.target);
@@ -255,8 +262,8 @@ function createCalendar(
       resetLocalStorage('selectedTimeObj');
       setDateInputValue();
       toggleIconActiveStyle(calendarIcon);
-      toggleCalendarVisibility();
-      toggleSheduleVisibility();
+      toggleElementVisibility(calendarBlock);
+      toggleElementVisibility(sheduleEl);
     }
   }
 
@@ -276,11 +283,8 @@ function createCalendar(
     generateCalendar(monthToShowInCalendarObj);
   }
 
-  function toggleCalendarVisibility() {
-    calendarBlock.classList.toggle('isHidden');
-  }
-  function toggleSheduleVisibility() {
-    sheduleEl.classList.toggle('isHidden');
+  function toggleElementVisibility(el) {
+    el.classList.toggle('isHidden');
   }
 
   function createCalendarRow() {
@@ -291,6 +295,12 @@ function createCalendar(
     return dateInput
       .closest('li')
       .nextElementSibling.querySelector('[name="userTime"]');
+  }
+
+  function getClosestTimePickerBlock(dateInput) {
+    return dateInput
+      .closest('li')
+      .nextElementSibling.querySelector('.shedule-wrap');
   }
 
   generateCalendar(selectedDateObj);

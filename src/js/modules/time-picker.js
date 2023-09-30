@@ -80,18 +80,9 @@ function initializeTimePicker(timePickerElement) {
       const orderHour = selectedTimeObj.hours;
       const orderMinute = selectedTimeObj.minutes;
       disableHourCells(timePickerElement, minHour, maxHour);
-      toggleIconActiveStyle(clockIcon);
       updateDigitsPickerBlocks(orderHour, orderMinute);
-      const allHourElements = timePickerElement.querySelectorAll('.hours');
-      const allMinuteElements = timePickerElement.querySelectorAll('.minutes');
-      const hourElement = [...allHourElements].find(
-        el => el.getAttribute('data-id') == orderHour
-      );
-      const minuteElement = [...allMinuteElements].find(
-        el => el.getAttribute('data-id') == orderMinute
-      );
-      updateTimePickerTablo(hourElement, allHourElements);
-      updateTimePickerTablo(minuteElement, allMinuteElements);
+      updateTimePicker(orderHour, orderMinute);
+      toggleIconActiveStyle(clockIcon);
       toggleTimePickerVisibility();
       toggleSheduleVisibility();
       const isTimePickerVisible =
@@ -102,6 +93,22 @@ function initializeTimePicker(timePickerElement) {
     } else {
       showWarningMessage(timeInput);
     }
+  }
+
+  function updateTimePicker(orderHour, orderMinute) {
+    const allHourElements = timePickerElement.querySelectorAll('.hours');
+    const allMinuteElements = timePickerElement.querySelectorAll('.minutes');
+
+    const hourElement = [...allHourElements].find(
+      el => el.getAttribute('data-id') == orderHour
+    );
+
+    const minuteElement = [...allMinuteElements].find(
+      el => el.getAttribute('data-id') == orderMinute
+    );
+
+    updateChosenTablo(hourElement, allHourElements);
+    updateChosenTablo(minuteElement, allMinuteElements);
   }
 
   function getMinAndMaxHours(dateString, workShedule) {
@@ -180,7 +187,7 @@ function initializeTimePicker(timePickerElement) {
     if (!validateClickedNumber(clickedElement)) return;
     const partTimeName = getTimePartName(blockSelector);
     const elements = timePickerElement.querySelectorAll(`.${partTimeName}`);
-    updateTimePickerTablo(clickedElement, elements);
+    updateChosenTablo(clickedElement, elements);
     const block = timePickerElement.querySelector(blockSelector);
     const value = clickedElement.dataset.id;
     updateTimePickerBlock(block, value);
@@ -196,7 +203,7 @@ function initializeTimePicker(timePickerElement) {
     );
   }
 
-  function updateTimePickerTablo(clickedElement, elements) {
+  function updateChosenTablo(clickedElement, elements) {
     [...elements].map(element =>
       element === clickedElement
         ? selectElement(element)
