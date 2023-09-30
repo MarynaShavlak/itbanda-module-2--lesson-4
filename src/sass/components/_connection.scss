@@ -163,6 +163,24 @@
     }
  }
 
+.active-dark-theme .connection .socials__icon {
+  fill: $main-accent-color;
+}
+.active-dark-theme .connection {
+.socials__link {
+    &:hover,
+     &:focus {
+          background-color: $main-accent-color;
+          .socials__icon {
+              fill: $second-additional-bg-color;
+            }
+     }
+        
+    }
+} 
+
+
+
  .tel--support {
     color: $main-accent-color;
     font-family: 'Montserrat', sans-serif;

@@ -35,9 +35,9 @@
     flex-direction: column;
     padding: 30px;
       border-radius: 30px;
-        background: $primary-white-color;
+        background-color: $primary-white-color;
         transform: scale(1);
-        transition: transform $cubic;
+        transition: transform $cubic, background-color $cubic;;
         width: 335px;
       
         .backdrop--hidden & {
@@ -54,10 +54,16 @@
 
 
 
+
   @media screen and (min-width: 1440px) {
     min-height: 581px;
     gap: 24px;
   }
+}
+
+
+.active-dark-theme .modal {
+  background-color: $dark-add-2-color;
 }
 
 .modal--support {

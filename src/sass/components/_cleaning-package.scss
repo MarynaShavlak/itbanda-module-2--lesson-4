@@ -26,6 +26,7 @@
   flex-direction: column;
   row-gap: 40px;
   background-color: $second-additional-bg-color;
+  transition: background-color $cubic;
   margin-top: 51px;
   margin-bottom: 24px;
   border-radius: 20px;
@@ -53,7 +54,9 @@
   }
 }
 
-
+.active-dark-theme .month-subsr-block {
+  background-color: $dark-add-3-color;
+}
 
 .info-block__title {
   font-weight: 600;
@@ -336,11 +339,16 @@
 
 .banner {
   background-color: $main-accent-color;
+  transition: background-color $cubic;
   border-radius: 20px;
   @media screen and (min-width: 1440px) {
     border-radius: 30px;
   }
 }
+
+.active-dark-theme .banner {
+  
+  background-color: $time-picker-tablo-color;}
 
 .maintenance {
 
