@@ -1,7 +1,10 @@
 import {
   toggleIconActiveStyle,
-  getClosestIconClock,
+  getClosestIcon,
   toggleElementVisibility,
+  handleInputBlur,
+  setShedulerVisibilityOptions,
+  toggleClosestVisibility,
 } from './common';
 import { parseDateStringToDate, getDayNameFromDate } from './dates';
 import { storeDataInLocalStorage, getDataFromStorage } from './local-storage';
@@ -17,9 +20,7 @@ const workShedule = [
 ];
 
 const timePickerElements = document.querySelectorAll('.time-picker-wrap');
-timePickerElements.forEach(element => {
-  initializeTimePicker(element);
-});
+timePickerElements.forEach(initializeTimePicker);
 
 function initializeTimePicker(timePickerElement) {
   const {
@@ -29,7 +30,7 @@ function initializeTimePicker(timePickerElement) {
     minuteTablo,
     hourPicker,
     minutePicker,
-    timePickerBtn,
+    confirmTimeBtn,
     timeInput,
   } = getTimePickerElements(timePickerElement);
 
@@ -41,29 +42,22 @@ function initializeTimePicker(timePickerElement) {
 
   timeInput.addEventListener('click', handleTimePicker);
   clockIcon.addEventListener('click', handleTimePicker);
-
-  timeInput.addEventListener('blur', e => {
-    const trimmedValue = extractTime(e.target.value);
-    timeInput.value = trimmedValue;
+  timeInput.addEventListener('blur', () => {
+    handleInputBlur(timeInput, extractTime);
   });
-
   hourTablo.addEventListener('click', e =>
     onTimeCellClick(e, '.time-picker__hours')
   );
-
   minuteTablo.addEventListener('click', e =>
     onTimeCellClick(e, '.time-picker__minutes')
   );
-
   minutePicker.addEventListener('click', () =>
     toggleTablo(minuteTablo, hourTablo)
   );
-
   hourPicker.addEventListener('click', () =>
     toggleTablo(hourTablo, minuteTablo)
   );
-
-  timePickerBtn.addEventListener('click', () => {
+  confirmTimeBtn.addEventListener('click', () => {
     toggleElementVisibility(timePickerElement);
     toggleElementVisibility(sheduleEl);
     resetDisabledTabloCells(timePickerElement);
@@ -86,9 +80,8 @@ function initializeTimePicker(timePickerElement) {
       disableHourCells(timePickerElement, minHour, maxHour);
       updateDigitsPickerBlocks(orderHour, orderMinute);
       updateTimePicker(orderHour, orderMinute);
-      toggleIconActiveStyle(clockIcon);
-      toggleElementVisibility(timePickerElement);
-      toggleElementVisibility(sheduleEl);
+      setShedulerVisibilityOptions(timePickerElement, sheduleEl, clockIcon);
+      toggleClosestCalendarVisibility(timeInput);
       const isTimePickerVisible =
         !timePickerElement.classList.contains('isHidden');
       if (isTimePickerVisible) {
@@ -156,13 +149,13 @@ function initializeTimePicker(timePickerElement) {
   }
 
   function getTimePickerElements(el) {
-    const clockIcon = getClosestIconClock(el);
+    const clockIcon = getClosestIcon(el, 'icon--clock');
     const sheduleEl = el.parentElement.querySelector('.work-shedule');
     const hourTablo = el.querySelector('.tablo--hours');
     const minuteTablo = el.querySelector('.tablo--minutes');
     const hourPicker = el.querySelector('.time-picker__hours');
     const minutePicker = el.querySelector('.time-picker__minutes');
-    const timePickerBtn = el.querySelector('.time-picker__btn');
+    const confirmTimeBtn = el.querySelector('.time-picker__btn');
     const timeInput =
       el.parentElement.previousElementSibling.querySelector(
         '[name="userTime"]'
@@ -174,7 +167,7 @@ function initializeTimePicker(timePickerElement) {
       minuteTablo,
       hourPicker,
       minutePicker,
-      timePickerBtn,
+      confirmTimeBtn,
       timeInput,
     };
   }
@@ -254,5 +247,15 @@ function initializeTimePicker(timePickerElement) {
     const trimmedString = inputString.trim();
     const timeMatch = trimmedString.match(/\d{2}\s*:\s*\d{2}/);
     return timeMatch ? timeMatch[0] : null;
+  }
+
+  function getClosestCalendarBlock(timeInput) {
+    return timeInput
+      .closest('li')
+      .previousElementSibling.querySelector('.shedule-wrap');
+  }
+  function toggleClosestCalendarVisibility(timeInput) {
+    const wrap = getClosestCalendarBlock(timeInput);
+    toggleClosestVisibility(wrap, 'calendar', 'icon--calendar');
   }
 }

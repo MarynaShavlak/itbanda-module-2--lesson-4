@@ -116,12 +116,37 @@ export function appendElement(parent, child) {
   parent.appendChild(child);
 }
 
-export function getClosestIconClock(timePick) {
-  const clockIcon =
-    timePick.parentElement.previousElementSibling.querySelector('.icon--clock');
-  return clockIcon;
+export function getClosestIcon(element, iconClassName) {
+  return element.parentElement.previousElementSibling.querySelector(
+    `.${iconClassName}`
+  );
 }
 
 export function toggleElementVisibility(el) {
   el.classList.toggle('isHidden');
+}
+
+export function handleInputBlur(inputElement, extractFunction) {
+  inputElement.addEventListener('blur', e => {
+    const trimmedValue = extractFunction(e.target.value);
+    inputElement.value = trimmedValue;
+  });
+}
+
+export function setShedulerVisibilityOptions(pickEl, sheduleEl, icon) {
+  toggleElementVisibility(pickEl);
+  toggleElementVisibility(sheduleEl);
+  toggleIconActiveStyle(icon);
+}
+
+export function toggleClosestVisibility(wrap, blockClassName, iconClassName) {
+  const sheduleInfoBlock = wrap.querySelector('.work-shedule');
+  const blockElement = wrap.querySelector(`.${blockClassName}`);
+
+  if (!sheduleInfoBlock.classList.contains('isHidden')) {
+    toggleElementVisibility(sheduleInfoBlock);
+    toggleElementVisibility(blockElement);
+    const icon = getClosestIcon(blockElement, iconClassName);
+    toggleIconActiveStyle(icon);
+  }
 }
