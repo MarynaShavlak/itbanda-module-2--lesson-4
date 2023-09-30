@@ -32,6 +32,7 @@
 .reviews__item {
   width: 335px;
   background-color: $first-additional-bg-color;
+  transition: background-color $cubic, box-shadow $cubic;
   border-radius: 20px;
   padding: 28px 24px;
   @media screen and (min-width: 768px) {
@@ -44,6 +45,13 @@
   }
  
 }
+
+.active-dark-theme .reviews__item {
+background-color: $dark-add-color;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
 
 .item-1 {
   height: 212px;

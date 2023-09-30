@@ -1,7 +1,9 @@
 .footer {
   background-color: $first-additional-bg-color;
-
 }
+
+.active-dark-theme .footer {
+  background-color: $dark-add-color;}
 
 .footer__wrap {
   background-color: $second-additional-bg-color;
@@ -173,7 +175,6 @@ color: $first-additional-bg-color;
       &:focus {
         color: $first-additional-bg-color;
         background-color: $dark-theme;
-        // border: 1px solid $first-additional-bg-color;
   
         .socials__icon {
           fill: $first-additional-bg-color;

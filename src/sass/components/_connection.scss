@@ -70,6 +70,7 @@
   flex-direction: column;
   align-items: center;
   background-color: $primary-white-color;
+  transition: background-color $cubic,box-shadow $cubic;
   border-radius: 20px;
    padding-left: 16px;
     padding-right: 16px;
@@ -93,6 +94,11 @@
       padding: 40px;
     }
   }
+
+.active-dark-theme .connection--second-block {
+  background-color: $dark-add-2-color;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
 
 .connection--second-block.block-with-image::before {

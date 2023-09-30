@@ -1,4 +1,6 @@
 .section {
+  background-color: $primary-white-color;
+    transition: background-color $cubic;
     padding-top: 64px;
     padding-bottom: 64px;
   @media screen and (min-width: 768px) {
@@ -12,9 +14,35 @@
  
 }
 
+.active-dark-theme  .section {
+  background-color: $dark-add-2-color;
+}
+
+
 .section--dark-background {
   background-color: $first-additional-bg-color;
+  transition: background-color $cubic;
+
 }
+
+.active-dark-theme .section--dark-background {
+background-color: $dark-add-color;
+// border-bottom: 40px solid transparent;
+//   position: relative;
+}
+
+// .active-dark-theme .section--dark-background::after {
+//   content: "";
+//   position: absolute;
+//   bottom: -60px;
+//   left: 0;
+//   width: 100%;
+//   height: 40px;
+//   background-image: linear-gradient(to right, white, white,white);
+//   filter: blur(15px);
+//   z-index: 2;
+// }
+
 
 
 
@@ -83,6 +111,7 @@ line-height: 1.21;
   flex-direction: column;
   border-radius: 20px;
   background-color: $second-additional-bg-color;
+  transition: background-color $cubic;
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 64px;
@@ -100,4 +129,7 @@ line-height: 1.21;
     padding-left: 60px;
     padding-right: 60px;
   }
+}
+.active-dark-theme .section__container {
+  background-color: $dark-add-3-color;
 }

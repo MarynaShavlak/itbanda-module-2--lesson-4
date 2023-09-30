@@ -32,6 +32,7 @@
   display:flex;
   flex-direction: column;
   background-color: $first-additional-bg-color;
+  transition: background-color $cubic, box-shadow $cubic;
   border-radius: 20px;
   padding: 32px 24px;
   flex-basis: calc((100% - 24px)/2);
@@ -46,6 +47,11 @@
     border-radius: 30px;
     padding: 40px;
   }
+}
+
+.active-dark-theme .block {
+  background-color: $dark-add-color;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .block--white {
