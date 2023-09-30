@@ -39,9 +39,9 @@
       <path fill="#fff" d="M24.049 17.147H7.957v-2.299h16.092v2.299z" style="fill:var(--color2, #fff)" />
     </symbol>
     <symbol id="icon-plus" viewBox="0 0 32 32">
-      <path fill="#4d1299" d="M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0s16 7.163 16 16z" />
-      <path fill="#fff" d="M24.049 17.147h-6.897v6.897h-2.299v-6.897H7.956v-2.299h6.897V7.951h2.299v6.897h6.897v2.299z"
-        style="fill:var(--color2, #fff)" />
+      <path d="M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0s16 7.163 16 16z" />
+      <path fill="#fff"
+        d="M24.049 17.147h-6.897v6.897h-2.299v-6.897H7.956v-2.299h6.897V7.951h2.299v6.897h6.897v2.299z" />
     </symbol>
     <symbol id="icon-whatsApp" viewBox="0 0 32 32">
       <path

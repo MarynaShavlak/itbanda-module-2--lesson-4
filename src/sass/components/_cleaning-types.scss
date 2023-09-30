@@ -58,6 +58,11 @@
   background-color: $primary-white-color;
 }
 
+.active-dark-theme .block--white {
+  background-color: $second-additional-bg-color;
+}
+
+
 
 .block:not(.block--trust):nth-child(2) {
   @media screen and (min-width: 768px) and (max-width: 1439px){

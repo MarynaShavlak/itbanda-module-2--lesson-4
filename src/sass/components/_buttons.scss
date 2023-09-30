@@ -36,8 +36,11 @@
   }
 }
 
-.active-dark-theme .btn--light {
+.active-dark-theme .btn--light:not(.active) {
   background-color: $first-additional-bg-color;
+  &:hover {
+      background-color: $dark-add-2-color;
+    }
 }
 
 .tel-btn {
@@ -277,6 +280,9 @@ padding: 17px 25px;
     }
  }
 
+ .active-dark-theme .time-picker__btn {
+    background-color: $datepicker-color;
+ }
 
 .blob-btn {
   z-index: 2;

@@ -356,7 +356,7 @@ border: 2px solid $first-additional-bg-color;
     }
  }
 
-.active-dark-theme .menu-toggle svg {
+.active-dark-theme .menu-toggle .menu-toggle__icon{
   stroke: $first-additional-bg-color;
 }
 
@@ -370,7 +370,7 @@ border: 2px solid $first-additional-bg-color;
   z-index: 50;
   padding-top: 20px;
   background-color: $main-accent-color;
-  transition: transform $cubic;
+  transition: transform $cubic, background-color $cubic;
   transform: translateX(100%);
   &.is-open {
       transform: translateX(0);
@@ -383,6 +383,20 @@ border: 2px solid $first-additional-bg-color;
     width: 600px;
     padding-top: 167px;
   }
+
+    .menu__icon-close {
+fill: $main-accent-color;
+transition: fill $cubic;
+    }
+ }
+
+
+
+ .active-dark-theme .aside-menu {
+  background-color: $time-picker-tablo-color;
+  .menu__icon-close {
+      fill: $time-picker-tablo-color;
+    }
  }
 
  .aside-menu__about {

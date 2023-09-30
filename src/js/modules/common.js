@@ -13,6 +13,7 @@ const allowedPages = [
 
 document.addEventListener('DOMContentLoaded', function () {
   const currentPage = window.location.pathname;
+  console.log('currentPage : ', currentPage);
 
   // if (currentPage === '/cleaning/' || currentPage === '/cleaning/index.html') {
   if (currentPage === '/' || currentPage === '/index.html') {
@@ -27,8 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
     hideBuildingsToggleMenu();
     hideSelectedItems('.add-services-list__item:nth-child(n+3)');
     updateDynamicLinks('after-repair.html#office-calc-block');
+  } else if (currentPage === '/calc-order.html') {
+    console.log('khzv');
     // } else if (currentPage === '/cleaning/calc-order.html') {
-  } else if (currentPage === '/cleaning/calc-order.html') {
     setBuildingsFlexBasis('.buildings__element', 'calc(100% / 2)');
     addWhiteBackground('.block');
     setCalculatorBuildingsToggleMenu();
