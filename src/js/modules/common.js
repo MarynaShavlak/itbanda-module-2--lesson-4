@@ -14,7 +14,8 @@ const allowedPages = [
 document.addEventListener('DOMContentLoaded', function () {
   const currentPage = window.location.pathname;
 
-  if (currentPage === '/cleaning/' || currentPage === '/cleaning/index.html') {
+  // if (currentPage === '/cleaning/' || currentPage === '/cleaning/index.html') {
+  if (currentPage === '/' || currentPage === '/index.html') {
     setCurrentNavLink('.nav__link');
     updateDynamicLinks('index.html#order-cleaning-block');
   } else if (currentPage === '/cleaning/office.html') {

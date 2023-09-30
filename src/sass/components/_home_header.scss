@@ -6,7 +6,13 @@
   z-index: 50;
   background-color: $primary-white-color;
   border-bottom: 1px solid $light-accent-color;
+  transition: background-color $cubic;
  }
+
+.active-dark-theme .header {
+  background-color: $dark-theme;
+}
+
 
  .header__container {
   position:relative;
@@ -28,10 +34,21 @@
  }
 .nav__logo-img {
 fill: $main-accent-color;
+transition: fill $cubic;
 .nav--aside-menu & {
   fill: $primary-white-color;
+  transition: fill $cubic;
 }
 }
+
+.active-dark-theme .nav__logo-img {
+  fill: $primary-white-color;
+  .nav--aside-menu & {
+  fill: $main-accent-color;
+  }
+}
+
+
 
  .nav__list {
   display: flex;
@@ -45,14 +62,23 @@ fill: $main-accent-color;
   line-height: 1.42;
   border: 2px solid $main-accent-color;
   border-radius: 50px;
+  transition: border $cubic;
   @media screen and (min-width: 768px) {
       margin-left: 47px;
       margin-right: 0;
   }
  }
+
+.active-dark-theme .nav__list {
+border: 2px solid $first-additional-bg-color;
+}
+
+
 .nav__list--light {
   border: 2px solid $primary-white-color;
 }
+
+
  .nav__item {
   padding: 5px 14px;
   border-radius: 25px;
@@ -68,6 +94,22 @@ fill: $main-accent-color;
   }
  }
 
+.active-dark-theme .nav__item {
+  &:has(.nav__link--current) {
+    background-color: $first-additional-bg-color;
+  }
+
+  &:not(:has(.nav__link--current)):hover {
+    background-color: $first-additional-bg-color;
+
+    .nav__link {
+      color: $primary-black-color;
+    }
+  }
+}
+
+
+
  .nav__item--light {
   &:has(.nav__link--current) {
     background-color: $primary-white-color;
@@ -80,12 +122,31 @@ fill: $main-accent-color;
   }
  }
 
+
+ .active-dark-theme .nav__item--light {
+  &:has(.nav__link--current) {
+    background-color: $dark-theme;
+  }
+  &:not(:has(.nav__link--current)):hover   {
+    background-color: $first-additional-bg-color;
+     .nav__link {
+      color: $primary-black-color;
+     }
+  }
+ }
+
  .nav__link {
   position:relative;
   display: block;
   color: $primary-black-color;
   transition: color $cubic, background-color $cubic;
  }
+
+ .active-dark-theme .nav__link {
+  color: $first-additional-bg-color;
+ }
+
+
 
  .nav__link--current {
   color: $primary-white-color;
@@ -94,13 +155,32 @@ fill: $main-accent-color;
   }
  }
 
+ .active-dark-theme .nav__link--current {
+  color: $primary-white-color;
+  &.nav__link--light {
+      color: $main-accent-color;
+  }
+ }
+
+
+
  .nav__link--light {
   color: $primary-white-color;
+ }
+
+ .active-dark-theme .nav__link--light {
+  color: $primary-black-color;
  }
 
  .nav__link--current {
   &:not(.nav__link--light) {
     color: $primary-white-color;
+ }
+}
+
+ .active-dark-theme .nav__link--current {
+  &:not(.nav__link--light) {
+    color: $primary-black-color;
  }
 }
 
@@ -125,6 +205,18 @@ fill: $main-accent-color;
       color: $main-accent-color;
     }
  }
+
+ .active-dark-theme .menu__link {
+  color: $first-additional-bg-color;
+  transition: color $cubic;
+
+  &:hover,
+  &:focus {
+    color: $card-hover-effect-color;
+  }
+}
+
+
 
  .contacts {
   display: none;
@@ -171,8 +263,12 @@ fill: $main-accent-color;
 
 }
 .socials__link {
+  color: $main-accent-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   border-radius: 50%;
-  transition:  background-color $cubic;
+  transition:  background-color $cubic, color $cubic;
 &:hover, &:focus {
     color: $primary-white-color;
     background-color: $main-accent-color;
@@ -182,26 +278,30 @@ fill: $main-accent-color;
   }
 }
 
+ .socials__icon {
+   fill: currentColor;
+   transition: fill $cubic;
+   width: 32px;
+   height: 32px;
 
-.socials__link {
- color: $main-accent-color;
- display: flex;
- align-items: center;
- justify-content: center;
-}
-.socials__icon {
-  fill: currentColor;
-  transition: fill $cubic;
-}
-
-  .socials__icon {
-      width: 32px;
-      height: 32px;
-  @media screen and (min-width: 1440px) {
-      width: 40px;
-      height: 40px;
-  }
+   @media screen and (min-width: 1440px) {
+     width: 40px;
+     height: 40px;
+   }
  }
+
+.active-dark-theme .socials__link {
+  color: $first-additional-bg-color;
+&:hover, &:focus {
+    color: $main-accent-color;
+    background-color: $primary-white-color;
+    .socials__icon {
+      fill:$main-accent-color;
+    }
+  }
+}
+
+ 
 
  .menu-toggle {
     margin-left: auto;
