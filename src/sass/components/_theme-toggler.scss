@@ -2,33 +2,74 @@
   position: relative;
   margin-right: 40px;
   display: flex;
-  // background-color: red;
   width: 130px;
   height: 60px;
-  border: 5px solid $card-hover-effect-color;
   border-radius: 40px;
 
 }
+
+
+
+.theme-toggler-wrap--light {
+  border: 5px solid $card-hover-effect-color;
+}
+.theme-toggler-wrap--dark {
+  border: 5px solid $btn-arrow-color;
+}
+
+
 .theme__circle {
   position: absolute;
-  top:0;
-  left: -1px;
+  top: -1px;
   border-radius: 50%;
   height: 52px;
   width: 52px;
+}
+
+.theme__circle--light{
+  display: none;
+  left: -1px;
   background-color: $card-hover-effect-color;
   // background-color: green;
 }
 
-.circle__sun {
+.theme__circle--dark {
+    background-color: $btn-arrow-color;
+    right: -1px;
+}
+
+
+.circle-item {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: $btn-arrow-color;
+  border-radius: 50%;
+}
+
+
+.circle__sun {
   width: 18px;
   height: 18px;
+  background-color: $btn-arrow-color;
+}
+.circle__moon {
+  position: relative;
+  background-color: $primary-white-color;
+  width: 30px;
+  height: 30px;
+}
+
+.circle__moon::before {
+  position: absolute;
+  left: -4px;
+  top:0;
+  content:'';
+  width: 22px;
+  height: 22px;
+  background-color: $btn-arrow-color;
   border-radius: 50%;
+  
 }
 
 .circle__ray {
