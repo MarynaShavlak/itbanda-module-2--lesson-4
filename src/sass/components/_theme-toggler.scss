@@ -1,20 +1,23 @@
 .theme-toggler-wrap {
-  position: relative;
-  margin-right: 40px;
+  position: absolute;
+ left: -90px;
+ top: 50%;
+ transform: translate(0, -50%);
   display: flex;
-  width: 130px;
-  height: 60px;
-  border-radius: 40px;
+  width: 90px;
+  height: 43px;
+  border-radius: 50px;
 
 }
 
 
 
 .theme-toggler-wrap--light {
-  border: 5px solid $card-hover-effect-color;
+  display:none;
+  border: 3px solid $main-accent-color;
 }
 .theme-toggler-wrap--dark {
-  border: 5px solid $btn-arrow-color;
+  border: 3px solid $btn-arrow-color;
 }
 
 
@@ -22,14 +25,13 @@
   position: absolute;
   top: -1px;
   border-radius: 50%;
-  height: 52px;
-  width: 52px;
+  height: 40px;
+  width:40px;
 }
 
 .theme__circle--light{
-  display: none;
   left: -1px;
-  background-color: $card-hover-effect-color;
+  background-color: $main-accent-color;
   // background-color: green;
 }
 
@@ -49,15 +51,15 @@
 
 
 .circle__sun {
-  width: 18px;
-  height: 18px;
-  background-color: $btn-arrow-color;
+  width: 11px;
+  height: 11px;
+  background-color: $first-additional-bg-color;
 }
 .circle__moon {
   position: relative;
   background-color: $primary-white-color;
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 27px;
 }
 
 .circle__moon::before {
@@ -77,38 +79,38 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: $btn-arrow-color;
-  width: 3px;
-  height: 10px;
+  background-color: $first-additional-bg-color;
+  width: 2px;
+  height: 7px;
   }
 
 .circle__ray:nth-child(2) {
-  transform: translate(-50%, calc(-50% - 15px));
+  transform: translate(-50%, calc(-50% - 13px));
 }
 
 .circle__ray:nth-child(5) {
-  transform: translate(-50%, calc(-50% + 15px));
+  transform: translate(-50%, calc(-50% + 13px));
 }
 
 .circle__ray:nth-child(4) {
-  transform: translate(calc(-50% + 15px), -50%) rotate(90deg);
+  transform: translate(calc(-50% + 13px), -50%) rotate(90deg);
 }
 
 .circle__ray:nth-child(8) {
-  transform: translate(calc(-50% - 15px), -50%) rotate(90deg);
+  transform: translate(calc(-50% - 13px), -50%) rotate(90deg);
 }
 
 .circle__ray:nth-child(3) {
-  transform: translate(calc(-50% + 11px), calc(-50% - 11px)) rotate(45deg);
+  transform: translate(calc(-50% + 9px), calc(-50% - 9px)) rotate(45deg);
 }
 
 .circle__ray:nth-child(9) {
-  transform: translate(calc(-50% - 11px), calc(-50% - 11px)) rotate(-45deg);
+  transform: translate(calc(-50% - 9px), calc(-50% - 9px)) rotate(-45deg);
 }
 
 .circle__ray:nth-child(7) {
-  transform: translate(calc(-50% - 11px), calc(-50% + 11px)) rotate(45deg);
+  transform: translate(calc(-50% - 9px), calc(-50% + 9px)) rotate(45deg);
 }
 .circle__ray:nth-child(6) {
-  transform: translate(calc(-50% + 11px), calc(-50% + 11px)) rotate(-45deg);
+  transform: translate(calc(-50% + 9px), calc(-50% + 9px)) rotate(-45deg);
 }
