@@ -77,6 +77,7 @@
 }
 
 .toggle-question-icon {
+  fill: $main-accent-color;
   width: 23px;
   height: 23px;
   @media screen and (min-width: 768px){
@@ -109,7 +110,6 @@
 
 
 .toggle-question-btn .icon--minus {
-  display: none;
   fill: $main-accent-color;
 }
 

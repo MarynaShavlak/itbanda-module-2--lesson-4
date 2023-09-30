@@ -3,7 +3,7 @@ const accordionsList = document.querySelectorAll('.accordion');
 
 toggleAnswerBtnList.forEach(button => {
   button.addEventListener('click', e => {
-    toggleAnswerBtnList.forEach(closeBtnIcon);
+    // toggleAnswerBtnList.forEach(closeBtnIcon);
     if (e.target === button) {
       toggleBtnIcon(button);
     }
@@ -20,16 +20,19 @@ accordionsList.forEach(accordion => {
 function closeBtnIcon(btn) {
   const plusIcon = btn.querySelector('.icon--plus');
   const minusIcon = btn.querySelector('.icon--minus');
-  plusIcon.style.display = 'block';
-  minusIcon.style.display = 'none';
+  plusIcon.classList.remove('isHidden');
+  minusIcon.classList.add('isHidden');
 }
 
 function toggleBtnIcon(btn) {
   const plusIcon = btn.querySelector('.icon--plus');
+  console.log('plusIcon: ', plusIcon);
   const minusIcon = btn.querySelector('.icon--minus');
-  plusIcon.style.display = plusIcon.style.display === 'none' ? 'block' : 'none';
-  minusIcon.style.display =
-    minusIcon.style.display === 'none' ? 'block' : 'none';
+  console.log('minusIcon: ', minusIcon);
+  plusIcon.classList.toggle('isHidden');
+  minusIcon.classList.toggle('isHidden');
+  console.log('ПІСЛЯ ТОГЛ plusIcon: ', plusIcon);
+  console.log(' ПІСЛЯ ТОГЛ minusIcon: ', minusIcon);
 }
 
 function openAccordion(accordion) {
@@ -59,7 +62,8 @@ function toggleAccordion(accordion) {
 
 function handleAccordionClick(accordion) {
   const btn = accordion.querySelector('.toggle-question-btn');
+  console.log('btn : ', btn);
   toggleAccordion(accordion);
-  toggleAnswerBtnList.forEach(closeBtnIcon);
+  // toggleAnswerBtnList.forEach(el => () => closeBtnIcon(el));
   toggleBtnIcon(btn);
 }
