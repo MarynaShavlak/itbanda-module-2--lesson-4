@@ -1,4 +1,8 @@
-import { toggleIconActiveStyle } from './common';
+import {
+  toggleIconActiveStyle,
+  getClosestIconClock,
+  toggleElementVisibility,
+} from './common';
 import { parseDateStringToDate, getDayNameFromDate } from './dates';
 import { storeDataInLocalStorage, getDataFromStorage } from './local-storage';
 
@@ -60,8 +64,8 @@ function initializeTimePicker(timePickerElement) {
   );
 
   timePickerBtn.addEventListener('click', () => {
-    toggleTimePickerVisibility();
-    toggleSheduleVisibility();
+    toggleElementVisibility(timePickerElement);
+    toggleElementVisibility(sheduleEl);
     resetDisabledTabloCells(timePickerElement);
 
     toggleIconActiveStyle(clockIcon);
@@ -83,8 +87,8 @@ function initializeTimePicker(timePickerElement) {
       updateDigitsPickerBlocks(orderHour, orderMinute);
       updateTimePicker(orderHour, orderMinute);
       toggleIconActiveStyle(clockIcon);
-      toggleTimePickerVisibility();
-      toggleSheduleVisibility();
+      toggleElementVisibility(timePickerElement);
+      toggleElementVisibility(sheduleEl);
       const isTimePickerVisible =
         !timePickerElement.classList.contains('isHidden');
       if (isTimePickerVisible) {
@@ -152,8 +156,7 @@ function initializeTimePicker(timePickerElement) {
   }
 
   function getTimePickerElements(el) {
-    const clockIcon =
-      el.parentElement.previousElementSibling.querySelector('.icon--clock');
+    const clockIcon = getClosestIconClock(el);
     const sheduleEl = el.parentElement.querySelector('.work-shedule');
     const hourTablo = el.querySelector('.tablo--hours');
     const minuteTablo = el.querySelector('.tablo--minutes');
@@ -193,9 +196,7 @@ function initializeTimePicker(timePickerElement) {
     updateTimePickerBlock(block, value);
     updateTimeInput(blockSelector, value);
   }
-  function toggleSheduleVisibility() {
-    sheduleEl.classList.toggle('isHidden');
-  }
+
   function validateClickedNumber(clickedElement) {
     return (
       clickedElement.classList.contains('number') &&
@@ -230,9 +231,7 @@ function initializeTimePicker(timePickerElement) {
     tabloToShow.classList.remove('isHidden');
     tabloToHide.classList.add('isHidden');
   }
-  function toggleTimePickerVisibility() {
-    timePickerElement.classList.toggle('isHidden');
-  }
+
   function updateTimeInput(selector, value) {
     const partTime = getTimePartName(selector);
     selectedTimeObj[partTime] = value;

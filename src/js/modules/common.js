@@ -115,3 +115,13 @@ function setBuildingsFlexBasis(selector, value) {
 export function appendElement(parent, child) {
   parent.appendChild(child);
 }
+
+export function getClosestIconClock(timePick) {
+  const clockIcon =
+    timePick.parentElement.previousElementSibling.querySelector('.icon--clock');
+  return clockIcon;
+}
+
+export function toggleElementVisibility(el) {
+  el.classList.toggle('isHidden');
+}

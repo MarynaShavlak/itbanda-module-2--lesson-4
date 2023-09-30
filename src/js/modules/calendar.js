@@ -1,4 +1,9 @@
-import { toggleIconActiveStyle, appendElement } from './common';
+import {
+  toggleIconActiveStyle,
+  getClosestIconClock,
+  appendElement,
+  toggleElementVisibility,
+} from './common';
 import {
   getCurrentDateAsString,
   extractDate,
@@ -60,40 +65,13 @@ function createCalendar(
   );
   const prevMonthBtn = calendarBlock.querySelector('.calendar__prevMonth-btn');
   const nextMonthBtn = calendarBlock.querySelector('.calendar__nextMonth-btn');
-  dateInput.addEventListener('click', () => {
-    toggleElementVisibility(calendarBlock);
-    toggleElementVisibility(sheduleEl);
-    const wrap = getClosestTimePickerBlock(dateInput);
-    console.log('wrap: ', wrap);
-    const timeWorkShedule = wrap.querySelector('.work-shedule');
-    if (!timeWorkShedule.classList.contains('isHidden')) {
-      toggleElementVisibility(timeWorkShedule);
-    }
 
-    toggleIconActiveStyle(calendarIcon);
-    monthToShowInCalendarObj = new Date(selectedDateObj);
-    const isCalendarVisible = !calendarBlock.classList.contains('isHidden');
-    generateCalendar(selectedDateObj);
-    if (isCalendarVisible) {
-      setDateInputValue();
-    }
-  });
+  dateInput.addEventListener('click', handleCalendar);
+  calendarIcon.addEventListener('click', handleCalendar);
 
   dateInput.addEventListener('blur', e => {
     const trimmedValue = extractDate(e.target.value);
     dateInput.value = trimmedValue;
-  });
-
-  calendarIcon.addEventListener('click', e => {
-    toggleElementVisibility(calendarBlock);
-    toggleElementVisibility(sheduleEl);
-    monthToShowInCalendarObj = new Date(selectedDateObj);
-    generateCalendar(selectedDateObj);
-    toggleIconActiveStyle(e.target);
-    const isCalendarVisible = !calendarBlock.classList.contains('isHidden');
-    if (isCalendarVisible) {
-      setDateInputValue();
-    }
   });
 
   prevMonthBtn?.addEventListener('click', () => {
@@ -103,6 +81,17 @@ function createCalendar(
   nextMonthBtn?.addEventListener('click', () => {
     updateCalendar(1);
   });
+
+  function handleCalendar() {
+    setShedulerVisibilityOptions(calendarBlock, sheduleEl, calendarIcon);
+    toggleClosestTimePickerVisibility(dateInput);
+    monthToShowInCalendarObj = new Date(selectedDateObj);
+    generateCalendar(selectedDateObj);
+    const isCalendarVisible = !calendarBlock.classList.contains('isHidden');
+    if (isCalendarVisible) {
+      setDateInputValue();
+    }
+  }
 
   function setCellText(cell, day) {
     cell.textContent = day;
@@ -283,10 +272,6 @@ function createCalendar(
     generateCalendar(monthToShowInCalendarObj);
   }
 
-  function toggleElementVisibility(el) {
-    el.classList.toggle('isHidden');
-  }
-
   function createCalendarRow() {
     return document.createElement('tr');
   }
@@ -301,6 +286,29 @@ function createCalendar(
     return dateInput
       .closest('li')
       .nextElementSibling.querySelector('.shedule-wrap');
+  }
+
+  function toggleClosestTimePickerVisibility(dateInput) {
+    const wrap = getClosestTimePickerBlock(dateInput);
+    const timeWorkShedule = wrap.querySelector('.work-shedule');
+    const timePickerElement = wrap.querySelector('.time-picker-wrap');
+
+    if (!timeWorkShedule.classList.contains('isHidden')) {
+      toggleElementVisibility(timeWorkShedule);
+      toggleElementVisibility(timePickerElement);
+      const clockIcon = getClosestIconClock(timePickerElement);
+      toggleIconActiveStyle(clockIcon);
+    }
+  }
+
+  function setShedulerVisibilityOptions(
+    calendarBlock,
+    sheduleEl,
+    calendarIcon
+  ) {
+    toggleElementVisibility(calendarBlock);
+    toggleElementVisibility(sheduleEl);
+    toggleIconActiveStyle(calendarIcon);
   }
 
   generateCalendar(selectedDateObj);
