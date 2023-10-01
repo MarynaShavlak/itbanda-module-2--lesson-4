@@ -8,7 +8,6 @@ let currentTheme = 'light';
 
 themeToggler.addEventListener('click', () => {
   currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-  console.log('currentTheme: ', currentTheme);
   themeToggler.classList.toggle('theme-toggler-wrap--light');
   themeToggler.classList.toggle('theme-toggler-wrap--dark');
   themeCircle.classList.toggle('theme__circle--light');

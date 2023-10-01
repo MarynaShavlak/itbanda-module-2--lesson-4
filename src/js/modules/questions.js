@@ -26,13 +26,9 @@ function closeBtnIcon(btn) {
 
 function toggleBtnIcon(btn) {
   const plusIcon = btn.querySelector('.icon--plus');
-  console.log('plusIcon: ', plusIcon);
   const minusIcon = btn.querySelector('.icon--minus');
-  console.log('minusIcon: ', minusIcon);
   plusIcon.classList.toggle('isHidden');
   minusIcon.classList.toggle('isHidden');
-  console.log('ПІСЛЯ ТОГЛ plusIcon: ', plusIcon);
-  console.log(' ПІСЛЯ ТОГЛ minusIcon: ', minusIcon);
 }
 
 function openAccordion(accordion) {
@@ -62,7 +58,6 @@ function toggleAccordion(accordion) {
 
 function handleAccordionClick(accordion) {
   const btn = accordion.querySelector('.toggle-question-btn');
-  console.log('btn : ', btn);
   toggleAnswerBtnList.forEach(closeBtnIcon);
   toggleAccordion(accordion);
   toggleBtnIcon(btn);
