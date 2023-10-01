@@ -1,9 +1,11 @@
 .footer {
   background-color: $first-additional-bg-color;
+  z-index: 3;
 }
 
 .active-dark-theme .footer {
-  background-color: $dark-add-color;}
+  background-color: $dark-add-color;
+}
 
 .footer__wrap {
   background-color: $second-additional-bg-color;

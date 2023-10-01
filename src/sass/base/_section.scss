@@ -11,11 +11,87 @@
     padding-top: 116px;
     padding-bottom: 116px;
   }
- 
 }
 
+.section--cleaning-types, .reviews, .section--buildings, .section--repair {
+  border-bottom: 50px solid transparent;
+  border-top: 50px solid transparent;
+  position: relative;
+  padding-top: 34px;
+  padding-bottom: 34px;
+  border-bottom: 30px solid transparent;
+  border-top: 30px solid transparent;
+   @media screen and (min-width: 768px) {
+    padding-top: 42px;
+    padding-bottom: 42px;
+
+  }
+  @media screen and (min-width: 1440px) {
+      padding-top: 66px;
+      padding-bottom: 66px;
+      border-bottom: 50px solid transparent;
+      border-top: 50px solid transparent;
+  }
+}
+
+
+.section--cleaning-types::before, .reviews::before, .section--buildings::before, .section--repair::before{
+  content: "";
+  position: absolute;
+  width: 110%;
+  left: -50px;
+  background-image: linear-gradient(to right, white, white,white);
+  filter: blur(10px);
+  z-index: 2;
+  // @media screen and (min-width: 768px) {
+    top: -50px;
+    height: 40px;
+  // }
+  @media screen and (min-width: 1440px) {
+    top: -70px;
+    height: 50px;
+  }
+}
+
+.active-dark-theme .section--cleaning-types::before,
+.active-dark-theme .reviews::before, 
+.active-dark-theme .section--cleaning-types::after,
+.active-dark-theme .reviews::after,
+.active-dark-theme .section--buildings::before, 
+.active-dark-theme .section--buildings::after, 
+.active-dark-theme .section--repair::before, 
+.active-dark-theme .section--repair::after {
+    background-image: linear-gradient(to right, $dark-add-4-color, $dark-add-4-color, $dark-add-4-color);
+}
+
+
+.section--cleaning-types::after, .reviews::after, .section--buildings::after, .section--repair::after {
+  content: "";
+  position: absolute;
+  left: -50px;
+  width: 110%;
+
+  background-image: linear-gradient(to right, white, white,white);
+  filter: blur(10px);
+  z-index: 2;
+   bottom: -50px;
+  height: 40px;
+    @media screen and (min-width: 1440px) {
+      bottom: -70px;
+        height: 50px;
+    }
+}
+
+
+
+
+
+
+
 .active-dark-theme  .section {
-  background-color: $dark-add-2-color;
+  // background-color: $dark-add-2-color;
+  // background-color: $first-additional-bg-color;
+  background-color: $dark-add-4-color;
 }
 
 
