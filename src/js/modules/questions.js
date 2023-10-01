@@ -3,10 +3,10 @@ const accordionsList = document.querySelectorAll('.accordion');
 
 toggleAnswerBtnList.forEach(button => {
   button.addEventListener('click', e => {
-    // toggleAnswerBtnList.forEach(closeBtnIcon);
     if (e.target === button) {
       toggleBtnIcon(button);
     }
+    toggleAnswerBtnList.forEach(closeBtnIcon);
   });
 });
 
@@ -63,7 +63,7 @@ function toggleAccordion(accordion) {
 function handleAccordionClick(accordion) {
   const btn = accordion.querySelector('.toggle-question-btn');
   console.log('btn : ', btn);
+  toggleAnswerBtnList.forEach(closeBtnIcon);
   toggleAccordion(accordion);
-  // toggleAnswerBtnList.forEach(el => () => closeBtnIcon(el));
   toggleBtnIcon(btn);
 }

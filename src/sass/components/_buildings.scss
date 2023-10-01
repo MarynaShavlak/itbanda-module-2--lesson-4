@@ -73,7 +73,7 @@
   background-color: $primary-white-color;
   flex-basis: calc((100% - 32px)/2);
   height: auto;
-  transition: transform $cubic;
+  transition: transform $cubic,background-color $cubic;
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     flex-basis: calc((100% - 30px)/2);
@@ -84,6 +84,9 @@
   }
 }
 
+.active-dark-theme .service-buildings__item {
+  background-color: $first-additional-bg-color;
+}
 
 .service-buildings__text {
   z-index: 2;
@@ -120,14 +123,16 @@
       top: 40px;
   }
  
-
-  width: 170px;
+ width: 170px;
   height: 170px;
   border-radius: 50%;
   background-color: $card-hover-effect-color;
   z-index: 0;
-  transition: transform $cubic;
+  transition: transform $cubic, background-color $cubic;
 }
+
+
+
 
 .service-buildings__item .buildings__icon-wrap {
   width: 170px;
@@ -137,8 +142,15 @@
   border: 2px solid $card-hover-effect-color;
   position: relative;
   z-index: 1;
-  transition: all 0.3s ease-out;
+  transition: all $cubic;
 }
+
+
+.active-dark-theme .service-buildings__item .buildings__icon-wrap {
+  background-color: $first-additional-bg-color;
+    border: 2px solid $card-hover-effect-color;
+}
+
 
 .service-buildings__item .buildings__icon-wrap:after {
   content: "";

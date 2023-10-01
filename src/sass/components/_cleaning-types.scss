@@ -50,7 +50,7 @@
 }
 
 .active-dark-theme .block {
-  background-color: $dark-add-color;
+  // background-color: $dark-add-color;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -191,6 +191,7 @@ text-align: justify;
 }
 
 .toolkit__icon {
+  fill: $main-accent-color;
   width: 13px;
   height: 13px;
   z-index: 2;
