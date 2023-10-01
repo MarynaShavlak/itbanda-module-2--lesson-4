@@ -2,11 +2,66 @@ import { resetLocalStorage } from './local-storage';
 import { setTheme, THEMES, applyTheme } from './theme-toggler';
 import { getThemeTogglerElements } from './get-elements';
 
+const navLinkSelector = '.nav__link';
+const asideNavLinkSelector = '.nav--aside-menu .nav__link';
+const officeNavLinkSelector = '.nav__list .nav__item:nth-child(2) .nav__link';
+const officeAsideNavLinkSelector =
+  '.nav--aside-menu  .nav__list .nav__item:nth-child(2) .nav__link';
+const addServicesListItemSelector = '.add-services-list__item:nth-child(n+3)';
+
+const indexURL = 'index.html#order-cleaning-block';
+const officeURL = 'office.html#office-calc-block';
+const afterRepairURL = 'after-repair.html#office-calc-block';
+
+const flexBasisOneThird = 'calc(100% / 3)';
+const flexBasisHalf = 'calc(100% / 2)';
+
+const pages = {
+  home: ['/', '/index.html'], // ['/cleaning/', '/cleaning/index.html']
+  office: ['/office.html'], // ['/cleaning/office.html'']
+  afterRepair: ['/cleaning/after-repair.html'],
+  calcOrder: ['/cleaning/calc-order.html'],
+  contacts: ['/cleaning/contacts.html'],
+  successOr404: ['/cleaning/success-order.html', '/cleaning/404.html'],
+};
+
+const pageActions = {
+  home: () => {
+    setCurrentNavLinks([navLinkSelector, asideNavLinkSelector]);
+    updateDynamicLinks(indexURL);
+  },
+  office: () => {
+    setCurrentNavLinks([officeNavLinkSelector, officeAsideNavLinkSelector]);
+    updateDynamicLinks(officeURL);
+    setBuildingsFlexBasis(flexBasisOneThird);
+    setOfficeBuildingsToggleMenu();
+  },
+  afterRepair: () => {
+    hideToggleMenu();
+    hideSelectedItems(addServicesListItemSelector);
+    updateDynamicLinks(afterRepairURL);
+  },
+  calcOrder: () => {
+    setBuildingsFlexBasis(flexBasisHalf);
+    addWhiteBackground();
+    setCalculatorBuildingsToggleMenu();
+  },
+  contacts: () => {
+    modifyContactPage();
+    modifyMainSection();
+  },
+  successOr404: () => {
+    modifyMainSection();
+    window.addEventListener('beforeunload', function () {
+      resetLocalStorage('userOrderDataObj');
+    });
+  },
+};
+
 document.addEventListener('DOMContentLoaded', function () {
   const currentPage = window.location.pathname;
   const bodyEl = document.querySelector('body');
   const { themeToggler } = getThemeTogglerElements();
-
   themeToggler.addEventListener('click', () => {
     setTheme(
       bodyEl.classList.contains('active-dark-theme')
@@ -16,33 +71,11 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   applyTheme();
 
-  if (currentPage === '/cleaning/' || currentPage === '/cleaning/index.html') {
-    setCurrentNavLink('.nav__link');
-    updateDynamicLinks('index.html#order-cleaning-block');
-  } else if (currentPage === '/cleaning/office.html') {
-    setCurrentNavLink('.nav__list .nav__item:nth-child(2) .nav__link');
-    updateDynamicLinks('office.html#office-calc-block');
-    setBuildingsFlexBasis('.buildings__element', 'calc(100% / 3)');
-    setOfficeBuildingsToggleMenu();
-  } else if (currentPage === '/cleaning/after-repair.html') {
-    hideBuildingsToggleMenu();
-    hideSelectedItems('.add-services-list__item:nth-child(n+3)');
-    updateDynamicLinks('after-repair.html#office-calc-block');
-  } else if (currentPage === '/cleaning/calc-order.html') {
-    setBuildingsFlexBasis('.buildings__element', 'calc(100% / 2)');
-    addWhiteBackground('.block');
-    setCalculatorBuildingsToggleMenu();
-  } else if (currentPage === '/cleaning/contacts.html') {
-    modifyContactPage();
-    modifyMainSection();
-  } else if (
-    currentPage === '/cleaning/success-order.html' ||
-    currentPage === '/cleaning/404.html'
-  ) {
-    modifyMainSection();
-    window.addEventListener('beforeunload', function () {
-      resetLocalStorage('userOrderDataObj');
-    });
+  const action = Object.keys(pageActions).find(page =>
+    pages[page].includes(currentPage)
+  );
+  if (action) {
+    pageActions[action]();
   }
 });
 
@@ -56,16 +89,19 @@ function hideSelectedItems(selector) {
   items.forEach(item => item.classList.add('isHidden'));
 }
 
-function addWhiteBackground(selector) {
-  const items = document.querySelectorAll(selector);
+function addWhiteBackground() {
+  const items = document.querySelectorAll('.block');
   items.forEach(item => item.classList.add('block--white'));
 }
 
-function setCurrentNavLink(selector) {
-  const currentNavLink = document.querySelector(selector);
-  if (currentNavLink) {
-    currentNavLink.classList.add('nav__link--current');
-  }
+function setCurrentNavLinks(selectors) {
+  selectors.forEach(selector => {
+    const currentNavLink = document.querySelector(selector);
+    console.log('currentNavLink: ', currentNavLink);
+    if (currentNavLink) {
+      currentNavLink.classList.add('nav__link--current');
+    }
+  });
 }
 
 function modifyContactPage() {
@@ -108,8 +144,8 @@ function setCalculatorBuildingsToggleMenu() {
   calculatorBuilding.classList.remove('isHidden');
 }
 
-function setBuildingsFlexBasis(selector, value) {
-  const buildingsElements = document.querySelectorAll(selector);
+function setBuildingsFlexBasis(value) {
+  const buildingsElements = document.querySelectorAll('.buildings__element');
   buildingsElements.forEach(item => (item.style.flexBasis = value));
 }
 
