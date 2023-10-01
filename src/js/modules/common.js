@@ -1,18 +1,20 @@
 import { resetLocalStorage } from './local-storage';
-const allowedPages = [
-  '/cleaning/',
-  '/cleaning/index.html',
-  '/cleaning/office.html',
-  '/cleaning/success-order.html',
-  '/cleaning/after-repair.html',
-  '/cleaning/calc-order.html',
-  '/cleaning/services.html',
-  '/cleaning/contacts.html',
-  '/cleaning/faq.html',
-];
+import { setTheme, THEMES, applyTheme } from './theme-toggler';
+import { getThemeTogglerElements } from './get-elements';
 
 document.addEventListener('DOMContentLoaded', function () {
   const currentPage = window.location.pathname;
+  const bodyEl = document.querySelector('body');
+  const { themeToggler } = getThemeTogglerElements();
+
+  themeToggler.addEventListener('click', () => {
+    setTheme(
+      bodyEl.classList.contains('active-dark-theme')
+        ? THEMES.LIGHT
+        : THEMES.DARK
+    );
+  });
+  applyTheme();
 
   if (currentPage === '/cleaning/' || currentPage === '/cleaning/index.html') {
     setCurrentNavLink('.nav__link');

@@ -68,3 +68,12 @@ export function getClosestTimePickerBlock(dateInput) {
     .closest('li')
     .nextElementSibling.querySelector('.shedule-wrap');
 }
+
+export function getThemeTogglerElements() {
+  const themeToggler = document.querySelector('.theme-toggler-wrap');
+  const themeCircle = document.querySelector('.theme__circle');
+  const sunRays = document.querySelectorAll('.circle__ray');
+  const sunIcon = document.querySelector('.circle__sun');
+  const moonIcon = document.querySelector('.circle__moon');
+  return { themeToggler, themeCircle, sunRays, sunIcon, moonIcon };
+}

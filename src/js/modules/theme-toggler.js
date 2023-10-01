@@ -1,19 +1,45 @@
-const themeToggler = document.querySelector('.theme-toggler-wrap');
-const themeCircle = document.querySelector('.theme__circle');
-const sunRays = document.querySelectorAll('.circle__ray');
-const sunIcon = document.querySelector('.circle__sun');
-const moonIcon = document.querySelector('.circle__moon');
-const bodyEl = document.querySelector('body');
-let currentTheme = 'light';
+import { getThemeTogglerElements } from './get-elements';
+import { getDataFromStorage, storeDataInLocalStorage } from './local-storage';
 
-themeToggler.addEventListener('click', () => {
-  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-  themeToggler.classList.toggle('theme-toggler-wrap--light');
-  themeToggler.classList.toggle('theme-toggler-wrap--dark');
-  themeCircle.classList.toggle('theme__circle--light');
-  themeCircle.classList.toggle('theme__circle--dark');
-  sunIcon.classList.toggle('circle__sun--hidden');
-  moonIcon.classList.toggle('circle__moon--hidden');
-  sunRays.forEach(el => el.classList.toggle('circle__ray--hidden'));
-  bodyEl.classList.toggle('active-dark-theme');
-});
+export const THEMES = {
+  LIGHT: 'light',
+  DARK: 'dark',
+};
+
+let currentTheme = getDataFromStorage('theme') || THEMES.LIGHT;
+
+export function setTheme(theme) {
+  currentTheme = theme;
+  storeDataInLocalStorage('theme', theme);
+  applyTheme();
+}
+
+export function toggleTheme() {
+  setTheme(currentTheme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT);
+}
+
+export function applyTheme() {
+  const { themeToggler, themeCircle, sunRays, sunIcon, moonIcon } =
+    getThemeTogglerElements();
+  const bodyEl = document.querySelector('body');
+
+  if (currentTheme === THEMES.DARK) {
+    bodyEl.classList.add('active-dark-theme');
+    themeToggler.classList.add('theme-toggler-wrap--dark');
+    themeToggler.classList.remove('theme-toggler-wrap--light');
+    themeCircle.classList.add('theme__circle--dark');
+    themeCircle.classList.remove('theme__circle--light');
+    sunIcon.classList.add('circle__sun--hidden');
+    moonIcon.classList.remove('circle__moon--hidden');
+    sunRays.forEach(el => el.classList.add('circle__ray--hidden'));
+  } else {
+    bodyEl.classList.remove('active-dark-theme');
+    themeToggler.classList.remove('theme-toggler-wrap--dark');
+    themeToggler.classList.add('theme-toggler-wrap--light');
+    themeCircle.classList.remove('theme__circle--dark');
+    themeCircle.classList.add('theme__circle--light');
+    sunIcon.classList.remove('circle__sun--hidden');
+    moonIcon.classList.add('circle__moon--hidden');
+    sunRays.forEach(el => el.classList.remove('circle__ray--hidden'));
+  }
+}
