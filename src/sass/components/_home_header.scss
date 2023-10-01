@@ -64,7 +64,7 @@ transition: fill $cubic;
   border-radius: 50px;
   transition: border $cubic;
   @media screen and (min-width: 768px) {
-      margin-left: 47px;
+      margin-left: 35px;
       margin-right: 0;
   }
  }
@@ -125,7 +125,7 @@ border: 2px solid $first-additional-bg-color;
 
  .active-dark-theme .nav__item--light {
   &:has(.nav__link--current) {
-    background-color: $dark-theme;
+    background-color: $first-additional-bg-color;
   }
   &:not(:has(.nav__link--current)):hover   {
     background-color: $first-additional-bg-color;
@@ -169,7 +169,7 @@ border: 2px solid $first-additional-bg-color;
  }
 
  .active-dark-theme .nav__link--light {
-  color: $primary-black-color;
+  color: $first-additional-bg-color;
  }
 
  .nav__link--current {
@@ -240,7 +240,7 @@ border: 2px solid $first-additional-bg-color;
 
 .contacts__socials {
     @media screen and (min-width: 768px) {
-        margin-left: 49px;
+        margin-left: 30px;
       }
       @media screen and (min-width: 1440px) {
         gap: 15px;

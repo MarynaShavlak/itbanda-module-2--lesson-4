@@ -3,7 +3,7 @@
   width: 80px;
   height: 60px;
   right: 10px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1440px) {
   right: 40px;
 
   width: 130px;
@@ -41,7 +41,7 @@
 .circle:nth-child(2) {
   top: 50%;
   right: 0;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1439px) {
       transform: translate(-18px, -50%);
     }
   transform: translate(-35px, -50%);
@@ -52,7 +52,7 @@
 .circle:nth-child(3) {
   top: 50%;
   right: 0;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1439px) {
       transform: translate(-18px, calc(-50% + 13px));
     }
   transform: translate(-18px, calc(-50% + 10px));
@@ -62,7 +62,7 @@
 .circle:nth-child(4) {
   top: 50%;
   right: 0;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1439px) {
       transform: translate(-37px, -50%);
     }
   transform: translate(-55px, -50%);
@@ -73,7 +73,7 @@
   animation-delay: 0.5s;
   top: 50%;
   right: 0;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1439px) {
       transform: translate(-55px, -50%);
     }
   transform: translate(-75px, -50%);
@@ -84,7 +84,7 @@
   right: 0;
   transform: translate(-95px, -50%);
   animation-delay: 0.3s;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1439px) {
       display: none;
     }
 }
@@ -94,7 +94,7 @@
   right: 0;
   transform: translate(-115px, -50%);
   animation-delay: 0.1s;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1439px) {
       display: none;
   }
 }
@@ -104,7 +104,7 @@
   top: 50%;
   right: 0;
   transform: translate(-35px, calc(-50% + 20px));
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1439px) {
       display: none;
     }
 }
@@ -114,7 +114,7 @@
   right: 0;
   transform: translate(-35px, calc(-50% - 20px));
   animation-delay: 0.9s;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1439px) {
       display: none;
     }
 }
@@ -122,7 +122,7 @@
 .circle:nth-child(10) {
   top: 50%;
   right: 0;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1439px) {
     transform: translate(-18px, calc(-50% - 13px));
   }
   transform: translate(-18px, calc(-50% - 10px));
