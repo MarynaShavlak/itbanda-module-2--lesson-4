@@ -86,122 +86,134 @@ user experience:
 
   ### Enhanced Time Selection with Schedule Integration ⏰:
 
-Our unique time picker mimics the design of a real clock, allowing users to
-effortlessly choose the time for their cleaning order. It integrates seamlessly
-with company's schedule, ensuring that users can only select hours that align
-with working hours. It ensure that all cleaning orders align with operational
-schedule, minimizing scheduling conflicts and improving overall
-efficiency.Customers will have confidence in service's reliability, knowing that
-their chosen cleaning time is within company's working hours, leading to higher
-satisfaction and trust.
+  Our unique time picker mimics the design of a real clock, allowing users to
+  effortlessly choose the time for their cleaning order. It integrates
+  seamlessly with company's schedule, ensuring that users can only select hours
+  that align with working hours. It ensure that all cleaning orders align with
+  operational schedule, minimizing scheduling conflicts and improving overall
+  efficiency.Customers will have confidence in service's reliability, knowing
+  that their chosen cleaning time is within company's working hours, leading to
+  higher satisfaction and trust.
 
-### Customized Cleaning Selection and Instant Cost Estimation 💼:
+  ### Customized Cleaning Selection and Instant Cost Estimation 💼:
 
-Users can effortlessly customize their cleaning preferences by specifying the
-type of cleaning, square footage, and selecting additional cleaning items along
-with quantities. Our real-time cost calculator not only provides clarity and
-satisfaction but also saves users time as they don't need external calculators.
-This high degree of customization, coupled with transparent cost estimation,
-fosters trust and confidence, significantly boosting user engagement and
-increasing the likelihood of successful bookings. This commitment to detail and
-customization underpins our dedication to delivering exceptional service.
+  Users can effortlessly customize their cleaning preferences by specifying the
+  type of cleaning, square footage, and selecting additional cleaning items
+  along with quantities. Our real-time cost calculator not only provides clarity
+  and satisfaction but also saves users time as they don't need external
+  calculators. This high degree of customization, coupled with transparent cost
+  estimation, fosters trust and confidence, significantly boosting user
+  engagement and increasing the likelihood of successful bookings. This
+  commitment to detail and customization underpins our dedication to delivering
+  exceptional service.
 
-### Customer Feedback Showcase 🌟:
+  ### Customer Feedback Showcase 🌟:
 
-Our visually engaging customer review section is more than just aesthetics; it
-spotlights client feedback and experiences. With convenient buttons, users can
-easily share their feedback on Google or Facebook, bolstering our online
-reputation and trust. It leverages social proof, showcasing client satisfaction
-and encouraging user-generated content. It's essential for building trust,
-attracting new clients, and maintaining an authentic online reputation.
+  Our visually engaging customer review section is more than just aesthetics; it
+  spotlights client feedback and experiences. With convenient buttons, users can
+  easily share their feedback on Google or Facebook, bolstering our online
+  reputation and trust. It leverages social proof, showcasing client
+  satisfaction and encouraging user-generated content. It's essential for
+  building trust, attracting new clients, and maintaining an authentic online
+  reputation.
 
-### Trust-Building Section 🤝:
+  ### Trust-Building Section 🤝:
 
-This section highlights our commitment to individualized, high-quality cleaning,
-professional equipment, safe cleaning products, and transparent pricing. It
-emphasizes our dedication to exceptional service and their satisfaction.
+  This section highlights our commitment to individualized, high-quality
+  cleaning, professional equipment, safe cleaning products, and transparent
+  pricing. It emphasizes our dedication to exceptional service and their
+  satisfaction.
 
-### Interactive Room Visualizations 🖼️:
+  ### Interactive Room Visualizations 🖼️:
 
-Users can toggle between kitchen, room, and bathroom photos, with animated
-tooltips visually displaying the available cleaning services and items for each
-room. It transforms website from a static list of services into an into an
-attractive and informative platform, making it easier for users to understand
-the scope of our services.
+  Users can toggle between kitchen, room, and bathroom photos, with animated
+  tooltips visually displaying the available cleaning services and items for
+  each room. It transforms website from a static list of services into an into
+  an attractive and informative platform, making it easier for users to
+  understand the scope of our services.
 
-### Streamlined Order Placement 🛒:
+  ### Streamlined Order Placement 🛒:
 
-Throughout our site, users will find order buttons that, when clicked, smoothly
-redirect them to the relevant form section. This intuitive feature eliminates
-the need for manual scrolling and searching, saving users valuable time. It
-optimizes the user experience, making it more efficient and user-friendly. By
-reducing friction in the order placement process, it encourages more users to
-take action, ultimately driving conversions and increasing customer
-satisfaction.
+  Throughout our site, users will find order buttons that, when clicked,
+  smoothly redirect them to the relevant form section. This intuitive feature
+  eliminates the need for manual scrolling and searching, saving users valuable
+  time. It optimizes the user experience, making it more efficient and
+  user-friendly. By reducing friction in the order placement process, it
+  encourages more users to take action, ultimately driving conversions and
+  increasing customer satisfaction.
 
-### Smooth Scroll to Top ⬆️:
+  ### Smooth Scroll to Top ⬆️:
 
-Our website features a custom animated arrow button. When clicked, it delivers a
-visually pleasing and smooth scrolling experience, swiftly guiding users back to
-the top of the site. This button's design is thoughtfully optimized for mobile
-devices, ensuring a seamless and engaging interaction. It enhances user
-navigation by providing a quick way to return to the top of the page, especially
-on long-scrolling pages. It improves overall user experience and ease of site
-exploration, making it a valuable addition to our project.
+  Our website features a custom animated arrow button. When clicked, it delivers
+  a visually pleasing and smooth scrolling experience, swiftly guiding users
+  back to the top of the site. This button's design is thoughtfully optimized
+  for mobile devices, ensuring a seamless and engaging interaction. It enhances
+  user navigation by providing a quick way to return to the top of the page,
+  especially on long-scrolling pages. It improves overall user experience and
+  ease of site exploration, making it a valuable addition to our project.
 
-### Error Notification and Field Validation ❌:
+  ### Error Notification and Field Validation ❌:
 
-In our order form, incomplete or missed information triggers clear, highlighted
-messages guiding users for a successful submission. This crucial feature reduces
-frustration, errors, and manual resolution efforts, ensuring a smooth, efficient
-user experience and improving overall satisfaction and order completion rates.
+  In our order form, incomplete or missed information triggers clear,
+  highlighted messages guiding users for a successful submission. This crucial
+  feature reduces frustration, errors, and manual resolution efforts, ensuring a
+  smooth, efficient user experience and improving overall satisfaction and order
+  completion rates.
 
-### Convenient Contact Accessibility 📞:
+  ### Convenient Contact Accessibility 📞:
 
-Vital contact information is readily available across our site, including the
-header and footer, aside-menu, modal windows, as well as within dedicated
-sections on home cleaning, office cleaning, post-construction, and services
-cleaning pages. We also offer a separate page solely for contact details,
-simplifying user access and eliminating any need for users to expend additional
-time and effort searching for this information. This ensures streamlined
-communication, builds trust, and enhances overall user experience, underlining
-our commitment to accessibility and transparency.
+  Vital contact information is readily available across our site, including the
+  header and footer, aside-menu, modal windows, as well as within dedicated
+  sections on home cleaning, office cleaning, post-construction, and services
+  cleaning pages. We also offer a separate page solely for contact details,
+  simplifying user access and eliminating any need for users to expend
+  additional time and effort searching for this information. This ensures
+  streamlined communication, builds trust, and enhances overall user experience,
+  underlining our commitment to accessibility and transparency.
 
-### Comprehensive Service Information ℹ️:
+  ### Comprehensive Service Information ℹ️:
 
-Our website features a dedicated page where users can easily access information
-about the types of cleaning territories and a detailed list of services,
-complete with images. It enhances user understanding and engagement. It provides
-a comprehensive visual guide to our cleaning offerings, making it easier for
-users to explore and select the services that best suit their needs. By
-presenting information in a clear and visual manner, it helps users make
-informed choices and boosts their confidence in our services.
+  Our website features a dedicated page where users can easily access
+  information about the types of cleaning territories and a detailed list of
+  services, complete with images. It enhances user understanding and engagement.
+  It provides a comprehensive visual guide to our cleaning offerings, making it
+  easier for users to explore and select the services that best suit their
+  needs. By presenting information in a clear and visual manner, it helps users
+  make informed choices and boosts their confidence in our services.
 
-### Custom 404 Error Page 🚧:
+  ### Custom 404 Error Page 🚧:
 
-Our project includes a custom-designed 404 error page that appears when users
-enter a non-existent URL. This page features a button that redirects users to
-the homepage. It ensures that even when users encounter a dead end, they have an
-easy way to navigate back to the homepage, reducing frustration and helping them
-continue their journey on our website. It also presents a professional and
-user-centric image for our project.
+  Our project includes a custom-designed 404 error page that appears when users
+  enter a non-existent URL. This page features a button that redirects users to
+  the homepage. It ensures that even when users encounter a dead end, they have
+  an easy way to navigate back to the homepage, reducing frustration and helping
+  them continue their journey on our website. It also presents a professional
+  and user-centric image for our project.
 
-### Order Success Confirmation Page ✅:
+  ### Order Success Confirmation Page ✅:
 
-We have implemented an Order Success Confirmation Page that users are redirected
-to after successfully completing an order form. On this page, users can review
-all the information they provided in their order, instilling confidence that
-their order was submitted accurately. Additionally, there's a button link that
-redirects users to the homepage. It enhances user trust and satisfaction. This
-assures users that their order details have been recorded correctly, minimizing
-any doubts or concerns. Moreover, the inclusion of a link to the homepage
-encourages users to explore further, potentially leading to additional
-engagement and conversions on our website.
+  We have implemented an Order Success Confirmation Page that users are
+  redirected to after successfully completing an order form. On this page, users
+  can review all the information they provided in their order, instilling
+  confidence that their order was submitted accurately. Additionally, there's a
+  button link that redirects users to the homepage. It enhances user trust and
+  satisfaction. This assures users that their order details have been recorded
+  correctly, minimizing any doubts or concerns. Moreover, the inclusion of a
+  link to the homepage encourages users to explore further, potentially leading
+  to additional engagement and conversions on our website.
 
-### Custom Attractive UI Effects ✨:
+  ### Custom Attractive UI Effects ✨:
 
-Feauture includes captivating hover animations for buttons, visually appealing
-animations for images and elements, dynamic background animations for banners,
-personalized card hover effects, and attention-grabbing blur animations for
-important elements.These effects captivate users, enhance aesthetics, reinforce
-branding, emphasize key elements, and set us apart in the market.
+  Feauture includes captivating hover animations for buttons, visually appealing
+  animations for images and elements, dynamic background animations for banners,
+  personalized card hover effects, and attention-grabbing blur animations for
+  important elements.These effects captivate users, enhance aesthetics,
+  reinforce branding, emphasize key elements, and set us apart in the market.
+
+  ### Dynamic Theme Toggle :bulb: :
+
+  This project boasts a dynamic theme toggler. Users can effortlessly switch
+  between light and dark themes, ensuring comfort and accessibility. This
+  feature reflects brand identity, showcases technological proficiency, and
+  ultimately enhances user satisfaction,contributig to the engagement
+  increasement , longer user sessions, and higher conversion rates.
