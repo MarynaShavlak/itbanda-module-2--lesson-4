@@ -17,8 +17,8 @@ const flexBasisOneThird = 'calc(100% / 3)';
 const flexBasisHalf = 'calc(100% / 2)';
 
 const pages = {
-  home: ['/', '/index.html'], // ['/cleaning/', '/cleaning/index.html']
-  office: ['/office.html'], // ['/cleaning/office.html'']
+  home: ['/cleaning/', '/cleaning/index.html'], // ['/', '/index.html'],
+  office: ['/cleaning/office.html'], // ['/office.html'],
   afterRepair: ['/cleaning/after-repair.html'],
   calcOrder: ['/cleaning/calc-order.html'],
   contacts: ['/cleaning/contacts.html'],
