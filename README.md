@@ -24,34 +24,44 @@ user experience:
   project, can be viewed
   **[here](<https://www.figma.com/file/GdyJeZESRhor68bOcivuVL/%D0%9C%D0%B0%D0%BA%D0%B5%D1%82-%D1%81%D0%B0%D0%B9%D1%82%D1%83-%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BD%D0%B3%D1%83-(%D1%80%D0%BE%D0%B7%D1%80%D0%BE%D0%B1%D0%BD%D0%B8%D0%BA%D1%83)?type=design&node-id=148-3087&mode=design&t=Nlzghjs2fvSgpCOJ-0>)**.
 
-- **HTML5** is used to structure the project interface, organizing content and
-  interactive elements for a solid user interface foundation.
-- **SCSS/SASS** is responsible for styling and enhancing the project visually,
-  with custom styles, animations, and responsive design techniques that ensure a
-  visually appealing and consistent user experience across different devices.
-- **CSS Grid Layout** was instrumental in creating an innovative and
-  aesthetically engaging layout for the reviews section. In this design, the
-  placement of reviews transcends conventional column and row arrangements,
-  adapting to the varying heights of individual blocks. It adds a distinctive
-  and visually appealing dimension to the section, enhancing its overall appeal
-  and user experience.
-- **JavaScript** powers every aspect of this project for a smooth user
-  experience. It handles the aside menu, room slider with tooltips, FAQ
-  accordion, modals, form data collection with error checking, custom calendar
-  and time picker, Google Maps location selection, item selection and quality
-  adjustment, and calculates the total cost of each user's cleaning order.
-- The **BEM methodology** organizes the codebase, making it more maintainable
-  and scalable by breaking down components into reusable building blocks. It
-  enhances code understanding, facilitates collaboration, and reduces
-  duplication.
-- **Git and GitHub** are used for version control, enabling efficient
-  collaboration, code sharing, and tracking of modifications. GitHub serves as a
-  centralized repository for storing the codebase, facilitating version control,
-  issue tracking, and collaboration among developers.
-- **Responsive design** ensures that the game adapts to different screen sizes
-  and devices. By utilizing CSS media queries and flexible layouts, it provides
-  an optimal user experience across various platforms, enhancing accessibility,
-  satisfaction, and engagement.
+- **HTML5** ![HTML5](https://img.shields.io/badge/HTML5-Used-orange) is used to
+  structure the project interface, organizing content and interactive elements
+  for a solid user interface foundation.
+- **SCSS/SASS** ![SCSS/SASS](https://img.shields.io/badge/SCSS%2FSASS-Used-pink)
+  is responsible for styling and enhancing the project visually, with custom
+  styles, animations, and responsive design techniques that ensure a visually
+  appealing and consistent user experience across different devices.
+- **CSS Grid Layout**
+  ![CSS Grid Layout](https://img.shields.io/badge/CSS%20Grid%20Layout-Used-blue)
+  was instrumental in creating an innovative and aesthetically engaging layout
+  for the reviews section. In this design, the placement of reviews transcends
+  conventional column and row arrangements, adapting to the varying heights of
+  individual blocks. It adds a distinctive and visually appealing dimension to
+  the section, enhancing its overall appeal and user experience.
+- **JavaScript**
+  ![JavaScript](https://img.shields.io/badge/JavaScript-Used-yellow) powers
+  every aspect of this project for a smooth user experience. It handles the
+  aside menu, room slider with tooltips, FAQ accordion, modals, form data
+  collection with error checking, custom calendar and time picker, Google Maps
+  location selection, item selection and quality adjustment, and calculates the
+  total cost of each user's cleaning order.
+- The **BEM methodology**
+  ![BEM Methodology](https://img.shields.io/badge/BEM%20Methodology-Used-purple)
+  organizes the codebase, making it more maintainable and scalable by breaking
+  down components into reusable building blocks. It enhances code understanding,
+  facilitates collaboration, and reduces duplication.
+- **Git and
+  GitHub**![Git and GitHub](https://img.shields.io/badge/Git%20and%20GitHub-Used-green)
+  are used for version control, enabling efficient collaboration, code sharing,
+  and tracking of modifications. GitHub serves as a centralized repository for
+  storing the codebase, facilitating version control, issue tracking, and
+  collaboration among developers.
+- **Responsive
+  design**![Responsive Design](https://img.shields.io/badge/Responsive%20Design-Implemented-blue)
+  ensures that the game adapts to different screen sizes and devices. By
+  utilizing CSS media queries and flexible layouts, it provides an optimal user
+  experience across various platforms, enhancing accessibility, satisfaction,
+  and engagement.
 
 ## :movie_camera: Visual Showcase
 
@@ -317,6 +327,13 @@ user sessions, and higher conversion rates.
   for one-time payments or subscriptions for regular cleaning services.
 - :man_office_worker: **Employee Scheduling System:** Create a scheduling system
   for cleaning staff to efficiently assign and manage cleaning appointments.
+
+  ## Acknowledgments
+
+  A special note of appreciation goes out to
+  [Body scroll lock](https://github.com/willmcpo/body-scroll-lock#readme) ffor
+  their exceptional contribution in effortlessly controlling and managing scroll
+  behavior.
 
 ## Conclusion
 
