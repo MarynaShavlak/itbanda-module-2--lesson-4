@@ -257,7 +257,7 @@ user sessions, and higher conversion rates.
 
 ## Screenshots
 
-<img src='/src/images/screens/2.jpg' width=200 height=300><img src='/src/images/screens/2.jpg' width=200 height=300>
+<img src='/src/images/screens/2.jpg' width=400 ><img src='/src/images/screens/2.jpg' width=400 >
 
 ## :hourglass:Future Enhancements
 
