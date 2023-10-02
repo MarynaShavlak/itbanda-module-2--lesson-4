@@ -8,7 +8,7 @@ estimate. Book your preferred date and time, share your location and key
 details, and we'll handle the rest. We'll reach out to you promptly for
 confirmation. At Comfort Group, cleanliness is just a click away!
 
-![](/src/images/preview.jpeg)
+![](/src/images/preview.jpg)
 
 ## :computer: Technologies Used
 
