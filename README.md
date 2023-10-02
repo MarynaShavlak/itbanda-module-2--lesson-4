@@ -255,13 +255,13 @@ reflects brand identity, showcases technological proficiency, and ultimately
 enhances user satisfaction,contributig to the engagement increasement , longer
 user sessions, and higher conversion rates.
 
-## Screenshots
+## 🖼️ Screenshots
 
-<img src='/src/images/screens/2.jpg' width=400 ><img src='/src/images/screens/9.jpg' width=400 >
+<img src='/src/images/screens/2.jpg' width=400 ><img src='/src/images/screens/6.jpg' width=400 >
 <img src='/src/images/screens/3.jpg' width=400 ><img src='/src/images/screens/4.jpg' width=400 >
 <img src='/src/images/screens/5.jpg' width=400 ><img src='/src/images/screens/1.jpg' width=400 >
 <img src='/src/images/screens/7.jpg' width=400 ><img src='/src/images/screens/8.jpg' width=400 >
-<img src='/src/images/screens/6.jpg' width=400 ><img src='/src/images/screens/10.jpg' width=400 >
+<img src='/src/images/screens/9.jpg' width=400 ><img src='/src/images/screens/10.jpg' width=400 >
 
 ## :hourglass:Future Enhancements
 
