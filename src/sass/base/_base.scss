@@ -22,9 +22,13 @@ body {
 main {
   flex-grow: 1;
   padding-top: 112px;
-  
+  background-color: $first-additional-bg-color;
 }
 
+
+.active-dark-theme main {
+  background-color: $dark-add-color;
+}
 h1,
 h2,
 h3,
