@@ -114,6 +114,25 @@ Start the server
 Here's an overview of the directory structure of the Comfort Group Cleaning
 Website project:
 
+cleaning/ ├── src/ # Source code and project assets │ ├── images/ # Images and
+graphics used in the project │ ├── scripts/ # JavaScript files │ │ ├──
+modules/ # Reusable JavaScript modules │ │ │ ├── module1.js # Example reusable
+module │ │ │ ├── module2.js # Another reusable module │ │ │ ├── ... │ │ ├──
+entry-scripts/ # Main JavaScript files for each entry HTML file │ │ │ ├──
+main-home.js # Main JavaScript for the home page │ │ │ ├── main-about.js # Main
+JavaScript for the about page │ │ │ ├── main-services.js # Main JavaScript for
+the services page │ │ │ ├── ... │ ├── styles/ # SCSS/SASS files │ │ ├── base/ #
+Base styles │ │ ├── utils/ # Utility styles │ │ ├── components/ #
+Component-specific styles │ │ ├── index.scss # Main SCSS/SASS file │ ├──
+pages/ # HTML pages │ │ ├── index.html # Home page │ │ ├── office.html # About
+page │ │ ├── services.html # Services page │ │ ├── contacts.html # Contact page
+│ │ ├── ... │ ├── partials/ # HTML partials for reuse │ │ ├── header.html #
+Example header partial │ │ ├── footer.html # Example footer partial │ │ ├── ...
+├── dist/ # Compiled and optimized project files (generated) ├── node_modules/ #
+Node.js modules and dependencies (generated) ├── .gitignore # Git ignore file
+├── package.json # Project dependencies and settings ├── README.md # Project
+README file ├── ...
+
 ## ⚙️ Features
 
 ### 🧹 Versatile Cleaning Services :
