@@ -62,20 +62,39 @@ min-width: 40px;
   width: 100%;
   border: none;
   border-collapse: separate;
-  border-spacing: 4px;
+ 
+border-spacing: 4px;
+  
+  
 }
 
 .calendar__day-name,
 .calendar td {
-  padding-top: 12px;
-  padding-bottom: 12px;
+
   text-align: center;
-  width:40px;
-  height:40px;
+  width: 35px;
+  height: 35px;
+  @media screen and (min-width: 768px) {
+  width: 40px;
+  height: 40px;
+    padding-top: 12px;
+      padding-bottom: 12px;
+  }
+
   border-radius: 50%;
   transition : color $cubic, background-color $cubic;
 }
 
+
+.calendar tr {
+  width: 33px;
+    height: 33px;
+  
+    @media screen and (min-width: 768px) {
+      width: 40px;
+      height: 40px;
+    }
+}
 
 .calendar td {
   cursor:pointer;
