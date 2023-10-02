@@ -110,38 +110,38 @@ Website project:
 
 ```
 cleaning/
-├── src/ # Source code and project assets
-│ ├── images/ # Images and graphics used in the project
-│ ├── scripts/ # JavaScript files
-│ │ ├── modules/ # Reusable JavaScript modules
-│ │ │ ├── module1.js # Example reusable module
-│ │ │ ├── module2.js # Another reusable module
+├── src/
+│ ├── images/
+│ ├── scripts/
+│ │ ├── modules/
+│ │ │ ├── module1.js
+│ │ │ ├── module2.js
 │ │ │ ├── ...
-│ │ ├── entry-scripts/ # Main JavaScript files for each entry HTML file
-│ │ │ ├── main-home.js # Main JavaScript for the home page
-│ │ │ ├── main-about.js # Main JavaScript for the office page
-│ │ │ ├── main-services.js # Main JavaScript for the services page
+│ │ ├── entry-scripts/
+│ │ │ ├── main-home.js
+│ │ │ ├── main-about.js
+│ │ │ ├── main-services.js
 │ │ │ ├── ...
-│ ├── styles/ # SCSS/SASS files
-│ │ ├── base/ # Base styles
-│ │ ├── utils/ # Utility styles
-│ │ ├── components/ # Component-specific styles
-│ │ ├── index.scss # Main SCSS/SASS file
-│ ├── pages/ # HTML pages
-│ │ ├── index.html # Home page
-│ │ ├── office.html # Office page
-│ │ ├── services.html # Services page
-│ │ ├── contacts.html # Contacts page
+│ ├── styles/
+│ │ ├── base/
+│ │ ├── utils/
+│ │ ├── components/
+│ │ ├── index.scss
+│ ├── pages/
+│ │ ├── index.html
+│ │ ├── office.html
+│ │ ├── services.html
+│ │ ├── contacts.html
 │ │ ├── ...
-│ ├── partials/ # HTML partials for reuse
-│ │ ├── header.html # Example header partial
-│ │ ├── footer.html # Example footer partial
+│ ├── partials/
+│ │ ├── header.html
+│ │ ├── footer.html
 │ │ ├── ...
 ├── dist/ # Compiled and optimized project files (generated)
 ├── node_modules/ # Node.js modules and dependencies (generated)
 ├── .gitignore # Git ignore file
-├── package.json # Project dependencies and settings
-├── README.md # Project README file
+├── package.json
+├── README.md
 ├── ...
 ```
 
