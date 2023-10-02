@@ -255,6 +255,11 @@ reflects brand identity, showcases technological proficiency, and ultimately
 enhances user satisfaction,contributig to the engagement increasement , longer
 user sessions, and higher conversion rates.
 
+## Screenshots
+
+![App Screenshot](/src/images/screens/1.jpg)
+![App Screenshot](/src/images/screens/2.jpg)
+
 ## :hourglass:Future Enhancements
 
 - :bookmark_tabs: **User Accounts and Profiles:** Allow users to create accounts
