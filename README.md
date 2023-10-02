@@ -17,7 +17,7 @@ user experience:
 
 - **Initial Design**: The initial design, which served as the foundation of our
   project, can be viewed
-  **[here]**(https://www.figma.com/file/GdyJeZESRhor68bOcivuVL/%D0%9C%D0%B0%D0%BA%D0%B5%D1%82-%D1%81%D0%B0%D0%B9%D1%82%D1%83-%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BD%D0%B3%D1%83-(%D1%80%D0%BE%D0%B7%D1%80%D0%BE%D0%B1%D0%BD%D0%B8%D0%BA%D1%83)?type=design&node-id=148-3087&mode=design&t=Nlzghjs2fvSgpCOJ-0).
+  **[here](https://www.figma.com/file/GdyJeZESRhor68bOcivuVL/%D0%9C%D0%B0%D0%BA%D0%B5%D1%82-%D1%81%D0%B0%D0%B9%D1%82%D1%83-%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BD%D0%B3%D1%83-(%D1%80%D0%BE%D0%B7%D1%80%D0%BE%D0%B1%D0%BD%D0%B8%D0%BA%D1%83)?type=design&node-id=148-3087&mode=design&t=Nlzghjs2fvSgpCOJ-0)**.
 
 - **HTML5** is used to structure the project interface, organizing content and
   interactive elements for a solid user interface foundation.
