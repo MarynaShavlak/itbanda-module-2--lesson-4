@@ -257,7 +257,17 @@ user sessions, and higher conversion rates.
 
 ## 🖼️ Screenshots
 
-<img src='/src/images/screens/2.jpg' width=400 ><img src='/src/images/screens/6.jpg' width=400 >
+<table>
+  <tr>
+    <td>Interactive Room Visualizations</td>
+     <td>Order Success Confirmation Page</td>
+  </tr>
+  <tr>
+    <td><img src='/src/images/screens/2.jpg' width=400 ></td>
+    <td><img src='/src/images/screens/6.jpg' width=400 ></td>
+  </tr>
+ </table>
+
 <img src='/src/images/screens/3.jpg' width=400 ><img src='/src/images/screens/4.jpg' width=400 >
 <img src='/src/images/screens/5.jpg' width=400 ><img src='/src/images/screens/1.jpg' width=400 >
 <img src='/src/images/screens/7.jpg' width=400 ><img src='/src/images/screens/8.jpg' width=400 >
