@@ -53,6 +53,10 @@ user experience:
   an optimal user experience across various platforms, enhancing accessibility,
   satisfaction, and engagement.
 
+  ## Visual Showcase
+
+   https://github.com/MarynaShavlak/cleaning/assets/111526360/5235c37e-97ee-4dac-838f-e7105b53535a
+
   ## ⚙️ Features
 
   ### Versatile Cleaning Services 🧹:
