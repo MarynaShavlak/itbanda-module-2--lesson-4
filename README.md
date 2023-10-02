@@ -57,181 +57,203 @@ user experience:
 
   https://github.com/MarynaShavlak/cleaning/assets/111526360/5235c37e-97ee-4dac-838f-e7105b53535a
 
-  ## ⚙️ Features
+## Run Locally
 
-  ### 🧹 Versatile Cleaning Services :
+Clone the project
 
-  Our cleaning company offers a diverse range of services catering not only to
-  residential spaces but also to offices, restaurants, shops, and
-  post-construction sites. This versatility makes our website valuable to a wide
-  array of clients with varying needs. Whether it's individuals seeking home
-  cleaning or larger businesses like shops and restaurants looking for regular
-  cleaning services, our platform accommodates them all, helping us build a
-  diverse clientele base.
+```bash
+  git clone https://github.com/MarynaShavlak/cleaning
+```
 
-  ### 📚 FAQ Accordion :
+Go to the project directory
 
-  Dynamic section efficiently addresses frequently asked questions, streamlining
-  our customer support efforts and making it easier for users to find the
-  information they need.
+```bash
+  cd cleaning
+```
 
-  ### 🗺️ Location Picker via Google Maps API :
+Install dependencies
 
-  Users can precisely mark their location for the service team, as well as
-  specify additional locations for key pick-up before cleaning and key return
-  after cleaning, if needed. It ensures a smooth and reliable cleaning process,
-  minimizing any inconvenience or security concerns associated with key
-  transfers, ultimately enhancing the overall customer experience.
+```bash
+  npm install
+```
 
-  ### 📍 Address with Interactive Map :
+Start the server
 
-  Clicking our address reveals an interactive map in a modal window, pinpointing
-  our office location. Users can open the full Google Maps interface in a new
-  tab for detailed directions. This enhances user convenience by offering a
-  clear visual representation of our office location. It simplifies the process
-  of finding our office, which is crucial for clients visiting us in person. It
-  demonstrates our commitment to transparency and accessibility, reinforcing
-  trust in our services.
+```bash
+  npm run start
+```
 
-  ### 📅 Custom Calendar with Date Blocking :
+## ⚙️ Features
 
-  Users can easily select their desired cleaning date from a visually appealing
-  calendar interface, with past dates intelligently blocked to streamline the
-  booking process.
+### 🧹 Versatile Cleaning Services :
 
-  ### ⏰ Enhanced Time Selection with Schedule Integration :
+Our cleaning company offers a diverse range of services catering not only to
+residential spaces but also to offices, restaurants, shops, and
+post-construction sites. This versatility makes our website valuable to a wide
+array of clients with varying needs. Whether it's individuals seeking home
+cleaning or larger businesses like shops and restaurants looking for regular
+cleaning services, our platform accommodates them all, helping us build a
+diverse clientele base.
 
-  Our unique time picker mimics the design of a real clock, allowing users to
-  effortlessly choose the time for their cleaning order. It integrates
-  seamlessly with company's schedule, ensuring that users can only select hours
-  that align with working hours. It ensure that all cleaning orders align with
-  operational schedule, minimizing scheduling conflicts and improving overall
-  efficiency.Customers will have confidence in service's reliability, knowing
-  that their chosen cleaning time is within company's working hours, leading to
-  higher satisfaction and trust.
+### 📚 FAQ Accordion :
 
-  ### 💼 Customized Cleaning Selection and Instant Cost Estimation :
+Dynamic section efficiently addresses frequently asked questions, streamlining
+our customer support efforts and making it easier for users to find the
+information they need.
 
-  Users can effortlessly customize their cleaning preferences by specifying the
-  type of cleaning, square footage, and selecting additional cleaning items
-  along with quantities. Our real-time cost calculator not only provides clarity
-  and satisfaction but also saves users time as they don't need external
-  calculators. This high degree of customization, coupled with transparent cost
-  estimation, fosters trust and confidence, significantly boosting user
-  engagement and increasing the likelihood of successful bookings. This
-  commitment to detail and customization underpins our dedication to delivering
-  exceptional service.
+### 🗺️ Location Picker via Google Maps API :
 
-  ### 🌟 Customer Feedback Showcase :
+Users can precisely mark their location for the service team, as well as specify
+additional locations for key pick-up before cleaning and key return after
+cleaning, if needed. It ensures a smooth and reliable cleaning process,
+minimizing any inconvenience or security concerns associated with key transfers,
+ultimately enhancing the overall customer experience.
 
-  Our visually engaging customer review section is more than just aesthetics; it
-  spotlights client feedback and experiences. With convenient buttons, users can
-  easily share their feedback on Google or Facebook, bolstering our online
-  reputation and trust. It leverages social proof, showcasing client
-  satisfaction and encouraging user-generated content. It's essential for
-  building trust, attracting new clients, and maintaining an authentic online
-  reputation.
+### 📍 Address with Interactive Map :
 
-  ### 🤝 Trust-Building Section :
+Clicking our address reveals an interactive map in a modal window, pinpointing
+our office location. Users can open the full Google Maps interface in a new tab
+for detailed directions. This enhances user convenience by offering a clear
+visual representation of our office location. It simplifies the process of
+finding our office, which is crucial for clients visiting us in person. It
+demonstrates our commitment to transparency and accessibility, reinforcing trust
+in our services.
 
-  This section highlights our commitment to individualized, high-quality
-  cleaning, professional equipment, safe cleaning products, and transparent
-  pricing. It emphasizes our dedication to exceptional service and their
-  satisfaction.
+### 📅 Custom Calendar with Date Blocking :
 
-  ### 🖼️ Interactive Room Visualizations :
+Users can easily select their desired cleaning date from a visually appealing
+calendar interface, with past dates intelligently blocked to streamline the
+booking process.
 
-  Users can toggle between kitchen, room, and bathroom photos, with animated
-  tooltips visually displaying the available cleaning services and items for
-  each room. It transforms website from a static list of services into an into
-  an attractive and informative platform, making it easier for users to
-  understand the scope of our services.
+### ⏰ Enhanced Time Selection with Schedule Integration :
 
-  ### 🛒 Streamlined Order Placement :
+Our unique time picker mimics the design of a real clock, allowing users to
+effortlessly choose the time for their cleaning order. It integrates seamlessly
+with company's schedule, ensuring that users can only select hours that align
+with working hours. It ensure that all cleaning orders align with operational
+schedule, minimizing scheduling conflicts and improving overall
+efficiency.Customers will have confidence in service's reliability, knowing that
+their chosen cleaning time is within company's working hours, leading to higher
+satisfaction and trust.
 
-  Throughout our site, users will find order buttons that, when clicked,
-  smoothly redirect them to the relevant form section. This intuitive feature
-  eliminates the need for manual scrolling and searching, saving users valuable
-  time. It optimizes the user experience, making it more efficient and
-  user-friendly. By reducing friction in the order placement process, it
-  encourages more users to take action, ultimately driving conversions and
-  increasing customer satisfaction.
+### 💼 Customized Cleaning Selection and Instant Cost Estimation :
 
-  ### ⬆️ Smooth Scroll to Top :
+Users can effortlessly customize their cleaning preferences by specifying the
+type of cleaning, square footage, and selecting additional cleaning items along
+with quantities. Our real-time cost calculator not only provides clarity and
+satisfaction but also saves users time as they don't need external calculators.
+This high degree of customization, coupled with transparent cost estimation,
+fosters trust and confidence, significantly boosting user engagement and
+increasing the likelihood of successful bookings. This commitment to detail and
+customization underpins our dedication to delivering exceptional service.
 
-  Our website features a custom animated arrow button. When clicked, it delivers
-  a visually pleasing and smooth scrolling experience, swiftly guiding users
-  back to the top of the site. This button's design is thoughtfully optimized
-  for mobile devices, ensuring a seamless and engaging interaction. It enhances
-  user navigation by providing a quick way to return to the top of the page,
-  especially on long-scrolling pages. It improves overall user experience and
-  ease of site exploration, making it a valuable addition to our project.
+### 🌟 Customer Feedback Showcase :
 
-  ### ❌ Error Notification and Field Validation:
+Our visually engaging customer review section is more than just aesthetics; it
+spotlights client feedback and experiences. With convenient buttons, users can
+easily share their feedback on Google or Facebook, bolstering our online
+reputation and trust. It leverages social proof, showcasing client satisfaction
+and encouraging user-generated content. It's essential for building trust,
+attracting new clients, and maintaining an authentic online reputation.
 
-  In our order form, incomplete or missed information triggers clear,
-  highlighted messages guiding users for a successful submission. This crucial
-  feature reduces frustration, errors, and manual resolution efforts, ensuring a
-  smooth, efficient user experience and improving overall satisfaction and order
-  completion rates.
+### 🤝 Trust-Building Section :
 
-  ### 📞 Convenient Contact Accessibility :
+This section highlights our commitment to individualized, high-quality cleaning,
+professional equipment, safe cleaning products, and transparent pricing. It
+emphasizes our dedication to exceptional service and their satisfaction.
 
-  Vital contact information is readily available across our site, including the
-  header and footer, aside-menu, modal windows, as well as within dedicated
-  sections on home cleaning, office cleaning, post-construction, and services
-  cleaning pages. We also offer a separate page solely for contact details,
-  simplifying user access and eliminating any need for users to expend
-  additional time and effort searching for this information. This ensures
-  streamlined communication, builds trust, and enhances overall user experience,
-  underlining our commitment to accessibility and transparency.
+### 🖼️ Interactive Room Visualizations :
 
-  ### ℹ️ Comprehensive Service Information :
+Users can toggle between kitchen, room, and bathroom photos, with animated
+tooltips visually displaying the available cleaning services and items for each
+room. It transforms website from a static list of services into an into an
+attractive and informative platform, making it easier for users to understand
+the scope of our services.
 
-  Our website features a dedicated page where users can easily access
-  information about the types of cleaning territories and a detailed list of
-  services, complete with images. It enhances user understanding and engagement.
-  It provides a comprehensive visual guide to our cleaning offerings, making it
-  easier for users to explore and select the services that best suit their
-  needs. By presenting information in a clear and visual manner, it helps users
-  make informed choices and boosts their confidence in our services.
+### 🛒 Streamlined Order Placement :
 
-  ### 🚧Custom 404 Error Page :
+Throughout our site, users will find order buttons that, when clicked, smoothly
+redirect them to the relevant form section. This intuitive feature eliminates
+the need for manual scrolling and searching, saving users valuable time. It
+optimizes the user experience, making it more efficient and user-friendly. By
+reducing friction in the order placement process, it encourages more users to
+take action, ultimately driving conversions and increasing customer
+satisfaction.
 
-  Our project includes a custom-designed 404 error page that appears when users
-  enter a non-existent URL. This page features a button that redirects users to
-  the homepage. It ensures that even when users encounter a dead end, they have
-  an easy way to navigate back to the homepage, reducing frustration and helping
-  them continue their journey on our website. It also presents a professional
-  and user-centric image for our project.
+### ⬆️ Smooth Scroll to Top :
 
-  ### ✅ Order Success Confirmation Page :
+Our website features a custom animated arrow button. When clicked, it delivers a
+visually pleasing and smooth scrolling experience, swiftly guiding users back to
+the top of the site. This button's design is thoughtfully optimized for mobile
+devices, ensuring a seamless and engaging interaction. It enhances user
+navigation by providing a quick way to return to the top of the page, especially
+on long-scrolling pages. It improves overall user experience and ease of site
+exploration, making it a valuable addition to our project.
 
-  We have implemented an Order Success Confirmation Page that users are
-  redirected to after successfully completing an order form. On this page, users
-  can review all the information they provided in their order, instilling
-  confidence that their order was submitted accurately. Additionally, there's a
-  button link that redirects users to the homepage. It enhances user trust and
-  satisfaction. This assures users that their order details have been recorded
-  correctly, minimizing any doubts or concerns. Moreover, the inclusion of a
-  link to the homepage encourages users to explore further, potentially leading
-  to additional engagement and conversions on our website.
+### ❌ Error Notification and Field Validation:
 
-  ### ✨ Custom Attractive UI Effects :
+In our order form, incomplete or missed information triggers clear, highlighted
+messages guiding users for a successful submission. This crucial feature reduces
+frustration, errors, and manual resolution efforts, ensuring a smooth, efficient
+user experience and improving overall satisfaction and order completion rates.
 
-  Feauture includes captivating hover animations for buttons, visually appealing
-  animations for images and elements, dynamic background animations for banners,
-  personalized card hover effects, and attention-grabbing blur animations for
-  important elements.These effects captivate users, enhance aesthetics,
-  reinforce branding, emphasize key elements, and set us apart in the market.
+### 📞 Convenient Contact Accessibility :
 
-  ### :bulb: Dynamic Theme Toggle :
+Vital contact information is readily available across our site, including the
+header and footer, aside-menu, modal windows, as well as within dedicated
+sections on home cleaning, office cleaning, post-construction, and services
+cleaning pages. We also offer a separate page solely for contact details,
+simplifying user access and eliminating any need for users to expend additional
+time and effort searching for this information. This ensures streamlined
+communication, builds trust, and enhances overall user experience, underlining
+our commitment to accessibility and transparency.
 
-  This project boasts a dynamic theme toggler. Users can effortlessly switch
-  between light and dark themes, ensuring comfort and accessibility. This
-  feature reflects brand identity, showcases technological proficiency, and
-  ultimately enhances user satisfaction,contributig to the engagement
-  increasement , longer user sessions, and higher conversion rates.
+### ℹ️ Comprehensive Service Information :
+
+Our website features a dedicated page where users can easily access information
+about the types of cleaning territories and a detailed list of services,
+complete with images. It enhances user understanding and engagement. It provides
+a comprehensive visual guide to our cleaning offerings, making it easier for
+users to explore and select the services that best suit their needs. By
+presenting information in a clear and visual manner, it helps users make
+informed choices and boosts their confidence in our services.
+
+### 🚧Custom 404 Error Page :
+
+Our project includes a custom-designed 404 error page that appears when users
+enter a non-existent URL. This page features a button that redirects users to
+the homepage. It ensures that even when users encounter a dead end, they have an
+easy way to navigate back to the homepage, reducing frustration and helping them
+continue their journey on our website. It also presents a professional and
+user-centric image for our project.
+
+### ✅ Order Success Confirmation Page :
+
+We have implemented an Order Success Confirmation Page that users are redirected
+to after successfully completing an order form. On this page, users can review
+all the information they provided in their order, instilling confidence that
+their order was submitted accurately. Additionally, there's a button link that
+redirects users to the homepage. It enhances user trust and satisfaction. This
+assures users that their order details have been recorded correctly, minimizing
+any doubts or concerns. Moreover, the inclusion of a link to the homepage
+encourages users to explore further, potentially leading to additional
+engagement and conversions on our website.
+
+### ✨ Custom Attractive UI Effects :
+
+Feauture includes captivating hover animations for buttons, visually appealing
+animations for images and elements, dynamic background animations for banners,
+personalized card hover effects, and attention-grabbing blur animations for
+important elements.These effects captivate users, enhance aesthetics, reinforce
+branding, emphasize key elements, and set us apart in the market.
+
+### :bulb: Dynamic Theme Toggle :
+
+This project boasts a dynamic theme toggler. Users can effortlessly switch
+between light and dark themes, ensuring comfort and accessibility. This feature
+reflects brand identity, showcases technological proficiency, and ultimately
+enhances user satisfaction,contributig to the engagement increasement , longer
+user sessions, and higher conversion rates.
 
 ## :hourglass:Future Enhancements
 
