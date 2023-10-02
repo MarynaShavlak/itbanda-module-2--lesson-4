@@ -20,7 +20,7 @@ const pages = {
   home: ['/cleaning/', '/cleaning/index.html'], // ['/', '/index.html'],
   office: ['/cleaning/office.html'], // ['/office.html'],
   afterRepair: ['/cleaning/after-repair.html'],
-  calcOrder: ['/cleaning/calc-order.html'],
+  calcOrder: ['/calc-order.html'], //['/cleaning/calc-order.html'],
   contacts: ['/cleaning/contacts.html'],
   successOr404: ['/cleaning/success-order.html', '/cleaning/404.html'],
 };
@@ -37,11 +37,12 @@ const pageActions = {
     setOfficeBuildingsToggleMenu();
   },
   afterRepair: () => {
-    hideToggleMenu();
+    hideBuildingsToggleMenu();
     hideSelectedItems(addServicesListItemSelector);
     updateDynamicLinks(afterRepairURL);
   },
   calcOrder: () => {
+    setFooterStyle();
     setBuildingsFlexBasis(flexBasisHalf);
     addWhiteBackground();
     setCalculatorBuildingsToggleMenu();
@@ -92,6 +93,15 @@ function hideSelectedItems(selector) {
 function addWhiteBackground() {
   const items = document.querySelectorAll('.block');
   items.forEach(item => item.classList.add('block--white'));
+}
+
+function setFooterStyle() {
+  const footer = document.querySelector('.footer');
+  footer.classList.add('footer--calc-order');
+  // const isDarkTheme = document.querySelector('body').classList.contains('active-dark-theme');
+  // if () {
+
+  // }
 }
 
 function setCurrentNavLinks(selectors) {

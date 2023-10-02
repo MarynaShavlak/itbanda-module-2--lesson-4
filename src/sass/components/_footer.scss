@@ -2,9 +2,18 @@
   background-color: $first-additional-bg-color;
   z-index: 3;
 }
+.footer.footer--calc-order {
+  background-color: $primary-white-color;
+}
+
+
+
 
 .active-dark-theme .footer {
   background-color: $dark-add-color;
+}
+.active-dark-theme .footer.footer--calc-order {
+  background-color: $dark-add-4-color;
 }
 
 .footer__wrap {
