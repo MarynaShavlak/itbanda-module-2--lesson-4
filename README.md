@@ -55,11 +55,11 @@ user experience:
 
   ## :movie_camera: Visual Showcase
 
-   https://github.com/MarynaShavlak/cleaning/assets/111526360/5235c37e-97ee-4dac-838f-e7105b53535a
+  https://github.com/MarynaShavlak/cleaning/assets/111526360/5235c37e-97ee-4dac-838f-e7105b53535a
 
   ## ⚙️ Features
 
-  ### Versatile Cleaning Services 🧹:
+  ### 🧹 Versatile Cleaning Services :
 
   Our cleaning company offers a diverse range of services catering not only to
   residential spaces but also to offices, restaurants, shops, and
@@ -69,13 +69,13 @@ user experience:
   cleaning services, our platform accommodates them all, helping us build a
   diverse clientele base.
 
-  ### FAQ Accordion 📚:
+  ### 📚 FAQ Accordion :
 
   Dynamic section efficiently addresses frequently asked questions, streamlining
   our customer support efforts and making it easier for users to find the
   information they need.
 
-  ### Location Picker via Google Maps API 🗺️:
+  ### 🗺️ Location Picker via Google Maps API :
 
   Users can precisely mark their location for the service team, as well as
   specify additional locations for key pick-up before cleaning and key return
@@ -83,7 +83,7 @@ user experience:
   minimizing any inconvenience or security concerns associated with key
   transfers, ultimately enhancing the overall customer experience.
 
-  ### Address with Interactive Map 📍:
+  ### 📍 Address with Interactive Map :
 
   Clicking our address reveals an interactive map in a modal window, pinpointing
   our office location. Users can open the full Google Maps interface in a new
@@ -93,13 +93,13 @@ user experience:
   demonstrates our commitment to transparency and accessibility, reinforcing
   trust in our services.
 
-  ### Custom Calendar with Date Blocking 📅:
+  ### 📅 Custom Calendar with Date Blocking :
 
   Users can easily select their desired cleaning date from a visually appealing
   calendar interface, with past dates intelligently blocked to streamline the
   booking process.
 
-  ### Enhanced Time Selection with Schedule Integration ⏰:
+  ### ⏰ Enhanced Time Selection with Schedule Integration :
 
   Our unique time picker mimics the design of a real clock, allowing users to
   effortlessly choose the time for their cleaning order. It integrates
@@ -110,7 +110,7 @@ user experience:
   that their chosen cleaning time is within company's working hours, leading to
   higher satisfaction and trust.
 
-  ### Customized Cleaning Selection and Instant Cost Estimation 💼:
+  ### 💼 Customized Cleaning Selection and Instant Cost Estimation :
 
   Users can effortlessly customize their cleaning preferences by specifying the
   type of cleaning, square footage, and selecting additional cleaning items
@@ -122,7 +122,7 @@ user experience:
   commitment to detail and customization underpins our dedication to delivering
   exceptional service.
 
-  ### Customer Feedback Showcase 🌟:
+  ### 🌟 Customer Feedback Showcase :
 
   Our visually engaging customer review section is more than just aesthetics; it
   spotlights client feedback and experiences. With convenient buttons, users can
@@ -132,14 +132,14 @@ user experience:
   building trust, attracting new clients, and maintaining an authentic online
   reputation.
 
-  ### Trust-Building Section 🤝:
+  ### 🤝 Trust-Building Section :
 
   This section highlights our commitment to individualized, high-quality
   cleaning, professional equipment, safe cleaning products, and transparent
   pricing. It emphasizes our dedication to exceptional service and their
   satisfaction.
 
-  ### Interactive Room Visualizations 🖼️:
+  ### 🖼️ Interactive Room Visualizations :
 
   Users can toggle between kitchen, room, and bathroom photos, with animated
   tooltips visually displaying the available cleaning services and items for
@@ -147,7 +147,7 @@ user experience:
   an attractive and informative platform, making it easier for users to
   understand the scope of our services.
 
-  ### Streamlined Order Placement 🛒:
+  ### 🛒 Streamlined Order Placement :
 
   Throughout our site, users will find order buttons that, when clicked,
   smoothly redirect them to the relevant form section. This intuitive feature
@@ -157,7 +157,7 @@ user experience:
   encourages more users to take action, ultimately driving conversions and
   increasing customer satisfaction.
 
-  ### Smooth Scroll to Top ⬆️:
+  ### ⬆️ Smooth Scroll to Top :
 
   Our website features a custom animated arrow button. When clicked, it delivers
   a visually pleasing and smooth scrolling experience, swiftly guiding users
@@ -167,7 +167,7 @@ user experience:
   especially on long-scrolling pages. It improves overall user experience and
   ease of site exploration, making it a valuable addition to our project.
 
-  ### Error Notification and Field Validation ❌:
+  ### ❌ Error Notification and Field Validation:
 
   In our order form, incomplete or missed information triggers clear,
   highlighted messages guiding users for a successful submission. This crucial
@@ -175,7 +175,7 @@ user experience:
   smooth, efficient user experience and improving overall satisfaction and order
   completion rates.
 
-  ### Convenient Contact Accessibility 📞:
+  ### 📞 Convenient Contact Accessibility :
 
   Vital contact information is readily available across our site, including the
   header and footer, aside-menu, modal windows, as well as within dedicated
@@ -186,7 +186,7 @@ user experience:
   streamlined communication, builds trust, and enhances overall user experience,
   underlining our commitment to accessibility and transparency.
 
-  ### Comprehensive Service Information ℹ️:
+  ### ℹ️ Comprehensive Service Information :
 
   Our website features a dedicated page where users can easily access
   information about the types of cleaning territories and a detailed list of
@@ -196,7 +196,7 @@ user experience:
   needs. By presenting information in a clear and visual manner, it helps users
   make informed choices and boosts their confidence in our services.
 
-  ### Custom 404 Error Page 🚧:
+  ### 🚧Custom 404 Error Page :
 
   Our project includes a custom-designed 404 error page that appears when users
   enter a non-existent URL. This page features a button that redirects users to
@@ -205,7 +205,7 @@ user experience:
   them continue their journey on our website. It also presents a professional
   and user-centric image for our project.
 
-  ### Order Success Confirmation Page ✅:
+  ### ✅ Order Success Confirmation Page :
 
   We have implemented an Order Success Confirmation Page that users are
   redirected to after successfully completing an order form. On this page, users
@@ -217,7 +217,7 @@ user experience:
   link to the homepage encourages users to explore further, potentially leading
   to additional engagement and conversions on our website.
 
-  ### Custom Attractive UI Effects ✨:
+  ### ✨ Custom Attractive UI Effects :
 
   Feauture includes captivating hover animations for buttons, visually appealing
   animations for images and elements, dynamic background animations for banners,
@@ -225,7 +225,7 @@ user experience:
   important elements.These effects captivate users, enhance aesthetics,
   reinforce branding, emphasize key elements, and set us apart in the market.
 
-  ### Dynamic Theme Toggle :bulb: :
+  ### :bulb: Dynamic Theme Toggle :
 
   This project boasts a dynamic theme toggler. Users can effortlessly switch
   between light and dark themes, ensuring comfort and accessibility. This
