@@ -119,7 +119,7 @@ cleaning/
 │ │ │ ├── ...
 │ │ ├── entry-scripts/ # Main JavaScript files for each entry HTML file
 │ │ │ ├── main-home.js # Main JavaScript for the home page
-│ │ │ ├── main-about.js # Main JavaScript for the about page
+│ │ │ ├── main-about.js # Main JavaScript for the office page
 │ │ │ ├── main-services.js # Main JavaScript for the services page
 │ │ │ ├── ...
 │ ├── styles/ # SCSS/SASS files
@@ -129,9 +129,9 @@ cleaning/
 │ │ ├── index.scss # Main SCSS/SASS file
 │ ├── pages/ # HTML pages
 │ │ ├── index.html # Home page
-│ │ ├── office.html # About page
+│ │ ├── office.html # Office page
 │ │ ├── services.html # Services page
-│ │ ├── contacts.html # Contact page
+│ │ ├── contacts.html # Contacts page
 │ │ ├── ...
 │ ├── partials/ # HTML partials for reuse
 │ │ ├── header.html # Example header partial
