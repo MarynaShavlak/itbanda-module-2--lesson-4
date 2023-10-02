@@ -307,8 +307,6 @@ user sessions, and higher conversion rates.
   </tr>
  </table>
 
-<img src='/src/images/screens/9.jpg' width=400 ><img src='/src/images/screens/10.jpg' width=400 >
-
 ## :hourglass:Future Enhancements
 
 - :bookmark_tabs: **User Accounts and Profiles:** Allow users to create accounts
