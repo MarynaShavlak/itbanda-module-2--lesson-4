@@ -20,7 +20,7 @@ const pages = {
   home: ['/cleaning/', '/cleaning/index.html'], // ['/', '/index.html'],
   office: ['/cleaning/office.html'], // ['/office.html'],
   afterRepair: ['/cleaning/after-repair.html'],
-  calcOrder: ['/calc-order.html'], //['/cleaning/calc-order.html'],
+  calcOrder: ['/cleaning/calc-order.html'], //['/cleaning/calc-order.html'],
   contacts: ['/cleaning/contacts.html'],
   successOr404: ['/cleaning/success-order.html', '/cleaning/404.html'],
 };
@@ -98,16 +98,11 @@ function addWhiteBackground() {
 function setFooterStyle() {
   const footer = document.querySelector('.footer');
   footer.classList.add('footer--calc-order');
-  // const isDarkTheme = document.querySelector('body').classList.contains('active-dark-theme');
-  // if () {
-
-  // }
 }
 
 function setCurrentNavLinks(selectors) {
   selectors.forEach(selector => {
     const currentNavLink = document.querySelector(selector);
-    console.log('currentNavLink: ', currentNavLink);
     if (currentNavLink) {
       currentNavLink.classList.add('nav__link--current');
     }
