@@ -186,26 +186,40 @@ text-align: justify;
   overflow: hidden;
   position: relative;
   border-radius: 20px;
+  width: 335px;
+  height: 223px;
   
     @media screen and (min-width: 768px) {
+      width: 690px;
+      height: 459px;
       border-radius: 30px;
     }
-  width: 1160px;
-    height: 771px;
+    @media screen and (min-width: 1440px) {
+      width: 1160px;
+      height: 771px;
+    }
 }
+
+  
 
 .rooms__schema {
   position: relative;
   border-radius: 20px;
+  width: 335px;
+    height: 223px;
   @media screen and (min-width: 768px) {
+    width: 690px;
+      height: 459px;
     border-radius: 30px;
   }
   transition: transform $cubic;
     position: absolute;
     left: 0;
     top:0;
+  @media screen and (min-width: 1440px) {
     width: 1160px;
     height: 771px;
+  }
 }
 
 .rooms__schema--current {
