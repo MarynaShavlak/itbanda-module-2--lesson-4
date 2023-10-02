@@ -22,18 +22,21 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css"
     />
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+    <link rel="stylesheet" href="../styles/index.scss" />
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.png" />
   </head>
   <body>
     <include src="./partials/common/header.html"></include>
     <main>
-      <include src="./partials/success/success-hero.html"></include>
+      <include src="./partials/services/services-buildings.html"></include>
+      <include src="./partials/services/services-types.html"></include>
     </main>
     <include src="./partials/common/footer.html"></include>
     <include src="./partials/common/location-modal.html"></include>
+    <include src="./partials/common/support-modal.html"></include>
+    <include src="./partials/common/subscription-modal.html"></include>
     <include src="./partials/common/scroll-to-top.html"></include>
 
-    <script src="js/success-order.js" type="module"></script>
+    <script src="../scripts/services.js" type="module"></script>
   </body>
 </html>

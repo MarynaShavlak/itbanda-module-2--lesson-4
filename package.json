@@ -1,22 +1,19 @@
 {
-  "name": "parcel-project-template",
+  "name": "cleaning",
   "version": "2.0.0",
   "description": "",
   "homepage": "https://marynashavlak.github.io/cleaning/",
   "scripts": {
-    "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /cleaning/"
+    "start": "parcel src/pages/*.html",
+    "build": "parcel build src/pages/*.html --public-url /cleaning/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marynashavlak/cleaning.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Maryna Shavkak <shavlakmaryna@gmail.com>",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
-  },
   "dependencies": {
     "body-scroll-lock": "^4.0.0-beta.0",
     "modern-normalize": "^1.1.0"
@@ -30,15 +27,15 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "parcel": {
     "entryPoints": {
-      "index": "./src/js/index.js",
-      "office": "./src/js/office.js",
-      "after-repair": "./src/js/after-repair.js",
-      "calc-order": "./src/js/calc-order.js",
-      "services": "./src/js/services.js",
-      "faq": "./src/js/questions.js",
-      "contacts": "./src/js/contacts.js",
-      "error": "./src/js/error.js",
-      "success-order": "./src/js/success-order.js"
+      "index": "./src/scripts/index.js",
+      "office": "./src/scripts/office.js",
+      "after-repair": "./src/scripts/after-repair.js",
+      "calc-order": "./src/scripts/calc-order.js",
+      "services": "./src/scripts/services.js",
+      "faq": "./src/scripts/questions.js",
+      "contacts": "./src/scripts/contacts.js",
+      "error": "./src/scripts/error.js",
+      "success-order": "./src/scripts/success-order.js"
     },
     "outputDirectory": "./dist"
   }

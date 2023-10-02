@@ -92,6 +92,11 @@ Start the server
   npm run start
 ```
 
+## :file_folder: Project Structure
+
+Here's an overview of the directory structure of the Comfort Group Cleaning
+Website project:
+
 ## ⚙️ Features
 
 ### 🧹 Versatile Cleaning Services :
@@ -327,12 +332,12 @@ user sessions, and higher conversion rates.
 - :man_office_worker: **Employee Scheduling System:** Create a scheduling system
   for cleaning staff to efficiently assign and manage cleaning appointments.
 
-  ## Acknowledgments
+## :handshake: Acknowledgments
 
-  A special note of appreciation goes out to
-  [Body scroll lock](https://github.com/willmcpo/body-scroll-lock#readme) ffor
-  their exceptional contribution in effortlessly controlling and managing scroll
-  behavior.
+A special note of appreciation goes out to
+[Body scroll lock](https://github.com/willmcpo/body-scroll-lock#readme) for
+their exceptional contribution in effortlessly controlling and managing scroll
+behavior.
 
 ## Conclusion
 
