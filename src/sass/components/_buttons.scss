@@ -350,8 +350,6 @@ padding: 17px 25px;
 }
 
 
-
-
 .blob-btn:hover:after {
   transition: all 0.3s;
   left: 0;
@@ -379,8 +377,24 @@ background-color: $second-additional-bg-color;
   position: relative;
   display: block;
   height: 100%;
-  filter: url('#goo');
 }
+@supports (filter: url('#goo')) {
+
+  [id^='goo'] {
+    filter: url('#goo');
+  }
+
+  .blob-btn__blob {
+    transform: translate3d(0, 150%, 0) scale(1.4);
+  }
+
+  .blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.4);
+  }
+}
+
+
+
 
 .blob-btn__blob {
   position: absolute;
@@ -397,12 +411,6 @@ background-color: $second-additional-bg-color;
   background: $main-accent-color;
 }
 
-
-@supports (filter: url('#goo')) {
-  .blob-btn__blob {
-    transform: translate3d(0, 150%, 0) scale(1.4);
-  }
-}
 
 .blob-btn__blob:nth-child(1) {
   left: 0;
@@ -426,12 +434,6 @@ background-color: $second-additional-bg-color;
 
 .blob-btn:hover .blob-btn__blob {
   transform: translateZ(0) scale(1.7);
-}
-
-@supports (filter: url('#goo')) {
-  .blob-btn:hover .blob-btn__blob {
-    transform: translateZ(0) scale(1.4);
-  }
 }
 
 
