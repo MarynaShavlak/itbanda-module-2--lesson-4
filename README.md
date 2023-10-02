@@ -8,6 +8,8 @@ estimate. Book your preferred date and time, share your location and key
 details, and we'll handle the rest. We'll reach out to you promptly for
 confirmation. At Comfort Group, cleanliness is just a click away!
 
+![](https://github.com/MarynaShavlak/cleaning/src/images/preview.jpeg)
+
 ## :computer: Technologies Used
 
 Cleaning Website is built using a variety of technologies to ensure a seamless
