@@ -229,7 +229,7 @@ user experience:
 - **Employee Scheduling System :man_office_worker:** Create a scheduling system
   for cleaning staff to efficiently assign and manage cleaning appointments.
 
-## Future Enhancements
+## Conclusion
 
 Comfort Group's cleaning company website is a testament to innovation and
 user-centered design. By leveraging a variety of technologies and implementing a
