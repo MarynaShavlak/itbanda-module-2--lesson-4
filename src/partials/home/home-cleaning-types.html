@@ -4,11 +4,13 @@
     <include src="./partials/common/month-subscr-types.html"></include>
     <div class="rooms__wrapper">
       <ul class="rooms-toggle">
-        <li class="rooms__item  rooms__item--current" id="room-1">Кухня</li>
-        <li class="rooms__item " id="room-2">Кімнати</li>
+        <li class="rooms__item  rooms__item--current right"  id="room-1" >Кухня</li>
+        <li class="rooms__item" id="room-2" class="left">Кімнати</li>
         <li class="rooms__item " id="room-3">Санвузол</li>
     </ul>
-    <div class="rooms__schema schema--kitchen rooms__schema--current">
+    <div class="slider__wrap ">
+      
+      <div class="rooms__schema schema--kitchen rooms__schema--current">
       <picture class="rooms__image">
               <source
                 srcset="
@@ -82,8 +84,8 @@
               </svg>
         </button>
       </div>
-    </div>
-    <div class="rooms__schema schema--room">
+      </div>
+      <div class="rooms__schema schema--room rooms__schema--next">
       <picture class="rooms__image">
               <source
                 srcset="
@@ -175,8 +177,8 @@
               </svg>
         </button>
       </div>
-    </div>
-    <div class="rooms__schema schema--bath">
+      </div>
+      <div class="rooms__schema schema--bath rooms__schema--prev">
       <picture class="rooms__image">
               <source
                 srcset="
@@ -260,7 +262,9 @@
         </button>
       </div>
 
-    </div>
+      </div>
+  </div>
+    
    
 
     </div>

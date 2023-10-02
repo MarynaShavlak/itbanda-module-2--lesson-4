@@ -182,13 +182,44 @@ text-align: justify;
   color: $primary-white-color;
 }
 
+.slider__wrap {
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  
+    @media screen and (min-width: 768px) {
+      border-radius: 30px;
+    }
+  width: 1160px;
+    height: 771px;
+}
+
 .rooms__schema {
   position: relative;
   border-radius: 20px;
   @media screen and (min-width: 768px) {
     border-radius: 30px;
   }
+  transition: transform $cubic;
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 1160px;
+    height: 771px;
 }
+
+.rooms__schema--current {
+  transform: translateX(0);
+}
+.rooms__schema--next {
+  transform: translate(100%) ;
+}
+.rooms__schema--prev {
+  transform: translate(-100%) ;
+}
+
+
+
 
 .toolkit__icon {
   fill: $main-accent-color;
@@ -233,11 +264,6 @@ text-align: justify;
   left:50%;
   transform: translate(-50%,100%);
 }
-
-
-
-
-
 
 
 .toolkit__desc {
@@ -403,16 +429,16 @@ text-align: justify;
   }
  }
 
- .schema--room {
-  display: none;
- }
- .schema--bath {
-  display: none;
- }
+//  .schema--room {
+//   display: none;
+//  }
+//  .schema--bath {
+//   display: none;
+//  }
 
- .rooms__schema--current {
-  display: block;
- }
+//  .rooms__schema--current {
+//   display: block;
+//  }
 
 
  .schema--room .wrapper--first {
@@ -673,4 +699,5 @@ text-align: justify;
         right: 230px;
       }
  }
+
 
