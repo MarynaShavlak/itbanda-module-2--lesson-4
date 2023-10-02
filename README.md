@@ -235,13 +235,13 @@ user experience:
 
 ## :hourglass:Future Enhancements
 
-- **User Accounts and Profiles :bookmark_tabs:** Allow users to create accounts
+- :bookmark_tabs: **User Accounts and Profiles:** Allow users to create accounts
   and profiles where they can save their preferences, booking history, and
   payment information for a smoother booking experience in the future..
-- **Payment Integration :credit_card:::** Integrate a secure payment gateway to
+- :credit_card: **Payment Integration** Integrate a secure payment gateway to
   allow users to make payments directly on website. This could include options
   for one-time payments or subscriptions for regular cleaning services.
-- **Employee Scheduling System :man_office_worker:** Create a scheduling system
+- :man_office_worker: **Employee Scheduling System:** Create a scheduling system
   for cleaning staff to efficiently assign and manage cleaning appointments.
 
 ## Conclusion
