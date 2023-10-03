@@ -1,5 +1,10 @@
-import { resetErrors } from './user-order-form';
-import { subscForm } from './user-order-form';
+import {} from './user-order-form';
+import {
+  resetErrors,
+  subscForm,
+  hidePolicyError,
+  hidePaymentTypeError,
+} from './user-order-form';
 
 export function initializeModal(refs) {
   refs.openModalBtn?.addEventListener('click', () => toggleModal(refs));
@@ -17,5 +22,9 @@ export function initializeModal(refs) {
 export function toggleModal(refs) {
   document.body.classList.toggle(`${refs.name}-modal-open`);
   refs.modal?.classList.toggle('backdrop--hidden');
-  if (refs.name === 'subscription') resetErrors(subscForm?.elements);
+  if (refs.name === 'subscription') {
+    resetErrors(subscForm?.elements);
+    hidePaymentTypeError();
+    hidePolicyError();
+  }
 }

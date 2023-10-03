@@ -9,9 +9,30 @@ import {
 export const subscForm = document.querySelector('.subscr__form');
 const paymentBtnList = document.querySelectorAll('.payment__btn');
 const paymentErrorMessage = document.querySelector('.form__payment-error-text');
-const policyErrorMessage = document.querySelector('.form__policy-error-text');
 const formInputList = document.querySelectorAll('.form__input');
 const makeOrderBtn = document.querySelector('.calc-btn');
+const policyCheckBox = document.querySelector('[name="studio-policy-check"]');
+const observer = new MutationObserver((mutationsList, observer) => {
+  mutationsList.forEach(mutation => {
+    if (
+      mutation.type === 'attributes' &&
+      mutation.attributeName === 'data-checked'
+    ) {
+      const isChecked = policyCheckBox.getAttribute('data-checked') === 'true';
+      hidePolicyError();
+    }
+  });
+});
+
+observer.observe(policyCheckBox, {
+  attributes: true,
+  attributeFilter: ['data-checked'],
+});
+
+policyCheckBox.addEventListener('change', () => {
+  policyCheckBox.setAttribute('data-checked', policyCheckBox.checked);
+});
+
 subscForm?.addEventListener('submit', onSubmitForm);
 makeOrderBtn?.addEventListener('click', e => {
   e.preventDefault();
@@ -21,13 +42,10 @@ makeOrderBtn?.addEventListener('click', e => {
 paymentBtnList.forEach(el => {
   el.addEventListener('click', e => {
     onPaymentTypeBtnClick(e);
-    const isPaymentErrorMessageVisible =
-      !paymentErrorMessage.classList.contains('isHidden');
-    if (isPaymentErrorMessageVisible) {
-      togglePaymentTypeErrorVisibility();
-    }
+    hidePaymentTypeError();
   });
 });
+
 formInputList.forEach(el => {
   el.addEventListener('focus', () => {
     el.classList.remove('error');
@@ -106,15 +124,38 @@ function checkIfPaymentTypeChosen() {
 function checkIfPolicyAgreed() {
   const policyCheckBox = document.querySelector('[name="studio-policy-check"]');
   const isAgreed = policyCheckBox.checked;
+  console.log('isAgreed: ', isAgreed);
   return isAgreed;
 }
 
-function togglePaymentTypeErrorVisibility() {
+export function togglePaymentTypeErrorVisibility() {
+  const paymentErrorMessage = document.querySelector(
+    '.form__payment-error-text'
+  );
   paymentErrorMessage.classList.toggle('isHidden');
 }
 
-function togglePolicyErrorVisibility() {
-  policyErrorMessage.classList.toggle('isHidden');
+export function hidePaymentTypeError() {
+  const isPaymentErrorMessageVisible =
+    !paymentErrorMessage.classList.contains('isHidden');
+  if (isPaymentErrorMessageVisible) {
+    togglePaymentTypeErrorVisibility();
+  }
+}
+
+export function togglePolicyErrorVisibility() {
+  const policyErrorMessage = document.querySelector('.form__policy-error-text');
+  policyErrorMessage.classList.add('isHidden');
+  const isPolicyAgreed = checkIfPolicyAgreed();
+  if (!isPolicyAgreed) {
+    policyErrorMessage.classList.remove('isHidden');
+  }
+}
+
+export function hidePolicyError() {
+  const policyErrorMessage = document.querySelector('.form__policy-error-text');
+
+  policyErrorMessage.classList.add('isHidden');
 }
 
 function onSubmitForm(e) {
@@ -127,15 +168,12 @@ function onSubmitForm(e) {
   resetErrors(elements);
   addErrorClass(elementsWithErrors);
   const isPaymentTypeChosen = checkIfPaymentTypeChosen();
-  const isPolicyAgreed = checkIfPolicyAgreed();
   const isAnyError = elementsWithErrors.length > 0;
-
   if (!isPaymentTypeChosen) {
     togglePaymentTypeErrorVisibility();
   }
-  if (!isPolicyAgreed) {
-    togglePolicyErrorVisibility();
-  }
+  togglePolicyErrorVisibility();
+
   if (!isPaymentTypeChosen || isAnyError || !isPolicyAgreed) {
     return;
   }
@@ -147,6 +185,7 @@ function onSubmitForm(e) {
   storeDataInLocalStorage('userOrderDataObj', userOrderDataObj);
   resetFormFields(elements);
   resetChosenPaymentType();
+  observer.disconnect();
   if (!isComplexOrder) {
     toggleModal(refsSubscr);
   }
