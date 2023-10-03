@@ -139,14 +139,14 @@ transform: rotate(180deg);
   }
 
   25% {
-    color: $additional-accent-color;
+    color: $error-color;
   }
 
   50% {
     color: $main-accent-color;
   }
   75% {
-    color: $additional-accent-color
+    color: $error-color;
   }
 
   100% {

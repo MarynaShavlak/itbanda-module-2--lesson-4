@@ -12,26 +12,31 @@ const paymentErrorMessage = document.querySelector('.form__payment-error-text');
 const formInputList = document.querySelectorAll('.form__input');
 const makeOrderBtn = document.querySelector('.calc-btn');
 const policyCheckBox = document.querySelector('[name="studio-policy-check"]');
-const observer = new MutationObserver((mutationsList, observer) => {
-  mutationsList.forEach(mutation => {
-    if (
-      mutation.type === 'attributes' &&
-      mutation.attributeName === 'data-checked'
-    ) {
-      const isChecked = policyCheckBox.getAttribute('data-checked') === 'true';
-      hidePolicyError();
-    }
+
+if (policyCheckBox) {
+  const observer = new MutationObserver((mutationsList, observer) => {
+    console.log('mutationsList: ', mutationsList);
+    mutationsList.forEach(mutation => {
+      if (
+        mutation.type === 'attributes' &&
+        mutation.attributeName === 'data-checked'
+      ) {
+        const isChecked = policyCheckBox.getAttribute('data-checked') === 'true';
+        hidePolicyError();
+      }
+    });
   });
-});
 
-observer.observe(policyCheckBox, {
-  attributes: true,
-  attributeFilter: ['data-checked'],
-});
+  observer.observe(policyCheckBox, {
+    attributes: true,
+    attributeFilter: ['data-checked'],
+  });
 
-policyCheckBox.addEventListener('change', () => {
-  policyCheckBox.setAttribute('data-checked', policyCheckBox.checked);
-});
+  policyCheckBox.addEventListener('change', () => {
+    policyCheckBox.setAttribute('data-checked', policyCheckBox.checked);
+  });
+}
+
 
 subscForm?.addEventListener('submit', onSubmitForm);
 makeOrderBtn?.addEventListener('click', e => {

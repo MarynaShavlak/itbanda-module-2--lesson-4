@@ -266,7 +266,7 @@
 
 .hero__image {
   position: absolute;
-  background-image: url(../images/hero/hero_mobile.svg);
+  background-image: url(../images/hero/hero_mobile.png);
   background-repeat: no-repeat;
   width: 425px;
   height: 285px;
@@ -275,13 +275,13 @@
 
  
   @media screen and (min-width: 768px) {
-    background-image: url(../images/hero/hero_tablet.svg);
+    background-image: url(../images/hero/hero_tablet.png);
     width: 738px;
     height: 495px;
   }
      
    @media screen and (min-width: 1440px) {
-    background-image: url(../images/hero/hero.svg);
+    background-image: url(../images/hero/hero.png);
     width: 836px;
     height: 561px;
 

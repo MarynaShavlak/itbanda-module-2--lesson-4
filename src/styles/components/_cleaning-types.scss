@@ -112,7 +112,8 @@ text-align: justify;
 
 .block__remark {
   margin-top: auto;
-  color: $additional-text-color;
+  // color: $additional-text-color;
+  color: $btn-arrow-color;
   font-size: 14px;
   line-height: 1.36;
   @media screen and (min-width: 1440px) {
