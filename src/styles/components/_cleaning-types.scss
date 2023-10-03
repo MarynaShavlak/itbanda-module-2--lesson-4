@@ -50,7 +50,6 @@
 }
 
 .active-dark-theme .block {
-  // background-color: $dark-add-color;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -442,18 +441,6 @@ text-align: justify;
       right: 42px;
   }
  }
-
-//  .schema--room {
-//   display: none;
-//  }
-//  .schema--bath {
-//   display: none;
-//  }
-
-//  .rooms__schema--current {
-//   display: block;
-//  }
-
 
  .schema--room .wrapper--first {
    position: absolute;
