@@ -1,15 +1,17 @@
 # 🧹 Comfort Group: Your Convenient Cleaning Solution!
 
-![](https://img.shields.io/badge/Code-JavaScript-informational?style=flat&logo=JavaScript&color=F7DF1E)
-![](https://img.shields.io/badge/Code-HTML5-informational?style=flat&logo=HTML5&color=E34F26)
+## :fire: Project Overview
 
-![](https://img.shields.io/badge/Style-CSS3-informational?style=flat&logo=CSS3&color=1572B6)
-![](https://img.shields.io/badge/Style-CSS%20Grid%20Layout-informational?style=flat&logo=CSS3&color=1572B6)
+Comfort Group presents an innovative and user-friendly cleaning solution that
+simplifies and enhances the cleaning service experience. Our project, built
+using a combination of technologies and a range of features, aims to provide a
+hassle-free platform for users to access top-quality cleaning services. Our
+project's **primary purpose** is to revolutionize the cleaning service industry
+by offering a convenient and efficient solution for users seeking cleaning
+services
 
-![](https://img.shields.io/badge/Tools-Figma-informational?style=flat&logo=Figma&color=F24E1E)
-![](https://img.shields.io/badge/Tools-NPM-informational?style=flat&logo=NPM&color=CB3837)
-![](https://img.shields.io/badge/Tools-Git-informational?style=flat&logo=Git&color=F05032)
-![](https://img.shields.io/badge/Tools-GitHub-informational?style=flat&logo=GitHub&color=181717)
+![](https://img.shields.io/badge/Code-JavaScript-informational?style=flat&logo=JavaScript&color=F7DF1E)![](https://img.shields.io/badge/Code-HTML5-informational?style=flat&logo=HTML5&color=E34F26)![](https://img.shields.io/badge/Style-CSS3-informational?style=flat&logo=CSS3&color=1572B6)![](https://img.shields.io/badge/Style-CSS%20Grid%20Layout-informational?style=flat&logo=CSS3&color=1572B6)![](https://img.shields.io/badge/Tools-Figma-informational?style=flat&logo=Figma&color=F24E1E)![](https://img.shields.io/badge/Tools-NPM-informational?style=flat&logo=NPM&color=CB3837)
+![](https://img.shields.io/badge/Tools-Git-informational?style=flat&logo=Git&color=F05032)![](https://img.shields.io/badge/Tools-GitHub-informational?style=flat&logo=GitHub&color=181717)
 
 ## 🔍 Introduction
 
@@ -369,7 +371,7 @@ user sessions, and higher conversion rates.
   </tr>
  </table>
 
-## :hourglass:Future Enhancements
+## :hourglass:Roadmap
 
 - :bookmark_tabs: **User Accounts and Profiles:** Allow users to create accounts
   and profiles where they can save their preferences, booking history, and
