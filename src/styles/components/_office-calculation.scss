@@ -44,6 +44,9 @@
     padding: 60px;
     margin-top: 72px;
     background-image: url('../images/banner/tablet/hand-with-phone@1x.png');
+    @supports (background-image: url('../images/banner/tablet/hand-with-phone@1x.webp')) {
+      background-image: url(../images/banner/tablet/hand-with-phone@1x.webp);
+    }
     background-size: 500px;
     background-position: right -50px bottom -135px;
     
@@ -51,18 +54,27 @@
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
         background-image: url('../images/banner/tablet/hand-with-phone@2x.png');
+        @supports (background-image: url('../images/banner/tablet/hand-with-phone@2x.webp')) {
+          background-image: url(../images/banner/tablet/hand-with-phone@2x.webp);
+        }
       }
   }
 
   @media screen and (min-width: 1440px) {
     margin-top: 116px;
     background-image: url('../images/banner/desktop/hand-with-phone@1x.png');
+    @supports (background-image: url('../images/banner/desktop/hand-with-phone@1x.webp')) {
+      background-image: url(../images/banner/desktop/hand-with-phone@1x.webp);
+    }
     background-size: 660px;
     background-position: right bottom -135px;
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
         background-image: url('../images/banner/desktop/hand-with-phone@2x.png');
+        @supports (background-image: url('../images/banner/desktop/hand-with-phone@2x.webp')) {
+          background-image: url(../images/banner/desktop/hand-with-phone@2x.webp);
+        }
       }
   }
 }
