@@ -149,6 +149,39 @@ cleaning/
 ├── ...
 ```
 
+## 🚀 Lighthouse Indicators
+
+Taking pride in maintaining top-notch performance, accessibility, best practices, and SEO on all website pages, a dedication to delivering an outstanding user experience is evident in the consistently high Lighthouse audit scores achieved.
+
+  ### Performance
+  The website pages consistently achieve high performance scores, ranging from 96 to 98, on Lighthouse audits. This indicates that the pages load swiftly and efficiently, providing users with a seamless and responsive experience.
+
+  ### Accessibility
+  Accessibility is a core aspect of the website's design, reflected in consistent scores of 100 on Lighthouse audits for all pages. These scores affirm a commitment to inclusivity, ensuring that individuals with disabilities can navigate and interact with the content with ease.
+
+  ### Best Practices
+  Adherence to best practices in web development is evident, as scores of 92 on Lighthouse audits are consistent for all pages. The website is built with clean and efficient code, guaranteeing a secure and reliable experience for users.
+
+  ### SEO (Search Engine Optimization)
+  Dedication to search engine optimization shines through in the Lighthouse scores, which consistently reach 100 on all pages. This signifies that the website is optimized to rank well on search engines, making it effortless for users to discover content and services.
+
+  ### Lighthouse Score Details
+  Here is a detailed breakdown of Lighthouse scores for each of our website's pages:
+
+  | Page                | Performance | Accessibility | Best Practices | SEO |
+  |---------------------|-------------|---------------|----------------|-----|
+  | Home Page           | 96          | 100           | 92             | 100 |
+  | Office Page         | 97          | 100           | 92             | 100 |
+  | After Repair Page   | 97          | 100           | 92             | 100 |
+  | Calculator Page     | 98          | 100           | 92             | 100 |
+  | Services            | 98          | 100           | 92             | 100 |
+  | Contacts            | 98          | 100           | 92             | 100 |
+  | FAQ                 | 98          | 100           | 92             | 100 |
+
+  *Note: Scores may vary slightly due to real-time updates and changes to the website.*
+
+  Committed to maintaining and enhancing these high standards, the goal is to ensure an exceptional experience for all users.
+
 ## ⚙️ Features
 
 ### 🧹 Versatile Cleaning Services :
