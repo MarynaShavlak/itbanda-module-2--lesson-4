@@ -469,11 +469,17 @@
     background-size: cover;
     background-position: top 50px right;
     background-image: url('../images/hero/office/desktop/office-cleaner@1x.png');
+    @supports (background-image: url('../images/hero/office/desktop/office-cleaner@1x.webp')) {
+      background-image: url(../images/hero/office/desktop/office-cleaner@1x.webp);
+    }
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       background-image: url('../images/hero/office/desktop/office-cleaner@2x.png');
+      @supports (background-image: url('../images/hero/office/desktop/office-cleaner@2x.webp')) {
+        background-image: url(../images/hero/office/desktop/office-cleaner@2x.webp);
+      }
     }
   }
 }

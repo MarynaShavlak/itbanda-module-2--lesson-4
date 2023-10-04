@@ -385,6 +385,11 @@
   background-image:
     url('../images/cleaning-package/tablet/boy@1x.png'),
     url('../images/cleaning-package/desktop/light.svg');
+    @supports (background-image: url('../images/cleaning-package/tablet/boy@1x.webp')) {
+      background-image:
+    url(../images/cleaning-package/tablet/boy@1x.webp),
+    url(../images/cleaning-package/desktop/light.svg);
+    }
 
   @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
@@ -392,6 +397,11 @@
     background-image:
       url('../images/cleaning-package/tablet/boy@2x.png'),
       url('../images/cleaning-package/desktop/light.svg');
+      @supports (background-image: url('../images/cleaning-package/tablet/boy@2x.webp')) {
+        background-image:
+      url(../images/cleaning-package/tablet/boy@2x.webp),
+      url(../images/cleaning-package/desktop/light.svg);
+      }
   }
 }
 

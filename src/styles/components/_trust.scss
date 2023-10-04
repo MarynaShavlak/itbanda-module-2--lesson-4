@@ -27,11 +27,17 @@
   width: 107px;
   height: 107px;
   background-image: url('../images/trust/washcloth_tablet@1x.png');
+  @supports (background-image: url('../images/trust/washcloth_tablet@1x.webp')) {
+    background-image: url(../images/trust/washcloth_tablet@1x.webp);
+  }
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       background-image: url('../images/trust/washcloth_tablet@2x.png');
       background-size: contain;
+      @supports (background-image: url('../images/trust/washcloth_tablet@2x.webp')) {
+        background-image: url(../images/trust/washcloth_tablet@2x.webp);
+      }
     }
 
   @media screen and (min-width: 768px) {
@@ -45,10 +51,16 @@
     width: 140px;
     height: 140px;
     background-image: url('../images/trust/washcloth@1x.png');
+    @supports (background-image: url('../images/trust/washcloth@1x.webp')) {
+      background-image: url(../images/trust/washcloth@1x.webp);
+    }
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
         background-image: url('../images/trust/washcloth@2x.png');
+        @supports (background-image: url('../images/trust/washcloth@2x.webp')) {
+          background-image: url(../images/trust/washcloth@2x.webp);
+        }
     }
   }
 }
@@ -62,11 +74,17 @@
   width: 110px;
   height: 110px;
   background-image: url('../images/trust/brush__mobile@1x.png');
+  @supports (background-image: url('../images/trust/brush__mobile@1x.webp')) {
+    background-image: url(../images/trust/brush__mobile@1x.webp);
+  }
 
   @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
     background-image: url('../images/trust/brush__mobile@2x.png');
+    @supports (background-image: url('../images/trust/brush__mobile@2x.webp')) {
+      background-image: url(../images/trust/brush__mobile@2x.webp);
+    }
     background-size: contain;
   }
 
@@ -76,14 +94,22 @@
     width: 134px;
     height: 134px;
     background-image: url('../images/trust/brush_tablet@1x.png');
+    @supports (background-image: url('../images/trust/brush_tablet@1x.webp')) {
+      background-image: url(../images/trust/brush_tablet@1x.webp);
+    }
     
       @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
         background-image: url('../images/trust/brush_tablet@2x.png');
         background-size: contain;
+        @supports (background-image: url('../images/trust/brush_tablet@2x.webp')) {
+          background-image: url(../images/trust/brush_tablet@2x.webp);
+        }
       }
-  }
+      }
+
+
 
   @media screen and (min-width: 1440px) {
     bottom:143px;
