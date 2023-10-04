@@ -291,7 +291,10 @@
 .cleaning__banner {
   position: relative;
   height: 321px;
-  background-image: url('../images/cleaning-package/desktop/banner-back@1x.png');
+  background-image: url('../images/cleaning-package/mobile/banner-back@1x.png');
+  @supports (background-image: url('../images/cleaning-package/mobile/banner-back@1x.webp')) {
+    background-image: url(../images/cleaning-package/mobile/banner-back@1x.webp);
+  }
   background-position: left top 45px;
   padding: 24px;
   
@@ -307,29 +310,44 @@
   @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
-    background-image: url('../images/cleaning-package/desktop/banner-back@2x.png');
+    background-image: url('../images/cleaning-package/mobile/banner-back@2x.png');
+    @supports (background-image: url('../images/cleaning-package/mobile/banner-back@2x.webp')) {
+      background-image: url(../images/cleaning-package/mobile/banner-back@2x.webp);
+    }
   }
 
   @media screen and (min-width: 768px) {
     height: auto;
     background-position: right 35px top;
-    background-image: url('../images/cleaning-package/desktop/banner-back@1x.png');
+    background-image: url('../images/cleaning-package/tablet/banner-back@1x.png');
+    @supports (background-image: url('../images/cleaning-package/tablet/banner-back@1x.webp')) {
+      background-image: url(../images/cleaning-package/tablet/banner-back@1x.webp);
+    }
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-      background-image: url('../images/cleaning-package/desktop/banner-back@2x.png');
+      background-image: url('../images/cleaning-package/tablet/banner-back@2x.png');
+      @supports (background-image: url('../images/cleaning-package/tablet/banner-back@2x.webp')) {
+        background-image: url(../images/cleaning-package/tablet/banner-back@2x.webp);
+      }
     }
   }
 
   @media screen and (min-width: 1440px) {
     background-position: right 114px top;
     background-image: url('../images/cleaning-package/desktop/banner-back@1x.png');
+    @supports (background-image: url('../images/cleaning-package/desktop/banner-back@1x.webp')) {
+      background-image: url(../images/cleaning-package/desktop/banner-back@1x.webp);
+    }
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       background-image: url('../images/cleaning-package/desktop/banner-back@2x.png');
+      @supports (background-image: url('../images/cleaning-package/desktop/banner-back@2x.webp')) {
+        background-image: url(../images/cleaning-package/desktop/banner-back@2x.webp);
+      }
     }
   }
 

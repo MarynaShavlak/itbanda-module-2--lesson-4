@@ -266,24 +266,33 @@
 
 .hero__image {
   position: absolute;
-  background-image: url(../images/hero/hero_mobile.png);
+  background-image: url(../images/hero/home/hero_mobile.png);
   background-repeat: no-repeat;
   width: 425px;
   height: 285px;
   background-position: center;
   background-size: contain;
+  @supports (background-image: url('../images/hero/home/hero_mobile.webp')) {
+    background-image: url(../images/hero/home/hero_mobile.webp);
+  }
 
  
   @media screen and (min-width: 768px) {
-    background-image: url(../images/hero/hero_tablet.png);
+    background-image: url(../images/hero/home/hero_tablet.png);
     width: 738px;
     height: 495px;
+    @supports (background-image: url('../images/hero/home/hero__tablet.webp')) {
+      background-image: url(../images/hero/home/hero_tablet.webp);
+  }
   }
      
    @media screen and (min-width: 1440px) {
-    background-image: url(../images/hero/hero.png);
+    background-image: url(../images/hero/home/hero.png);
     width: 836px;
     height: 561px;
+    @supports (background-image: url('../images/hero/home/hero.webp')) {
+        background-image: url(../images/hero/home/hero.webp);
+    }
 
   }
 }
@@ -294,13 +303,18 @@
   @media screen and (max-width: 767px) {
     background-position: bottom right -40px;
   }
-  //background-size: contain;
   background-image: url('../images/hero/success-page/mobile/success-back@1x.png');
+  @supports (background-image: url('../images/hero/success-page/mobile/success-back@1x.webp')) {
+    background-image: url(../images/hero/success-page/mobile/success-back@1x.webp);
+  }
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       background-image: url('../images/hero/success-page/mobile/success-back@2x.png');
+      @supports (background-image: url('../images/hero/success-page/mobile/success-back@2x.webp')) {
+        background-image: url(../images/hero/success-page/mobile/success-back@2x.webp);
+      }
     }
 
   width: 347px;
@@ -311,11 +325,17 @@
     width: 450px;
     height: 450px;
     background-image: url('../images/hero/success-page/tablet/success-back@1x.png');
+    @supports (background-image: url('../images/hero/tablet/tablet/success-back@1x.webp')) {
+      background-image: url(../images/hero/success-page/mobile/success-back@1x.webp);
+    }
     
       @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
         background-image: url('../images/hero/success-page/tablet/success-back@2x.png');
+        @supports (background-image: url('../images/hero/success-page/tablet/success-back@2x.webp')) {
+          background-image: url(../images/hero/success-page/mobile/success-back@2x.webp);
+        }
       }
   }
      
@@ -326,11 +346,17 @@
   background-size: cover;
   background-position: top -40px right ;
   background-image: url('../images/hero/success-page/desktop/success-back@1x.png');
+  @supports (background-image: url('../images/hero/success-page/desktop/success-back@1x.webp')) {
+    background-image: url(../images/hero/success-page/desktop/success-back@1x.webp);
+  }
 
   @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
     background-image: url('../images/hero/success-page/desktop/success-back@2x.png');
+    @supports (background-image: url('../images/hero/success-page/desktop/success-back@2x.webp')) {
+      background-image: url(../images/hero/success-page/desktop/success-back@1x.webp);
+    }
   }
 }
 
@@ -401,11 +427,17 @@
   background-position: center;
   background-size: cover;
   background-image: url('../images/hero/office/mobile/office-cleaner@1x.png');
+  @supports (background-image: url('../images/hero/office/mobile/office-cleaner@1x.webp')) {
+    background-image: url(../images/hero/office/mobile/office-cleaner@1x.webp);
+  }
 
   @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
     background-image: url('../images/hero/office/mobile/office-cleaner@2x.png');
+    @supports (background-image: url('../images/hero/office/mobile/office-cleaner@2x.webp')) {
+      background-image: url(../images/hero/office/mobile/office-cleaner@2x.webp);
+    }
   }
 
   width: 308px;
@@ -416,11 +448,17 @@
     width: 382px;
     height: 380px;
     background-image: url('../images/hero/office/tablet/office-cleaner@1x.png');
+    @supports (background-image: url('../images/hero/office/tablet/office-cleaner@1x.webp')) {
+      background-image: url(../images/hero/office/tablet/office-cleaner@1x.webp);
+    }
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       background-image: url('../images/hero/office/tablet/office-cleaner@2x.png');
+      @supports (background-image: url('../images/hero/office/tablet/office-cleaner@2x.webp')) {
+        background-image: url(../images/hero/office/tablet/office-cleaner@2x.webp);
+      }
     }
   }
 
@@ -497,10 +535,16 @@
     height: 332px;
   }
   background-image: url('../images/hero/after-repair/mobile/after-repair-hero@1x.png');
+  @supports (background-image: url('../images/hero/after-repair/mobile/after-repair-hero@1x.webp')) {
+    background-image: url(../images/hero/after-repair/mobile/after-repair-hero@1x.webp);
+  }
   @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
     background-image: url('../images/hero/after-repair/mobile/after-repair-hero@2x.png');
+    @supports (background-image: url('../images/hero/after-repair/mobile/after-repair-hero@2x.webp')) {
+      background-image: url(../images/hero/after-repair/mobile/after-repair-hero@2x.webp);
+    }
   }
 
 
@@ -511,11 +555,17 @@
     background-size: cover;
     background-position: center;
     background-image: url('../images/hero/after-repair/tablet/after-repair-hero@1x.png');
+    @supports (background-image: url('../images/hero/after-repair/tablet/after-repair-hero@1x.webp')) {
+      background-image: url(../images/hero/after-repair/tablet/after-repair-hero@1x.webp);
+    }
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       background-image: url('../images/hero/after-repair/tablet/after-repair-hero@2x.png');
+      @supports (background-image: url('../images/hero/after-repair/tablet/after-repair-hero@2x.webp')) {
+        background-image: url(../images/hero/after-repair/tablet/after-repair-hero@2x.webp);
+      }
     }
   }
 
@@ -524,11 +574,17 @@
     width: 523px;
     height: 667px;
     background-image: url('../images/hero/after-repair/desktop/after-repair-hero@1x.png');
+    @supports (background-image: url('../images/hero/after-repair/desktop/after-repair-hero@1x.webp')) {
+      background-image: url(../images/hero/after-repair/desktop/after-repair-hero@1x.webp);
+    }
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       background-image: url('../images/hero/after-repair/desktop/after-repair-hero@2x.png');
+      @supports (background-image: url('../images/hero/after-repair/desktop/after-repair-hero@2x.webp')) {
+        background-image: url(../images/hero/after-repair/desktop/after-repair-hero@2x.webp);
+      }
     }
   }
 }
@@ -557,11 +613,17 @@
   background-repeat: no-repeat;
   background-position: center;
   background-image: url('../images/hero/error/mobile/error-hero@1x.png');
+  @supports (background-image: url('../images/hero/error/mobile/error-hero@1x.webp')) {
+    background-image: url(../images/hero/error/mobile/error-hero@1x.webp);
+  }
 
   @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
     background-image: url('../images/hero/error/mobile/error-hero@2x.png');
+    @supports (background-image: url('../images/hero/error/mobile/error-hero@2x.webp')) {
+      background-image: url(../images/hero/error/mobile/error-hero@2x.webp);
+    }
   }
 
   width: 347px;
@@ -572,12 +634,18 @@
     width: 302px;
     height: 400px;
     background-image: url('../images/hero/error/tablet/error-hero@1x.png');
+    @supports (background-image: url('../images/hero/error/tablet/error-hero@1x.webp')) {
+      background-image: url(../images/hero/error/tablet/error-hero@1x.webp);
+    }
     background-size: 320px;
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       background-image: url('../images/hero/error/tablet/error-hero@2x.png');
+      @supports (background-image: url('../images/hero/error/tablet/error-hero@2x.webp')) {
+        background-image: url(../images/hero/error/tablet/error-hero@2x.webp);
+      }
     }
   }
 
@@ -593,9 +661,4 @@
     (min-resolution: 2dppx) {
     }
   }
-
-
-
-
-
 }
