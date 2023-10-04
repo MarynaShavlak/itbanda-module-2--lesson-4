@@ -17,10 +17,10 @@ const flexBasisOneThird = 'calc(100% / 3)';
 const flexBasisHalf = 'calc(100% / 2)';
 
 const pages = {
-  home: ['/cleaning/', '/cleaning/index.html'], // ['/', '/index.html'],
-  office: ['/cleaning/office.html'], // ['/office.html'],
+  home: ['/cleaning/', '/cleaning/index.html'], 
+  office: ['/cleaning/office.html'],
   afterRepair: ['/cleaning/after-repair.html'],
-  calcOrder: ['/cleaning/calc-order.html'], //['/cleaning/calc-order.html'],
+  calcOrder: ['/cleaning/calc-order.html'], 
   contacts: ['/cleaning/contacts.html'],
   successOr404: ['/cleaning/success-order.html', '/cleaning/404.html'],
 };

@@ -5,5 +5,12 @@
   "reporters": [
     "...",
     "parcel-reporter-clean-dist"
-  ]
+  ],
+  "transformers": {
+    "*.png": ["@parcel/transformer-image"],
+    "*.jpg": ["@parcel/transformer-image"],
+    "*.jpeg": ["@parcel/transformer-image"],
+    "*.gif": ["@parcel/transformer-image"],
+    "*.webp": ["@parcel/transformer-image"]
+  }
 }

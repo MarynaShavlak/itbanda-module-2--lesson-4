@@ -116,11 +116,17 @@
     width: 157px;
     height: 157px;
     background-image: url('../images/trust/brush@1x.png');
+    @supports (background-image: url('../images/trust/brush@1x.webp')) {
+      background-image: url(../images/trust/brush@1x.webp);
+    }
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
       background-image: url('../images/trust/brush@2x.png');
+      @supports (background-image: url('../images/trust/brush@2x.webp')) {
+        background-image: url(../images/trust/brush@2x.webp);
+      }
     }
   }
 }

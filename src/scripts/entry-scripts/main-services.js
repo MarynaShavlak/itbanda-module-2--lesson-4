@@ -1,4 +1,5 @@
 import '../modules/common.js';
+import '../modules/create-services-list.js';
 import '../modules/aside-menu.js';
 import '../modules/theme-toggler.js';
 import '../modules/scroll-to-top.js';
