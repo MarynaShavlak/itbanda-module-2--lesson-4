@@ -366,47 +366,47 @@ Optimizing images for Retina displays and using the WebP format is paramount for
      <td>Order Success Confirmation Page</td>
   </tr>
   <tr>
-    <td><img src='/src/images/screens/2.jpg' width=400 alt="скріншот сайту" ></td>
-    <td><img src='/src/images/screens/12.gif' width=400 alt="скріншот сайту" ></td>
+    <td><img src='/src/images/screens/2.jpg' width=400 alt="скріншот  cторінки сайту" ></td>
+    <td><img src='/src/images/screens/12.gif' width=400 alt="скріншот  cторінки сайту" ></td>
   </tr>
     <td>Custom Calendar with Date Blocking</td>
      <td>Enhanced Time Selection with Schedule Integration</td>
   </tr>
   <tr>
-    <td><img src='/src/images/screens/3.jpg' width=400 alt="скріншот сайту" ></td>
-    <td><img src='/src/images/screens/4.jpg' width=400 alt="скріншот сайту" ></td>
+    <td><img src='/src/images/screens/3.jpg' width=400 alt="скріншот  cторінки сайту" ></td>
+    <td><img src='/src/images/screens/4.jpg' width=400 alt="скріншот  cторінки сайту" ></td>
   </tr>
   </tr>
     <td>Error Notification and Field Validation</td>
      <td>FAQ Accordion</td>
   </tr>
   <tr>
-    <td><img src='/src/images/screens/5.jpg' width=400 alt="скріншот сайту" ></td>
-    <td><img src='/src/images/screens/1.jpg' width=400 alt="скріншот сайту" ></td>
+    <td><img src='/src/images/screens/5.jpg' width=400 alt="скріншот  cторінки сайту" ></td>
+    <td><img src='/src/images/screens/1.jpg' width=400 alt="скріншот  cторінки сайту" ></td>
   </tr>
   </tr>
     <td>Customized Cleaning Selection and Instant Cost Estimation</td>
      <td>Trust-Building Section, Dynamic Theme Toggle</td>
   </tr>
   <tr>
-    <td><img src='/src/images/screens/7.jpg' width=400 alt="скріншот сайту" ></td>
-    <td><img src='/src/images/screens/8.jpg' width=400 alt="скріншот сайту" ></td>
+    <td><img src='/src/images/screens/7.jpg' width=400 alt="скріншот  cторінки сайту" ></td>
+    <td><img src='/src/images/screens/8.jpg' width=400 alt="скріншот  cторінки сайту" ></td>
   </tr>
   </tr>
     <td>Comprehensive Service Information, Sidebar Menu</td>
      <td>Responsive Design</td>
   </tr>
   <tr>
-    <td><img src='/src/images/screens/9.jpg' width=400 alt="скріншот сайту" ></td>
-    <td><img src='/src/images/screens/10.jpg' width=400 alt="скріншот сайту" ></td>
+    <td><img src='/src/images/screens/9.jpg' width=400 alt="скріншот  cторінки сайту" ></td>
+    <td><img src='/src/images/screens/10.jpg' width=400 alt="скріншот  cторінки сайту" ></td>
   </tr>
   </tr>
     <td>Custom 404 Error Page, Address with Interactive Map</td>
      <td>Custom Attractive UI Effects</td>
   </tr>
   <tr>
-    <td><img src='/src/images/screens/11.jpg' width=400 alt="скріншот сайту" ></td>
-    <td><img src='/src/images/screens/6.jpg' width=400 alt="скріншот сайту" ></td>
+    <td><img src='/src/images/screens/11.jpg' width=400 alt="скріншот  cторінки сайту" ></td>
+    <td><img src='/src/images/screens/6.jpg' width=400 alt="скріншот  cторінки сайту" ></td>
   </tr>
  </table>
 
